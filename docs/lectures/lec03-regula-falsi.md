@@ -6,10 +6,11 @@ title: Regula Falsi
 
 # Regula Falsi
 
-![Lecture 3: Regula Falsi](../assets/thumbnails/lec03_regula_falsi.png){ .nm-video }
+<iframe class="nm-video" src="https://www.youtube-nocookie.com/embed/mJpxcbBGdI4" title="Lecture 3: Regula Falsi" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 <div class="nm-actions" markdown>
 [Practise this lecture](../practice/lec03_regula_falsi.html){ .md-button .md-button--primary }
+[Watch on YouTube](https://www.youtube.com/watch?v=mJpxcbBGdI4){ .md-button }
 </div>
 
 <div class="nm-key" markdown>
