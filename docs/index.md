@@ -1,42 +1,57 @@
 ---
+title: Numerical Methods
 hide:
   - navigation
   - toc
 ---
 
-# Numerical Methods
-
-<p class="nm-hero">Short, visual video lectures on the core algorithms of numerical analysis, each paired with a self-paced practice page. Watch a lecture, then practise it straight away.</p>
+<div class="nm-hero">
+  <p class="nm-eyebrow">A visual course</p>
+  <h1>Numerical Methods</h1>
+  <p class="nm-lede">Short animated lectures on the algorithms behind scientific computing. Each lecture comes with notes and a self-paced practice page with live plots, hints and instant feedback.</p>
+  <div class="nm-actions">
+    <a class="md-button md-button--primary" href="lectures/lec01-bisection/">Start with Lecture 1</a>
+  </div>
+</div>
 
 ## Lectures
 
-<div class="grid cards" markdown>
-
--   [![Lecture 1: The Bisection Method](assets/thumbnails/lec01_bisection.png)](lectures/lec01-bisection.md)
-
-    **Lecture 1 · The Bisection Method**
-
-    Bracket a root, cut the interval in half, keep the half with the sign change. Slow, but guaranteed.
-
-    [:octicons-arrow-right-24: Lecture page](lectures/lec01-bisection.md) ·
-    [:material-pencil-box-outline: Practise](practice/lec01_bisection.html)
-
--   [![Lecture 2: The Secant Method](assets/thumbnails/lec02_secant.png)](lectures/lec02-secant.md)
-
-    **Lecture 2 · The Secant Method**
-
-    Replace the curve by a straight line through the last two points. Order 1.618, the golden ratio.
-
-    [:octicons-arrow-right-24: Lecture page](lectures/lec02-secant.md) ·
-    [:material-pencil-box-outline: Practise](practice/lec02_secant.html)
-
+<div class="nm-lectures">
+  <article class="nm-lecture">
+    <a href="lectures/lec01-bisection/"><img src="assets/thumbnails/lec01_bisection.png" alt="Lecture 1: The Bisection Method"></a>
+    <div>
+      <div class="nm-num">Lecture 1 · 7 min</div>
+      <h3><a href="lectures/lec01-bisection/">The Bisection Method</a></h3>
+      <p>Bracket a root, cut the interval in half and keep the half with the sign change. Slow, but guaranteed: \(|c_n - r| \le \frac{b-a}{2^n}\).</p>
+      <div class="nm-links">
+        <a href="lectures/lec01-bisection/">Notes</a>
+        <a href="https://www.youtube.com/watch?v=OyOAFWVk5Sc">Video</a>
+        <a href="practice/lec01_bisection.html">Practice</a>
+      </div>
+    </div>
+  </article>
+  <article class="nm-lecture">
+    <a href="lectures/lec02-secant/"><img src="assets/thumbnails/lec02_secant.png" alt="Lecture 2: The Secant Method"></a>
+    <div>
+      <div class="nm-num">Lecture 2 · 8 min</div>
+      <h3><a href="lectures/lec02-secant/">The Secant Method</a></h3>
+      <p>Replace the curve by the straight line through the last two points. Much faster than bisection, with order \(p = \frac{1+\sqrt5}{2} \approx 1.618\).</p>
+      <div class="nm-links">
+        <a href="lectures/lec02-secant/">Notes</a>
+        <a href="https://www.youtube.com/watch?v=4c2-SlNsi70">Video</a>
+        <a href="practice/lec02_secant.html">Practice</a>
+      </div>
+    </div>
+  </article>
+  <article class="nm-lecture nm-soon">
+    <div><div class="nm-num">Coming next</div>Regula Falsi · Newton–Raphson · Fixed-point iteration · Order of convergence</div>
+  </article>
 </div>
 
-## How to use this course
+## How each lecture works
 
-1. **Watch** the lecture video. Each one is 6–8 minutes and explains the idea with animations.
-2. **Read** the lecture page for the key formulas, the worked example and the algorithm.
-3. **Practise** with the interactive page: sliders, live plots, instant feedback and hints. Your progress is saved in your browser.
-
-!!! tip "Coming next"
-    Regula Falsi, Newton–Raphson, fixed-point iteration, and order of convergence.
+<div class="nm-steps">
+  <div class="nm-step"><b>Watch</b>A 6–8 minute animated video that builds the idea step by step.</div>
+  <div class="nm-step"><b>Read</b>The notes: key formulas, the worked example and the algorithm.</div>
+  <div class="nm-step"><b>Practise</b>Nine short interactive tasks. Your progress is saved as you go.</div>
+</div>

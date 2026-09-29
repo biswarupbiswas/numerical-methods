@@ -8,7 +8,7 @@ Live site: https://biswarupbiswas.github.io/numerical-methods/
 
 ```bash
 pip install -r requirements.txt
-./sync.sh            # pull latest practice pages, thumbnails and MATLAB files from ../numerical_methods
+./sync.sh            # copy the latest lecture thumbnails from ../numerical_methods
 mkdocs serve         # preview at http://127.0.0.1:8000
 mkdocs gh-deploy     # build and publish to the gh-pages branch
 ```

@@ -27,6 +27,7 @@ theme:
     code: IBM Plex Mono
   features:
     - navigation.instant
+    - navigation.tracking
     - navigation.sections
     - navigation.footer
     - navigation.top
@@ -52,8 +53,16 @@ markdown_extensions:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
+extra:
+  generator: false
+
+copyright: "© 2026 Biswarup Biswas"
+
 extra_css:
+  - https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css
+  - https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,650&display=swap
   - stylesheets/extra.css
 extra_javascript:
-  - javascripts/mathjax.js
-  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  - https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js
+  - https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js
+  - javascripts/katex.js
