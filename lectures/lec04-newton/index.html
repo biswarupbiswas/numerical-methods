@@ -12,13 +12,11 @@
         <meta name="author" content="Biswarup Biswas">
       
       
-        <link rel="canonical" href="https://biswarupbiswas.github.io/numerical-methods/lectures/lec01-bisection/">
+        <link rel="canonical" href="https://biswarupbiswas.github.io/numerical-methods/lectures/lec04-newton/">
       
       
-        <link rel="prev" href="../..">
+        <link rel="prev" href="../lec03-regula-falsi/">
       
-      
-        <link rel="next" href="../lec02-secant/">
       
       
         
@@ -29,7 +27,7 @@
     
     
       
-        <title>The Bisection Method - Numerical Methods</title>
+        <title>The Newton–Raphson Method - Numerical Methods</title>
       
     
     
@@ -86,7 +84,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#the-bisection-method" class="md-skip">
+        <a href="#the-newtonraphson-method" class="md-skip">
           Skip to content
         </a>
       
@@ -122,7 +120,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              The Bisection Method
+              The Newton–Raphson Method
             
           </span>
         </div>
@@ -346,37 +344,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    1 · Bisection Method
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../lec01-bisection/" class="md-nav__link">
         
   
   
@@ -392,114 +363,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#key-results" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Key results
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#the-problem" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The problem
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#intermediate-value-theorem" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Intermediate Value Theorem
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#the-idea" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The idea
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#worked-example" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Worked example
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#algorithm" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Algorithm
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#error-bound-and-number-of-iterations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Error bound and number of iterations
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#strengths-and-weaknesses" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Strengths and weaknesses
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -565,10 +428,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../lec04-newton/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 · Newton–Raphson
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -584,6 +474,136 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#key-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key results
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#from-secant-to-tangent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From secant to tangent
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-formula" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The formula
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#worked-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked example
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-the-error-is-squared" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why the error is squared
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-babylonian-square-root" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Babylonian square root
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cost-per-function-evaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cost per function evaluation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-newton-fails" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When Newton fails
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Algorithm
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comparison
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -634,10 +654,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-problem" class="md-nav__link">
+  <a href="#from-secant-to-tangent" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The problem
+        From secant to tangent
       
     </span>
   </a>
@@ -645,21 +665,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#intermediate-value-theorem" class="md-nav__link">
+  <a href="#the-formula" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Intermediate Value Theorem
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#the-idea" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The idea
+        The formula
       
     </span>
   </a>
@@ -678,6 +687,50 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#why-the-error-is-squared" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why the error is squared
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-babylonian-square-root" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Babylonian square root
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cost-per-function-evaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cost per function evaluation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-newton-fails" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When Newton fails
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#algorithm" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -689,21 +742,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#error-bound-and-number-of-iterations" class="md-nav__link">
+  <a href="#comparison" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Error bound and number of iterations
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#strengths-and-weaknesses" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Strengths and weaknesses
+        Comparison
       
     </span>
   </a>
@@ -727,140 +769,150 @@
 
 
 
-<p class="nm-eyebrow">Lecture 1</p>
+<p class="nm-eyebrow">Lecture 4</p>
 
-<h1 id="the-bisection-method">The Bisection Method<a class="headerlink" href="#the-bisection-method" title="Permanent link">&para;</a></h1>
-<iframe class="nm-video" src="https://www.youtube-nocookie.com/embed/OyOAFWVk5Sc" title="Lecture 1: The Bisection Method" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
+<h1 id="the-newtonraphson-method">The Newton–Raphson Method<a class="headerlink" href="#the-newtonraphson-method" title="Permanent link">&para;</a></h1>
+<p><img alt="Lecture 4: The Newton–Raphson Method" class="nm-video" src="../../assets/thumbnails/lec04_newton.png" /></p>
 <div class="nm-actions">
-<p><a class="md-button md-button--primary" href="../../practice/lec01_bisection.html">Practise this lecture</a>
-<a class="md-button" href="https://www.youtube.com/watch?v=OyOAFWVk5Sc">Watch on YouTube</a></p>
+<p><a class="md-button md-button--primary" href="../../practice/lec04_newton.html">Practise this lecture</a></p>
 </div>
 <div class="nm-key">
 <h4 id="key-results">Key results<a class="headerlink" href="#key-results" title="Permanent link">&para;</a></h4>
 <ul>
-<li>If <span class="arithmatex">\(f\)</span> is continuous on <span class="arithmatex">\([a,b]\)</span> and <span class="arithmatex">\(f(a)\,f(b) &lt; 0\)</span>, there is a root in <span class="arithmatex">\((a,b)\)</span>.</li>
-<li>Midpoint <span class="arithmatex">\(c = \frac{a+b}{2}\)</span>; keep the half where <span class="arithmatex">\(f\)</span> changes sign.</li>
-<li>Error bound <span class="arithmatex">\(|c_n - r| \le \frac{b-a}{2^n}\)</span>; linear convergence with rate <span class="arithmatex">\(\frac12\)</span>.</li>
+<li><span class="arithmatex">\(x_{n+1} = x_n - \dfrac{f(x_n)}{f'(x_n)}\)</span>: follow the tangent line down to the axis.</li>
+<li>Near a simple root the convergence is <strong>quadratic</strong>: <span class="arithmatex">\(e_{n+1} \approx \frac{f''(r)}{2f'(r)}\,e_n^2\)</span>, so the correct digits double.</li>
+<li>It needs <span class="arithmatex">\(f'\)</span> and a good starting guess; it can find the wrong root, meet a flat tangent, cycle or diverge.</li>
 </ul>
 </div>
-<h2 id="the-problem">The problem<a class="headerlink" href="#the-problem" title="Permanent link">&para;</a></h2>
-<p>Many equations have no closed-form solution, for example</p>
+<h2 id="from-secant-to-tangent">From secant to tangent<a class="headerlink" href="#from-secant-to-tangent" title="Permanent link">&para;</a></h2>
+<p>The secant method draws a line through two points of the curve. Slide the two points together and the secant becomes the <strong>tangent</strong>, the line with slope <span class="arithmatex">\(f'(x)\)</span>. Newton's method starts from a single guess <span class="arithmatex">\(x_0\)</span>, follows the tangent to the axis, and repeats.</p>
+<h2 id="the-formula">The formula<a class="headerlink" href="#the-formula" title="Permanent link">&para;</a></h2>
+<p>The tangent at <span class="arithmatex">\(x_n\)</span> is <span class="arithmatex">\(y = f(x_n) + f'(x_n)\,(x - x_n)\)</span>. Setting <span class="arithmatex">\(y = 0\)</span>:</p>
 <div class="arithmatex">\[
-f(x) = x^3 - x - 2 = 0 .
+x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}, \qquad n \ge 0 .
 \]</div>
-<p>We look for a <strong>root</strong> <span class="arithmatex">\(r\)</span>, a number with <span class="arithmatex">\(f(r) = 0\)</span>. Graphically, it is where the curve crosses the <span class="arithmatex">\(x\)</span>-axis.</p>
-<h2 id="intermediate-value-theorem">Intermediate Value Theorem<a class="headerlink" href="#intermediate-value-theorem" title="Permanent link">&para;</a></h2>
-<p>If <span class="arithmatex">\(f\)</span> is continuous on <span class="arithmatex">\([a,b]\)</span> and <span class="arithmatex">\(f(a)\,f(b) &lt; 0\)</span>, then there is at least one <span class="arithmatex">\(r \in (a,b)\)</span> with <span class="arithmatex">\(f(r) = 0\)</span>.</p>
-<div class="admonition warning">
-<p class="admonition-title">Continuity matters</p>
-<p><span class="arithmatex">\(g(x) = 1/x\)</span> has <span class="arithmatex">\(g(-1)\,g(1) &lt; 0\)</span> but no root in <span class="arithmatex">\((-1, 1)\)</span>: it jumps across the axis at <span class="arithmatex">\(x = 0\)</span>.</p>
-</div>
-<h2 id="the-idea">The idea<a class="headerlink" href="#the-idea" title="Permanent link">&para;</a></h2>
-<p>Cut the interval at the midpoint <span class="arithmatex">\(c = \frac{a+b}{2}\)</span>, check the sign of <span class="arithmatex">\(f(c)\)</span>, and keep the half where the sign changes. The root stays trapped while the interval halves at every step.</p>
+<p>For a straight line <span class="arithmatex">\(f(x) = ax + b\)</span> the tangent is the line itself, so Newton reaches the root <span class="arithmatex">\(-b/a\)</span> in one step from any <span class="arithmatex">\(x_0\)</span>.</p>
 <h2 id="worked-example">Worked example<a class="headerlink" href="#worked-example" title="Permanent link">&para;</a></h2>
-<p><span class="arithmatex">\(f(x) = x^3 - x - 2\)</span> on <span class="arithmatex">\([1, 2]\)</span>, with <span class="arithmatex">\(f(1) = -2\)</span> and <span class="arithmatex">\(f(2) = 4\)</span>.</p>
+<p><span class="arithmatex">\(f(x) = x^3 + 2x^2 - x - 1\)</span>, <span class="arithmatex">\(f'(x) = 3x^2 + 4x - 1\)</span>, starting at <span class="arithmatex">\(x_0 = 1\)</span>:</p>
 <table>
 <thead>
 <tr>
 <th style="text-align: right;"><span class="arithmatex">\(n\)</span></th>
-<th style="text-align: right;"><span class="arithmatex">\(a\)</span></th>
-<th style="text-align: right;"><span class="arithmatex">\(b\)</span></th>
-<th style="text-align: right;"><span class="arithmatex">\(c\)</span></th>
-<th style="text-align: right;"><span class="arithmatex">\(f(c)\)</span></th>
+<th style="text-align: right;"><span class="arithmatex">\(x_n\)</span></th>
+<th style="text-align: right;"><span class="arithmatex">\(\lvert f(x_n)\rvert\)</span></th>
+<th style="text-align: right;"><span class="arithmatex">\(f'(x_n)\)</span></th>
+<th style="text-align: right;"><span class="arithmatex">\(\lvert x_n - r\rvert\)</span></th>
 </tr>
 </thead>
 <tbody>
 <tr>
+<td style="text-align: right;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(1.0000000000\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(1.0\times10^{0}\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(6.0000\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(2.0\times10^{-1}\)</span></td>
+</tr>
+<tr>
 <td style="text-align: right;"><span class="arithmatex">\(1\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(1\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(2\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(1.5\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(-0.1250\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(0.8333333333\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(1.3\times10^{-1}\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(4.4167\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(3.1\times10^{-2}\)</span></td>
 </tr>
 <tr>
 <td style="text-align: right;"><span class="arithmatex">\(2\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(1.5\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(2\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(1.75\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(+1.6094\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(0.8029350105\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(4.1\times10^{-3}\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(4.1459\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(1.0\times10^{-3}\)</span></td>
 </tr>
 <tr>
 <td style="text-align: right;"><span class="arithmatex">\(3\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(1.5\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(1.75\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(1.625\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(+0.6660\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(0.8019387932\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(4.4\times10^{-6}\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(4.1371\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(1.1\times10^{-6}\)</span></td>
 </tr>
 <tr>
 <td style="text-align: right;"><span class="arithmatex">\(4\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(1.5\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(1.625\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(1.5625\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(+0.2522\)</span></td>
-</tr>
-<tr>
-<td style="text-align: right;"><span class="arithmatex">\(5\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(1.5\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(1.5625\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(1.53125\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(+0.0591\)</span></td>
-</tr>
-<tr>
-<td style="text-align: right;"><span class="arithmatex">\(6\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(1.5\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(1.53125\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(1.515625\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(-0.0341\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(0.8019377358\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(4.9\times10^{-12}\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(4.1371\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(1.2\times10^{-12}\)</span></td>
 </tr>
 </tbody>
 </table>
-<p>The true root is <span class="arithmatex">\(r = 1.5213797\ldots\)</span></p>
-<h2 id="algorithm">Algorithm<a class="headerlink" href="#algorithm" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>input  f, a, b  with  f(a)·f(b) &lt; 0,  tol
-repeat
-    c ← (a + b) / 2
-    if  f(a)·f(c) &lt; 0
-        b ← c          # root in left half
-    else
-        a ← c          # root in right half
-until  (b − a)/2 &lt; tol
-return c
-</code></pre></div>
-<p><strong>Stopping criteria.</strong> Only <span class="arithmatex">\(\frac{b-a}{2} &lt; \text{tol}\)</span> guarantees <span class="arithmatex">\(|c - r| &lt; \text{tol}\)</span>. A small <span class="arithmatex">\(|f(c)|\)</span> does not, because the function may be very flat, and a maximum number of iterations is a safety net.</p>
-<h2 id="error-bound-and-number-of-iterations">Error bound and number of iterations<a class="headerlink" href="#error-bound-and-number-of-iterations" title="Permanent link">&para;</a></h2>
+<p>The correct digits are about <span class="arithmatex">\(0.7,\ 1.5,\ 3.0,\ 6.0,\ 11.9\)</span>: they <strong>double</strong> at every step.</p>
+<h2 id="why-the-error-is-squared">Why the error is squared<a class="headerlink" href="#why-the-error-is-squared" title="Permanent link">&para;</a></h2>
+<p>Taylor's theorem around <span class="arithmatex">\(x_n\)</span> gives <span class="arithmatex">\(0 = f(r) = f(x_n) + f'(x_n)(r - x_n) + \tfrac12 f''(\xi)(r - x_n)^2\)</span>. Dividing by <span class="arithmatex">\(f'(x_n)\)</span>:</p>
 <div class="arithmatex">\[
-|c_n - r| \le \frac{b-a}{2^n}
-\qquad\Longrightarrow\qquad
-n \ge \log_2\frac{b-a}{\varepsilon} .
+r - x_{n+1} = -\frac{f''(\xi)}{2f'(x_n)}\,(r - x_n)^2
+\quad\Longrightarrow\quad
+\lim_{n\to\infty}\frac{r - x_{n+1}}{(r - x_n)^2} = -\frac{f''(r)}{2f'(r)} .
 \]</div>
-<p>For <span class="arithmatex">\([1,2]\)</span> and <span class="arithmatex">\(\varepsilon = 10^{-6}\)</span>: <span class="arithmatex">\(n \ge \log_2(10^6) \approx 19.93\)</span>, so <span class="arithmatex">\(20\)</span> iterations are enough. Convergence is <strong>linear</strong> with rate <span class="arithmatex">\(\frac12\)</span>: about <span class="arithmatex">\(3.3\)</span> iterations per correct decimal digit.</p>
-<h2 id="strengths-and-weaknesses">Strengths and weaknesses<a class="headerlink" href="#strengths-and-weaknesses" title="Permanent link">&para;</a></h2>
+<p>Equivalently, Newton is the one-point method <span class="arithmatex">\(x_{n+1} = g(x_n)\)</span> with <span class="arithmatex">\(g(x) = x - f(x)/f'(x)\)</span>, and <span class="arithmatex">\(g'(x) = \dfrac{f(x)\,f''(x)}{f'(x)^2}\)</span> vanishes at the root. That is what makes the order at least <span class="arithmatex">\(2\)</span>.</p>
+<h2 id="the-babylonian-square-root">The Babylonian square root<a class="headerlink" href="#the-babylonian-square-root" title="Permanent link">&para;</a></h2>
+<p>For <span class="arithmatex">\(f(x) = x^2 - 2\)</span> Newton's method becomes <span class="arithmatex">\(x_{n+1} = \frac12\left(x_n + \frac{2}{x_n}\right)\)</span>: average <span class="arithmatex">\(x\)</span> with <span class="arithmatex">\(2/x\)</span>. From <span class="arithmatex">\(x_0 = 1\)</span>: <span class="arithmatex">\(1.5,\ 1.41667,\ 1.4142157,\ 1.41421356237\)</span>, again doubling the digits.</p>
+<h2 id="cost-per-function-evaluation">Cost per function evaluation<a class="headerlink" href="#cost-per-function-evaluation" title="Permanent link">&para;</a></h2>
+<p>Each Newton step needs <span class="arithmatex">\(f\)</span> and <span class="arithmatex">\(f'\)</span>, two evaluations; the secant method needs one. Per evaluation, Newton's order is <span class="arithmatex">\(\sqrt2 \approx 1.41\)</span> and the secant method's is <span class="arithmatex">\(1.618\)</span>. When <span class="arithmatex">\(f'\)</span> is expensive, the secant method can win.</p>
+<h2 id="when-newton-fails">When Newton fails<a class="headerlink" href="#when-newton-fails" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>The wrong root.</strong> From <span class="arithmatex">\(x_0 = 0\)</span>, <span class="arithmatex">\(f'(0) = -1 &lt; 0\)</span> points the other way: <span class="arithmatex">\(0 \to -1 \to -0.5 \to -0.5556\)</span>, converging to <span class="arithmatex">\(-0.55496\)</span> instead of <span class="arithmatex">\(0.80194\)</span>.</li>
+<li><strong>A flat tangent.</strong> At <span class="arithmatex">\(x \approx 0.215\)</span>, <span class="arithmatex">\(f'(x) = 0\)</span>. Starting at <span class="arithmatex">\(0.2\)</span> the tangent is nearly flat and the next guess is <span class="arithmatex">\(-13.7\)</span>.</li>
+<li><strong>A cycle.</strong> For <span class="arithmatex">\(f(x) = x^3 - 2x + 2\)</span> from <span class="arithmatex">\(x_0 = 0\)</span>: <span class="arithmatex">\(0 \to 1 \to 0 \to 1 \to \cdots\)</span></li>
+<li><strong>Divergence.</strong> For <span class="arithmatex">\(f(x) = \arctan x\)</span> from <span class="arithmatex">\(1.5\)</span>: <span class="arithmatex">\(-1.69,\ 2.32,\ -5.11,\ 32.3, \ldots\)</span>; from <span class="arithmatex">\(1.3\)</span> it converges.</li>
+</ul>
+<p>A sufficient condition for convergence is <span class="arithmatex">\(M\,|r - x_0| &lt; 1\)</span> with <span class="arithmatex">\(M = \dfrac{\max|f''|}{2\min|f'|}\)</span> near the root; then <span class="arithmatex">\(M|r - x_n| \le (M|r - x_0|)^{2^n}\)</span>.</p>
+<h2 id="algorithm">Algorithm<a class="headerlink" href="#algorithm" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>input  f, f', x0, tol, maxit
+for n = 0 to maxit − 1
+    if  f'(xn) = 0 :  error (zero derivative)
+    x(n+1) ← xn − f(xn) / f'(xn)
+    if  |x(n+1) − xn| ≤ tol :  return x(n+1)
+end
+error: no convergence within maxit
+</code></pre></div>
+<h2 id="comparison">Comparison<a class="headerlink" href="#comparison" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th>Strengths</th>
-<th>Weaknesses</th>
+<th></th>
+<th>Guaranteed?</th>
+<th>Order</th>
+<th>Needs <span class="arithmatex">\(f'\)</span>?</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Always converges for continuous <span class="arithmatex">\(f\)</span> with a sign change</td>
-<td>Slow: linear convergence</td>
+<td>Bisection</td>
+<td>yes</td>
+<td><span class="arithmatex">\(1\)</span></td>
+<td>no</td>
 </tr>
 <tr>
-<td>Simple to program</td>
-<td>Needs a starting interval with a sign change</td>
+<td>Regula Falsi</td>
+<td>yes</td>
+<td><span class="arithmatex">\(1\)</span></td>
+<td>no</td>
 </tr>
 <tr>
-<td>Guaranteed error bound</td>
-<td>Misses roots that only touch the axis, such as <span class="arithmatex">\((x-1)^2\)</span></td>
+<td>Secant</td>
+<td>no</td>
+<td><span class="arithmatex">\(1.618\)</span></td>
+<td>no</td>
+</tr>
+<tr>
+<td>Newton</td>
+<td>no</td>
+<td><span class="arithmatex">\(2\)</span></td>
+<td>yes</td>
 </tr>
 </tbody>
 </table>
+<p>In practice a safe method gets close to the root, and Newton finishes the job in a few steps.</p>
 <div class="nm-actions">
-<p><a class="md-button md-button--primary" href="../../practice/lec01_bisection.html">Practise this lecture</a>
-<a class="md-button" href="../lec02-secant/">Next: The Secant Method →</a></p>
+<p><a class="md-button md-button--primary" href="../../practice/lec04_newton.html">Practise this lecture</a>
+<a class="md-button" href="../lec03-regula-falsi/">← Previous: Regula Falsi</a></p>
 </div>
 
 
@@ -900,7 +952,7 @@ n \ge \log_2\frac{b-a}{\varepsilon} .
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../.." class="md-footer__link md-footer__link--prev" aria-label="Previous: Home">
+          <a href="../lec03-regula-falsi/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 3 · Regula Falsi">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -910,27 +962,11 @@ n \ge \log_2\frac{b-a}{\varepsilon} .
                 Previous
               </span>
               <div class="md-ellipsis">
-                Home
+                3 · Regula Falsi
               </div>
             </div>
           </a>
         
-        
-          
-          <a href="../lec02-secant/" class="md-footer__link md-footer__link--next" aria-label="Next: 2 · Secant Method">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              <div class="md-ellipsis">
-                2 · Secant Method
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
-            </div>
-          </a>
         
       </nav>
     
