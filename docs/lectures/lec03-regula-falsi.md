@@ -92,4 +92,5 @@ end
 <div class="nm-actions" markdown>
 [Practise this lecture](../practice/lec03_regula_falsi.html){ .md-button .md-button--primary }
 [← Previous: The Secant Method](lec02-secant.md){ .md-button }
+[Next: Newton–Raphson →](lec04-newton.md){ .md-button }
 </div>

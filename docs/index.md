@@ -56,8 +56,20 @@ hide:
       </div>
     </div>
   </article>
+  <article class="nm-lecture">
+    <a href="lectures/lec04-newton/"><img src="assets/thumbnails/lec04_newton.png" alt="Lecture 4: The Newton–Raphson Method"></a>
+    <div>
+      <div class="nm-num">Lecture 4 · 8 min</div>
+      <h3><a href="lectures/lec04-newton/">The Newton–Raphson Method</a></h3>
+      <p>Follow the tangent line down to the axis. Quadratic convergence, \(e_{n+1} \approx C\,e_n^2\): the correct digits double every step.</p>
+      <div class="nm-links">
+        <a href="lectures/lec04-newton/">Notes</a>
+        <a href="practice/lec04_newton.html">Practice</a>
+      </div>
+    </div>
+  </article>
   <article class="nm-lecture nm-soon">
-    <div><div class="nm-num">Coming next</div>Newton–Raphson · Fixed-point iteration · Order of convergence</div>
+    <div><div class="nm-num">Coming next</div>Fixed-point iteration · Order of convergence · Floating-point numbers</div>
   </article>
 </div>
 

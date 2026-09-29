@@ -40,6 +40,7 @@ nav:
       - "1 · Bisection Method": lectures/lec01-bisection.md
       - "2 · Secant Method": lectures/lec02-secant.md
       - "3 · Regula Falsi": lectures/lec03-regula-falsi.md
+      - "4 · Newton–Raphson": lectures/lec04-newton.md
 
 markdown_extensions:
   - admonition
