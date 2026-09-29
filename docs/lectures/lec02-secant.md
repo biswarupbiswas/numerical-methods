@@ -105,4 +105,5 @@ In practice the two ideas are combined: robust root finders keep a bracket like 
 <div class="nm-actions" markdown>
 [Practise this lecture](../practice/lec02_secant.html){ .md-button .md-button--primary }
 [← Previous: The Bisection Method](lec01-bisection.md){ .md-button }
+[Next: Regula Falsi →](lec03-regula-falsi.md){ .md-button }
 </div>
