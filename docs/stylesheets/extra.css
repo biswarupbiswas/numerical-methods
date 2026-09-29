@@ -1,0 +1,26 @@
+/* Same palette as the videos: navy bar, blue curves, gold brackets. */
+:root, [data-md-color-scheme="default"] {
+  --md-primary-fg-color: #0e1a33;
+  --md-primary-fg-color--light: #1c2b4d;
+  --md-primary-fg-color--dark: #08101f;
+  --md-accent-fg-color: #1f5fd6;
+  --nm-gold: #b87d00;
+}
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: #0b0e14;
+  --md-primary-fg-color--light: #171b24;
+  --md-primary-fg-color--dark: #07090d;
+  --md-accent-fg-color: #8ab4f8;
+  --md-default-bg-color: #0f1117;
+  --md-typeset-a-color: #8ab4f8;
+  --nm-gold: #fdd663;
+}
+.md-typeset h1 { font-weight: 650; }
+.md-typeset .md-button { border-radius: 6px; }
+.md-typeset .grid.cards > ul > li { border-radius: 10px; }
+.md-typeset .grid.cards img { border-radius: 6px; margin-bottom: .4rem; }
+.nm-hero { font-size: 1.05rem; max-width: 42rem; }
+.nm-thumb { border-radius: 10px; width: 100%; max-width: 720px; display: block; }
+.nm-actions { display: flex; flex-wrap: wrap; gap: .6rem; margin: 1rem 0 1.4rem; }
+.nm-actions .md-button { margin: 0; }
+.nm-gold { color: var(--nm-gold); font-weight: 600; }
