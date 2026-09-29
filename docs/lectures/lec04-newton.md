@@ -6,10 +6,11 @@ title: The Newton–Raphson Method
 
 # The Newton–Raphson Method
 
-![Lecture 4: The Newton–Raphson Method](../assets/thumbnails/lec04_newton.png){ .nm-video }
+<iframe class="nm-video" src="https://www.youtube-nocookie.com/embed/MIM5zopwb5o" title="Lecture 4: The Newton–Raphson Method" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 <div class="nm-actions" markdown>
 [Practise this lecture](../practice/lec04_newton.html){ .md-button .md-button--primary }
+[Watch on YouTube](https://www.youtube.com/watch?v=MIM5zopwb5o){ .md-button }
 </div>
 
 <div class="nm-key" markdown>
