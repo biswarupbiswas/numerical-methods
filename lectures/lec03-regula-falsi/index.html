@@ -12,13 +12,11 @@
         <meta name="author" content="Biswarup Biswas">
       
       
-        <link rel="canonical" href="https://biswarupbiswas.github.io/numerical-methods/lectures/lec01-bisection/">
+        <link rel="canonical" href="https://biswarupbiswas.github.io/numerical-methods/lectures/lec03-regula-falsi/">
       
       
-        <link rel="prev" href="../..">
+        <link rel="prev" href="../lec02-secant/">
       
-      
-        <link rel="next" href="../lec02-secant/">
       
       
         
@@ -29,7 +27,7 @@
     
     
       
-        <title>The Bisection Method - Numerical Methods</title>
+        <title>Regula Falsi - Numerical Methods</title>
       
     
     
@@ -86,7 +84,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#the-bisection-method" class="md-skip">
+        <a href="#regula-falsi" class="md-skip">
           Skip to content
         </a>
       
@@ -122,7 +120,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              The Bisection Method
+              Regula Falsi
             
           </span>
         </div>
@@ -346,37 +344,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    1 · Bisection Method
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../lec01-bisection/" class="md-nav__link">
         
   
   
@@ -392,114 +363,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#key-results" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Key results
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#the-problem" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The problem
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#intermediate-value-theorem" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Intermediate Value Theorem
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#the-idea" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The idea
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#worked-example" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Worked example
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#algorithm" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Algorithm
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#error-bound-and-number-of-iterations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Error bound and number of iterations
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#strengths-and-weaknesses" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Strengths and weaknesses
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -537,10 +400,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../lec03-regula-falsi/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 · Regula Falsi
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -556,6 +446,103 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#key-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key results
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-idea" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The idea
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#worked-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked example
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-stuck-endpoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The stuck endpoint
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-illinois-fix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Illinois fix
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Algorithm
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comparison
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -606,28 +593,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-problem" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The problem
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#intermediate-value-theorem" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Intermediate Value Theorem
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#the-idea" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -650,6 +615,28 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#the-stuck-endpoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The stuck endpoint
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-illinois-fix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Illinois fix
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#algorithm" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -661,21 +648,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#error-bound-and-number-of-iterations" class="md-nav__link">
+  <a href="#comparison" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Error bound and number of iterations
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#strengths-and-weaknesses" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Strengths and weaknesses
+        Comparison
       
     </span>
   </a>
@@ -699,140 +675,158 @@
 
 
 
-<p class="nm-eyebrow">Lecture 1</p>
+<p class="nm-eyebrow">Lecture 3</p>
 
-<h1 id="the-bisection-method">The Bisection Method<a class="headerlink" href="#the-bisection-method" title="Permanent link">&para;</a></h1>
-<iframe class="nm-video" src="https://www.youtube-nocookie.com/embed/OyOAFWVk5Sc" title="Lecture 1: The Bisection Method" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
+<h1 id="regula-falsi">Regula Falsi<a class="headerlink" href="#regula-falsi" title="Permanent link">&para;</a></h1>
+<p><img alt="Lecture 3: Regula Falsi" class="nm-video" src="../../assets/thumbnails/lec03_regula_falsi.png" /></p>
 <div class="nm-actions">
-<p><a class="md-button md-button--primary" href="../../practice/lec01_bisection.html">Practise this lecture</a>
-<a class="md-button" href="https://www.youtube.com/watch?v=OyOAFWVk5Sc">Watch on YouTube</a></p>
+<p><a class="md-button md-button--primary" href="../../practice/lec03_regula_falsi.html">Practise this lecture</a></p>
 </div>
 <div class="nm-key">
 <h4 id="key-results">Key results<a class="headerlink" href="#key-results" title="Permanent link">&para;</a></h4>
 <ul>
-<li>If <span class="arithmatex">\(f\)</span> is continuous on <span class="arithmatex">\([a,b]\)</span> and <span class="arithmatex">\(f(a)\,f(b) &lt; 0\)</span>, there is a root in <span class="arithmatex">\((a,b)\)</span>.</li>
-<li>Midpoint <span class="arithmatex">\(c = \frac{a+b}{2}\)</span>; keep the half where <span class="arithmatex">\(f\)</span> changes sign.</li>
-<li>Error bound <span class="arithmatex">\(|c_n - r| \le \frac{b-a}{2^n}\)</span>; linear convergence with rate <span class="arithmatex">\(\frac12\)</span>.</li>
+<li>Chord point <span class="arithmatex">\(c = \dfrac{a\,f(b) - b\,f(a)}{f(b) - f(a)}\)</span>; keep the part of <span class="arithmatex">\([a,b]\)</span> with the sign change.</li>
+<li>It always keeps a bracket, but for convex or concave <span class="arithmatex">\(f\)</span> one endpoint gets stuck: <strong>linear</strong> convergence.</li>
+<li>The Illinois modification halves the value of a stuck endpoint and makes it <strong>superlinear</strong>.</li>
 </ul>
 </div>
-<h2 id="the-problem">The problem<a class="headerlink" href="#the-problem" title="Permanent link">&para;</a></h2>
-<p>Many equations have no closed-form solution, for example</p>
-<div class="arithmatex">\[
-f(x) = x^3 - x - 2 = 0 .
-\]</div>
-<p>We look for a <strong>root</strong> <span class="arithmatex">\(r\)</span>, a number with <span class="arithmatex">\(f(r) = 0\)</span>. Graphically, it is where the curve crosses the <span class="arithmatex">\(x\)</span>-axis.</p>
-<h2 id="intermediate-value-theorem">Intermediate Value Theorem<a class="headerlink" href="#intermediate-value-theorem" title="Permanent link">&para;</a></h2>
-<p>If <span class="arithmatex">\(f\)</span> is continuous on <span class="arithmatex">\([a,b]\)</span> and <span class="arithmatex">\(f(a)\,f(b) &lt; 0\)</span>, then there is at least one <span class="arithmatex">\(r \in (a,b)\)</span> with <span class="arithmatex">\(f(r) = 0\)</span>.</p>
-<div class="admonition warning">
-<p class="admonition-title">Continuity matters</p>
-<p><span class="arithmatex">\(g(x) = 1/x\)</span> has <span class="arithmatex">\(g(-1)\,g(1) &lt; 0\)</span> but no root in <span class="arithmatex">\((-1, 1)\)</span>: it jumps across the axis at <span class="arithmatex">\(x = 0\)</span>.</p>
-</div>
 <h2 id="the-idea">The idea<a class="headerlink" href="#the-idea" title="Permanent link">&para;</a></h2>
-<p>Cut the interval at the midpoint <span class="arithmatex">\(c = \frac{a+b}{2}\)</span>, check the sign of <span class="arithmatex">\(f(c)\)</span>, and keep the half where the sign changes. The root stays trapped while the interval halves at every step.</p>
+<p>Bisection keeps a bracket but ignores the values of <span class="arithmatex">\(f\)</span>; the secant method uses the values but keeps no bracket. <strong>Regula Falsi</strong> (the method of false position) does both: start from a bracket <span class="arithmatex">\([a,b]\)</span> with <span class="arithmatex">\(f(a)\,f(b) &lt; 0\)</span>, draw the chord joining <span class="arithmatex">\((a, f(a))\)</span> and <span class="arithmatex">\((b, f(b))\)</span>, and cut where the chord crosses the axis:</p>
+<div class="arithmatex">\[
+c = b - \frac{f(b)\,(b-a)}{f(b)-f(a)} = \frac{a\,f(b) - b\,f(a)}{f(b) - f(a)} .
+\]</div>
+<p>This is the secant formula applied to the two endpoints. Then, as in bisection, keep <span class="arithmatex">\([a, c]\)</span> if <span class="arithmatex">\(f(a)\,f(c) &lt; 0\)</span> and <span class="arithmatex">\([c, b]\)</span> otherwise, so the root stays trapped.</p>
 <h2 id="worked-example">Worked example<a class="headerlink" href="#worked-example" title="Permanent link">&para;</a></h2>
-<p><span class="arithmatex">\(f(x) = x^3 - x - 2\)</span> on <span class="arithmatex">\([1, 2]\)</span>, with <span class="arithmatex">\(f(1) = -2\)</span> and <span class="arithmatex">\(f(2) = 4\)</span>.</p>
+<p><span class="arithmatex">\(f(x) = x^3 + 2x^2 - x - 1\)</span> on <span class="arithmatex">\([0, 1]\)</span>, the same example as the secant method. The iterates are numbered <span class="arithmatex">\(x_2, x_3, \ldots\)</span> to compare with the secant method.</p>
 <table>
 <thead>
 <tr>
 <th style="text-align: right;"><span class="arithmatex">\(n\)</span></th>
 <th style="text-align: right;"><span class="arithmatex">\(a\)</span></th>
 <th style="text-align: right;"><span class="arithmatex">\(b\)</span></th>
-<th style="text-align: right;"><span class="arithmatex">\(c\)</span></th>
-<th style="text-align: right;"><span class="arithmatex">\(f(c)\)</span></th>
+<th style="text-align: right;"><span class="arithmatex">\(x_n\)</span></th>
+<th style="text-align: right;"><span class="arithmatex">\(f(x_n)\)</span></th>
+<th style="text-align: right;">secant <span class="arithmatex">\(x_n\)</span></th>
 </tr>
 </thead>
 <tbody>
 <tr>
+<td style="text-align: right;"><span class="arithmatex">\(2\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(0.0000\)</span></td>
 <td style="text-align: right;"><span class="arithmatex">\(1\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(1\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(2\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(1.5\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(-0.1250\)</span></td>
-</tr>
-<tr>
-<td style="text-align: right;"><span class="arithmatex">\(2\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(1.5\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(2\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(1.75\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(+1.6094\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(0.500000\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(-0.8750\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(0.500000\)</span></td>
 </tr>
 <tr>
 <td style="text-align: right;"><span class="arithmatex">\(3\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(1.5\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(1.75\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(1.625\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(+0.6660\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(0.5000\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(1\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(0.733333\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(-0.2634\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(0.733333\)</span></td>
 </tr>
 <tr>
 <td style="text-align: right;"><span class="arithmatex">\(4\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(1.5\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(1.625\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(1.5625\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(+0.2522\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(0.7333\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(1\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(0.788931\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(-0.0531\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(0.833828\)</span></td>
 </tr>
 <tr>
 <td style="text-align: right;"><span class="arithmatex">\(5\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(1.5\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(1.5625\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(1.53125\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(+0.0591\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(0.7889\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(1\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(0.799567\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(-0.0098\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(0.799535\)</span></td>
 </tr>
 <tr>
 <td style="text-align: right;"><span class="arithmatex">\(6\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(1.5\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(1.53125\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(1.515625\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(-0.0341\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(0.7996\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(1\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(0.801509\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(-0.0018\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(0.801858\)</span></td>
+</tr>
+<tr>
+<td style="text-align: right;"><span class="arithmatex">\(7\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(0.8015\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(1\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(0.801860\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(-0.0003\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(0.801938\)</span></td>
 </tr>
 </tbody>
 </table>
-<p>The true root is <span class="arithmatex">\(r = 1.5213797\ldots\)</span></p>
-<h2 id="algorithm">Algorithm<a class="headerlink" href="#algorithm" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>input  f, a, b  with  f(a)·f(b) &lt; 0,  tol
-repeat
-    c ← (a + b) / 2
-    if  f(a)·f(c) &lt; 0
-        b ← c          # root in left half
-    else
-        a ← c          # root in right half
-until  (b − a)/2 &lt; tol
-return c
-</code></pre></div>
-<p><strong>Stopping criteria.</strong> Only <span class="arithmatex">\(\frac{b-a}{2} &lt; \text{tol}\)</span> guarantees <span class="arithmatex">\(|c - r| &lt; \text{tol}\)</span>. A small <span class="arithmatex">\(|f(c)|\)</span> does not, because the function may be very flat, and a maximum number of iterations is a safety net.</p>
-<h2 id="error-bound-and-number-of-iterations">Error bound and number of iterations<a class="headerlink" href="#error-bound-and-number-of-iterations" title="Permanent link">&para;</a></h2>
+<h2 id="the-stuck-endpoint">The stuck endpoint<a class="headerlink" href="#the-stuck-endpoint" title="Permanent link">&para;</a></h2>
+<p>Every new point lands to the <strong>left</strong> of the root, so <span class="arithmatex">\(a\)</span> is replaced each time and <span class="arithmatex">\(b = 1\)</span> never moves: all the chords pivot around <span class="arithmatex">\((1, 1)\)</span>. The reason is the shape of the curve: <span class="arithmatex">\(f''(x) = 6x + 4 &gt; 0\)</span>, so <span class="arithmatex">\(f\)</span> is <strong>convex</strong> on <span class="arithmatex">\([0,1]\)</span>. The chord of a convex curve lies above the graph, so it crosses the axis too early. (For a concave curve the same happens on the other side.)</p>
+<p>With one endpoint frozen, the errors shrink by a constant factor:</p>
 <div class="arithmatex">\[
-|c_n - r| \le \frac{b-a}{2^n}
-\qquad\Longrightarrow\qquad
-n \ge \log_2\frac{b-a}{\varepsilon} .
+\frac{e_{n+1}}{e_n} \;\to\; 1 - \frac{f'(r)\,(b - r)}{f(b)} \approx 0.18 ,
 \]</div>
-<p>For <span class="arithmatex">\([1,2]\)</span> and <span class="arithmatex">\(\varepsilon = 10^{-6}\)</span>: <span class="arithmatex">\(n \ge \log_2(10^6) \approx 19.93\)</span>, so <span class="arithmatex">\(20\)</span> iterations are enough. Convergence is <strong>linear</strong> with rate <span class="arithmatex">\(\frac12\)</span>: about <span class="arithmatex">\(3.3\)</span> iterations per correct decimal digit.</p>
-<h2 id="strengths-and-weaknesses">Strengths and weaknesses<a class="headerlink" href="#strengths-and-weaknesses" title="Permanent link">&para;</a></h2>
+<p>which is <strong>linear</strong> convergence. By <span class="arithmatex">\(x_7\)</span> Regula Falsi has error <span class="arithmatex">\(7.7\times10^{-5}\)</span>, while the secant method already has <span class="arithmatex">\(2.0\times10^{-7}\)</span>.</p>
+<div class="admonition warning">
+<p class="admonition-title">The bracket does not shrink to zero</p>
+<p>The width <span class="arithmatex">\(b - a\)</span> tends to <span class="arithmatex">\(b - r \approx 0.198\)</span>, not to <span class="arithmatex">\(0\)</span>. So Regula Falsi cannot stop when the bracket is small; it stops when the residual <span class="arithmatex">\(|f(c)|\)</span> is small.</p>
+</div>
+<p>Stagnation can be dramatic. For <span class="arithmatex">\(f(x) = x^{10} - 1\)</span> on <span class="arithmatex">\([0, 1.3]\)</span>, six correct digits take <strong>20</strong> bisection steps but <strong>61</strong> Regula Falsi steps.</p>
+<h2 id="the-illinois-fix">The Illinois fix<a class="headerlink" href="#the-illinois-fix" title="Permanent link">&para;</a></h2>
+<p>Whenever the same endpoint is kept twice in a row, halve its stored function value in the chord formula. This tilts the chord, pulls the next point across the root, and makes the stuck endpoint move. On our example the error of <span class="arithmatex">\(x_8\)</span> drops from <span class="arithmatex">\(1.4\times10^{-5}\)</span> to <span class="arithmatex">\(1.9\times10^{-9}\)</span>; on <span class="arithmatex">\(x^{10} - 1\)</span> the step count drops from <span class="arithmatex">\(61\)</span> to <span class="arithmatex">\(13\)</span>. The Illinois method keeps the bracket and converges superlinearly (order <span class="arithmatex">\(\sqrt[3]{3} \approx 1.44\)</span>).</p>
+<h2 id="algorithm">Algorithm<a class="headerlink" href="#algorithm" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>input  f, a, b  with  f(a)·f(b) &lt; 0, tol, maxit
+fa ← f(a),  fb ← f(b)
+for k = 1 to maxit
+    c ← (a·fb − b·fa) / (fb − fa)
+    fc ← f(c)
+    if  |fc| ≤ tol :  return c
+    if  fa·fc &lt; 0
+        b ← c,  fb ← fc          # Illinois: if a was kept twice, fa ← fa/2
+    else
+        a ← c,  fa ← fc          # Illinois: if b was kept twice, fb ← fb/2
+end
+</code></pre></div>
+<h2 id="comparison">Comparison<a class="headerlink" href="#comparison" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th>Strengths</th>
-<th>Weaknesses</th>
+<th></th>
+<th>Guaranteed?</th>
+<th>Order</th>
+<th>Weak spot</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Always converges for continuous <span class="arithmatex">\(f\)</span> with a sign change</td>
-<td>Slow: linear convergence</td>
+<td>Bisection</td>
+<td>yes</td>
+<td><span class="arithmatex">\(1\)</span> (rate <span class="arithmatex">\(\frac12\)</span>)</td>
+<td>slow</td>
 </tr>
 <tr>
-<td>Simple to program</td>
-<td>Needs a starting interval with a sign change</td>
+<td>Regula Falsi</td>
+<td>yes</td>
+<td><span class="arithmatex">\(1\)</span> (often)</td>
+<td>stuck endpoint</td>
 </tr>
 <tr>
-<td>Guaranteed error bound</td>
-<td>Misses roots that only touch the axis, such as <span class="arithmatex">\((x-1)^2\)</span></td>
+<td>Secant</td>
+<td>no</td>
+<td><span class="arithmatex">\(1.618\)</span></td>
+<td>can wander off</td>
+</tr>
+<tr>
+<td>Illinois</td>
+<td>yes</td>
+<td><span class="arithmatex">\(\approx 1.44\)</span></td>
+<td>—</td>
 </tr>
 </tbody>
 </table>
 <div class="nm-actions">
-<p><a class="md-button md-button--primary" href="../../practice/lec01_bisection.html">Practise this lecture</a>
-<a class="md-button" href="../lec02-secant/">Next: The Secant Method →</a></p>
+<p><a class="md-button md-button--primary" href="../../practice/lec03_regula_falsi.html">Practise this lecture</a>
+<a class="md-button" href="../lec02-secant/">← Previous: The Secant Method</a></p>
 </div>
 
 
@@ -872,7 +866,7 @@ n \ge \log_2\frac{b-a}{\varepsilon} .
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../.." class="md-footer__link md-footer__link--prev" aria-label="Previous: Home">
+          <a href="../lec02-secant/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 2 · Secant Method">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -882,27 +876,11 @@ n \ge \log_2\frac{b-a}{\varepsilon} .
                 Previous
               </span>
               <div class="md-ellipsis">
-                Home
-              </div>
-            </div>
-          </a>
-        
-        
-          
-          <a href="../lec02-secant/" class="md-footer__link md-footer__link--next" aria-label="Next: 2 · Secant Method">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              <div class="md-ellipsis">
                 2 · Secant Method
               </div>
             </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
-            </div>
           </a>
+        
         
       </nav>
     
