@@ -1,8 +1,9 @@
 # Lecture 1 · The Bisection Method
 
-![Lecture 1 thumbnail](../assets/thumbnails/lec01_bisection.png){ .nm-thumb }
+<iframe class="nm-video" src="https://www.youtube-nocookie.com/embed/OyOAFWVk5Sc" title="Lecture 1: The Bisection Method" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 <div class="nm-actions" markdown>
+[:fontawesome-brands-youtube: Watch on YouTube](https://www.youtube.com/watch?v=OyOAFWVk5Sc){ .md-button }
 [:material-pencil-box-outline: Practise this lecture](../practice/lec01_bisection.html){ .md-button .md-button--primary }
 [:material-download: MATLAB version (optional)](../downloads/bisection_onramp.m){ .md-button }
 </div>

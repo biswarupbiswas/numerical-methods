@@ -1,8 +1,9 @@
 # Lecture 2 · The Secant Method
 
-![Lecture 2 thumbnail](../assets/thumbnails/lec02_secant.png){ .nm-thumb }
+<iframe class="nm-video" src="https://www.youtube-nocookie.com/embed/4c2-SlNsi70" title="Lecture 2: The Secant Method" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 <div class="nm-actions" markdown>
+[:fontawesome-brands-youtube: Watch on YouTube](https://www.youtube.com/watch?v=4c2-SlNsi70){ .md-button }
 [:material-pencil-box-outline: Practise this lecture](../practice/lec02_secant.html){ .md-button .md-button--primary }
 </div>
 
