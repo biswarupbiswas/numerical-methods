@@ -1,7 +1,7 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <style>.course a{color:inherit;text-decoration:none}.course a:hover{text-decoration:underline}</style></head><body>
-<title>Bisection Method Practice</title>
+<title>Secant Method Practice</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,650&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
@@ -131,7 +131,7 @@ canvas { width: 100%; height: auto; aspect-ratio: 4 / 3.3; display: block; max-w
   <div class="topbar-inner">
     <div>
       <div class="course"><a href="../">Numerical Methods</a> · Practice</div>
-      <div class="lecture">Lecture 1: The Bisection Method</div>
+      <div class="lecture">Lecture 2: The Secant Method</div>
     </div>
     <div class="progress" aria-label="Progress">
       <div class="segs" id="segs"></div>
@@ -166,9 +166,9 @@ canvas { width: 100%; height: auto; aspect-ratio: 4 / 3.3; display: block; max-w
 
 <script>
 "use strict";
-const STORE = "nm-lec01-bisection-v1";
-const f = x => x ** 3 - x - 2;
-const ROOT = 1.5213797068045676;
+const STORE = "nm-lec02-secant-v1";
+const f = x => x ** 3 + 2 * x ** 2 - x - 1;
+const ROOT = 0.8019377358048383;
 
 /* ---------------- tiny plotting library (canvas, theme-aware) ---------------- */
 class Plot {
@@ -290,234 +290,237 @@ function drawBracket(a, b, title) {
 }
 
 /* ---------------- tasks ---------------- */
-const LECTURE_NAME = "Lecture 1";
-function finalPlot() {
-  let a = 1, b = 2; for (let n = 0; n < 12; n++) { const c = (a + b) / 2; if (f(a) * f(c) < 0) b = c; else a = c; }
-  drawBracket(a, b, `x* ≈ ${ROOT.toFixed(6)}`); P.pt(ROOT, 0, { color: "gold", r: 9 }); P.draw();
+const LECTURE_NAME = "Lecture 2";
+const secNext = (a, b, g = f) => b - g(b) * (b - a) / (g(b) - g(a));
+function secSeq(x0, x1, n) { const xs = [x0, x1]; for (let k = 0; k < n; k++) { const a = xs.at(-2), b = xs.at(-1); if (f(a) === f(b)) break; xs.push(secNext(a, b)); } return xs; }
+const XS = secSeq(0, 1, 7);                       // x0 .. x8 of the worked example
+
+/** Draw f, the secant through x_a and x_b (extended across the view), and its crossing. */
+function drawSecant(xa, xb, view, title, o = {}) {
+  const [v0, v1, w0, w1] = view;
+  P.setView(v0, v1, w0, w1, { xlabel: "x" }); P.fn(f);
+  const m = (f(xb) - f(xa)) / (xb - xa);
+  if (Number.isFinite(m)) P.seg(v0, f(xa) + m * (v0 - xa), v1, f(xa) + m * (v1 - xa), { color: o.lineColor || "gold", width: 2.5 });
+  for (const [x, n] of [[xa, o.la], [xb, o.lb]]) {
+    P.seg(x, 0, x, f(x), { color: signCol(f(x)), dash: true, width: 1.5 }); P.pt(x, f(x), { color: signCol(f(x)), r: 7 });
+    if (n) P.text(x, 0, n, { dy: f(x) > 0 ? 16 : -16, size: 15, bold: true });
+  }
+  if (o.showNext && Number.isFinite(m) && m !== 0) { const xn = secNext(xa, xb); P.pt(xn, 0, { color: "ink", r: 6 }); if (o.ln) P.text(xn, 0, o.ln, { dy: 18, size: 15, bold: true }); }
+  if (o.root) P.pt(ROOT, 0, { color: "pos", r: 5, ring: true });
+  $("plotTitle").textContent = title; P.draw();
 }
+function finalPlot() {
+  drawSecant(XS[6], XS[7], [0.7, 0.9, -0.4, 0.4], `r ≈ ${ROOT.toFixed(7)}`, { root: true });
+  P.pt(ROOT, 0, { color: "gold", r: 9 }); P.draw();
+}
+
 const TASKS = [
-  { nav: "Evaluate f", title: "Evaluate f at the endpoints",
-    instr: `<p>We want to solve <span class="math">f(x) = x³ − x − 2 = 0</span>. A root is where the curve crosses the x-axis.</p>
-            <p>Work out <b>f(1)</b> and <b>f(2)</b>, then decide whether f changes sign on [1, 2].</p>`,
-    hints: ["Substitute x = 1:  1³ − 1 − 2.", "f(2) = 2³ − 2 − 2. One value is negative and one is positive."],
-    answer: "f(1) = −2 and f(2) = 4. They have opposite signs, so yes: f changes sign on [1, 2].",
+  { nav: "Slope of the secant", title: "The slope of the secant",
+    instr: `<p>We solve <span class="math">f(x) = x³ + 2x² − x − 1 = 0</span> starting from <b>x₀ = 0</b> and <b>x₁ = 1</b>.</p>
+            <p>f(0) = −1 and f(1) = 1. What is the <b>slope</b> of the secant line through these two points?</p>`,
+    hints: ["Slope = rise over run = (f(x₁) − f(x₀)) / (x₁ − x₀).", "(1 − (−1)) / (1 − 0)."],
+    answer: "slope = (1 − (−1)) / (1 − 0) = 2.",
     build(C) {
-      P.setView(-0.5, 2.5, -4, 6, { xlabel: "x" }); P.fn(f); $("plotTitle").textContent = "f(x) = x³ − x − 2"; P.draw();
-      const a = field(C, "f(1) =", "ans1"), b = field(C, "f(2) =", "ans2");
-      cards(C, ["Yes", "No"], "Does f change sign on [1, 2]?");
+      drawSecant(0, 1, [-0.3, 1.3, -1.6, 2.2], "The secant through (0, −1) and (1, 1)", { la: "x₀", lb: "x₁" });
+      const s = field(C, "slope =", "ans1");
       return () => {
-        if (!near(parseNum(a.value), -2)) return ["wrong", "f(1) is not right yet."];
-        if (!near(parseNum(b.value), 4)) return ["wrong", "f(2) is not right yet."];
-        if (!S.choice) return ["wrong", "Now choose Yes or No."];
-        if (S.choice !== 1) return ["wrong", "Look at the signs of f(1) and f(2) again."];
-        P.pt(1, -2, { color: "neg", r: 7 }); P.pt(2, 4, { color: "pos", r: 7 }); P.seg(1, 0, 2, 0, { color: "gold", width: 7, cap: "butt" }); P.draw();
-        return ["done", "f(1) = −2 is negative and f(2) = 4 is positive, so the curve must cross the axis in between."];
+        const v = parseNum(s.value);
+        if (near(v, 0.5)) return ["wrong", "That is run over rise. The slope is rise over run."];
+        if (!near(v, 2)) return ["wrong", "Not quite. Divide the change in f by the change in x."];
+        return ["done", "Correct! The secant rises 2 units in f for every unit in x."];
       };
     } },
 
-  { nav: "Starting interval", title: "Choose a starting interval",
-    instr: `<p>Bisection needs a starting interval [a, b] where <b>f(a) and f(b) have opposite signs</b>, i.e. f(a)·f(b) &lt; 0.</p>
-            <p>Drag the two sliders to choose your own a and b, then press <b>Check</b>.</p>`,
-    hints: ["Watch the colours: red means f is negative, green means positive. You need one of each.",
-            "The curve crosses the axis near x = 1.5. Put a on its left and b on its right."],
-    answer: "Any interval with a to the left of 1.52 and b to the right works, for example [0, 2] or [1, 3].",
+  { nav: "Next guess x₂", title: "Where does the line cross?",
+    instr: `<p>From x₁ = 1 we slide down the secant to the axis. We must drop a height of f(x₁) = 1, so we move left by f(x₁) / slope.</p>
+            <p>Use <span class="math">x₂ = x₁ − f(x₁)(x₁ − x₀) / (f(x₁) − f(x₀))</span> to find <b>x₂</b>.</p>`,
+    hints: ["f(x₁)(x₁ − x₀) = 1 × 1 and f(x₁) − f(x₀) = 2.", "x₂ = 1 − 1/2."],
+    answer: "x₂ = 1 − 1·(1 − 0)/(1 − (−1)) = 0.5.",
     build(C) {
-      let a = 2, b = 3; const live = el("div", { className: "live" });
-      const redraw = () => {
-        const ok = a < b && f(a) * f(b) < 0;
-        P.setView(-1, 3, -6, 12, { xlabel: "x" }); P.fn(f);
-        P.seg(Math.min(a, b), 0, Math.max(a, b), 0, { color: ok ? "gold" : "neg", width: 8, cap: "butt", alpha: .9 });
-        for (const [x, n] of [[a, "a"], [b, "b"]]) { P.seg(x, 0, x, f(x), { color: signCol(f(x)), dash: true, width: 1.5 });
-          P.pt(x, f(x), { color: signCol(f(x)), r: 7 }); P.text(x, 0, n, { dy: f(x) > 0 ? 16 : -16, bold: true, size: 16 }); }
-        $("plotTitle").textContent = "Drag the sliders: trap the root between a and b"; P.draw();
-        live.innerHTML = `f(a) = ${signed(f(a))}<br>f(b) = ${signed(f(b))}`;
+      drawSecant(0, 1, [-0.3, 1.3, -1.6, 2.2], "Slide down the secant to the axis", { la: "x₀", lb: "x₁" });
+      const s = field(C, "x₂ =", "ans1");
+      return () => {
+        if (!near(parseNum(s.value), 0.5)) return ["wrong", "Not quite. Put x₀ = 0, x₁ = 1, f(x₀) = −1, f(x₁) = 1 into the formula."];
+        drawSecant(0, 1, [-0.3, 1.3, -1.6, 2.2], "x₂ = 0.5", { la: "x₀", lb: "x₁", showNext: true, ln: "x₂" });
+        return ["done", "Correct! The secant crosses the axis at x₂ = 0.5, where f = −0.875."];
       };
-      slider(C, "a", "sa", -1, 3, 0.05, 2, v => { a = v; redraw(); });
-      slider(C, "b", "sb", -1, 3, 0.05, 3, v => { b = v; redraw(); });
+    } },
+
+  { nav: "Drag the points", title: "Drag the two points",
+    instr: `<p>Move the sliders to choose x₀ and x₁. The gold line is the secant and the black dot is the next guess x₂.</p>
+            <p>Your goal: make <b>x₂ land within 0.02 of the root</b> r ≈ 0.802 (the green ring).</p>`,
+    hints: ["Points far apart give a rough line. What happens when both points are near the root?", "Try x₀ and x₁ both between 0.6 and 1.0."],
+    answer: "Any two points close to the root work, for example x₀ = 0.7 and x₁ = 0.9.",
+    build(C) {
+      let a = 0, b = 1.3; const live = el("div", { className: "live" });
+      const redraw = () => {
+        drawSecant(a, b, [-0.4, 1.4, -1.6, 2.4], "Move x₀ and x₁", { la: "x₀", lb: "x₁", showNext: true, ln: "x₂", root: true });
+        const x2 = secNext(a, b);
+        live.innerHTML = Number.isFinite(x2) && a !== b
+          ? `x₂ = ${x2.toFixed(4)} &nbsp; distance to root = <span class="${Math.abs(x2 - ROOT) < 0.02 ? "pos" : "neg"}">${Math.abs(x2 - ROOT).toFixed(4)}</span>`
+          : `<span class="neg">x₀ and x₁ must be different points.</span>`;
+      };
+      slider(C, "x₀", "sa", -0.4, 1.4, 0.01, 0, v => { a = v; redraw(); });
+      slider(C, "x₁", "sb", -0.4, 1.4, 0.01, 1.3, v => { b = v; redraw(); });
       C.append(live);
       return () => {
-        if (a >= b) return ["wrong", "a must be to the left of b."];
-        if (f(a) * f(b) > 0) return ["wrong", `f(${a.toFixed(2)}) and f(${b.toFixed(2)}) have the same sign, so a root is not guaranteed.`];
-        return ["done", `f(${a.toFixed(2)})·f(${b.toFixed(2)}) &lt; 0, so [${a.toFixed(2)}, ${b.toFixed(2)}] is a valid starting interval.`];
+        if (a === b) return ["wrong", "x₀ and x₁ must be different."];
+        const x2 = secNext(a, b);
+        if (!(Math.abs(x2 - ROOT) < 0.02)) return ["wrong", `x₂ = ${x2.toFixed(3)} is ${Math.abs(x2 - ROOT).toFixed(3)} away from the root. Keep trying.`];
+        return ["done", `x₂ = ${x2.toFixed(4)} is within 0.02 of the root. Starting points close to the root give an excellent next guess.`];
       };
     } },
 
-  { nav: "Continuity", title: "Why continuity matters",
-    instr: `<p>Look at <span class="math">g(x) = 1/x</span> on [−1, 1]. g(−1) = −1 and g(1) = 1, so g(−1)·g(1) &lt; 0.</p><p>Is there a root of g in (−1, 1)?</p>`,
-    hints: ["The Intermediate Value Theorem needs two things. Is g continuous on the whole interval?", "What happens to 1/x at x = 0?"],
-    answer: "No. 1/x is not continuous at x = 0: it jumps from −∞ to +∞ and never equals 0.",
-    build(C) {
-      P.setView(-2, 2, -5, 5, { xlabel: "x" });
-      P.fn(x => 1 / x, { domain: [-2, -0.15] }); P.fn(x => 1 / x, { domain: [0.15, 2] });
-      P.seg(0, -5, 0, 5, { color: "gold", dash: true, width: 2 });
-      P.pt(-1, -1, { color: "neg", r: 7 }); P.pt(1, 1, { color: "pos", r: 7 });
-      $("plotTitle").textContent = "g(x) = 1/x"; P.draw();
-      cards(C, ["Yes, the Intermediate Value Theorem guarantees one", "No, g is not continuous on [−1, 1], so the theorem does not apply", "Yes, at x = 0"]);
-      return () => {
-        if (!S.choice) return ["wrong", "Choose one of the options."];
-        if (S.choice !== 2) return ["wrong", "Look closely at what happens at x = 0."];
-        return ["done", "Right! g jumps across the axis at x = 0. Without continuity there is no guarantee."];
-      };
-    } },
-
-  { nav: "Bisection by hand", title: "Bisection by hand",
-    instr: `<p>Run bisection by hand on <b>[a, b] = [1, 2]</b>. For each step:</p>
-            <p>1. compute the midpoint <span class="math">c = (a + b)/2</span><br>2. compute <b>f(c)</b> (3 decimals is enough)<br>3. choose the half where f changes sign.</p>`,
-    hints: ["c is exactly halfway between a and b: add them and divide by 2.", "For f(c), compute c³ − c − 2. A calculator is fine.",
-            "Keep the half whose two endpoints have opposite signs of f."],
+  { nav: "Secant by hand", title: "Secant by hand",
+    instr: `<p>Continue the example. Each step uses the <b>two newest</b> points:</p>
+            <p><span class="math">xₙ₊₁ = xₙ − f(xₙ)(xₙ − xₙ₋₁) / (f(xₙ) − f(xₙ₋₁))</span></p>`,
+    hints: ["Keep x₁ = 1 and x₂ = 0.5 for the first step; x₀ is no longer used.", "Watch the signs: f(x₂) is negative.",
+            "4 decimal places is enough."],
     answer: "",
     build(C, T) {
-      let a = 1, b = 2, step = 1;
-      const lbl = el("div", { className: "steplabel" }); C.append(lbl);
-      const ci = field(C, "Midpoint c =", "ans1"), fi = field(C, "f(c) =", "ans2");
-      const box = el("div"); C.append(box);
-      const setAnswer = () => { const c = (a + b) / 2; T.answer = `c = ${c}, f(c) = ${f(c).toFixed(4)}, keep the ${f(a) * f(c) < 0 ? "left" : "right"} half.`; };
-      const newStep = () => {
-        lbl.textContent = `Step ${step} of 3:   [a, b] = [${a}, ${b}]`; ci.value = ""; fi.value = ""; box.innerHTML = ""; S.choice = 0;
-        cards(box, [`Left half  [${a}, c]`, `Right half  [c, ${b}]`], "Which half contains the root?");
-        drawBracket(a, b, `Step ${step}:  [a, b] = [${a}, ${b}]`); setAnswer();
+      let step = 0;
+      const lbl = el("div", { className: "steplabel" }), info = el("div", { className: "live" });
+      C.append(lbl, info);
+      const inp = field(C, "", "ans1");
+      const lab = inp.parentElement.querySelector("label");
+      const setup = () => {
+        const n = step + 3, a = XS[n - 2], b = XS[n - 1];
+        lbl.textContent = `Step ${step + 1} of 2: compute x${"₃₄"[step]}`;
+        lab.textContent = `x${"₃₄"[step]} =`; inp.value = "";
+        info.innerHTML = `x${"₁₂"[step]} = ${+a.toFixed(4)}, f = ${f(a).toFixed(4)}<br>x${"₂₃"[step]} = ${+b.toFixed(4)}, f = ${f(b).toFixed(4)}`;
+        drawSecant(a, b, [-0.2, 1.2, -1.4, 1.6], `Step ${step + 1}: secant through x${"₁₂"[step]} and x${"₂₃"[step]}`,
+          { la: `x${"₁₂"[step]}`, lb: `x${"₂₃"[step]}` });
+        T.answer = `x${"₃₄"[step]} = ${XS[n].toFixed(6)}`;
       };
-      newStep();
+      setup();
       return () => {
-        const c = (a + b) / 2, fc = f(c);
-        if (!near(parseNum(ci.value), c)) return ["wrong", "The midpoint is not right yet."];
-        P.seg(c, 0, c, fc, { color: signCol(fc), dash: true, width: 2 }); P.pt(c, 0, { color: "ink", r: 5 }); P.draw();
-        if (!(Math.abs(parseNum(fi.value) - fc) <= 5e-4)) return ["wrong", `c = ${c} is right. Now check your value of f(c).`];
-        P.pt(c, fc, { color: signCol(fc), r: 7 }); P.draw();
-        if (!S.choice) return ["wrong", "Good! Now choose which half to keep."];
-        const left = f(a) * fc < 0;
-        if (S.choice !== (left ? 1 : 2)) return ["wrong", `f(a) = ${f(a).toFixed(3)} and f(c) = ${fc.toFixed(3)}. Which half has endpoints with opposite signs?`];
-        if (left) b = c; else a = c;
-        if (step < 3) { step++; setTimeout(newStep, 350); return ["step", `Correct! The root is now trapped in [${a}, ${b}]. On to step ${step}.`]; }
-        drawBracket(a, b, `After 3 steps:  [a, b] = [${a}, ${b}]`);
-        let rows = "", A = a, B = b;
-        for (let n = 4; n <= 10; n++) { const m = (A + B) / 2, fm = f(m);
-          rows += `<tr><td>${n}</td><td>${A.toFixed(6)}</td><td>${B.toFixed(6)}</td><td class="gold">${m.toFixed(6)}</td><td class="${signCol(fm)}">${fm >= 0 ? "+" : ""}${fm.toFixed(5)}</td></tr>`;
-          if (f(A) * fm < 0) B = m; else A = m; }
-        C.innerHTML = `<div class="question">The next steps, computed for you:</div><div class="tablewrap"><table class="iter"><thead><tr><th>n</th><th>a</th><th>b</th><th>c</th><th>f(c)</th></tr></thead><tbody>${rows}</tbody></table></div><div class="live">True root: <span class="pos">x* = ${ROOT.toFixed(6)}</span></div>`;
-        return ["done", `Excellent! After 3 steps the root is in [${a}, ${b}].`];
+        const n = step + 3;
+        if (!(Math.abs(parseNum(inp.value) - XS[n]) <= 5e-4)) return ["wrong", "Not quite. Check the signs in the formula carefully."];
+        if (step === 0) { step = 1; setTimeout(setup, 350); return ["step", `Correct! x₃ = ${XS[3].toFixed(4)}. Now drop x₁ and use x₂ and x₃.`]; }
+        drawSecant(XS[2], XS[3], [-0.2, 1.2, -1.4, 1.6], "x₄ overshoots the root slightly", { la: "x₂", lb: "x₃", showNext: true, ln: "x₄", root: true });
+        let rows = "";
+        for (let k = 0; k <= 8; k++) rows += `<tr><td>${k}</td><td class="gold">${XS[k].toFixed(7)}</td><td class="${signCol(f(XS[k]))}">${f(XS[k]) >= 0 ? "+" : ""}${f(XS[k]).toFixed(6)}</td><td>${Math.abs(XS[k] - ROOT).toExponential(1)}</td></tr>`;
+        C.innerHTML = `<div class="question">The whole run, computed for you:</div><div class="tablewrap"><table class="iter"><thead><tr><th>n</th><th>xₙ</th><th>f(xₙ)</th><th>|xₙ − r|</th></tr></thead><tbody>${rows}</tbody></table></div>`;
+        return ["done", `Excellent! x₄ = ${XS[4].toFixed(4)}. By x₈ the error is below 10⁻¹⁰.`];
       };
     } },
 
-  { nav: "Stopping criteria", title: "Stopping criteria",
-    instr: `<p>We stop when the answer is accurate enough. Which stopping test <b>guarantees</b> that |c − x*| &lt; tol?</p><p>The plot shows a clue.</p>`,
-    hints: ["In the plot, |f(c)| is tiny at c = 1.25, but c is still 0.25 away from the root.",
-            "The root is always inside [a, b] and c is its midpoint. How far can c be from the root?"],
-    answer: "(b − a)/2 &lt; tol. The root is inside [a, b], so the midpoint is at most (b − a)/2 away from it.",
+  { nav: "No bracket", title: "Both points on one side",
+    instr: `<p>In the example, <b>x₂ = 0.5</b> and <b>x₃ ≈ 0.733</b> both have f &lt; 0: both points are below the axis.</p>
+            <p>What does the secant method do next?</p>`,
+    hints: ["Look at the gold line in the plot. Does it stop at the two points?", "A straight line can be extended as far as we like."],
+    answer: "It extends the line beyond both points (extrapolation) and uses the crossing x₄ ≈ 0.834.",
     build(C) {
-      const tol = 2e-3, g = x => (x - 1.5) ** 5;
-      P.setView(1, 2, -0.01, 0.01, { xlabel: "x", yticks: [-0.01, -0.005, 0, 0.005, 0.01] });
-      P.band(1, 2, -tol, tol); P.fn(g); P.pt(1.25, g(1.25), { color: "neg", r: 7 }); P.pt(1.5, 0, { color: "pos", r: 8 });
-      P.text(1.25, 0.0045, "c = 1.25: |f(c)| < tol", { size: 13 }); P.text(1.5, -0.0045, "root x* = 1.5", { size: 13 });
-      P.text(1.88, tol * 1.7, "band |f| < tol", { size: 12, color: "muted" });
-      $("plotTitle").textContent = "A very flat function: f(x) = (x − 1.5)⁵"; P.draw();
-      cards(C, ["|f(c)| &lt; tol", "(b − a)/2 &lt; tol", "n ≥ Nmax (a maximum number of steps)"]);
+      drawSecant(XS[2], XS[3], [0.3, 1.0, -1.2, 0.6], "Two points below the axis", { la: "x₂", lb: "x₃", root: true });
+      cards(C, ["It stops: there is no sign change", "It extends the line beyond the points and uses its crossing", "It switches to bisection automatically"]);
       return () => {
         if (!S.choice) return ["wrong", "Choose one of the options."];
-        if (S.choice === 1) return ["wrong", "Look at the plot: |f(c)| is small at c = 1.25, but c is far from the root."];
-        if (S.choice === 3) return ["wrong", "A cap on the steps is a safety net. It says nothing about accuracy."];
-        return ["done", "Right! |c − x*| ≤ (b − a)/2, so this test guarantees the accuracy."];
+        if (S.choice === 1) return ["wrong", "Bisection would need a sign change, but the secant method does not."];
+        if (S.choice === 3) return ["wrong", "The plain secant method never switches. (Some hybrid methods, like MATLAB's fzero, do.)"];
+        drawSecant(XS[2], XS[3], [0.3, 1.0, -1.2, 0.6], "Extrapolation: x₄ ≈ 0.834", { la: "x₂", lb: "x₃", showNext: true, ln: "x₄", root: true });
+        return ["done", "Right! The secant method never keeps a bracket. It simply extends the line."];
       };
     } },
 
-  { nav: "Error bound", title: "The error bound",
-    instr: `<p>Start with [a, b] = [1, 2]. Drag the slider to see the interval after each halving.</p>
-            <p>The n-th midpoint satisfies <span class="math">|cₙ − x*| ≤ (b − a) / 2ⁿ</span>. What is this bound for <b>n = 5</b>? (You may type 1/32.)</p>`,
-    hints: ["b − a = 1, so the bound is 1/2⁵.", "You can type the answer as 1/32 or 2^-5."],
-    answer: "1/2⁵ = 1/32 = 0.03125.",
+  { nav: "Correct digits", title: "Digits add up",
+    instr: `<p>For the secant method <span class="math">eₙ₊₁ ≈ C·eₙ·eₙ₋₁</span>. Multiplying errors <b>adds</b> their numbers of correct digits.</p>
+            <p>In the example x₄, x₅, x₆ have about <b>1.5, 2.6 and 4.1</b> correct digits. Predict the digits of <b>x₇</b>.</p>`,
+    hints: ["The next number of digits is roughly the sum of the last two.", "2.6 + 4.1 = ?"],
+    answer: "About 2.6 + 4.1 = 6.7 digits. The actual value is 6.69.",
     build(C) {
-      const bars = n => {
-        P.setView(0.95, 2.8, -4.8, 0.8, { xlabel: "x", noY: true, yticks: [] });
-        let a = 1, b = 2; const cols = ["curve", "curve", "gold", "gold", "gold"];
-        for (let k = 0; k <= n; k++) {
-          P.seg(a, -k, b, -k, { color: cols[k], width: 10, cap: "butt", alpha: 1 - k * 0.08 });
-          P.text(2.08, -k, `width = 1/2${"⁰¹²³⁴"[k]} = ${1 / 2 ** k}`, { align: "left", size: 13 });
-          const c = (a + b) / 2; if (f(a) * f(c) < 0) b = c; else a = c; }
-        P.seg(ROOT, -4.8, ROOT, 0.8, { color: "pos", dash: true, width: 2 }); P.text(ROOT, 0.5, "root x*", { color: "pos", align: "left", dx: 6, size: 13 });
-        $("plotTitle").textContent = `After ${n} halving${n === 1 ? "" : "s"}`; P.draw();
+      const d = [1.50, 2.62, 4.10, 6.69, 10.76];
+      const draw = k => {
+        P.setView(0.4, 5.6, 0, 12, { xlabel: "guess", xticks: [1, 2, 3, 4, 5], yticks: [0, 2, 4, 6, 8, 10, 12] });
+        for (let i = 0; i < k; i++) { P.seg(i + 1, 0, i + 1, d[i], { color: i < 3 ? "curve" : "pos", width: 26, cap: "butt" });
+          P.text(i + 1, d[i], d[i].toFixed(1), { dy: -12, bold: true }); }
+        for (let i = 0; i < 5; i++) P.text(i + 1, 0, `x${"₄₅₆₇₈"[i]}`, { dy: -12, color: "muted", size: 12 });
+        $("plotTitle").textContent = "Correct digits in each guess"; P.draw();
       };
-      slider(C, "halvings", "sn", 0, 4, 1, 0, bars);
-      const inp = field(C, "Bound for n = 5:", "ans1");
+      draw(3);
+      const inp = field(C, "digits of x₇ ≈", "ans1");
       return () => {
         const v = parseNum(inp.value);
-        if (!Number.isFinite(v)) return ["wrong", "Type a number, for example 0.1 or 1/10."];
-        if (near(v, 1 / 16)) return ["wrong", "That is the bound for n = 4. Halve it once more."];
-        if (!near(v, 1 / 32)) return ["wrong", "Not quite. Use (b − a)/2ⁿ with n = 5."];
-        return ["done", "Correct! After 5 steps the midpoint is within 1/32 = 0.03125 of the root."];
+        if (!Number.isFinite(v)) return ["wrong", "Type a number of digits, for example 5.2."];
+        if (Math.abs(v - 6.7) > 0.35) return ["wrong", "Not quite. Add the digits of the previous two guesses."];
+        draw(5);
+        return ["done", "Correct! 2.6 + 4.1 ≈ 6.7, and then 4.1 + 6.7 ≈ 10.8. The digits grow like Fibonacci numbers."];
       };
     } },
 
-  { nav: "Number of iterations", title: "How many iterations?",
-    instr: `<p>To guarantee an error at most ε we need <span class="math">(b − a)/2ⁿ ≤ ε</span>, i.e. n ≥ log₂((b − a)/ε).</p>
-            <p>On [1, 2] with <b>ε = 10⁻⁴</b>, what is the smallest number of iterations n? Use the slider or the formula.</p>`,
-    hints: ["Move the slider until the ring first drops below the red line.", `log₂(10⁴) = ${Math.log2(1e4).toFixed(2)}, and n must be a whole number.`],
-    answer: "n = 14, because 1/2¹³ ≈ 1.2×10⁻⁴ is too big and 1/2¹⁴ ≈ 6.1×10⁻⁵ ≤ 10⁻⁴.",
+  { nav: "Order of convergence", title: "The order of convergence",
+    instr: `<p>If eₙ₊₁ ≈ C·eₙᵖ, then p is the order of convergence. The plot races bisection against secant on the same problem.</p>
+            <p>What is the order <b>p</b> of the secant method?</p>`,
+    hints: ["The digits grow like Fibonacci numbers, and the ratio of consecutive Fibonacci numbers tends to a famous constant.",
+            "p is the positive solution of p² = p + 1."],
+    answer: "p = (1 + √5)/2 ≈ 1.618, the golden ratio.",
     build(C) {
-      const live = el("div", { className: "live" });
-      const draw = n => {
-        P.setView(0, 20, 1e-7, 2, { xlabel: "n", ylog: true, xticks: [0, 4, 8, 12, 16, 20] });
-        P.seg(0, 1e-4, 20, 1e-4, { color: "neg", width: 2 }); P.text(19.8, 1e-4, "ε = 10⁻⁴", { color: "neg", align: "right", dy: -10, size: 13 });
-        P.fn(k => 2 ** -k, { width: 2 });
-        for (let k = 0; k <= 20; k++) P.pt(k, 2 ** -k, { color: "curve", r: 4 });
-        P.pt(n, 2 ** -n, { color: "gold", r: 10, ring: true });
-        $("plotTitle").textContent = "Error bound 1/2ⁿ on [1, 2] (log scale)"; P.draw();
-        const ok = 2 ** -n <= 1e-4;
-        live.innerHTML = `n = ${n}: bound = ${(2 ** -n).toExponential(2)} <span class="${ok ? "pos" : "neg"}">${ok ? "≤ ε ✓" : "too big"}</span>`;
-      };
-      slider(C, "n", "sn", 0, 20, 1, 4, draw); C.append(live);
-      const inp = field(C, "Smallest n =", "ans1");
+      P.setView(0, 12, 1e-12, 2, { xlabel: "step", ylog: true, xticks: [0, 2, 4, 6, 8, 10, 12] });
+      let a = 0, b = 1, prev = null;
+      for (let n = 1; n <= 12; n++) { const c = (a + b) / 2, e = Math.abs(c - ROOT);
+        if (prev) P.seg(prev[0], prev[1], n, e, { color: "neg", width: 2 }); P.pt(n, e, { color: "neg", r: 4 }); prev = [n, e];
+        if (f(a) * f(c) < 0) b = c; else a = c; }
+      prev = null;
+      for (let n = 1; n <= 7; n++) { const e = Math.abs(XS[n + 1] - ROOT);
+        if (prev) P.seg(prev[0], prev[1], n, e, { color: "pos", width: 2.5 }); P.pt(n, e, { color: "pos", r: 5 }); prev = [n, e]; }
+      P.text(11.8, 5e-4, "bisection", { color: "neg", align: "right", bold: true });
+      P.text(7.3, 2e-11, "secant", { color: "pos", align: "left", bold: true });
+      $("plotTitle").textContent = "Error per step (log scale)"; P.draw();
+      cards(C, ["p = 1 (linear)", "p ≈ 1.618", "p = 2 (quadratic)", "p = 0.5"]);
       return () => {
-        const v = parseNum(inp.value);
-        if (!Number.isFinite(v)) return ["wrong", "Type a whole number."];
-        if (v === 13) return ["wrong", "Close! 1/2¹³ ≈ 1.22×10⁻⁴ is still bigger than ε."];
-        if (v > 14 && Number.isInteger(v)) return ["wrong", "That works, but it is not the smallest n."];
-        if (v !== 14) return ["wrong", "Not quite. Find where the bound first drops below the red line."];
-        return ["done", "Correct! 14 iterations guarantee an error of at most 10⁻⁴."];
+        if (!S.choice) return ["wrong", "Choose one of the options."];
+        if (S.choice === 1) return ["wrong", "That is bisection. The secant method is faster than linear."];
+        if (S.choice === 3) return ["wrong", "Close, but not quite quadratic: the digits don't double each step."];
+        if (S.choice === 4) return ["wrong", "An order below 1 would mean it doesn't converge."];
+        return ["done", "Right! p = (1 + √5)/2 ≈ 1.618, the golden ratio: superlinear convergence."];
       };
     } },
 
-  { nav: "When it fails", title: "When bisection fails",
-    instr: `<p>Each function below has a root in [0, 2].</p><p>Which one can bisection <b>not</b> find, starting from [0, 2]?</p>`,
-    hints: ["Check the sign of each function at x = 0 and at x = 2.", "Look for a curve that touches the axis without crossing it."],
-    answer: "(x − 1)². It is positive at both ends and only touches the axis at x = 1, so there is no sign change.",
+  { nav: "When it fails", title: "When the secant method fails",
+    instr: `<p>Click each pair of starting points to see its first secant step.</p>
+            <p>Which pair makes the next guess <b>jump far away</b> from every root?</p>`,
+    hints: ["Look for two points where the curve is almost flat.", "When f(x₀) ≈ f(x₁) the secant is nearly horizontal."],
+    answer: "x₀ = 0.2, x₁ = 0.3. The curve is almost flat there, so the secant is nearly horizontal and crosses the axis at x₂ ≈ 6.05.",
     build(C) {
-      const fs = [[x => x ** 3 - 1, "curve", "x³ − 1"], [x => (x - 1) ** 2, "neg", "(x − 1)²"], [x => x - 1, "pos", "x − 1"], [x => Math.cos(x) - 0.5, "gold", "cos(x) − 0.5"]];
-      P.setView(0, 2, -1.5, 2, { xlabel: "x" });
-      fs.forEach(([g, c, n], i) => { P.fn(g, { color: c }); P.text(0.05, 1.85 - i * 0.22, "━ " + n, { color: c, align: "left", size: 13, bold: true }); });
-      $("plotTitle").textContent = "Four functions, each with a root in [0, 2]"; P.draw();
-      const btns = cards(C, fs.map(x => x[2]));
-      btns.forEach((b, i) => { b.style.color = `var(--${fs[i][1]})`; b.style.fontWeight = 600; });
+      const pairs = [[0, 1], [0.2, 0.3], [0.7, 0.9], [-1.5, -1]];
+      const view = [-2.6, 6.5, -2, 4];
+      drawSecant(0, 1, view, "Pick a pair", {});
+      const btns = cards(C, pairs.map(([p, q]) => `x₀ = ${p},  x₁ = ${q}`));
+      btns.forEach((b, i) => b.addEventListener("click", () => {
+        const [p, q] = pairs[i];
+        drawSecant(p, q, view, `x₀ = ${p}, x₁ = ${q}  →  x₂ = ${secNext(p, q).toFixed(3)}`, { showNext: true, ln: "x₂" });
+      }));
       return () => {
-        if (!S.choice) return ["wrong", "Choose one of the functions."];
-        if (S.choice !== 2) return ["wrong", `${fs[S.choice - 1][2]} changes sign on [0, 2], so bisection can find its root.`];
-        return ["done", "Right! (x − 1)² touches the axis without changing sign, so bisection has nothing to grab."];
+        if (!S.choice) return ["wrong", "Choose one of the pairs."];
+        if (S.choice !== 2) return ["wrong", "That first step stays close to a root. Try another pair."];
+        return ["done", "Right! f(0.2) ≈ f(0.3), so the secant is nearly horizontal and x₂ ≈ 6.05. If the values were equal, we would divide by zero."];
       };
     } },
 
   { nav: "The algorithm", title: "Put the algorithm in order",
-    instr: `<p>Put the steps of the bisection method in the right order using the menus.</p><p>When it is right, the plot runs the algorithm for you.</p>`,
-    hints: ["You need a valid starting interval before anything else.", "Compute c, use it to shrink the interval, then decide whether to stop."],
-    answer: "1. Choose a, b with f(a)·f(b) &lt; 0<br>2. Compute the midpoint c = (a + b)/2<br>3. If f(a)·f(c) &lt; 0 set b = c, otherwise set a = c<br>4. If (b − a)/2 &lt; tol stop, otherwise repeat",
+    instr: `<p>Put the steps of the secant method in the right order using the menus.</p><p>When it is right, the plot runs the algorithm for you.</p>`,
+    hints: ["You need two starting guesses first, and you must check the denominator before dividing.", "Compute x₂, then shift the points and test for convergence."],
+    answer: "1. Choose two starting guesses x₀ and x₁<br>2. If f(x₁) = f(x₀), stop: zero denominator<br>3. Compute x₂ = x₁ − f(x₁)(x₁ − x₀)/(f(x₁) − f(x₀))<br>4. Shift x₀ ← x₁, x₁ ← x₂; stop if |x₁ − x₀| &lt; tol, else repeat",
     build(C) {
-      const steps = ["Choose a, b with f(a)·f(b) < 0", "Compute the midpoint c = (a + b)/2", "If f(a)·f(c) < 0 set b = c, otherwise set a = c", "If (b − a)/2 < tol stop, otherwise repeat"];
-      const order = [2, 0, 3, 1];
+      const steps = ["Choose two starting guesses x₀ and x₁", "If f(x₁) = f(x₀), stop: zero denominator",
+                     "Compute x₂ = x₁ − f(x₁)(x₁ − x₀)/(f(x₁) − f(x₀))", "Shift x₀ ← x₁, x₁ ← x₂; stop if |x₁ − x₀| < tol, else repeat"];
+      const order = [2, 3, 0, 1];
       const grid = el("div", { className: "order" }); C.append(grid);
       const sels = [0, 1, 2, 3].map(k => {
         const s = el("select", { id: `dd${k + 1}` });
         s.append(el("option", { value: "" }, "— choose —"), ...order.map(i => { const o = el("option", { value: i }); o.textContent = steps[i]; return o; }));
         grid.append(el("label", { htmlFor: `dd${k + 1}`, className: "steplabel" }, `Step ${k + 1}`), s); return s; });
-      drawBracket(1, 2, "f(x) = x³ − x − 2 on [1, 2]");
+      drawSecant(0, 1, [-0.2, 1.2, -1.4, 1.6], "f(x) = x³ + 2x² − x − 1", { la: "x₀", lb: "x₁" });
       return () => {
         const v = sels.map(s => s.value);
         if (v.includes("")) return ["wrong", "Choose an option for every step."];
         if (new Set(v).size < 4) return ["wrong", "Each option should be used exactly once."];
         const bad = v.findIndex((x, k) => +x !== k);
         if (bad >= 0) return ["wrong", `Step ${bad + 1} is not in the right place yet.`];
-        let a = 1, b = 2, n = 0;
-        const tick = () => { const c = (a + b) / 2; if (f(a) * f(c) < 0) b = c; else a = c; n++;
-          drawBracket(a, b, `Iteration ${n}:  [a, b] = [${a.toFixed(5)}, ${b.toFixed(5)}]`); if (n < 8) setTimeout(tick, 380); };
+        let n = 1;
+        const tick = () => { drawSecant(XS[n - 1], XS[n], [-0.2, 1.2, -1.4, 1.6], `Iteration ${n}: x${n + 1} = ${XS[n + 1].toFixed(7)}`,
+          { showNext: true, root: true }); if (++n < 7) setTimeout(tick, 650); };
         setTimeout(tick, 300);
-        return ["done", "Perfect order! Watch the algorithm run on the plot."];
+        return ["done", "Perfect order! Watch the secant lines close in on the root."];
       };
     } },
 ];
