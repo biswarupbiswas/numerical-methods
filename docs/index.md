@@ -27,7 +27,8 @@ hide:
 
     Replace the curve by a straight line through the last two points. Order 1.618, the golden ratio.
 
-    [:octicons-arrow-right-24: Lecture page](lectures/lec02-secant.md)
+    [:octicons-arrow-right-24: Lecture page](lectures/lec02-secant.md) ·
+    [:material-pencil-box-outline: Practise](practice/lec02_secant.html)
 
 </div>
 

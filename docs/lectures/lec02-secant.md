@@ -2,8 +2,9 @@
 
 ![Lecture 2 thumbnail](../assets/thumbnails/lec02_secant.png){ .nm-thumb }
 
-!!! note "Practice page"
-    The interactive practice for this lecture is coming soon.
+<div class="nm-actions" markdown>
+[:material-pencil-box-outline: Practise this lecture](../practice/lec02_secant.html){ .md-button .md-button--primary }
+</div>
 
 ## The idea
 
@@ -84,3 +85,5 @@ end
 | New \(f\)-values per step | 1 | 1 |
 
 In practice the two ideas are combined: MATLAB's `fzero` keeps a bracket like bisection but takes fast secant-like steps when it is safe.
+
+[:material-pencil-box-outline: Practise this lecture](../practice/lec02_secant.html){ .md-button .md-button--primary }
