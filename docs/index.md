@@ -6,7 +6,7 @@ hide:
 
 # Numerical Methods
 
-<p class="nm-hero">Short, visual video lectures on the core algorithms of numerical analysis, each paired with a self-paced practice page. Watch a lecture, then practise it straight away in your browser: no installation, no sign-in, and it works on your phone.</p>
+<p class="nm-hero">Short, visual video lectures on the core algorithms of numerical analysis, each paired with a self-paced practice page. Watch a lecture, then practise it straight away.</p>
 
 ## Lectures
 
