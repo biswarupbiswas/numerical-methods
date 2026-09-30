@@ -12,13 +12,11 @@
         <meta name="author" content="Biswarup Biswas">
       
       
-        <link rel="canonical" href="https://biswarupbiswas.github.io/numerical-methods/lectures/lec05-fixed-point/">
+        <link rel="canonical" href="https://biswarupbiswas.github.io/numerical-methods/lectures/lec06-fixed-point-convergence/">
       
       
-        <link rel="prev" href="../lec04-newton/">
+        <link rel="prev" href="../lec05-fixed-point/">
       
-      
-        <link rel="next" href="../lec06-fixed-point-convergence/">
       
       
         
@@ -29,7 +27,7 @@
     
     
       
-        <title>Fixed-Point Iteration - Numerical Methods</title>
+        <title>Convergence of Fixed-Point Iteration - Numerical Methods</title>
       
     
     
@@ -86,7 +84,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#fixed-point-iteration" class="md-skip">
+        <a href="#convergence-of-fixed-point-iteration" class="md-skip">
           Skip to content
         </a>
       
@@ -122,7 +120,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Fixed-Point Iteration
+              Convergence of Fixed-Point Iteration
             
           </span>
         </div>
@@ -458,6 +456,34 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec05-fixed-point/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 · Fixed-Point Iteration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -477,7 +503,7 @@
   <span class="md-ellipsis">
     
   
-    5 · Fixed-Point Iteration
+    6 · Fixed-Point Convergence
   
 
     
@@ -495,7 +521,7 @@
   <span class="md-ellipsis">
     
   
-    5 · Fixed-Point Iteration
+    6 · Fixed-Point Convergence
   
 
     
@@ -532,10 +558,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#fixed-points-and-roots" class="md-nav__link">
+  <a href="#each-step-multiplies-the-error-by-a-slope" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Fixed points and roots
+        Each step multiplies the error by a slope
       
     </span>
   </a>
@@ -543,10 +569,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-iteration-and-cobweb-diagrams" class="md-nav__link">
+  <a href="#contraction-mapping-theorem" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The iteration and cobweb diagrams
+        Contraction mapping theorem
       
     </span>
   </a>
@@ -554,10 +580,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#example-four-rearrangements" class="md-nav__link">
+  <a href="#predicting-the-number-of-steps" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Example: four rearrangements
+        Predicting the number of steps
       
     </span>
   </a>
@@ -565,10 +591,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#when-does-a-fixed-point-exist" class="md-nav__link">
+  <a href="#rate-and-local-convergence" class="md-nav__link">
     <span class="md-ellipsis">
       
-        When does a fixed point exist?
+        Rate and local convergence
       
     </span>
   </a>
@@ -576,10 +602,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#algorithm" class="md-nav__link">
+  <a href="#relaxation-and-higher-order" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Algorithm
+        Relaxation and higher order
       
     </span>
   </a>
@@ -590,34 +616,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../lec06-fixed-point-convergence/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    6 · Fixed-Point Convergence
-  
-
-    
-  </span>
-  
-  
-
-      </a>
     </li>
   
 
@@ -668,10 +666,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#fixed-points-and-roots" class="md-nav__link">
+  <a href="#each-step-multiplies-the-error-by-a-slope" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Fixed points and roots
+        Each step multiplies the error by a slope
       
     </span>
   </a>
@@ -679,10 +677,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-iteration-and-cobweb-diagrams" class="md-nav__link">
+  <a href="#contraction-mapping-theorem" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The iteration and cobweb diagrams
+        Contraction mapping theorem
       
     </span>
   </a>
@@ -690,10 +688,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#example-four-rearrangements" class="md-nav__link">
+  <a href="#predicting-the-number-of-steps" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Example: four rearrangements
+        Predicting the number of steps
       
     </span>
   </a>
@@ -701,10 +699,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#when-does-a-fixed-point-exist" class="md-nav__link">
+  <a href="#rate-and-local-convergence" class="md-nav__link">
     <span class="md-ellipsis">
       
-        When does a fixed point exist?
+        Rate and local convergence
       
     </span>
   </a>
@@ -712,10 +710,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#algorithm" class="md-nav__link">
+  <a href="#relaxation-and-higher-order" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Algorithm
+        Relaxation and higher order
       
     </span>
   </a>
@@ -739,118 +737,181 @@
 
 
 
-<p class="nm-eyebrow">Lecture 5</p>
+<p class="nm-eyebrow">Lecture 6</p>
 
-<h1 id="fixed-point-iteration">Fixed-Point Iteration<a class="headerlink" href="#fixed-point-iteration" title="Permanent link">&para;</a></h1>
-<iframe class="nm-video" src="https://www.youtube-nocookie.com/embed/64pMPsAbHUE" title="Lecture 5: Fixed-Point Iteration" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
+<h1 id="convergence-of-fixed-point-iteration">Convergence of Fixed-Point Iteration<a class="headerlink" href="#convergence-of-fixed-point-iteration" title="Permanent link">&para;</a></h1>
+<p><img alt="Lecture 6: Convergence of Fixed-Point Iteration" class="nm-video" src="../../assets/thumbnails/lec06_fixed_point_convergence.png" /></p>
 <div class="nm-actions">
-<p><a class="md-button md-button--primary" href="../../practice/lec05_fixed_point.html">Practise this lecture</a>
-<a class="md-button" href="https://www.youtube.com/watch?v=64pMPsAbHUE">Watch on YouTube</a></p>
+<p><a class="md-button md-button--primary" href="../../practice/lec06_fixed_point_convergence.html">Practise this lecture</a></p>
 </div>
 <div class="nm-key">
 <h4 id="key-results">Key results<a class="headerlink" href="#key-results" title="Permanent link">&para;</a></h4>
 <ul>
-<li><span class="arithmatex">\(c\)</span> is a <strong>fixed point</strong> of <span class="arithmatex">\(g\)</span> if <span class="arithmatex">\(g(c) = c\)</span>: where <span class="arithmatex">\(y = g(x)\)</span> meets <span class="arithmatex">\(y = x\)</span>.</li>
-<li><span class="arithmatex">\(f(c) = 0 \iff c\)</span> is a fixed point of <span class="arithmatex">\(g(x) = x - f(x)\)</span>; iterate <span class="arithmatex">\(x_{n+1} = g(x_n)\)</span>.</li>
-<li>If <span class="arithmatex">\(g\)</span> is continuous and <span class="arithmatex">\(g([a,b]) \subseteq [a,b]\)</span>, then <span class="arithmatex">\(g\)</span> has a fixed point in <span class="arithmatex">\([a,b]\)</span>.</li>
+<li>Near a fixed point, <span class="arithmatex">\(r - x_{n+1} = g'(\xi_n)(r - x_n)\)</span>: each step multiplies the error by a slope.</li>
+<li><span class="arithmatex">\(|g'(r)| &lt; 1\)</span>: the fixed point attracts (linear convergence, rate <span class="arithmatex">\(|g'(r)|\)</span>); <span class="arithmatex">\(|g'(r)| &gt; 1\)</span>: it repels.</li>
+<li>Contraction mapping theorem with error bounds <span class="arithmatex">\(|r - x_n| \le \frac{\lambda^n}{1-\lambda}|x_1 - x_0|\)</span>.</li>
 </ul>
 </div>
-<h2 id="fixed-points-and-roots">Fixed points and roots<a class="headerlink" href="#fixed-points-and-roots" title="Permanent link">&para;</a></h2>
-<p>A number <span class="arithmatex">\(c\)</span> is a fixed point of <span class="arithmatex">\(g\)</span> if <span class="arithmatex">\(g(c) = c\)</span>. Graphically it is where the curve <span class="arithmatex">\(y = g(x)\)</span> crosses the diagonal <span class="arithmatex">\(y = x\)</span>.</p>
-<p>If <span class="arithmatex">\(f(c) = 0\)</span>, then <span class="arithmatex">\(c\)</span> is a fixed point of <span class="arithmatex">\(g(x) = x - f(x)\)</span>; conversely <span class="arithmatex">\(g(c) = c\)</span> makes <span class="arithmatex">\(c\)</span> a root of <span class="arithmatex">\(f(x) = x - g(x)\)</span>. Every root-finding problem can be recast as a fixed-point problem, and Newton's method is one: <span class="arithmatex">\(x_{n+1} = g(x_n)\)</span> with <span class="arithmatex">\(g(x) = x - f(x)/f'(x)\)</span>.</p>
-<h2 id="the-iteration-and-cobweb-diagrams">The iteration and cobweb diagrams<a class="headerlink" href="#the-iteration-and-cobweb-diagrams" title="Permanent link">&para;</a></h2>
-<p>Pick <span class="arithmatex">\(x_0\)</span> and feed each output back in:</p>
+<h2 id="each-step-multiplies-the-error-by-a-slope">Each step multiplies the error by a slope<a class="headerlink" href="#each-step-multiplies-the-error-by-a-slope" title="Permanent link">&para;</a></h2>
+<p>Close to a fixed point <span class="arithmatex">\(c\)</span>, the graph of <span class="arithmatex">\(g\)</span> looks like a straight line through <span class="arithmatex">\(c\)</span> with slope <span class="arithmatex">\(g'(c)\)</span>. The mean value theorem makes this exact:</p>
 <div class="arithmatex">\[
-x_{n+1} = g(x_n), \qquad n \ge 0 .
+c - x_{n+1} = g(c) - g(x_n) = g'(\xi_n)\,(c - x_n), \qquad \xi_n \text{ between } x_n \text{ and } c .
 \]</div>
-<p>If <span class="arithmatex">\(x_n \to c\)</span> and <span class="arithmatex">\(g\)</span> is continuous, then <span class="arithmatex">\(c = \lim x_{n+1} = g(\lim x_n) = g(c)\)</span>: the limit is a fixed point.</p>
-<p>A <strong>cobweb diagram</strong> draws the iteration: from <span class="arithmatex">\(x_n\)</span> go vertically to the curve (height <span class="arithmatex">\(g(x_n) = x_{n+1}\)</span>), then horizontally to the diagonal, and repeat. For <span class="arithmatex">\(g(x) = \cos x\)</span> from <span class="arithmatex">\(x_0 = 1\)</span> (radians) the values are <span class="arithmatex">\(0.5403,\ 0.8576,\ 0.6543,\ 0.7935, \ldots\)</span> and they settle on <span class="arithmatex">\(c = 0.7390851\ldots\)</span>, the number whose cosine is itself.</p>
-<h2 id="example-four-rearrangements">Example: four rearrangements<a class="headerlink" href="#example-four-rearrangements" title="Permanent link">&para;</a></h2>
-<p><span class="arithmatex">\(x^3 - 2x - 5 = 0\)</span> has a root <span class="arithmatex">\(r \approx 2.0945515\)</span> in <span class="arithmatex">\([2,3]\)</span>. It can be written as <span class="arithmatex">\(x = g(x)\)</span> in many ways, all with the same fixed point:</p>
+<p>So the slope decides everything:</p>
+<table>
+<thead>
+<tr>
+<th><span class="arithmatex">\(g'(c)\)</span></th>
+<th>Cobweb</th>
+<th>Behaviour</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(0 &lt; g'(c) &lt; 1\)</span></td>
+<td>staircase</td>
+<td>converges</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(-1 &lt; g'(c) &lt; 0\)</span></td>
+<td>spiral</td>
+<td>converges</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(g'(c) &lt; -1\)</span></td>
+<td>spiral</td>
+<td>diverges</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(g'(c) &gt; 1\)</span></td>
+<td>staircase</td>
+<td>diverges</td>
+</tr>
+</tbody>
+</table>
+<p>For the four rearrangements of <span class="arithmatex">\(x^3 - 2x - 5 = 0\)</span> from Lecture 5: <span class="arithmatex">\((2x+5)^{1/3}\)</span> has <span class="arithmatex">\(g'(r) \approx 0.15\)</span>, <span class="arithmatex">\(\sqrt{(2x+5)/x}\)</span> has <span class="arithmatex">\(-0.27\)</span>, <span class="arithmatex">\((2x+5)/x^2\)</span> has <span class="arithmatex">\(-1.54\)</span>, and <span class="arithmatex">\(x^3 - x - 5\)</span> has <span class="arithmatex">\(12.2\)</span>. The first two converge, the last two diverge.</p>
+<h2 id="contraction-mapping-theorem">Contraction mapping theorem<a class="headerlink" href="#contraction-mapping-theorem" title="Permanent link">&para;</a></h2>
+<p><span class="arithmatex">\(g\)</span> is a <strong>contraction</strong> on <span class="arithmatex">\([a,b]\)</span> if <span class="arithmatex">\(|g(x) - g(y)| \le \lambda|x - y|\)</span> for all <span class="arithmatex">\(x, y \in [a,b]\)</span>, with <span class="arithmatex">\(0 &lt; \lambda &lt; 1\)</span>.</p>
+<div class="admonition note">
+<p class="admonition-title">Theorem</p>
+<p>If <span class="arithmatex">\(g([a,b]) \subseteq [a,b]\)</span> and <span class="arithmatex">\(g\)</span> is a contraction on <span class="arithmatex">\([a,b]\)</span>, then <span class="arithmatex">\(g\)</span> has exactly one fixed point <span class="arithmatex">\(r \in [a,b]\)</span>, and <span class="arithmatex">\(x_{n+1} = g(x_n)\)</span> converges to <span class="arithmatex">\(r\)</span> from every <span class="arithmatex">\(x_0 \in [a,b]\)</span>, with</p>
 <div class="arithmatex">\[
-x = x^3 - x - 5, \qquad x = (2x+5)^{1/3}, \qquad x = \sqrt{\frac{2x+5}{x}}, \qquad x = \frac{2x+5}{x^2} .
+|r - x_n| \le \lambda^n |r - x_0| \le \frac{\lambda^n}{1-\lambda}\,|x_1 - x_0| .
 \]</div>
-<p>Starting from <span class="arithmatex">\(x_0 = 2\)</span>:</p>
+</div>
+<p><em>Uniqueness.</em> If <span class="arithmatex">\(c, d\)</span> are fixed points, <span class="arithmatex">\(|c - d| = |g(c) - g(d)| \le \lambda|c - d|\)</span>, so <span class="arithmatex">\((1-\lambda)|c-d| \le 0\)</span> and <span class="arithmatex">\(c = d\)</span>.</p>
+<p><em>Convergence.</em> <span class="arithmatex">\(|r - x_{n+1}| = |g(r) - g(x_n)| \le \lambda|r - x_n|\)</span>, hence <span class="arithmatex">\(|r - x_n| \le \lambda^n|r - x_0| \to 0\)</span>.</p>
+<p><em>Error bound.</em> <span class="arithmatex">\(|r - x_0| \le |r - x_1| + |x_1 - x_0| \le \lambda|r - x_0| + |x_1 - x_0|\)</span> gives <span class="arithmatex">\(|r - x_0| \le \frac{1}{1-\lambda}|x_1 - x_0|\)</span>. The same argument gives the a posteriori bound</p>
+<div class="arithmatex">\[
+|r - x_{n+1}| \le \frac{\lambda}{1-\lambda}\,|x_{n+1} - x_n| .
+\]</div>
+<p><strong>Finding <span class="arithmatex">\(\lambda\)</span>.</strong> If <span class="arithmatex">\(g'\)</span> is continuous and <span class="arithmatex">\(\lambda = \max_{[a,b]}|g'(x)| &lt; 1\)</span>, the mean value theorem shows <span class="arithmatex">\(g\)</span> is a contraction. For <span class="arithmatex">\(g(x) = (2x+5)^{1/3}\)</span> on <span class="arithmatex">\([2,3]\)</span>: <span class="arithmatex">\(g'(x) = \frac23(2x+5)^{-2/3}\)</span> is largest at <span class="arithmatex">\(x = 2\)</span>, so <span class="arithmatex">\(\lambda = \frac23\cdot 9^{-2/3} \approx 0.154\)</span>.</p>
+<h2 id="predicting-the-number-of-steps">Predicting the number of steps<a class="headerlink" href="#predicting-the-number-of-steps" title="Permanent link">&para;</a></h2>
+<p>With <span class="arithmatex">\(\lambda = 0.154\)</span> and <span class="arithmatex">\(|x_1 - x_0| = 0.0801\)</span>, an error below <span class="arithmatex">\(10^{-6}\)</span> needs <span class="arithmatex">\(\frac{0.154^n}{0.846}(0.0801) \le 10^{-6}\)</span>, i.e. <span class="arithmatex">\(n \ge 6.13\)</span>: <strong>7 steps</strong>.</p>
 <table>
 <thead>
 <tr>
 <th style="text-align: right;"><span class="arithmatex">\(n\)</span></th>
-<th style="text-align: right;"><span class="arithmatex">\((2x+5)^{1/3}\)</span></th>
-<th style="text-align: right;"><span class="arithmatex">\(\sqrt{(2x+5)/x}\)</span></th>
-<th style="text-align: right;"><span class="arithmatex">\((2x+5)/x^2\)</span></th>
-<th style="text-align: right;"><span class="arithmatex">\(x^3 - x - 5\)</span></th>
+<th style="text-align: right;"><span class="arithmatex">\(x_n\)</span></th>
+<th style="text-align: right;"><span class="arithmatex">\(\lvert x_n - r\rvert\)</span></th>
+<th style="text-align: right;">a priori bound</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align: right;"><span class="arithmatex">\(0\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(2.000000\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(2.000000\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(2.0000\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(2\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(2.000000000\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(9.46\times10^{-2}\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(9.47\times10^{-2}\)</span></td>
 </tr>
 <tr>
 <td style="text-align: right;"><span class="arithmatex">\(1\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(2.080084\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(2.121320\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(2.2500\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(1\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(2.080083823\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(1.45\times10^{-2}\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(1.46\times10^{-2}\)</span></td>
 </tr>
 <tr>
 <td style="text-align: right;"><span class="arithmatex">\(2\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(2.092351\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(2.087348\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(1.8765\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(-5\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(2.092350678\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(2.20\times10^{-3}\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(2.25\times10^{-3}\)</span></td>
 </tr>
 <tr>
 <td style="text-align: right;"><span class="arithmatex">\(3\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(2.094217\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(2.096517\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(2.4857\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(-125\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(2.094216996\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(3.34\times10^{-4}\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(3.46\times10^{-4}\)</span></td>
 </tr>
 <tr>
 <td style="text-align: right;"><span class="arithmatex">\(4\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(2.094501\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(2.094017\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(1.6139\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(-1953005\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(2.094500652\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(5.08\times10^{-5}\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(5.34\times10^{-5}\)</span></td>
 </tr>
 <tr>
 <td style="text-align: right;"><span class="arithmatex">\(5\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(2.094544\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(2.094697\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(3.1590\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(\cdots\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(2.094543758\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(7.72\times10^{-6}\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(8.22\times10^{-6}\)</span></td>
 </tr>
 <tr>
 <td style="text-align: right;"><span class="arithmatex">\(6\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(2.094550\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(2.094512\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(1.1342\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(\cdots\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(2.094550308\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(1.17\times10^{-6}\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(1.27\times10^{-6}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: right;"><span class="arithmatex">\(7\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(2.094551303\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(1.78\times10^{-7}\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(1.95\times10^{-7}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: right;"><span class="arithmatex">\(8\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(2.094551454\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(2.71\times10^{-8}\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(3.01\times10^{-8}\)</span></td>
 </tr>
 </tbody>
 </table>
-<p>The cube-root form climbs a <strong>staircase</strong> to <span class="arithmatex">\(r\)</span> (each error about <span class="arithmatex">\(0.15\)</span> times the previous one); the square-root form <strong>spirals in</strong>; <span class="arithmatex">\((2x+5)/x^2\)</span> <strong>spirals out</strong>; and <span class="arithmatex">\(x^3 - x - 5\)</span> <strong>explodes</strong>. Near the fixed point, a curve gentler than the diagonal closes in and a steeper one flies apart. Lecture 6 makes this precise with <span class="arithmatex">\(g'\)</span>.</p>
-<h2 id="when-does-a-fixed-point-exist">When does a fixed point exist?<a class="headerlink" href="#when-does-a-fixed-point-exist" title="Permanent link">&para;</a></h2>
-<p>If <span class="arithmatex">\(g\)</span> is continuous on <span class="arithmatex">\([a,b]\)</span> and <span class="arithmatex">\(g([a,b]) \subseteq [a,b]\)</span>, then <span class="arithmatex">\(g\)</span> has at least one fixed point in <span class="arithmatex">\([a,b]\)</span>.</p>
-<p><em>Proof.</em> Let <span class="arithmatex">\(h(x) = g(x) - x\)</span>. Since <span class="arithmatex">\(g\)</span> takes values in <span class="arithmatex">\([a,b]\)</span>, <span class="arithmatex">\(h(a) = g(a) - a \ge 0\)</span> and <span class="arithmatex">\(h(b) = g(b) - b \le 0\)</span>. By the Intermediate Value Theorem <span class="arithmatex">\(h(c) = 0\)</span> for some <span class="arithmatex">\(c \in [a,b]\)</span>, i.e. <span class="arithmatex">\(g(c) = c\)</span>.</p>
-<p>For <span class="arithmatex">\(g(x) = (2x+5)^{1/3}\)</span>: <span class="arithmatex">\(g\)</span> is increasing, <span class="arithmatex">\(g(2) = 9^{1/3} \approx 2.0801\)</span> and <span class="arithmatex">\(g(3) = 11^{1/3} \approx 2.2240\)</span>, so <span class="arithmatex">\(g([2,3]) \subseteq [2,3]\)</span> and a fixed point is guaranteed.</p>
-<h2 id="algorithm">Algorithm<a class="headerlink" href="#algorithm" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>input  g, x0, tol, maxit
-for n = 0 to maxit − 1
-    x(n+1) ← g(xn)
-    if  |x(n+1) − xn| &lt; tol :  return x(n+1)
-end
-error: no convergence within maxit
-</code></pre></div>
+<p>After 6 steps the error is still just above <span class="arithmatex">\(10^{-6}\)</span>; after 7 it is below, as predicted.</p>
+<h2 id="rate-and-local-convergence">Rate and local convergence<a class="headerlink" href="#rate-and-local-convergence" title="Permanent link">&para;</a></h2>
+<div class="arithmatex">\[
+\lim_{n\to\infty}\frac{r - x_{n+1}}{r - x_n} = g'(r),
+\]</div>
+<p>so the convergence is linear with rate <span class="arithmatex">\(|g'(r)|\)</span> when <span class="arithmatex">\(g'(r) \ne 0\)</span> (for the cube-root form, about <span class="arithmatex">\(0.152\)</span>). If <span class="arithmatex">\(|g'(r)| &lt; 1\)</span>, continuity keeps <span class="arithmatex">\(|g'| &lt; 1\)</span> on a small interval around <span class="arithmatex">\(r\)</span>, so the iteration converges for every <span class="arithmatex">\(x_0\)</span> close enough to <span class="arithmatex">\(r\)</span>: <strong>local convergence</strong>.</p>
+<h2 id="relaxation-and-higher-order">Relaxation and higher order<a class="headerlink" href="#relaxation-and-higher-order" title="Permanent link">&para;</a></h2>
+<p>Write <span class="arithmatex">\(g(x) = x - \alpha f(x)\)</span>. Its fixed points are the roots of <span class="arithmatex">\(f\)</span>, and <span class="arithmatex">\(g'(r) = 1 - \alpha f'(r)\)</span>. For <span class="arithmatex">\(x^3 - 2x - 5\)</span>, <span class="arithmatex">\(f'(r) \approx 11.16\)</span>:</p>
+<table>
+<thead>
+<tr>
+<th><span class="arithmatex">\(\alpha\)</span></th>
+<th><span class="arithmatex">\(g'(r)\)</span></th>
+<th>Behaviour</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(0.05\)</span></td>
+<td><span class="arithmatex">\(0.44\)</span></td>
+<td>slow</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(0.2\)</span></td>
+<td><span class="arithmatex">\(-1.23\)</span></td>
+<td>diverges</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(1/f'(r) \approx 0.0896\)</span></td>
+<td><span class="arithmatex">\(0\)</span></td>
+<td>very fast</td>
+</tr>
+</tbody>
+</table>
+<p>Newton's method takes <span class="arithmatex">\(\alpha = 1/f'(x_n)\)</span> at every step. When <span class="arithmatex">\(g'(r) = 0\)</span> the error is proportional to its square; in general, if <span class="arithmatex">\(g'(r) = \cdots = g^{(p-1)}(r) = 0\)</span>, the order of convergence is at least <span class="arithmatex">\(p\)</span>.</p>
 <div class="nm-actions">
-<p><a class="md-button md-button--primary" href="../../practice/lec05_fixed_point.html">Practise this lecture</a>
-<a class="md-button" href="../lec04-newton/">← Previous: Newton–Raphson</a>
-<a class="md-button" href="../lec06-fixed-point-convergence/">Next: Fixed-Point Convergence →</a></p>
+<p><a class="md-button md-button--primary" href="../../practice/lec06_fixed_point_convergence.html">Practise this lecture</a>
+<a class="md-button" href="../lec05-fixed-point/">← Previous: Fixed-Point Iteration</a></p>
 </div>
 
 
@@ -890,7 +951,7 @@ error: no convergence within maxit
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../lec04-newton/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 4 · Newton–Raphson">
+          <a href="../lec05-fixed-point/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 5 · Fixed-Point Iteration">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -900,27 +961,11 @@ error: no convergence within maxit
                 Previous
               </span>
               <div class="md-ellipsis">
-                4 · Newton–Raphson
+                5 · Fixed-Point Iteration
               </div>
             </div>
           </a>
         
-        
-          
-          <a href="../lec06-fixed-point-convergence/" class="md-footer__link md-footer__link--next" aria-label="Next: 6 · Fixed-Point Convergence">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              <div class="md-ellipsis">
-                6 · Fixed-Point Convergence
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
-            </div>
-          </a>
         
       </nav>
     
