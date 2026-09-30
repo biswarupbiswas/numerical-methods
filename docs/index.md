@@ -77,6 +77,7 @@ hide:
       <p>Rewrite \(f(x) = 0\) as \(x = g(x)\) and iterate \(x_{n+1} = g(x_n)\). Cobweb diagrams show which rearrangements converge and which blow up.</p>
       <div class="nm-links">
         <a href="lectures/lec05-fixed-point/">Notes</a>
+        <a href="https://www.youtube.com/watch?v=64pMPsAbHUE">Video</a>
         <a href="practice/lec05_fixed_point.html">Practice</a>
       </div>
     </div>

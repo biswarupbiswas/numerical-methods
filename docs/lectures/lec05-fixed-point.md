@@ -6,10 +6,11 @@ title: Fixed-Point Iteration
 
 # Fixed-Point Iteration
 
-![Lecture 5: Fixed-Point Iteration](../assets/thumbnails/lec05_fixed_point.png){ .nm-video }
+<iframe class="nm-video" src="https://www.youtube-nocookie.com/embed/64pMPsAbHUE" title="Lecture 5: Fixed-Point Iteration" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 <div class="nm-actions" markdown>
 [Practise this lecture](../practice/lec05_fixed_point.html){ .md-button .md-button--primary }
+[Watch on YouTube](https://www.youtube.com/watch?v=64pMPsAbHUE){ .md-button }
 </div>
 
 <div class="nm-key" markdown>
