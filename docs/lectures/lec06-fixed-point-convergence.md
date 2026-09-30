@@ -6,10 +6,11 @@ title: Convergence of Fixed-Point Iteration
 
 # Convergence of Fixed-Point Iteration
 
-![Lecture 6: Convergence of Fixed-Point Iteration](../assets/thumbnails/lec06_fixed_point_convergence.png){ .nm-video }
+<iframe class="nm-video" src="https://www.youtube-nocookie.com/embed/583PXs6cS4I" title="Lecture 6: Convergence of Fixed-Point Iteration" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 <div class="nm-actions" markdown>
 [Practise this lecture](../practice/lec06_fixed_point_convergence.html){ .md-button .md-button--primary }
+[Watch on YouTube](https://www.youtube.com/watch?v=583PXs6cS4I){ .md-button }
 </div>
 
 <div class="nm-key" markdown>
