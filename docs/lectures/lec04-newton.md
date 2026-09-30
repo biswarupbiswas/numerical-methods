@@ -103,4 +103,5 @@ In practice a safe method gets close to the root, and Newton finishes the job in
 <div class="nm-actions" markdown>
 [Practise this lecture](../practice/lec04_newton.html){ .md-button .md-button--primary }
 [← Previous: Regula Falsi](lec03-regula-falsi.md){ .md-button }
+[Next: Fixed-Point Iteration →](lec05-fixed-point.md){ .md-button }
 </div>

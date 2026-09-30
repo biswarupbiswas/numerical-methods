@@ -69,8 +69,20 @@ hide:
       </div>
     </div>
   </article>
+  <article class="nm-lecture">
+    <a href="lectures/lec05-fixed-point/"><img src="assets/thumbnails/lec05_fixed_point.png" alt="Lecture 5: Fixed-Point Iteration"></a>
+    <div>
+      <div class="nm-num">Lecture 5 · 7 min</div>
+      <h3><a href="lectures/lec05-fixed-point/">Fixed-Point Iteration</a></h3>
+      <p>Rewrite \(f(x) = 0\) as \(x = g(x)\) and iterate \(x_{n+1} = g(x_n)\). Cobweb diagrams show which rearrangements converge and which blow up.</p>
+      <div class="nm-links">
+        <a href="lectures/lec05-fixed-point/">Notes</a>
+        <a href="practice/lec05_fixed_point.html">Practice</a>
+      </div>
+    </div>
+  </article>
   <article class="nm-lecture nm-soon">
-    <div><div class="nm-num">Coming next</div>Fixed-point iteration · Order of convergence · Floating-point numbers</div>
+    <div><div class="nm-num">Coming next</div>Convergence of fixed-point iteration · Order of convergence · Floating-point numbers</div>
   </article>
 </div>
 
