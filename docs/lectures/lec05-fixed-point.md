@@ -82,4 +82,5 @@ error: no convergence within maxit
 <div class="nm-actions" markdown>
 [Practise this lecture](../practice/lec05_fixed_point.html){ .md-button .md-button--primary }
 [← Previous: Newton–Raphson](lec04-newton.md){ .md-button }
+[Next: Fixed-Point Convergence →](lec06-fixed-point-convergence.md){ .md-button }
 </div>
