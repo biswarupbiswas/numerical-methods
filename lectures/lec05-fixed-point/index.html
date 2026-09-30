@@ -12,13 +12,11 @@
         <meta name="author" content="Biswarup Biswas">
       
       
-        <link rel="canonical" href="https://biswarupbiswas.github.io/numerical-methods/lectures/lec03-regula-falsi/">
+        <link rel="canonical" href="https://biswarupbiswas.github.io/numerical-methods/lectures/lec05-fixed-point/">
       
       
-        <link rel="prev" href="../lec02-secant/">
+        <link rel="prev" href="../lec04-newton/">
       
-      
-        <link rel="next" href="../lec04-newton/">
       
       
         
@@ -29,7 +27,7 @@
     
     
       
-        <title>Regula Falsi - Numerical Methods</title>
+        <title>Fixed-Point Iteration - Numerical Methods</title>
       
     
     
@@ -86,7 +84,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#regula-falsi" class="md-skip">
+        <a href="#fixed-point-iteration" class="md-skip">
           Skip to content
         </a>
       
@@ -122,7 +120,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Regula Falsi
+              Fixed-Point Iteration
             
           </span>
         </div>
@@ -402,37 +400,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    3 · Regula Falsi
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../lec03-regula-falsi/" class="md-nav__link">
         
   
   
@@ -448,103 +419,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#key-results" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Key results
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#the-idea" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The idea
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#worked-example" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Worked example
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#the-stuck-endpoint" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The stuck endpoint
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#the-illinois-fix" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The Illinois fix
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#algorithm" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Algorithm
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#comparison" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Comparison
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -582,10 +456,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../lec05-fixed-point/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 · Fixed-Point Iteration
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -601,6 +502,92 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#key-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key results
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fixed-points-and-roots" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fixed points and roots
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-iteration-and-cobweb-diagrams" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The iteration and cobweb diagrams
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-four-rearrangements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: four rearrangements
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-does-a-fixed-point-exist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When does a fixed point exist?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Algorithm
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -651,10 +638,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-idea" class="md-nav__link">
+  <a href="#fixed-points-and-roots" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The idea
+        Fixed points and roots
       
     </span>
   </a>
@@ -662,10 +649,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#worked-example" class="md-nav__link">
+  <a href="#the-iteration-and-cobweb-diagrams" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Worked example
+        The iteration and cobweb diagrams
       
     </span>
   </a>
@@ -673,10 +660,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-stuck-endpoint" class="md-nav__link">
+  <a href="#example-four-rearrangements" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The stuck endpoint
+        Example: four rearrangements
       
     </span>
   </a>
@@ -684,10 +671,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-illinois-fix" class="md-nav__link">
+  <a href="#when-does-a-fixed-point-exist" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The Illinois fix
+        When does a fixed point exist?
       
     </span>
   </a>
@@ -699,17 +686,6 @@
     <span class="md-ellipsis">
       
         Algorithm
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#comparison" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Comparison
       
     </span>
   </a>
@@ -733,161 +709,115 @@
 
 
 
-<p class="nm-eyebrow">Lecture 3</p>
+<p class="nm-eyebrow">Lecture 5</p>
 
-<h1 id="regula-falsi">Regula Falsi<a class="headerlink" href="#regula-falsi" title="Permanent link">&para;</a></h1>
-<iframe class="nm-video" src="https://www.youtube-nocookie.com/embed/mJpxcbBGdI4" title="Lecture 3: Regula Falsi" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
+<h1 id="fixed-point-iteration">Fixed-Point Iteration<a class="headerlink" href="#fixed-point-iteration" title="Permanent link">&para;</a></h1>
+<p><img alt="Lecture 5: Fixed-Point Iteration" class="nm-video" src="../../assets/thumbnails/lec05_fixed_point.png" /></p>
 <div class="nm-actions">
-<p><a class="md-button md-button--primary" href="../../practice/lec03_regula_falsi.html">Practise this lecture</a>
-<a class="md-button" href="https://www.youtube.com/watch?v=mJpxcbBGdI4">Watch on YouTube</a></p>
+<p><a class="md-button md-button--primary" href="../../practice/lec05_fixed_point.html">Practise this lecture</a></p>
 </div>
 <div class="nm-key">
 <h4 id="key-results">Key results<a class="headerlink" href="#key-results" title="Permanent link">&para;</a></h4>
 <ul>
-<li>Chord point <span class="arithmatex">\(c = \dfrac{a\,f(b) - b\,f(a)}{f(b) - f(a)}\)</span>; keep the part of <span class="arithmatex">\([a,b]\)</span> with the sign change.</li>
-<li>It always keeps a bracket, but for convex or concave <span class="arithmatex">\(f\)</span> one endpoint gets stuck: <strong>linear</strong> convergence.</li>
-<li>The Illinois modification halves the value of a stuck endpoint and makes it <strong>superlinear</strong>.</li>
+<li><span class="arithmatex">\(c\)</span> is a <strong>fixed point</strong> of <span class="arithmatex">\(g\)</span> if <span class="arithmatex">\(g(c) = c\)</span>: where <span class="arithmatex">\(y = g(x)\)</span> meets <span class="arithmatex">\(y = x\)</span>.</li>
+<li><span class="arithmatex">\(f(c) = 0 \iff c\)</span> is a fixed point of <span class="arithmatex">\(g(x) = x - f(x)\)</span>; iterate <span class="arithmatex">\(x_{n+1} = g(x_n)\)</span>.</li>
+<li>If <span class="arithmatex">\(g\)</span> is continuous and <span class="arithmatex">\(g([a,b]) \subseteq [a,b]\)</span>, then <span class="arithmatex">\(g\)</span> has a fixed point in <span class="arithmatex">\([a,b]\)</span>.</li>
 </ul>
 </div>
-<h2 id="the-idea">The idea<a class="headerlink" href="#the-idea" title="Permanent link">&para;</a></h2>
-<p>Bisection keeps a bracket but ignores the values of <span class="arithmatex">\(f\)</span>; the secant method uses the values but keeps no bracket. <strong>Regula Falsi</strong> (the method of false position) does both: start from a bracket <span class="arithmatex">\([a,b]\)</span> with <span class="arithmatex">\(f(a)\,f(b) &lt; 0\)</span>, draw the chord joining <span class="arithmatex">\((a, f(a))\)</span> and <span class="arithmatex">\((b, f(b))\)</span>, and cut where the chord crosses the axis:</p>
+<h2 id="fixed-points-and-roots">Fixed points and roots<a class="headerlink" href="#fixed-points-and-roots" title="Permanent link">&para;</a></h2>
+<p>A number <span class="arithmatex">\(c\)</span> is a fixed point of <span class="arithmatex">\(g\)</span> if <span class="arithmatex">\(g(c) = c\)</span>. Graphically it is where the curve <span class="arithmatex">\(y = g(x)\)</span> crosses the diagonal <span class="arithmatex">\(y = x\)</span>.</p>
+<p>If <span class="arithmatex">\(f(c) = 0\)</span>, then <span class="arithmatex">\(c\)</span> is a fixed point of <span class="arithmatex">\(g(x) = x - f(x)\)</span>; conversely <span class="arithmatex">\(g(c) = c\)</span> makes <span class="arithmatex">\(c\)</span> a root of <span class="arithmatex">\(f(x) = x - g(x)\)</span>. Every root-finding problem can be recast as a fixed-point problem, and Newton's method is one: <span class="arithmatex">\(x_{n+1} = g(x_n)\)</span> with <span class="arithmatex">\(g(x) = x - f(x)/f'(x)\)</span>.</p>
+<h2 id="the-iteration-and-cobweb-diagrams">The iteration and cobweb diagrams<a class="headerlink" href="#the-iteration-and-cobweb-diagrams" title="Permanent link">&para;</a></h2>
+<p>Pick <span class="arithmatex">\(x_0\)</span> and feed each output back in:</p>
 <div class="arithmatex">\[
-c = b - \frac{f(b)\,(b-a)}{f(b)-f(a)} = \frac{a\,f(b) - b\,f(a)}{f(b) - f(a)} .
+x_{n+1} = g(x_n), \qquad n \ge 0 .
 \]</div>
-<p>This is the secant formula applied to the two endpoints. Then, as in bisection, keep <span class="arithmatex">\([a, c]\)</span> if <span class="arithmatex">\(f(a)\,f(c) &lt; 0\)</span> and <span class="arithmatex">\([c, b]\)</span> otherwise, so the root stays trapped.</p>
-<h2 id="worked-example">Worked example<a class="headerlink" href="#worked-example" title="Permanent link">&para;</a></h2>
-<p><span class="arithmatex">\(f(x) = x^3 + 2x^2 - x - 1\)</span> on <span class="arithmatex">\([0, 1]\)</span>, the same example as the secant method. The iterates are numbered <span class="arithmatex">\(x_2, x_3, \ldots\)</span> to compare with the secant method.</p>
+<p>If <span class="arithmatex">\(x_n \to c\)</span> and <span class="arithmatex">\(g\)</span> is continuous, then <span class="arithmatex">\(c = \lim x_{n+1} = g(\lim x_n) = g(c)\)</span>: the limit is a fixed point.</p>
+<p>A <strong>cobweb diagram</strong> draws the iteration: from <span class="arithmatex">\(x_n\)</span> go vertically to the curve (height <span class="arithmatex">\(g(x_n) = x_{n+1}\)</span>), then horizontally to the diagonal, and repeat. For <span class="arithmatex">\(g(x) = \cos x\)</span> from <span class="arithmatex">\(x_0 = 1\)</span> (radians) the values are <span class="arithmatex">\(0.5403,\ 0.8576,\ 0.6543,\ 0.7935, \ldots\)</span> and they settle on <span class="arithmatex">\(c = 0.7390851\ldots\)</span>, the number whose cosine is itself.</p>
+<h2 id="example-four-rearrangements">Example: four rearrangements<a class="headerlink" href="#example-four-rearrangements" title="Permanent link">&para;</a></h2>
+<p><span class="arithmatex">\(x^3 - 2x - 5 = 0\)</span> has a root <span class="arithmatex">\(r \approx 2.0945515\)</span> in <span class="arithmatex">\([2,3]\)</span>. It can be written as <span class="arithmatex">\(x = g(x)\)</span> in many ways, all with the same fixed point:</p>
+<div class="arithmatex">\[
+x = x^3 - x - 5, \qquad x = (2x+5)^{1/3}, \qquad x = \sqrt{\frac{2x+5}{x}}, \qquad x = \frac{2x+5}{x^2} .
+\]</div>
+<p>Starting from <span class="arithmatex">\(x_0 = 2\)</span>:</p>
 <table>
 <thead>
 <tr>
 <th style="text-align: right;"><span class="arithmatex">\(n\)</span></th>
-<th style="text-align: right;"><span class="arithmatex">\(a\)</span></th>
-<th style="text-align: right;"><span class="arithmatex">\(b\)</span></th>
-<th style="text-align: right;"><span class="arithmatex">\(x_n\)</span></th>
-<th style="text-align: right;"><span class="arithmatex">\(f(x_n)\)</span></th>
-<th style="text-align: right;">secant <span class="arithmatex">\(x_n\)</span></th>
+<th style="text-align: right;"><span class="arithmatex">\((2x+5)^{1/3}\)</span></th>
+<th style="text-align: right;"><span class="arithmatex">\(\sqrt{(2x+5)/x}\)</span></th>
+<th style="text-align: right;"><span class="arithmatex">\((2x+5)/x^2\)</span></th>
+<th style="text-align: right;"><span class="arithmatex">\(x^3 - x - 5\)</span></th>
 </tr>
 </thead>
 <tbody>
 <tr>
+<td style="text-align: right;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(2.000000\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(2.000000\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(2.0000\)</span></td>
 <td style="text-align: right;"><span class="arithmatex">\(2\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(0.0000\)</span></td>
+</tr>
+<tr>
 <td style="text-align: right;"><span class="arithmatex">\(1\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(0.500000\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(-0.8750\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(0.500000\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(2.080084\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(2.121320\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(2.2500\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(1\)</span></td>
+</tr>
+<tr>
+<td style="text-align: right;"><span class="arithmatex">\(2\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(2.092351\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(2.087348\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(1.8765\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(-5\)</span></td>
 </tr>
 <tr>
 <td style="text-align: right;"><span class="arithmatex">\(3\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(0.5000\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(1\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(0.733333\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(-0.2634\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(0.733333\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(2.094217\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(2.096517\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(2.4857\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(-125\)</span></td>
 </tr>
 <tr>
 <td style="text-align: right;"><span class="arithmatex">\(4\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(0.7333\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(1\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(0.788931\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(-0.0531\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(0.833828\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(2.094501\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(2.094017\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(1.6139\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(-1953005\)</span></td>
 </tr>
 <tr>
 <td style="text-align: right;"><span class="arithmatex">\(5\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(0.7889\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(1\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(0.799567\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(-0.0098\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(0.799535\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(2.094544\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(2.094697\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(3.1590\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(\cdots\)</span></td>
 </tr>
 <tr>
 <td style="text-align: right;"><span class="arithmatex">\(6\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(0.7996\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(1\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(0.801509\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(-0.0018\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(0.801858\)</span></td>
-</tr>
-<tr>
-<td style="text-align: right;"><span class="arithmatex">\(7\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(0.8015\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(1\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(0.801860\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(-0.0003\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(0.801938\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(2.094550\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(2.094512\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(1.1342\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(\cdots\)</span></td>
 </tr>
 </tbody>
 </table>
-<h2 id="the-stuck-endpoint">The stuck endpoint<a class="headerlink" href="#the-stuck-endpoint" title="Permanent link">&para;</a></h2>
-<p>Every new point lands to the <strong>left</strong> of the root, so <span class="arithmatex">\(a\)</span> is replaced each time and <span class="arithmatex">\(b = 1\)</span> never moves: all the chords pivot around <span class="arithmatex">\((1, 1)\)</span>. The reason is the shape of the curve: <span class="arithmatex">\(f''(x) = 6x + 4 &gt; 0\)</span>, so <span class="arithmatex">\(f\)</span> is <strong>convex</strong> on <span class="arithmatex">\([0,1]\)</span>. The chord of a convex curve lies above the graph, so it crosses the axis too early. (For a concave curve the same happens on the other side.)</p>
-<p>With one endpoint frozen, the errors shrink by a constant factor:</p>
-<div class="arithmatex">\[
-\frac{e_{n+1}}{e_n} \;\to\; 1 - \frac{f'(r)\,(b - r)}{f(b)} \approx 0.18 ,
-\]</div>
-<p>which is <strong>linear</strong> convergence. By <span class="arithmatex">\(x_7\)</span> Regula Falsi has error <span class="arithmatex">\(7.7\times10^{-5}\)</span>, while the secant method already has <span class="arithmatex">\(2.0\times10^{-7}\)</span>.</p>
-<div class="admonition warning">
-<p class="admonition-title">The bracket does not shrink to zero</p>
-<p>The width <span class="arithmatex">\(b - a\)</span> tends to <span class="arithmatex">\(b - r \approx 0.198\)</span>, not to <span class="arithmatex">\(0\)</span>. So Regula Falsi cannot stop when the bracket is small; it stops when the residual <span class="arithmatex">\(|f(c)|\)</span> is small.</p>
-</div>
-<p>Stagnation can be dramatic. For <span class="arithmatex">\(f(x) = x^{10} - 1\)</span> on <span class="arithmatex">\([0, 1.3]\)</span>, six correct digits take <strong>20</strong> bisection steps but <strong>61</strong> Regula Falsi steps.</p>
-<h2 id="the-illinois-fix">The Illinois fix<a class="headerlink" href="#the-illinois-fix" title="Permanent link">&para;</a></h2>
-<p>Whenever the same endpoint is kept twice in a row, halve its stored function value in the chord formula. This tilts the chord, pulls the next point across the root, and makes the stuck endpoint move. On our example the error of <span class="arithmatex">\(x_8\)</span> drops from <span class="arithmatex">\(1.4\times10^{-5}\)</span> to <span class="arithmatex">\(1.9\times10^{-9}\)</span>; on <span class="arithmatex">\(x^{10} - 1\)</span> the step count drops from <span class="arithmatex">\(61\)</span> to <span class="arithmatex">\(13\)</span>. The Illinois method keeps the bracket and converges superlinearly (order <span class="arithmatex">\(\sqrt[3]{3} \approx 1.44\)</span>).</p>
+<p>The cube-root form climbs a <strong>staircase</strong> to <span class="arithmatex">\(r\)</span> (each error about <span class="arithmatex">\(0.15\)</span> times the previous one); the square-root form <strong>spirals in</strong>; <span class="arithmatex">\((2x+5)/x^2\)</span> <strong>spirals out</strong>; and <span class="arithmatex">\(x^3 - x - 5\)</span> <strong>explodes</strong>. Near the fixed point, a curve gentler than the diagonal closes in and a steeper one flies apart. Lecture 6 makes this precise with <span class="arithmatex">\(g'\)</span>.</p>
+<h2 id="when-does-a-fixed-point-exist">When does a fixed point exist?<a class="headerlink" href="#when-does-a-fixed-point-exist" title="Permanent link">&para;</a></h2>
+<p>If <span class="arithmatex">\(g\)</span> is continuous on <span class="arithmatex">\([a,b]\)</span> and <span class="arithmatex">\(g([a,b]) \subseteq [a,b]\)</span>, then <span class="arithmatex">\(g\)</span> has at least one fixed point in <span class="arithmatex">\([a,b]\)</span>.</p>
+<p><em>Proof.</em> Let <span class="arithmatex">\(h(x) = g(x) - x\)</span>. Since <span class="arithmatex">\(g\)</span> takes values in <span class="arithmatex">\([a,b]\)</span>, <span class="arithmatex">\(h(a) = g(a) - a \ge 0\)</span> and <span class="arithmatex">\(h(b) = g(b) - b \le 0\)</span>. By the Intermediate Value Theorem <span class="arithmatex">\(h(c) = 0\)</span> for some <span class="arithmatex">\(c \in [a,b]\)</span>, i.e. <span class="arithmatex">\(g(c) = c\)</span>.</p>
+<p>For <span class="arithmatex">\(g(x) = (2x+5)^{1/3}\)</span>: <span class="arithmatex">\(g\)</span> is increasing, <span class="arithmatex">\(g(2) = 9^{1/3} \approx 2.0801\)</span> and <span class="arithmatex">\(g(3) = 11^{1/3} \approx 2.2240\)</span>, so <span class="arithmatex">\(g([2,3]) \subseteq [2,3]\)</span> and a fixed point is guaranteed.</p>
 <h2 id="algorithm">Algorithm<a class="headerlink" href="#algorithm" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>input  f, a, b  with  f(a)·f(b) &lt; 0, tol, maxit
-fa ← f(a),  fb ← f(b)
-for k = 1 to maxit
-    c ← (a·fb − b·fa) / (fb − fa)
-    fc ← f(c)
-    if  |fc| ≤ tol :  return c
-    if  fa·fc &lt; 0
-        b ← c,  fb ← fc          # Illinois: if a was kept twice, fa ← fa/2
-    else
-        a ← c,  fa ← fc          # Illinois: if b was kept twice, fb ← fb/2
+<div class="highlight"><pre><span></span><code>input  g, x0, tol, maxit
+for n = 0 to maxit − 1
+    x(n+1) ← g(xn)
+    if  |x(n+1) − xn| &lt; tol :  return x(n+1)
 end
+error: no convergence within maxit
 </code></pre></div>
-<h2 id="comparison">Comparison<a class="headerlink" href="#comparison" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>Guaranteed?</th>
-<th>Order</th>
-<th>Weak spot</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Bisection</td>
-<td>yes</td>
-<td><span class="arithmatex">\(1\)</span> (rate <span class="arithmatex">\(\frac12\)</span>)</td>
-<td>slow</td>
-</tr>
-<tr>
-<td>Regula Falsi</td>
-<td>yes</td>
-<td><span class="arithmatex">\(1\)</span> (often)</td>
-<td>stuck endpoint</td>
-</tr>
-<tr>
-<td>Secant</td>
-<td>no</td>
-<td><span class="arithmatex">\(1.618\)</span></td>
-<td>can wander off</td>
-</tr>
-<tr>
-<td>Illinois</td>
-<td>yes</td>
-<td><span class="arithmatex">\(\approx 1.44\)</span></td>
-<td>—</td>
-</tr>
-</tbody>
-</table>
 <div class="nm-actions">
-<p><a class="md-button md-button--primary" href="../../practice/lec03_regula_falsi.html">Practise this lecture</a>
-<a class="md-button" href="../lec02-secant/">← Previous: The Secant Method</a>
-<a class="md-button" href="../lec04-newton/">Next: Newton–Raphson →</a></p>
+<p><a class="md-button md-button--primary" href="../../practice/lec05_fixed_point.html">Practise this lecture</a>
+<a class="md-button" href="../lec04-newton/">← Previous: Newton–Raphson</a></p>
 </div>
 
 
@@ -927,7 +857,7 @@ end
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../lec02-secant/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 2 · Secant Method">
+          <a href="../lec04-newton/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 4 · Newton–Raphson">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -937,27 +867,11 @@ end
                 Previous
               </span>
               <div class="md-ellipsis">
-                2 · Secant Method
-              </div>
-            </div>
-          </a>
-        
-        
-          
-          <a href="../lec04-newton/" class="md-footer__link md-footer__link--next" aria-label="Next: 4 · Newton–Raphson">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              <div class="md-ellipsis">
                 4 · Newton–Raphson
               </div>
             </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
-            </div>
           </a>
+        
         
       </nav>
     
