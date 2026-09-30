@@ -95,8 +95,20 @@ hide:
       </div>
     </div>
   </article>
+  <article class="nm-lecture">
+    <a href="lectures/lec07-order-modified-newton/"><img src="assets/thumbnails/lec07_order_modified_newton.png" alt="Lecture 7: Order of Convergence"></a>
+    <div>
+      <div class="nm-num">Lecture 7 · 8 min</div>
+      <h3><a href="lectures/lec07-order-modified-newton/">Order of Convergence and Modified Newton</a></h3>
+      <p>Measure the order \(p\) from data, and restore Newton's quadratic speed at multiple roots with \(x_{n+1} = x_n - m\,f/f'\).</p>
+      <div class="nm-links">
+        <a href="lectures/lec07-order-modified-newton/">Notes</a>
+        <a href="practice/lec07_order_modified_newton.html">Practice</a>
+      </div>
+    </div>
+  </article>
   <article class="nm-lecture nm-soon">
-    <div><div class="nm-num">Coming next</div>Order of convergence and modified Newton · Floating-point numbers · Linear systems</div>
+    <div><div class="nm-num">Coming next</div>Errors and floating-point numbers · Machine epsilon · Linear systems</div>
   </article>
 </div>
 

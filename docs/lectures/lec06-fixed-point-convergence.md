@@ -103,4 +103,5 @@ Newton's method takes \(\alpha = 1/f'(x_n)\) at every step. When \(g'(r) = 0\) t
 <div class="nm-actions" markdown>
 [Practise this lecture](../practice/lec06_fixed_point_convergence.html){ .md-button .md-button--primary }
 [← Previous: Fixed-Point Iteration](lec05-fixed-point.md){ .md-button }
+[Next: Order and Modified Newton →](lec07-order-modified-newton.md){ .md-button }
 </div>

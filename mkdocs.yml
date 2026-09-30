@@ -43,6 +43,7 @@ nav:
       - "4 · Newton–Raphson": lectures/lec04-newton.md
       - "5 · Fixed-Point Iteration": lectures/lec05-fixed-point.md
       - "6 · Fixed-Point Convergence": lectures/lec06-fixed-point-convergence.md
+      - "7 · Order and Modified Newton": lectures/lec07-order-modified-newton.md
 
 markdown_extensions:
   - admonition
