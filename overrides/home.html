@@ -86,7 +86,7 @@
               <h4><a href="{{ ('lectures/' ~ page ~ '/') | url }}">{{ name }}</a></h4>
               <p class="nmh-card__blurb">{{ blurb }}</p>
               <div class="nmh-card__links">
-                <a href="https://www.youtube.com/watch?v={{ vid }}">Watch</a>
+                {% if vid %}<a href="https://www.youtube.com/watch?v={{ vid }}">Watch</a>{% endif %}
                 <a href="{{ ('lectures/' ~ page ~ '/') | url }}">Notes</a>
                 <a href="{{ ('practice/' ~ thumb ~ '.html') | url }}">Practise</a>
               </div>
