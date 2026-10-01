@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Machine Epsilon Practice · Numerical Methods</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,650&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<link rel="stylesheet" href="assets/practice.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <div>
+      <div class="course"><a class="home-link" href="../">Numerical Methods</a> · Practice</div>
+      <div class="lecture">Lecture 9: Machine Epsilon and Loss of Significance</div>
+    </div>
+    <div class="progress" aria-label="Progress">
+      <div class="segs" id="segs"></div>
+      <div class="count" id="count">0 / 9 done</div>
+    </div>
+  </div>
+</header>
+<main class="wrap">
+  <nav class="tasks" id="nav" aria-label="Tasks"></nav>
+  <section class="plot" aria-label="Plot">
+    <div class="plot-title" id="plotTitle"></div>
+    <canvas id="cv" width="800" height="660"></canvas>
+  </section>
+  <section class="task" aria-live="polite">
+    <div>
+      <div class="eyebrow" id="eyebrow">Task 1 of 9</div>
+      <h1 id="title"></h1>
+    </div>
+    <div class="instr" id="instr"></div>
+    <div class="controls" id="controls"></div>
+    <div class="feedback" id="feedback" role="status"></div>
+    <div class="buttons" id="buttons">
+      <button class="btn" id="hintBtn" type="button">Hint</button>
+      <button class="btn" id="revealBtn" type="button">Show answer</button>
+      <span class="spacer"></span>
+      <button class="btn primary" id="checkBtn" type="button">Check</button>
+      <button class="btn" id="nextBtn" type="button">Skip →</button>
+    </div>
+  </section>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<script src="assets/practice.js"></script>
+<script src="lec09.js"></script>
+</body>
+</html>

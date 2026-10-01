@@ -12,13 +12,11 @@
         <meta name="author" content="Biswarup Biswas">
       
       
-        <link rel="canonical" href="https://biswarupbiswas.github.io/numerical-methods/lectures/lec03-regula-falsi/">
+        <link rel="canonical" href="https://biswarupbiswas.github.io/numerical-methods/lectures/lec09-rounding-errors/">
       
       
-        <link rel="prev" href="../lec02-secant/">
+        <link rel="prev" href="../lec08-floating-point/">
       
-      
-        <link rel="next" href="../lec04-newton/">
       
       
         
@@ -29,7 +27,7 @@
     
     
       
-        <title>Regula Falsi - Numerical Methods</title>
+        <title>Machine Epsilon and Loss of Significance - Numerical Methods</title>
       
     
     
@@ -88,7 +86,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#regula-falsi" class="md-skip">
+        <a href="#machine-epsilon-and-loss-of-significance" class="md-skip">
           Skip to content
         </a>
       
@@ -124,7 +122,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Regula Falsi
+              Machine Epsilon and Loss of Significance
             
           </span>
         </div>
@@ -404,37 +402,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    3 · Regula Falsi
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../lec03-regula-falsi/" class="md-nav__link">
         
   
   
@@ -450,103 +421,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#key-results" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Key results
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#the-idea" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The idea
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#worked-example" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Worked example
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#the-stuck-endpoint" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The stuck endpoint
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#the-illinois-fix" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The Illinois fix
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#algorithm" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Algorithm
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#comparison" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Comparison
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -696,10 +570,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../lec09-rounding-errors/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9 · Machine Epsilon
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -715,6 +616,114 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#key-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key results
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#machine-epsilon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Machine epsilon
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#floating-point-arithmetic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Floating-point arithmetic
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#propagation-of-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Propagation of errors
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-sqrtx1-sqrtx-at-x-500-6-digits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: \(\sqrt{x+1} - \sqrt{x}\) at \(x = 500\), 6 digits
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-the-quadratic-formula" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: the quadratic formula
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remedies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Remedies
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ieee-754" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IEEE 754
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -765,10 +774,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-idea" class="md-nav__link">
+  <a href="#machine-epsilon" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The idea
+        Machine epsilon
       
     </span>
   </a>
@@ -776,10 +785,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#worked-example" class="md-nav__link">
+  <a href="#floating-point-arithmetic" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Worked example
+        Floating-point arithmetic
       
     </span>
   </a>
@@ -787,10 +796,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-stuck-endpoint" class="md-nav__link">
+  <a href="#propagation-of-errors" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The stuck endpoint
+        Propagation of errors
       
     </span>
   </a>
@@ -798,10 +807,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-illinois-fix" class="md-nav__link">
+  <a href="#example-sqrtx1-sqrtx-at-x-500-6-digits" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The Illinois fix
+        Example: \(\sqrt{x+1} - \sqrt{x}\) at \(x = 500\), 6 digits
       
     </span>
   </a>
@@ -809,10 +818,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#algorithm" class="md-nav__link">
+  <a href="#example-the-quadratic-formula" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Algorithm
+        Example: the quadratic formula
       
     </span>
   </a>
@@ -820,10 +829,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#comparison" class="md-nav__link">
+  <a href="#remedies" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Comparison
+        Remedies
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ieee-754" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IEEE 754
       
     </span>
   </a>
@@ -847,161 +867,169 @@
 
 
 
-<p class="nm-eyebrow">Lecture 3</p>
+<p class="nm-eyebrow">Lecture 9</p>
 
-<h1 id="regula-falsi">Regula Falsi<a class="headerlink" href="#regula-falsi" title="Permanent link">&para;</a></h1>
-<iframe class="nm-video" src="https://www.youtube-nocookie.com/embed/mJpxcbBGdI4" title="Lecture 3: Regula Falsi" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
+<h1 id="machine-epsilon-and-loss-of-significance">Machine Epsilon and Loss of Significance<a class="headerlink" href="#machine-epsilon-and-loss-of-significance" title="Permanent link">&para;</a></h1>
+<p><img alt="Lecture 9: Machine Epsilon and Loss of Significance" class="nm-video" src="../../assets/thumbnails/lec09_rounding_errors.png" /></p>
 <div class="nm-actions">
-<p><a class="md-button md-button--primary" href="../../practice/lec03_regula_falsi.html">Practise this lecture</a>
-<a class="md-button" href="https://www.youtube.com/watch?v=mJpxcbBGdI4">Watch on YouTube</a></p>
+<p><a class="md-button md-button--primary" href="../../practice/lec09_rounding_errors.html">Practise this lecture</a></p>
 </div>
 <div class="nm-key">
 <h4 id="key-results">Key results<a class="headerlink" href="#key-results" title="Permanent link">&para;</a></h4>
 <ul>
-<li>Chord point <span class="arithmatex">\(c = \dfrac{a\,f(b) - b\,f(a)}{f(b) - f(a)}\)</span>; keep the part of <span class="arithmatex">\([a,b]\)</span> with the sign change.</li>
-<li>It always keeps a bracket, but for convex or concave <span class="arithmatex">\(f\)</span> one endpoint gets stuck: <strong>linear</strong> convergence.</li>
-<li>The Illinois modification halves the value of a stuck endpoint and makes it <strong>superlinear</strong>.</li>
+<li>Machine epsilon <span class="arithmatex">\(\varepsilon_M = \beta^{1-t}\)</span>, the gap between <span class="arithmatex">\(1\)</span> and the next number; unit round-off <span class="arithmatex">\(u = \frac12\varepsilon_M\)</span>.</li>
+<li>Model of arithmetic: <span class="arithmatex">\(x \circledast y = (x * y)(1 + \delta)\)</span>, <span class="arithmatex">\(|\delta| \le u\)</span>.</li>
+<li>Products: relative errors add. Sums: amplified by <span class="arithmatex">\(\frac{|x| + |y|}{|x + y|}\)</span>, huge when <span class="arithmatex">\(x \approx -y\)</span> (cancellation).</li>
+<li>IEEE double: <span class="arithmatex">\(\varepsilon_M = 2^{-52} \approx 2.22\times10^{-16}\)</span>, about <span class="arithmatex">\(16\)</span> digits.</li>
 </ul>
 </div>
-<h2 id="the-idea">The idea<a class="headerlink" href="#the-idea" title="Permanent link">&para;</a></h2>
-<p>Bisection keeps a bracket but ignores the values of <span class="arithmatex">\(f\)</span>; the secant method uses the values but keeps no bracket. <strong>Regula Falsi</strong> (the method of false position) does both: start from a bracket <span class="arithmatex">\([a,b]\)</span> with <span class="arithmatex">\(f(a)\,f(b) &lt; 0\)</span>, draw the chord joining <span class="arithmatex">\((a, f(a))\)</span> and <span class="arithmatex">\((b, f(b))\)</span>, and cut where the chord crosses the axis:</p>
+<h2 id="machine-epsilon">Machine epsilon<a class="headerlink" href="#machine-epsilon" title="Permanent link">&para;</a></h2>
 <div class="arithmatex">\[
-c = b - \frac{f(b)\,(b-a)}{f(b)-f(a)} = \frac{a\,f(b) - b\,f(a)}{f(b) - f(a)} .
+\varepsilon_M = \beta^{1-t}, \qquad u = \tfrac12\,\varepsilon_M .
 \]</div>
-<p>This is the secant formula applied to the two endpoints. Then, as in bisection, keep <span class="arithmatex">\([a, c]\)</span> if <span class="arithmatex">\(f(a)\,f(c) &lt; 0\)</span> and <span class="arithmatex">\([c, b]\)</span> otherwise, so the root stays trapped.</p>
-<h2 id="worked-example">Worked example<a class="headerlink" href="#worked-example" title="Permanent link">&para;</a></h2>
-<p><span class="arithmatex">\(f(x) = x^3 + 2x^2 - x - 1\)</span> on <span class="arithmatex">\([0, 1]\)</span>, the same example as the secant method. The iterates are numbered <span class="arithmatex">\(x_2, x_3, \ldots\)</span> to compare with the secant method.</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: right;"><span class="arithmatex">\(n\)</span></th>
-<th style="text-align: right;"><span class="arithmatex">\(a\)</span></th>
-<th style="text-align: right;"><span class="arithmatex">\(b\)</span></th>
-<th style="text-align: right;"><span class="arithmatex">\(x_n\)</span></th>
-<th style="text-align: right;"><span class="arithmatex">\(f(x_n)\)</span></th>
-<th style="text-align: right;">secant <span class="arithmatex">\(x_n\)</span></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: right;"><span class="arithmatex">\(2\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(0.0000\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(1\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(0.500000\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(-0.8750\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(0.500000\)</span></td>
-</tr>
-<tr>
-<td style="text-align: right;"><span class="arithmatex">\(3\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(0.5000\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(1\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(0.733333\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(-0.2634\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(0.733333\)</span></td>
-</tr>
-<tr>
-<td style="text-align: right;"><span class="arithmatex">\(4\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(0.7333\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(1\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(0.788931\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(-0.0531\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(0.833828\)</span></td>
-</tr>
-<tr>
-<td style="text-align: right;"><span class="arithmatex">\(5\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(0.7889\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(1\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(0.799567\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(-0.0098\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(0.799535\)</span></td>
-</tr>
-<tr>
-<td style="text-align: right;"><span class="arithmatex">\(6\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(0.7996\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(1\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(0.801509\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(-0.0018\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(0.801858\)</span></td>
-</tr>
-<tr>
-<td style="text-align: right;"><span class="arithmatex">\(7\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(0.8015\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(1\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(0.801860\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(-0.0003\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(0.801938\)</span></td>
-</tr>
-</tbody>
-</table>
-<h2 id="the-stuck-endpoint">The stuck endpoint<a class="headerlink" href="#the-stuck-endpoint" title="Permanent link">&para;</a></h2>
-<p>Every new point lands to the <strong>left</strong> of the root, so <span class="arithmatex">\(a\)</span> is replaced each time and <span class="arithmatex">\(b = 1\)</span> never moves: all the chords pivot around <span class="arithmatex">\((1, 1)\)</span>. The reason is the shape of the curve: <span class="arithmatex">\(f''(x) = 6x + 4 &gt; 0\)</span>, so <span class="arithmatex">\(f\)</span> is <strong>convex</strong> on <span class="arithmatex">\([0,1]\)</span>. The chord of a convex curve lies above the graph, so it crosses the axis too early. (For a concave curve the same happens on the other side.)</p>
-<p>With one endpoint frozen, the errors shrink by a constant factor:</p>
+<p><span class="arithmatex">\(\varepsilon_M\)</span> is the distance from <span class="arithmatex">\(1\)</span> to the next floating-point number; <span class="arithmatex">\(u\)</span> bounds the relative error of rounding. It can be found by halving: start with <span class="arithmatex">\(e = 1\)</span> and halve while <span class="arithmatex">\(1 + e/2 &gt; 1\)</span>. In double precision the loop stops at <span class="arithmatex">\(e = 2^{-52} \approx 2.22\times10^{-16}\)</span>, and <span class="arithmatex">\(1 + 2^{-53} = 1\)</span>.</p>
+<h2 id="floating-point-arithmetic">Floating-point arithmetic<a class="headerlink" href="#floating-point-arithmetic" title="Permanent link">&para;</a></h2>
+<p>Each operation is computed as if exactly and then rounded:</p>
 <div class="arithmatex">\[
-\frac{e_{n+1}}{e_n} \;\to\; 1 - \frac{f'(r)\,(b - r)}{f(b)} \approx 0.18 ,
+x \circledast y = (x * y)(1 + \delta), \qquad |\delta| \le u, \quad * \in \{+, -, \times, \div\}.
 \]</div>
-<p>which is <strong>linear</strong> convergence. By <span class="arithmatex">\(x_7\)</span> Regula Falsi has error <span class="arithmatex">\(7.7\times10^{-5}\)</span>, while the secant method already has <span class="arithmatex">\(2.0\times10^{-7}\)</span>.</p>
-<div class="admonition warning">
-<p class="admonition-title">The bracket does not shrink to zero</p>
-<p>The width <span class="arithmatex">\(b - a\)</span> tends to <span class="arithmatex">\(b - r \approx 0.198\)</span>, not to <span class="arithmatex">\(0\)</span>. So Regula Falsi cannot stop when the bracket is small; it stops when the residual <span class="arithmatex">\(|f(c)|\)</span> is small.</p>
-</div>
-<p>Stagnation can be dramatic. For <span class="arithmatex">\(f(x) = x^{10} - 1\)</span> on <span class="arithmatex">\([0, 1.3]\)</span>, six correct digits take <strong>20</strong> bisection steps but <strong>61</strong> Regula Falsi steps.</p>
-<h2 id="the-illinois-fix">The Illinois fix<a class="headerlink" href="#the-illinois-fix" title="Permanent link">&para;</a></h2>
-<p>Whenever the same endpoint is kept twice in a row, halve its stored function value in the chord formula. This tilts the chord, pulls the next point across the root, and makes the stuck endpoint move. On our example the error of <span class="arithmatex">\(x_8\)</span> drops from <span class="arithmatex">\(1.4\times10^{-5}\)</span> to <span class="arithmatex">\(1.9\times10^{-9}\)</span>; on <span class="arithmatex">\(x^{10} - 1\)</span> the step count drops from <span class="arithmatex">\(61\)</span> to <span class="arithmatex">\(13\)</span>. The Illinois method keeps the bracket and converges superlinearly (order <span class="arithmatex">\(\sqrt[3]{3} \approx 1.44\)</span>).</p>
-<h2 id="algorithm">Algorithm<a class="headerlink" href="#algorithm" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>input  f, a, b  with  f(a)·f(b) &lt; 0, tol, maxit
-fa ← f(a),  fb ← f(b)
-for k = 1 to maxit
-    c ← (a·fb − b·fa) / (fb − fa)
-    fc ← f(c)
-    if  |fc| ≤ tol :  return c
-    if  fa·fc &lt; 0
-        b ← c,  fb ← fc          # Illinois: if a was kept twice, fa ← fa/2
-    else
-        a ← c,  fa ← fc          # Illinois: if b was kept twice, fb ← fb/2
-end
-</code></pre></div>
-<h2 id="comparison">Comparison<a class="headerlink" href="#comparison" title="Permanent link">&para;</a></h2>
+<p><strong>Addition is not associative.</strong> With <span class="arithmatex">\(4\)</span> digits, <span class="arithmatex">\((1.000 + 0.0004) + 0.0004 = 1.000\)</span> but <span class="arithmatex">\(1.000 + (0.0004 + 0.0004) = 1.001\)</span> (exact: <span class="arithmatex">\(1.0008\)</span>). Add small terms first.</p>
+<h2 id="propagation-of-errors">Propagation of errors<a class="headerlink" href="#propagation-of-errors" title="Permanent link">&para;</a></h2>
+<p><strong>Products and quotients</strong> are safe:</p>
+<div class="arithmatex">\[
+x(1+\varepsilon_1)\cdot y(1+\varepsilon_2) \approx xy\,(1 + \varepsilon_1 + \varepsilon_2), \qquad
+\frac{x(1+\varepsilon_1)}{y(1+\varepsilon_2)} \approx \frac{x}{y}(1 + \varepsilon_1 - \varepsilon_2).
+\]</div>
+<p><strong>Sums</strong> can amplify errors:</p>
+<div class="arithmatex">\[
+x(1+\varepsilon_1) + y(1+\varepsilon_2) = (x+y)\Big(1 + \frac{x\varepsilon_1 + y\varepsilon_2}{x+y}\Big), \qquad
+\text{relative error} \le \frac{|x| + |y|}{|x+y|}\,\max|\varepsilon_i| .
+\]</div>
+<p>When <span class="arithmatex">\(x \approx -y\)</span> the factor is huge: <strong>catastrophic cancellation</strong>. The subtraction itself is exact; the errors already in <span class="arithmatex">\(x\)</span> and <span class="arithmatex">\(y\)</span> become the leading digits of the result.</p>
+<h2 id="example-sqrtx1-sqrtx-at-x-500-6-digits">Example: <span class="arithmatex">\(\sqrt{x+1} - \sqrt{x}\)</span> at <span class="arithmatex">\(x = 500\)</span>, 6 digits<a class="headerlink" href="#example-sqrtx1-sqrtx-at-x-500-6-digits" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
 <th></th>
-<th>Guaranteed?</th>
-<th>Order</th>
-<th>Weak spot</th>
+<th>value</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Bisection</td>
-<td>yes</td>
-<td><span class="arithmatex">\(1\)</span> (rate <span class="arithmatex">\(\frac12\)</span>)</td>
-<td>slow</td>
+<td><span class="arithmatex">\(\sqrt{501},\ \sqrt{500}\)</span></td>
+<td><span class="arithmatex">\(22.3830,\ 22.3607\)</span></td>
 </tr>
 <tr>
-<td>Regula Falsi</td>
-<td>yes</td>
-<td><span class="arithmatex">\(1\)</span> (often)</td>
-<td>stuck endpoint</td>
+<td>direct: <span class="arithmatex">\(22.3830 - 22.3607\)</span></td>
+<td><span class="arithmatex">\(0.0223000\)</span> (relative error <span class="arithmatex">\(2.2\times10^{-3}\)</span>)</td>
 </tr>
 <tr>
-<td>Secant</td>
-<td>no</td>
-<td><span class="arithmatex">\(1.618\)</span></td>
-<td>can wander off</td>
-</tr>
-<tr>
-<td>Illinois</td>
-<td>yes</td>
-<td><span class="arithmatex">\(\approx 1.44\)</span></td>
-<td>—</td>
+<td>rationalised: <span class="arithmatex">\(\dfrac{1}{\sqrt{501} + \sqrt{500}} = \dfrac{1}{44.7437}\)</span></td>
+<td><span class="arithmatex">\(0.0223495\)</span> (all digits correct)</td>
 </tr>
 </tbody>
 </table>
+<h2 id="example-the-quadratic-formula">Example: the quadratic formula<a class="headerlink" href="#example-the-quadratic-formula" title="Permanent link">&para;</a></h2>
+<p><span class="arithmatex">\(x^2 + 62.10x + 1 = 0\)</span> with <span class="arithmatex">\(4\)</span>-digit arithmetic: <span class="arithmatex">\(b^2 - 4 = 3852\)</span>, <span class="arithmatex">\(\sqrt{3852} = 62.06\)</span>.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align: right;">computed</th>
+<th style="text-align: right;">true</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(x_1 = \dfrac{-b + \sqrt{b^2 - 4ac}}{2a}\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(-0.02000\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(-0.01610724\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(x_1 = \dfrac{-2c}{b + \sqrt{b^2 - 4ac}} = \dfrac{-2}{124.2}\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(-0.01610\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(-0.01610724\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(x_2 = \dfrac{-b - \sqrt{b^2 - 4ac}}{2a}\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(-62.08\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(-62.08389\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>The first formula has a relative error of <span class="arithmatex">\(24\%\)</span>; the rewritten one is correct to all four digits.</p>
+<h2 id="remedies">Remedies<a class="headerlink" href="#remedies" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Rationalise</strong>, as above.</li>
+<li><strong>Use identities</strong>: <span class="arithmatex">\(1 - \cos x = 2\sin^2\frac{x}{2}\)</span>. At <span class="arithmatex">\(x = 10^{-8}\)</span> the left side gives <span class="arithmatex">\(0\)</span>, the right side <span class="arithmatex">\(5\times10^{-17}\)</span>.</li>
+<li><strong>Taylor series</strong> for small arguments: <span class="arithmatex">\(e^x - 1 \approx x + \frac{x^2}{2}\)</span>. Numerical libraries provide special functions for <span class="arithmatex">\(e^x - 1\)</span> and <span class="arithmatex">\(\log(1 + x)\)</span>.</li>
+<li><strong>Reorder</strong> sums so that small terms are added first.</li>
+<li><strong>Rescale</strong> to avoid overflow: <span class="arithmatex">\(\sqrt{x^2 + y^2} = |x|\sqrt{1 + (y/x)^2}\)</span> works even for <span class="arithmatex">\(x = 10^{200}\)</span>.</li>
+</ul>
+<p>In 1996 the Ariane 5 rocket was lost when a 64-bit floating-point value was converted to a 16-bit integer and overflowed.</p>
+<h2 id="ieee-754">IEEE 754<a class="headerlink" href="#ieee-754" title="Permanent link">&para;</a></h2>
+<p>Since 1985 almost every computer follows the IEEE 754 standard (largely designed by William Kahan): fixed formats, correct rounding (round half to even by default) and special values. A number is stored as a sign bit <span class="arithmatex">\(s\)</span>, a biased exponent <span class="arithmatex">\(E\)</span> and a fraction <span class="arithmatex">\(f\)</span>:</p>
+<div class="arithmatex">\[
+x = (-1)^s \times 1.f \times 2^{E - \text{bias}} .
+\]</div>
+<p>The leading <span class="arithmatex">\(1\)</span> is the <strong>hidden bit</strong>: it is not stored, giving one extra bit of precision.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align: right;">single</th>
+<th style="text-align: right;">double</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bits (<span class="arithmatex">\(s\)</span>, <span class="arithmatex">\(E\)</span>, <span class="arithmatex">\(f\)</span>)</td>
+<td style="text-align: right;"><span class="arithmatex">\(1, 8, 23\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(1, 11, 52\)</span></td>
+</tr>
+<tr>
+<td>bias</td>
+<td style="text-align: right;"><span class="arithmatex">\(127\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(1023\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(t\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(24\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(53\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\varepsilon_M\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(1.19\times10^{-7}\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(2.22\times10^{-16}\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(u\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(5.96\times10^{-8}\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(1.11\times10^{-16}\)</span></td>
+</tr>
+<tr>
+<td>largest</td>
+<td style="text-align: right;"><span class="arithmatex">\(3.40\times10^{38}\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(1.80\times10^{308}\)</span></td>
+</tr>
+<tr>
+<td>smallest normal</td>
+<td style="text-align: right;"><span class="arithmatex">\(1.18\times10^{-38}\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(2.23\times10^{-308}\)</span></td>
+</tr>
+<tr>
+<td>decimal digits</td>
+<td style="text-align: right;"><span class="arithmatex">\(\approx 7\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(\approx 16\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>The smallest and largest exponent patterns are reserved: <span class="arithmatex">\(0\)</span> and subnormal numbers, and <span class="arithmatex">\(\pm\infty\)</span> and NaN.</p>
+<p><strong>Example.</strong> <span class="arithmatex">\(-7.25 = -111.01_2 = -1.1101_2\times2^2\)</span>. In single precision: <span class="arithmatex">\(s = 1\)</span>, <span class="arithmatex">\(E = 2 + 127 = 129 = 10000001_2\)</span>, <span class="arithmatex">\(f = 1101000\ldots0\)</span>.</p>
+<p><strong>Spacing.</strong> Consecutive doubles in <span class="arithmatex">\([2^j, 2^{j+1})\)</span> are <span class="arithmatex">\(2^{j-52}\)</span> apart: <span class="arithmatex">\(\varepsilon_M\)</span> near <span class="arithmatex">\(1\)</span>, but <span class="arithmatex">\(2\)</span> near <span class="arithmatex">\(10^{16}\)</span>, so <span class="arithmatex">\(10^{16} + 1 = 10^{16}\)</span> in double precision.</p>
 <div class="nm-actions">
-<p><a class="md-button md-button--primary" href="../../practice/lec03_regula_falsi.html">Practise this lecture</a>
-<a class="md-button" href="../lec02-secant/">← Previous: The Secant Method</a>
-<a class="md-button" href="../lec04-newton/">Next: Newton–Raphson →</a></p>
+<p><a class="md-button md-button--primary" href="../../practice/lec09_rounding_errors.html">Practise this lecture</a>
+<a class="md-button" href="../lec08-floating-point/">← Previous: Floating-Point Numbers</a></p>
 </div>
 
 
@@ -1041,7 +1069,7 @@ end
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../lec02-secant/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 2 · Secant Method">
+          <a href="../lec08-floating-point/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 8 · Floating-Point Numbers">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1051,27 +1079,11 @@ end
                 Previous
               </span>
               <div class="md-ellipsis">
-                2 · Secant Method
+                8 · Floating-Point Numbers
               </div>
             </div>
           </a>
         
-        
-          
-          <a href="../lec04-newton/" class="md-footer__link md-footer__link--next" aria-label="Next: 4 · Newton–Raphson">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              <div class="md-ellipsis">
-                4 · Newton–Raphson
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
-            </div>
-          </a>
         
       </nav>
     
