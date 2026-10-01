@@ -177,8 +177,9 @@ let P, S;
 function startPractice(cfg) {
   const { store, lecture, tasks: TASKS, finalPlot } = cfg;
   const note = el("div", { className: "calc-note", role: "note" },
-    "<b>Before you start:</b> keep a calculator ready. Some tasks ask you to compute a step by hand. If you don't have one, the calculator app on your phone is fine.");
+    "<b>Before you start:</b> keep a calculator ready. Some tasks ask you to compute a step by hand. Use the <b>Calculator</b> button at the bottom right, your phone's calculator app, or your own.");
   document.querySelector("main.wrap")?.before(note);
+  setupCalculator();
   P = new Plot($("cv"));
   // status: 0 = not done, 1 = solved without help, 2 = solved with help, 3 = answer shown
   S = { cur: 0, status: TASKS.map(() => 0), attempts: 0, hintIdx: 0, hintUsed: false, choice: 0, check: null, task: null };
@@ -245,4 +246,111 @@ function startPractice(cfg) {
   $("checkBtn").onclick = onCheck; $("hintBtn").onclick = onHint; $("revealBtn").onclick = onReveal; $("nextBtn").onclick = onNext;
   document.addEventListener("keydown", e => { if (e.key === "Enter" && e.target.matches("input[type=text]") && !$("checkBtn").disabled) onCheck(); });
   show(S.cur);
+}
+
+/* ---------------- floating calculator ---------------- */
+/** Safe expression evaluator (recursive descent): + − × ÷ ^, brackets, implicit ×, functions, π, e, ans. */
+function calcEvaluate(src, deg, ans) {
+  const s = src.replace(/×/g, "*").replace(/÷/g, "/").replace(/−/g, "-").replace(/π/g, "pi").replace(/√/g, "sqrt").replace(/\s+/g, "");
+  let i = 0;
+  const trig = f => x => f(deg ? x * Math.PI / 180 : x);
+  const itrig = f => x => (deg ? f(x) * 180 / Math.PI : f(x));
+  const FN = { sin: trig(Math.sin), cos: trig(Math.cos), tan: trig(Math.tan), asin: itrig(Math.asin), acos: itrig(Math.acos),
+    atan: itrig(Math.atan), sqrt: Math.sqrt, ln: Math.log, log: Math.log10, exp: Math.exp, abs: Math.abs };
+  const CONST = { pi: Math.PI, e: Math.E, ans };
+  const peek = () => s[i];
+  const fail = () => { throw new Error("syntax"); };
+  function primary() {
+    if (peek() === "(") { i++; const v = expr(); if (peek() !== ")") fail(); i++; return v; }
+    const num = s.slice(i).match(/^(\d+\.?\d*|\.\d+)/);
+    if (num) { i += num[0].length; return parseFloat(num[0]); }
+    const id = s.slice(i).match(/^[a-z]+/i);
+    if (id) {
+      const name = id[0].toLowerCase();
+      if (FN[name]) { i += name.length; if (peek() !== "(") fail(); i++; const v = expr(); if (peek() !== ")") fail(); i++; return FN[name](v); }
+      if (name in CONST) { i += name.length; return CONST[name]; }
+    }
+    fail();
+  }
+  function power() { const b = primary(); if (peek() === "^") { i++; return Math.pow(b, unary()); } return b; }
+  function unary() { if (peek() === "-") { i++; return -unary(); } if (peek() === "+") { i++; return unary(); } return power(); }
+  function term() {
+    let v = unary();
+    for (;;) {
+      const c = peek();
+      if (c === "*") { i++; v *= unary(); }
+      else if (c === "/") { i++; v /= unary(); }
+      else if (c !== undefined && /[\d.(a-z]/i.test(c)) v *= unary();     // implicit multiplication: 2pi, 3(4)
+      else return v;
+    }
+  }
+  function expr() { let v = term(); for (;;) { if (peek() === "+") { i++; v += term(); } else if (peek() === "-") { i++; v -= term(); } else return v; } }
+  const v = expr();
+  if (i !== s.length) fail();
+  return v;
+}
+function calcFormat(v) {
+  if (!Number.isFinite(v)) return "Error";
+  if (v !== 0 && (Math.abs(v) < 1e-6 || Math.abs(v) >= 1e12)) return v.toExponential(8).replace(/\.?0+e/, "e");
+  return String(+v.toPrecision(12));
+}
+function setupCalculator() {
+  let deg = false, ans = 0, lastField = null;
+  document.addEventListener("focusin", e => { if (e.target.matches?.("#controls input[type=text]")) lastField = e.target; });
+  const fab = el("button", { type: "button", className: "calc-fab", id: "calcFab" }, `<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="5" y="2.5" width="14" height="19" rx="2.5"/><rect x="8" y="5.5" width="8" height="4" rx="0.8"/><path d="M8.5 13h.01M12 13h.01M15.5 13h.01M8.5 16.5h.01M12 16.5h.01M15.5 16.5h.01"/></svg> Calculator`);
+  fab.setAttribute("aria-expanded", "false");
+  const panel = el("div", { className: "calc-panel", id: "calcPanel" });
+  panel.hidden = true;
+  panel.setAttribute("role", "dialog"); panel.setAttribute("aria-label", "Calculator");
+  panel.innerHTML = `
+    <div class="calc-head"><b>Calculator</b><button type="button" class="calc-mode" id="calcMode">RAD</button><button type="button" class="calc-x" aria-label="Close calculator">×</button></div>
+    <input class="calc-display" id="calcDisplay" type="text" inputmode="none" autocomplete="off" spellcheck="false" aria-label="Expression">
+    <div class="calc-result" id="calcResult">&nbsp;</div>
+    <div class="calc-keys"></div>
+    <button type="button" class="calc-use" id="calcUse" disabled>Use in answer</button>`;
+  const keys = [
+    ["sin", "sin("], ["cos", "cos("], ["tan", "tan("], ["π", "π"], ["e", "e"],
+    ["ln", "ln("], ["log", "log("], ["√", "√("], ["x²", "^2"], ["xʸ", "^"],
+    ["(", "("], [")", ")"], ["eˣ", "exp("], ["⌫", "BACK"], ["C", "CLEAR"],
+    ["7", "7"], ["8", "8"], ["9", "9"], ["÷", "÷"], ["ANS", "ans"],
+    ["4", "4"], ["5", "5"], ["6", "6"], ["×", "×"], ["×10ˣ", "×10^"],
+    ["1", "1"], ["2", "2"], ["3", "3"], ["−", "−"], ["=", "EQ"],
+    ["0", "0"], [".", "."], ["+/−", "NEG"], ["+", "+"],
+  ];
+  const grid = panel.querySelector(".calc-keys"), disp = panel.querySelector("#calcDisplay"), res = panel.querySelector("#calcResult");
+  const use = panel.querySelector("#calcUse");
+  const insert = t => { const a = disp.selectionStart ?? disp.value.length, b = disp.selectionEnd ?? a;
+    disp.value = disp.value.slice(0, a) + t + disp.value.slice(b); const p = a + t.length; disp.setSelectionRange(p, p); live(); };
+  const live = () => { if (!disp.value.trim()) { res.innerHTML = "&nbsp;"; return; }
+    try { res.textContent = "= " + calcFormat(calcEvaluate(disp.value, deg, ans)); res.classList.remove("err"); }
+    catch { res.textContent = "…"; } };
+  const equals = () => {
+    try { const v = calcEvaluate(disp.value, deg, ans); if (!Number.isFinite(v)) throw 0; ans = v; disp.value = calcFormat(v); res.textContent = "ANS = " + calcFormat(v);
+      res.classList.remove("err"); use.disabled = !lastField; }
+    catch { res.textContent = "Check the expression"; res.classList.add("err"); }
+  };
+  keys.forEach(([label, act]) => {
+    const b = el("button", { type: "button", className: "calc-key" + (/^\d$|^\.$/.test(label) ? " num" : "") + (act === "EQ" ? " eq" : "") }, label);
+    b.onclick = () => {
+      if (act === "EQ") equals();
+      else if (act === "CLEAR") { disp.value = ""; live(); }
+      else if (act === "BACK") { const a = disp.selectionStart ?? disp.value.length; if (a > 0) { disp.value = disp.value.slice(0, a - 1) + disp.value.slice(a); disp.setSelectionRange(a - 1, a - 1); } live(); }
+      else if (act === "NEG") { disp.value = disp.value.startsWith("−(") && disp.value.endsWith(")") ? disp.value.slice(2, -1) : (disp.value ? `−(${disp.value})` : "−"); live(); }
+      else insert(act);
+      disp.focus({ preventScroll: true });
+    };
+    grid.append(b);
+  });
+  disp.addEventListener("input", live);
+  disp.addEventListener("keydown", e => { if (e.key === "Enter") { e.preventDefault(); equals(); } if (e.key === "Escape") toggle(false); });
+  panel.querySelector("#calcMode").onclick = e => { deg = !deg; e.target.textContent = deg ? "DEG" : "RAD"; live(); };
+  panel.querySelector(".calc-x").onclick = () => toggle(false);
+  use.onclick = () => { if (!lastField) return; lastField.value = calcFormat(ans); lastField.focus(); toggle(false); };
+  function toggle(open) {
+    panel.hidden = !open; fab.setAttribute("aria-expanded", String(open)); fab.classList.toggle("open", open);
+    if (open) { use.disabled = !lastField || !disp.value; disp.focus({ preventScroll: true }); }
+  }
+  fab.onclick = () => toggle(panel.hidden);
+  document.body.append(panel, fab);
+  if (location.hash === "#calc") toggle(true);
 }
