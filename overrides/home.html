@@ -8,17 +8,19 @@
   (5, "Fixed-Point Iteration", "lec05-fixed-point", "lec05_fixed_point", "64pMPsAbHUE", "7:07", "Rewrite f(x) = 0 as x = g(x) and read the behaviour off a cobweb diagram."),
   (6, "Convergence of Fixed-Point Iteration", "lec06-fixed-point-convergence", "lec06_fixed_point_convergence", "583PXs6cS4I", "7:25", "Contraction mappings, error bounds, and the rate |g′(r)|."),
   (7, "Order of Convergence and Modified Newton", "lec07-order-modified-newton", "lec07_order_modified_newton", "HGcmFTTwxts", "7:47", "Measuring the order p, multiple roots, and restoring quadratic speed."),
+  (8, "Errors and Floating-Point Numbers", "lec08-floating-point", "lec08_floating_point", "", "8:44", "Why 0.1 + 0.2 is not 0.3: binary, floating-point systems, chopping and rounding."),
+  (9, "Machine Epsilon and Loss of Significance", "lec09-rounding-errors", "lec09_rounding_errors", "", "8:56", "Machine epsilon, catastrophic cancellation and how to avoid it, IEEE 754."),
 ] %}
 
 {% set modules = [
-  ("Root finding", "Lectures 1–7", "Bisection, secant, regula falsi, Newton, fixed-point iteration, order of convergence", true),
-  ("Computer arithmetic", "Lectures 8–9", "Errors, floating-point numbers, machine epsilon, loss of significance", false),
-  ("Linear systems", "Lectures 10–20", "Gaussian elimination, pivoting, LU and Cholesky, norms, conditioning, iterative methods", false),
-  ("Eigenvalues", "Lectures 21–23", "The power method, inverse and shifted inverse power methods", false),
-  ("Least squares", "Lectures 24–25", "Fitting lines and polynomials to data", false),
-  ("Interpolation", "Lectures 26–29", "Lagrange and Newton forms, the error term, the Runge phenomenon", false),
-  ("Numerical integration", "Lectures 30–35", "Trapezoidal and Simpson rules, Gauss–Legendre quadrature", false),
-  ("Differential equations", "Lectures 36–42", "Euler, Taylor and Runge–Kutta methods, stability and stiffness", false),
+  ("Root finding", "Lectures 1–7", "Bisection, secant, regula falsi, Newton, fixed-point iteration, order of convergence", true, 1, 7),
+  ("Computer arithmetic", "Lectures 8–9", "Errors, floating-point numbers, machine epsilon, loss of significance", true, 8, 9),
+  ("Linear systems", "Lectures 10–20", "Gaussian elimination, pivoting, LU and Cholesky, norms, conditioning, iterative methods", false, 10, 20),
+  ("Eigenvalues", "Lectures 21–23", "The power method, inverse and shifted inverse power methods", false, 21, 23),
+  ("Least squares", "Lectures 24–25", "Fitting lines and polynomials to data", false, 24, 25),
+  ("Interpolation", "Lectures 26–29", "Lagrange and Newton forms, the error term, the Runge phenomenon", false, 26, 29),
+  ("Numerical integration", "Lectures 30–35", "Trapezoidal and Simpson rules, Gauss–Legendre quadrature", false, 30, 35),
+  ("Differential equations", "Lectures 36–42", "Euler, Taylor and Runge–Kutta methods, stability and stiffness", false, 36, 42),
 ] %}
 
 {% block tabs %}
@@ -43,9 +45,9 @@
   </section>
   <section class="nmh-stats" aria-label="Course at a glance">
     <div class="nmh-stats__inner">
-      <div class="nmh-stat"><span class="nmh-stat__num">7</span><span class="nmh-stat__label">lectures published</span></div>
-      <div class="nmh-stat"><span class="nmh-stat__num">51</span><span class="nmh-stat__label">minutes of video</span></div>
-      <div class="nmh-stat"><span class="nmh-stat__num">63</span><span class="nmh-stat__label">practice tasks</span></div>
+      <div class="nmh-stat"><span class="nmh-stat__num">9</span><span class="nmh-stat__label">lectures published</span></div>
+      <div class="nmh-stat"><span class="nmh-stat__num">69</span><span class="nmh-stat__label">minutes of video</span></div>
+      <div class="nmh-stat"><span class="nmh-stat__num">81</span><span class="nmh-stat__label">practice tasks</span></div>
       <div class="nmh-stat"><span class="nmh-stat__num">8</span><span class="nmh-stat__label">modules planned</span></div>
     </div>
   </section>
@@ -58,11 +60,11 @@
     <div class="nmh-section__head">
       <p class="nmh-kicker nmh-kicker--dark">Syllabus</p>
       <h2>Eight modules, from roots to differential equations</h2>
-      <p class="nmh-section__lede">The course follows a first university course in numerical analysis. Module 1 is complete; new lectures are added as they are recorded.</p>
+      <p class="nmh-section__lede">The course follows a first university course in numerical analysis. Modules 1 and 2 are complete; new lectures are added as they are recorded.</p>
     </div>
 
     <ol class="nmh-modules">
-      {% for title, range, topics, ready in modules %}
+      {% for title, range, topics, ready, first, last in modules %}
       <li class="nmh-module {% if ready %}is-ready{% endif %}">
         <div class="nmh-module__row">
           <span class="nmh-module__num">{{ "%02d" | format(loop.index) }}</span>
@@ -75,7 +77,7 @@
         </div>
         {% if ready %}
         <div class="nmh-lectures">
-          {% for n, name, page, thumb, vid, dur, blurb in lectures %}
+          {% for n, name, page, thumb, vid, dur, blurb in lectures if first <= n <= last %}
           <article class="nmh-card">
             <a class="nmh-card__media" href="{{ ('lectures/' ~ page ~ '/') | url }}">
               <img src="{{ ('assets/thumbnails/' ~ thumb ~ '.png') | url }}" alt="Lecture {{ n }}: {{ name }}" loading="lazy">

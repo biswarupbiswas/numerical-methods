@@ -84,9 +84,10 @@ Here the convergence is even **cubic**: \(g(x) = x - \frac{1 - e^{-x^2}}{x} = \f
 **Unknown \(m\).** Apply Newton's method to \(u(x) = \dfrac{f(x)}{f'(x)}\), which has a simple root at \(r\) for any \(m\). This converges quadratically, but \(u' = 1 - \dfrac{f f''}{(f')^2}\) needs \(f''\).
 
 !!! warning "Cancellation"
-    For small \(x\), \(e^{x^2}\) is very close to \(1\), and computing \(e^{x^2} - 1\) directly subtracts nearly equal numbers, losing digits. The naive formula gives \(x_3 \approx 1.1\times10^{-12}\) instead of \(4.35\times10^{-13}\). A dedicated routine for \(e^y - 1\) (usually called `expm1`) avoids this. Lecture 8 explains why.
+    For small \(x\), \(e^{x^2}\) is very close to \(1\), and computing \(e^{x^2} - 1\) directly subtracts nearly equal numbers, losing digits. The naive formula gives \(x_3 \approx 1.1\times10^{-12}\) instead of \(4.35\times10^{-13}\). A dedicated routine for \(e^y - 1\) (usually called `expm1`) avoids this. Lecture 9 explains why.
 
 <div class="nm-actions" markdown>
 [Practise this lecture](../practice/lec07_order_modified_newton.html){ .md-button .md-button--primary }
 [← Previous: Fixed-Point Convergence](lec06-fixed-point-convergence.md){ .md-button }
+[Next: Floating-Point Numbers →](lec08-floating-point.md){ .md-button }
 </div>

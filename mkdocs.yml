@@ -45,6 +45,8 @@ nav:
       - "5 · Fixed-Point Iteration": lectures/lec05-fixed-point.md
       - "6 · Fixed-Point Convergence": lectures/lec06-fixed-point-convergence.md
       - "7 · Order and Modified Newton": lectures/lec07-order-modified-newton.md
+      - "8 · Floating-Point Numbers": lectures/lec08-floating-point.md
+      - "9 · Machine Epsilon": lectures/lec09-rounding-errors.md
 
 markdown_extensions:
   - admonition
