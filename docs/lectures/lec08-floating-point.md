@@ -6,10 +6,11 @@ title: Errors and Floating-Point Numbers
 
 # Errors and Floating-Point Numbers
 
-![Lecture 8: Errors and Floating-Point Numbers](../assets/thumbnails/lec08_floating_point.png){ .nm-video }
+<iframe class="nm-video" src="https://www.youtube-nocookie.com/embed/LYnjN184ih0" title="Lecture 8: Errors and Floating-Point Numbers" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 <div class="nm-actions" markdown>
 [Practise this lecture](../practice/lec08_floating_point.html){ .md-button .md-button--primary }
+[Watch on YouTube](https://www.youtube.com/watch?v=LYnjN184ih0){ .md-button }
 </div>
 
 <div class="nm-key" markdown>
