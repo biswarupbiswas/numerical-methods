@@ -8,6 +8,7 @@ edit_uri: ""
 
 theme:
   name: material
+  custom_dir: overrides
   language: en
   icon:
     logo: material/function-variant
@@ -67,6 +68,7 @@ extra_css:
   - https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css
   - https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,650&display=swap
   - stylesheets/extra.css
+  - stylesheets/home.css
 extra_javascript:
   - https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js
   - https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js

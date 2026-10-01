@@ -1,0 +1,128 @@
+/* Course landing page (home.html). Hero is deliberately dark in both themes; the rest follows the theme. */
+:root, [data-md-color-scheme="default"] {
+  --nmh-ink: #14203a;
+  --nmh-muted: #5a6477;
+  --nmh-line: #dfe3ea;
+  --nmh-card: #ffffff;
+  --nmh-soft: #f5f7fb;
+  --nmh-accent: #1f5fd6;
+  --nmh-gold: #c98a00;
+  --nmh-green: #1d8a4b;
+}
+[data-md-color-scheme="slate"] {
+  --nmh-ink: #e8eaed;
+  --nmh-muted: #9aa3b5;
+  --nmh-line: #2a3142;
+  --nmh-card: #171b24;
+  --nmh-soft: #131720;
+  --nmh-accent: #8ab4f8;
+  --nmh-gold: #fdd663;
+  --nmh-green: #81c995;
+}
+
+/* ---------- hero ---------- */
+.nmh-hero {
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px) 0 0 / 32px 32px,
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px) 0 0 / 32px 32px,
+    radial-gradient(ellipse at 75% 40%, #1b2d55 0%, #0e1a33 55%, #0a1226 100%);
+  color: #eef2fa;
+}
+.nmh-hero__inner {
+  max-width: 61rem; margin: 0 auto; padding: 3.2rem 1.2rem 4.2rem;
+  display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: 2.5rem; align-items: center;
+}
+.nmh-kicker { font-size: .68rem; letter-spacing: .16em; text-transform: uppercase; font-weight: 600; color: #fdd663; margin: 0 0 .9rem; }
+.nmh-kicker--dark { color: var(--nmh-accent); }
+.nmh-title { font-family: "Newsreader", Georgia, serif; font-weight: 650; font-size: 2.6rem; line-height: 1.05; margin: 0 0 1rem; color: #ffffff; letter-spacing: -0.01em; }
+.nmh-lede { font-size: 1rem; line-height: 1.65; color: #c9d2e3; max-width: 32rem; margin: 0 0 1.6rem; }
+.nmh-cta { display: flex; flex-wrap: wrap; gap: .7rem; margin-bottom: 1.4rem; }
+.nmh-btn { display: inline-block; padding: .7rem 1.25rem; border-radius: 7px; font-weight: 600; font-size: .8rem; text-decoration: none; transition: transform .15s ease, background .15s ease; }
+.nmh-btn:hover { transform: translateY(-1px); }
+.nmh-btn--primary { background: #fdd663; color: #0e1a33 !important; }
+.nmh-btn--primary:hover { background: #ffe38a; }
+.nmh-btn--ghost { color: #eef2fa !important; border: 1px solid rgba(255, 255, 255, 0.35); }
+.nmh-btn--ghost:hover { border-color: #fdd663; color: #fdd663 !important; }
+.nmh-author { font-size: .75rem; color: #8f9bb3; margin: 0; letter-spacing: .02em; }
+.nmh-hero__figure { margin: 0; }
+.nmh-hero__figure canvas { width: 100%; aspect-ratio: 4 / 3; display: block; border-radius: 12px;
+  background: rgba(10, 18, 38, 0.55); border: 1px solid rgba(255, 255, 255, 0.08); }
+.nmh-hero__figure figcaption { font-size: .68rem; color: #8f9bb3; margin-top: .55rem; text-align: center; }
+
+/* ---------- stats strip ---------- */
+.nmh-stats { background: var(--md-default-bg-color); }
+.nmh-stats__inner { max-width: 61rem; margin: -2.2rem auto 0; padding: 0 1.2rem; position: relative; z-index: 1;
+  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0;
+  background: var(--nmh-card); border: 1px solid var(--nmh-line); border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(14, 26, 51, 0.10); }
+.nmh-stat { padding: 1.1rem 1.2rem; display: flex; flex-direction: column; gap: .15rem; border-left: 1px solid var(--nmh-line); }
+.nmh-stat:first-child { border-left: 0; }
+.nmh-stat__num { font-family: "Newsreader", Georgia, serif; font-size: 1.9rem; font-weight: 650; color: var(--nmh-ink); font-variant-numeric: tabular-nums; line-height: 1.1; }
+.nmh-stat__label { font-size: .7rem; color: var(--nmh-muted); text-transform: uppercase; letter-spacing: .08em; }
+
+/* ---------- sections ---------- */
+.md-typeset .nmh-section { margin: 3rem 0 0; }
+.md-typeset .nmh-section__head h2 { font-family: "Newsreader", Georgia, serif; font-size: 2rem; font-weight: 650; margin: 0 0 .5rem; color: var(--nmh-ink); }
+.nmh-section__lede { color: var(--nmh-muted); max-width: 40rem; margin: 0 0 1.6rem; }
+
+/* modules */
+.md-typeset ol.nmh-modules { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--nmh-line); }
+.md-typeset ol.nmh-modules > li { margin: 0; padding: 0; border-bottom: 1px solid var(--nmh-line); }
+.nmh-module__row { display: grid; grid-template-columns: 3rem minmax(0, 1fr) auto auto; gap: 1.2rem; align-items: center; padding: 1.05rem .2rem; }
+.nmh-module__num { font-family: "Newsreader", Georgia, serif; font-size: 1.3rem; color: var(--nmh-muted); font-variant-numeric: tabular-nums; }
+.is-ready .nmh-module__num { color: var(--nmh-accent); }
+.md-typeset .nmh-module__text h3 { margin: 0; font-size: 1rem; font-weight: 600; color: var(--nmh-ink); font-family: inherit; }
+.nmh-module__text p { margin: .15rem 0 0; color: var(--nmh-muted); font-size: .78rem; }
+.nmh-module__range { font-size: .74rem; color: var(--nmh-muted); white-space: nowrap; }
+.nmh-pill { font-size: .66rem; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; padding: .25rem .6rem; border-radius: 999px;
+  background: var(--nmh-soft); color: var(--nmh-muted); border: 1px solid var(--nmh-line); white-space: nowrap; }
+.nmh-pill--ready { background: rgba(29, 138, 75, 0.10); color: var(--nmh-green); border-color: rgba(29, 138, 75, 0.35); }
+
+/* lecture cards inside module 1 */
+.nmh-lectures { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; padding: .3rem 0 1.5rem 4.2rem; }
+.nmh-card { background: var(--nmh-card); border: 1px solid var(--nmh-line); border-radius: 10px; overflow: hidden; display: flex; flex-direction: column;
+  transition: box-shadow .15s ease, transform .15s ease; }
+.nmh-card:hover { box-shadow: 0 8px 24px rgba(14, 26, 51, 0.12); transform: translateY(-2px); }
+.nmh-card__media { position: relative; display: block; }
+.nmh-card__media img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+.nmh-card__dur { position: absolute; right: .5rem; bottom: .5rem; background: rgba(10, 18, 38, 0.85); color: #fff; font-size: .62rem;
+  padding: .1rem .4rem; border-radius: 4px; font-variant-numeric: tabular-nums; }
+.nmh-card__body { padding: .8rem .9rem .9rem; display: flex; flex-direction: column; gap: .25rem; flex: 1; }
+.nmh-card__num { margin: 0; font-size: .62rem; letter-spacing: .12em; text-transform: uppercase; color: var(--nmh-muted); font-weight: 600; }
+.md-typeset .nmh-card h4 { margin: 0; font-size: .9rem; font-weight: 650; line-height: 1.3; font-family: inherit; letter-spacing: 0; }
+.md-typeset .nmh-card h4 a { color: var(--nmh-ink); }
+.nmh-card__blurb { margin: 0; font-size: .74rem; color: var(--nmh-muted); line-height: 1.5; flex: 1; }
+.nmh-card__links { display: flex; gap: .9rem; margin-top: .45rem; font-size: .72rem; font-weight: 600; }
+
+/* steps */
+.md-typeset ol.nmh-steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.2rem; }
+.md-typeset ol.nmh-steps li { margin: 0; padding: 1.2rem; background: var(--nmh-soft); border: 1px solid var(--nmh-line); border-radius: 10px; }
+.nmh-steps__n { display: inline-grid; place-items: center; width: 1.7rem; height: 1.7rem; border-radius: 50%; background: var(--nmh-accent);
+  color: var(--md-default-bg-color); font-weight: 700; font-size: .8rem; margin-bottom: .6rem; }
+.md-typeset ol.nmh-steps h3 { margin: 0 0 .3rem; font-size: 1rem; font-family: "Newsreader", Georgia, serif; font-weight: 650; }
+.md-typeset ol.nmh-steps p { margin: 0; font-size: .78rem; color: var(--nmh-muted); }
+
+/* final call to action */
+.nmh-final { margin: 3.5rem 0 1rem; padding: 2.2rem; border-radius: 14px; text-align: center;
+  background: radial-gradient(ellipse at 50% 0%, #1b2d55 0%, #0e1a33 70%); color: #eef2fa; }
+.md-typeset .nmh-final h2 { color: #fff; font-family: "Newsreader", Georgia, serif; margin: 0 0 .4rem; font-size: 1.7rem; }
+.nmh-final p { color: #c9d2e3; margin: 0 0 1.2rem; }
+
+/* page chrome on the home page */
+.md-typeset h1:first-child { display: none; }
+
+@media (max-width: 60rem) {
+  .nmh-lectures { grid-template-columns: repeat(2, minmax(0, 1fr)); padding-left: 0; }
+}
+@media (max-width: 44rem) {
+  .nmh-hero__inner { grid-template-columns: 1fr; padding: 2.4rem 1rem 3.6rem; }
+  .nmh-title { font-size: 2.1rem; }
+  .nmh-stats__inner { grid-template-columns: repeat(2, minmax(0, 1fr)); margin: -2.2rem 1rem 0; padding: 0; }
+  .nmh-stat:nth-child(3) { border-left: 0; }
+  .nmh-stat:nth-child(n+3) { border-top: 1px solid var(--nmh-line); }
+  .nmh-module__row { grid-template-columns: 2.2rem minmax(0, 1fr) auto; }
+  .nmh-module__range { display: none; }
+  .nmh-lectures { grid-template-columns: 1fr; }
+  .md-typeset ol.nmh-steps { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) { .nmh-btn, .nmh-card { transition: none; } }

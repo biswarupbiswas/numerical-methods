@@ -1,0 +1,174 @@
+{% extends "main.html" %}
+
+{% set lectures = [
+  (1, "The Bisection Method", "lec01-bisection", "lec01_bisection", "OyOAFWVk5Sc", "6:38", "Bracket a root and halve the interval. Slow, but guaranteed."),
+  (2, "The Secant Method", "lec02-secant", "lec02_secant", "4c2-SlNsi70", "7:46", "Replace the curve by a line through two points. Order 1.618, the golden ratio."),
+  (3, "Regula Falsi", "lec03-regula-falsi", "lec03_regula_falsi", "mJpxcbBGdI4", "7:07", "Bracketing with the secant line, the stuck endpoint, and the Illinois fix."),
+  (4, "The Newton–Raphson Method", "lec04-newton", "lec04_newton", "MIM5zopwb5o", "7:31", "Follow the tangent to the axis. Quadratic convergence and its failures."),
+  (5, "Fixed-Point Iteration", "lec05-fixed-point", "lec05_fixed_point", "64pMPsAbHUE", "7:07", "Rewrite f(x) = 0 as x = g(x) and read the behaviour off a cobweb diagram."),
+  (6, "Convergence of Fixed-Point Iteration", "lec06-fixed-point-convergence", "lec06_fixed_point_convergence", "583PXs6cS4I", "7:25", "Contraction mappings, error bounds, and the rate |g′(r)|."),
+  (7, "Order of Convergence and Modified Newton", "lec07-order-modified-newton", "lec07_order_modified_newton", "HGcmFTTwxts", "7:47", "Measuring the order p, multiple roots, and restoring quadratic speed."),
+] %}
+
+{% set modules = [
+  ("Root finding", "Lectures 1–7", "Bisection, secant, regula falsi, Newton, fixed-point iteration, order of convergence", true),
+  ("Computer arithmetic", "Lectures 8–9", "Errors, floating-point numbers, machine epsilon, loss of significance", false),
+  ("Linear systems", "Lectures 10–20", "Gaussian elimination, pivoting, LU and Cholesky, norms, conditioning, iterative methods", false),
+  ("Eigenvalues", "Lectures 21–23", "The power method, inverse and shifted inverse power methods", false),
+  ("Least squares", "Lectures 24–25", "Fitting lines and polynomials to data", false),
+  ("Interpolation", "Lectures 26–29", "Lagrange and Newton forms, the error term, the Runge phenomenon", false),
+  ("Numerical integration", "Lectures 30–35", "Trapezoidal and Simpson rules, Gauss–Legendre quadrature", false),
+  ("Differential equations", "Lectures 36–42", "Euler, Taylor and Runge–Kutta methods, stability and stiffness", false),
+] %}
+
+{% block tabs %}
+  {{ super() }}
+  <section class="nmh-hero">
+    <div class="nmh-hero__inner">
+      <div class="nmh-hero__text">
+        <p class="nmh-kicker">Open course · Numerical analysis</p>
+        <h1 class="nmh-title">Numerical Methods</h1>
+        <p class="nmh-lede">Animated lectures on the algorithms behind scientific computing, from finding roots to solving differential equations. Every lecture comes with written notes and an interactive practice set.</p>
+        <div class="nmh-cta">
+          <a class="nmh-btn nmh-btn--primary" href="{{ 'lectures/lec01-bisection/' | url }}">Start with Lecture 1</a>
+          <a class="nmh-btn nmh-btn--ghost" href="#syllabus">Browse the syllabus</a>
+        </div>
+        <p class="nmh-author">By Biswarup Biswas</p>
+      </div>
+      <figure class="nmh-hero__figure" aria-label="Newton's method converging to a root">
+        <canvas id="nmh-newton" width="560" height="420"></canvas>
+        <figcaption>Newton's method: each tangent line lands closer to the root.</figcaption>
+      </figure>
+    </div>
+  </section>
+  <section class="nmh-stats" aria-label="Course at a glance">
+    <div class="nmh-stats__inner">
+      <div class="nmh-stat"><span class="nmh-stat__num">7</span><span class="nmh-stat__label">lectures published</span></div>
+      <div class="nmh-stat"><span class="nmh-stat__num">51</span><span class="nmh-stat__label">minutes of video</span></div>
+      <div class="nmh-stat"><span class="nmh-stat__num">63</span><span class="nmh-stat__label">practice tasks</span></div>
+      <div class="nmh-stat"><span class="nmh-stat__num">8</span><span class="nmh-stat__label">modules planned</span></div>
+    </div>
+  </section>
+{% endblock %}
+
+{% block site_nav %}{% endblock %}
+
+{% block content %}
+  <section class="nmh-section" id="syllabus">
+    <div class="nmh-section__head">
+      <p class="nmh-kicker nmh-kicker--dark">Syllabus</p>
+      <h2>Eight modules, from roots to differential equations</h2>
+      <p class="nmh-section__lede">The course follows a first university course in numerical analysis. Module 1 is complete; new lectures are added as they are recorded.</p>
+    </div>
+
+    <ol class="nmh-modules">
+      {% for title, range, topics, ready in modules %}
+      <li class="nmh-module {% if ready %}is-ready{% endif %}">
+        <div class="nmh-module__row">
+          <span class="nmh-module__num">{{ "%02d" | format(loop.index) }}</span>
+          <div class="nmh-module__text">
+            <h3>{{ title }}</h3>
+            <p>{{ topics }}</p>
+          </div>
+          <span class="nmh-module__range">{{ range }}</span>
+          <span class="nmh-pill {% if ready %}nmh-pill--ready{% endif %}">{% if ready %}Available{% else %}Coming{% endif %}</span>
+        </div>
+        {% if ready %}
+        <div class="nmh-lectures">
+          {% for n, name, page, thumb, vid, dur, blurb in lectures %}
+          <article class="nmh-card">
+            <a class="nmh-card__media" href="{{ ('lectures/' ~ page ~ '/') | url }}">
+              <img src="{{ ('assets/thumbnails/' ~ thumb ~ '.png') | url }}" alt="Lecture {{ n }}: {{ name }}" loading="lazy">
+              <span class="nmh-card__dur">{{ dur }}</span>
+            </a>
+            <div class="nmh-card__body">
+              <p class="nmh-card__num">Lecture {{ n }}</p>
+              <h4><a href="{{ ('lectures/' ~ page ~ '/') | url }}">{{ name }}</a></h4>
+              <p class="nmh-card__blurb">{{ blurb }}</p>
+              <div class="nmh-card__links">
+                <a href="https://www.youtube.com/watch?v={{ vid }}">Watch</a>
+                <a href="{{ ('lectures/' ~ page ~ '/') | url }}">Notes</a>
+                <a href="{{ ('practice/' ~ thumb ~ '.html') | url }}">Practise</a>
+              </div>
+            </div>
+          </article>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </li>
+      {% endfor %}
+    </ol>
+  </section>
+
+  <section class="nmh-section nmh-how">
+    <div class="nmh-section__head">
+      <p class="nmh-kicker nmh-kicker--dark">How each lecture works</p>
+      <h2>Watch, read, practise</h2>
+    </div>
+    <ol class="nmh-steps">
+      <li><span class="nmh-steps__n">1</span><h3>Watch</h3><p>A 7-minute animated video builds the idea step by step: graphs, worked examples and failure cases.</p></li>
+      <li><span class="nmh-steps__n">2</span><h3>Read</h3><p>The notes collect the formulas, the worked example, the algorithm and the error analysis in one place.</p></li>
+      <li><span class="nmh-steps__n">3</span><h3>Practise</h3><p>Nine short interactive tasks with live plots, hints and instant feedback. Keep a calculator ready (your phone's calculator app is fine). Progress is saved as you go.</p></li>
+    </ol>
+  </section>
+
+  <section class="nmh-final">
+    <h2>Start with the bisection method</h2>
+    <p>Lecture 1 introduces the problem of solving \(f(x) = 0\) and the simplest method that always works.</p>
+    <a class="nmh-btn nmh-btn--primary" href="{{ 'lectures/lec01-bisection/' | url }}">Go to Lecture 1</a>
+  </section>
+
+  <script>
+  (function () {
+    const cv = document.getElementById("nmh-newton");
+    if (!cv) return;
+    const ctx = cv.getContext("2d");
+    const f = x => 0.08 * x * x - 2, fp = x => 0.16 * x, root = 5;
+    const X0 = 0.5, X1 = 10, Y0 = -3, Y1 = 6.5;
+    let W = 0, H = 0;
+    const X = x => 30 + (x - X0) / (X1 - X0) * (W - 50);
+    const Y = y => 20 + (Y1 - y) / (Y1 - Y0) * (H - 50);
+    function size() {
+      const r = cv.getBoundingClientRect(), d = window.devicePixelRatio || 1;
+      W = r.width; H = r.height; cv.width = W * d; cv.height = H * d; ctx.setTransform(d, 0, 0, d, 0, 0);
+    }
+    const steps = []; let x = 9.6;
+    for (let k = 0; k < 4; k++) { const xn = x - f(x) / fp(x); steps.push([x, xn]); x = xn; }
+    const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+    let t0 = null;
+    function frame(ts) {
+      if (t0 === null) t0 = ts;
+      const t = reduce ? 1e9 : (ts - t0) / 1000;
+      ctx.clearRect(0, 0, W, H);
+      // grid
+      ctx.strokeStyle = "rgba(255,255,255,0.06)"; ctx.lineWidth = 1;
+      for (let gx = 1; gx <= 10; gx++) { ctx.beginPath(); ctx.moveTo(X(gx), Y(Y1)); ctx.lineTo(X(gx), Y(Y0)); ctx.stroke(); }
+      for (let gy = -2; gy <= 6; gy += 2) { ctx.beginPath(); ctx.moveTo(X(X0), Y(gy)); ctx.lineTo(X(X1), Y(gy)); ctx.stroke(); }
+      ctx.strokeStyle = "rgba(255,255,255,0.35)"; ctx.lineWidth = 1.5;
+      ctx.beginPath(); ctx.moveTo(X(X0), Y(0)); ctx.lineTo(X(X1), Y(0)); ctx.stroke();
+      // curve
+      ctx.strokeStyle = "#8ab4f8"; ctx.lineWidth = 3.5; ctx.beginPath();
+      for (let i = 0; i <= 200; i++) { const u = X0 + (X1 - X0) * i / 200; const v = f(u); i ? ctx.lineTo(X(u), Y(v)) : ctx.moveTo(X(u), Y(v)); }
+      ctx.stroke();
+      // tangents, one per 1.4 s, looping every 8 s
+      const cycle = t % 8, shown = Math.min(steps.length, cycle / 1.4);
+      steps.forEach(([a, b], k) => {
+        const p = Math.max(0, Math.min(1, shown - k));
+        if (p <= 0) return;
+        const col = ["#fdd663", "#e6d86a", "#b8d88a", "#81c995"][k];
+        ctx.strokeStyle = col; ctx.lineWidth = 2.5;
+        const ex = a + (b - a) * p, ey = f(a) + fp(a) * (ex - a);
+        ctx.beginPath(); ctx.moveTo(X(a), Y(f(a))); ctx.lineTo(X(ex), Y(ey)); ctx.stroke();
+        ctx.fillStyle = col; ctx.beginPath(); ctx.arc(X(a), Y(f(a)), 5, 0, 7); ctx.fill();
+        if (p >= 1) {
+          ctx.setLineDash([4, 4]); ctx.beginPath(); ctx.moveTo(X(b), Y(0)); ctx.lineTo(X(b), Y(f(b))); ctx.stroke(); ctx.setLineDash([]);
+        }
+      });
+      ctx.fillStyle = "#81c995"; ctx.globalAlpha = 0.25; ctx.beginPath(); ctx.arc(X(root), Y(0), 12, 0, 7); ctx.fill();
+      ctx.globalAlpha = 1; ctx.beginPath(); ctx.arc(X(root), Y(0), 5, 0, 7); ctx.fill();
+      if (!reduce) requestAnimationFrame(frame);
+    }
+    size(); addEventListener("resize", size); requestAnimationFrame(frame);
+  })();
+  </script>
+{% endblock %}
