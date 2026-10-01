@@ -155,3 +155,4 @@ table.results th, table.results td { text-align: left; font-family: var(--body);
   .calc-fab { right: 16px; bottom: calc(16px + env(safe-area-inset-bottom, 0px)); }
   main.wrap { padding-bottom: 90px; }
 }
+[hidden] { display: none !important; }
