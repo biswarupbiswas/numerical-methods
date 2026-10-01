@@ -122,3 +122,6 @@ canvas { width: 100%; height: auto; aspect-ratio: 4 / 3.3; display: block; max-w
 table.results th, table.results td { text-align: left; font-family: var(--body); }
 .home-link { color: inherit; text-decoration: none; }
 .home-link:hover { text-decoration: underline; }
+.calc-note { max-width: 1320px; margin: 16px auto 0; padding: 10px 14px; margin-inline: max(16px, calc((100% - 1320px) / 2 + 16px));
+  background: var(--accent-soft); border: 1px solid var(--line); border-left: 4px solid var(--gold); border-radius: 8px; font-size: 14px; color: var(--ink); }
+.calc-note b { font-weight: 600; }

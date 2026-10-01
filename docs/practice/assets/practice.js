@@ -176,6 +176,9 @@ function setPlotTitle(html) { const t = $("plotTitle"); t.innerHTML = html; type
 let P, S;
 function startPractice(cfg) {
   const { store, lecture, tasks: TASKS, finalPlot } = cfg;
+  const note = el("div", { className: "calc-note", role: "note" },
+    "<b>Before you start:</b> keep a calculator ready. Some tasks ask you to compute a step by hand. If you don't have one, the calculator app on your phone is fine.");
+  document.querySelector("main.wrap")?.before(note);
   P = new Plot($("cv"));
   // status: 0 = not done, 1 = solved without help, 2 = solved with help, 3 = answer shown
   S = { cur: 0, status: TASKS.map(() => 0), attempts: 0, hintIdx: 0, hintUsed: false, choice: 0, check: null, task: null };
