@@ -6,10 +6,11 @@ title: Order of Convergence and Modified Newton
 
 # Order of Convergence and Modified Newton
 
-![Lecture 7: Order of Convergence](../assets/thumbnails/lec07_order_modified_newton.png){ .nm-video }
+<iframe class="nm-video" src="https://www.youtube-nocookie.com/embed/HGcmFTTwxts" title="Lecture 7: Order of Convergence and Modified Newton" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 <div class="nm-actions" markdown>
 [Practise this lecture](../practice/lec07_order_modified_newton.html){ .md-button .md-button--primary }
+[Watch on YouTube](https://www.youtube.com/watch?v=HGcmFTTwxts){ .md-button }
 </div>
 
 <div class="nm-key" markdown>
