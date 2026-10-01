@@ -6,10 +6,11 @@ title: Machine Epsilon and Loss of Significance
 
 # Machine Epsilon and Loss of Significance
 
-![Lecture 9: Machine Epsilon and Loss of Significance](../assets/thumbnails/lec09_rounding_errors.png){ .nm-video }
+<iframe class="nm-video" src="https://www.youtube-nocookie.com/embed/OWk3188Nl34" title="Lecture 9: Machine Epsilon and Loss of Significance" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 <div class="nm-actions" markdown>
 [Practise this lecture](../practice/lec09_rounding_errors.html){ .md-button .md-button--primary }
+[Watch on YouTube](https://www.youtube.com/watch?v=OWk3188Nl34){ .md-button }
 </div>
 
 <div class="nm-key" markdown>
