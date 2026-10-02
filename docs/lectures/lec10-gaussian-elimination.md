@@ -17,12 +17,23 @@ title: Gaussian Elimination
 - Row operations (adding a multiple of one row to another, swapping rows) do not change the solution of \(A\mathbf{x}=\mathbf{b}\).
 - Multipliers \(m_{ik}=a_{ik}^{(k)}/a_{kk}^{(k)}\); row \(i\leftarrow\) row \(i-m_{ik}\,\)row \(k\) for the rows below \(k\).
 - Back substitution: \(x_n=b_n/u_{nn}\), then \(x_i=\big(b_i-\sum_{j>i}u_{ij}x_j\big)/u_{ii}\).
+- Cramer's rule with cofactor determinants needs \(1.6\times10^{160}\) multiplications for \(n=100\), longer than the age of the universe; elimination needs \(343\,300\).
 - The product of the pivots is \(\det A\). A zero pivot stops the method; a small pivot ruins the accuracy.
 </div>
 
 ## The problem
 
 A system of \(n\) linear equations in \(n\) unknowns is written \(A\mathbf{x}=\mathbf{b}\). It has exactly one solution when \(\det A\neq0\). Gaussian elimination reduces it to an upper triangular system \(U\mathbf{x}=\mathbf{c}\) with the same solution, which back substitution then solves from the bottom up.
+
+## Why not Cramer's rule?
+
+Cramer's rule, learnt in school, gives each unknown as \(x_i=\det A_i/\det A\), where \(A_i\) is \(A\) with column \(i\) replaced by \(\mathbf{b}\). A determinant of order \(m\) expanded by cofactors needs \(M(m)=m\,M(m-1)+m\approx(e-1)\,m!\) multiplications, and Cramer's rule needs \(n+1\) of them. For \(n=100\):
+
+\[
+(n+1)\,M(100)+n=1.6196\times10^{160}\ \text{multiplications}.
+\]
+
+At \(10^{18}\) operations per second (the fastest supercomputers) this takes \(1.6\times10^{142}\) seconds, about \(3.7\times10^{124}\) times the age of the universe (\(13.8\times10^9\) years \(=4.4\times10^{17}\) s). Gaussian elimination needs \(343\,300\) multiplications: a fraction of a millisecond on a laptop.
 
 ## Worked example
 
