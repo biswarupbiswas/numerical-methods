@@ -49,6 +49,7 @@ nav:
       - "9 · Machine Epsilon": lectures/lec09-rounding-errors.md
       - "10 · Gaussian Elimination": lectures/lec10-gaussian-elimination.md
       - "11 · Operation Count": lectures/lec11-operation-count.md
+      - "12 · Pivoting": lectures/lec12-pivoting.md
 
 markdown_extensions:
   - admonition

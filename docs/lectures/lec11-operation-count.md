@@ -54,4 +54,5 @@ For \(n=1000\) the exact count is \(668\,165\,500\), against \(\frac23n^3=666\,6
 <div class="nm-actions" markdown>
 [Practise this lecture](../practice/lec11_operation_count.html){ .md-button .md-button--primary }
 [← Previous: Gaussian Elimination](lec10-gaussian-elimination.md){ .md-button }
+[Next: Pivoting →](lec12-pivoting.md){ .md-button }
 </div>
