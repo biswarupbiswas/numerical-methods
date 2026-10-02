@@ -12,13 +12,11 @@
         <meta name="author" content="Biswarup Biswas">
       
       
-        <link rel="canonical" href="https://biswarupbiswas.github.io/numerical-methods/lectures/lec07-order-modified-newton/">
+        <link rel="canonical" href="https://biswarupbiswas.github.io/numerical-methods/lectures/lec11-operation-count/">
       
       
-        <link rel="prev" href="../lec06-fixed-point-convergence/">
+        <link rel="prev" href="../lec10-gaussian-elimination/">
       
-      
-        <link rel="next" href="../lec08-floating-point/">
       
       
         
@@ -29,7 +27,7 @@
     
     
       
-        <title>Order of Convergence and Modified Newton - Numerical Methods</title>
+        <title>Operation Count of Gaussian Elimination - Numerical Methods</title>
       
     
     
@@ -88,7 +86,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#order-of-convergence-and-modified-newton" class="md-skip">
+        <a href="#operation-count-of-gaussian-elimination" class="md-skip">
           Skip to content
         </a>
       
@@ -124,7 +122,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Order of Convergence and Modified Newton
+              Operation Count of Gaussian Elimination
             
           </span>
         </div>
@@ -516,37 +514,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    7 · Order and Modified Newton
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../lec07-order-modified-newton/" class="md-nav__link">
         
   
   
@@ -562,81 +533,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#key-results" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Key results
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#order-of-convergence" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Order of convergence
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#order-of-one-point-methods" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Order of one-point methods
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#multiple-roots" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Multiple roots
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#modified-newton" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Modified Newton
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -730,10 +626,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../lec11-operation-count/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 · Operation Count
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -749,6 +672,70 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#key-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key results
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#counting-the-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Counting the work
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#some-numbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Some numbers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparisons" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comparisons
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -799,10 +786,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#order-of-convergence" class="md-nav__link">
+  <a href="#counting-the-work" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Order of convergence
+        Counting the work
       
     </span>
   </a>
@@ -810,10 +797,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#order-of-one-point-methods" class="md-nav__link">
+  <a href="#some-numbers" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Order of one-point methods
+        Some numbers
       
     </span>
   </a>
@@ -821,21 +808,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#multiple-roots" class="md-nav__link">
+  <a href="#comparisons" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Multiple roots
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#modified-newton" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Modified Newton
+        Comparisons
       
     </span>
   </a>
@@ -859,130 +835,87 @@
 
 
 
-<p class="nm-eyebrow">Lecture 7</p>
+<p class="nm-eyebrow">Lecture 11</p>
 
-<h1 id="order-of-convergence-and-modified-newton">Order of Convergence and Modified Newton<a class="headerlink" href="#order-of-convergence-and-modified-newton" title="Permanent link">&para;</a></h1>
-<iframe class="nm-video" src="https://www.youtube-nocookie.com/embed/HGcmFTTwxts" title="Lecture 7: Order of Convergence and Modified Newton" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
+<h1 id="operation-count-of-gaussian-elimination">Operation Count of Gaussian Elimination<a class="headerlink" href="#operation-count-of-gaussian-elimination" title="Permanent link">&para;</a></h1>
+<p><img alt="Lecture 11: Operation Count of Gaussian Elimination" class="nm-video" src="../../assets/thumbnails/lec11_operation_count.png" /></p>
 <div class="nm-actions">
-<p><a class="md-button md-button--primary" href="../../practice/lec07_order_modified_newton.html">Practise this lecture</a>
-<a class="md-button" href="https://www.youtube.com/watch?v=HGcmFTTwxts">Watch on YouTube</a></p>
+<p><a class="md-button md-button--primary" href="../../practice/lec11_operation_count.html">Practise this lecture</a></p>
 </div>
 <div class="nm-key">
 <h4 id="key-results">Key results<a class="headerlink" href="#key-results" title="Permanent link">&para;</a></h4>
 <ul>
-<li>Order <span class="arithmatex">\(p\)</span>: <span class="arithmatex">\(e_{n+1} \approx C\,e_n^{\,p}\)</span>; on a log-log plot of <span class="arithmatex">\(e_{n+1}\)</span> against <span class="arithmatex">\(e_n\)</span> the slope is <span class="arithmatex">\(p\)</span>.</li>
-<li>One-point methods: <span class="arithmatex">\(g'(r) = \cdots = g^{(p-1)}(r) = 0\)</span>, <span class="arithmatex">\(g^{(p)}(r) \ne 0\)</span> <span class="arithmatex">\(\Rightarrow\)</span> order exactly <span class="arithmatex">\(p\)</span>.</li>
-<li>At a root of multiplicity <span class="arithmatex">\(m\)</span>, Newton has <span class="arithmatex">\(g'(r) = 1 - \frac1m\)</span> (linear); modified Newton <span class="arithmatex">\(x_{n+1} = x_n - m\frac{f(x_n)}{f'(x_n)}\)</span> restores order <span class="arithmatex">\(2\)</span>.</li>
+<li>Forward elimination costs about <span class="arithmatex">\(\frac23n^3\)</span> operations; back substitution about <span class="arithmatex">\(n^2\)</span>.</li>
+<li>Doubling <span class="arithmatex">\(n\)</span> multiplies the work by <span class="arithmatex">\(8\)</span>.</li>
+<li>Cramer's rule with cofactor determinants needs about <span class="arithmatex">\((n+1)!\)</span> operations; computing <span class="arithmatex">\(A^{-1}\)</span> costs about <span class="arithmatex">\(2n^3\)</span>.</li>
+<li>With the elimination saved, each extra right-hand side costs only <span class="arithmatex">\(n^2\)</span>; a tridiagonal system costs <span class="arithmatex">\(O(n)\)</span>.</li>
 </ul>
 </div>
-<h2 id="order-of-convergence">Order of convergence<a class="headerlink" href="#order-of-convergence" title="Permanent link">&para;</a></h2>
-<p>A sequence <span class="arithmatex">\(x_n \to r\)</span> converges with <strong>order</strong> <span class="arithmatex">\(p \ge 1\)</span> if</p>
-<div class="arithmatex">\[
-|r - x_{n+1}| \le C\,|r - x_n|^p ,
-\]</div>
-<p>with <span class="arithmatex">\(C &lt; 1\)</span> required when <span class="arithmatex">\(p = 1\)</span> (then <span class="arithmatex">\(C\)</span> is the <strong>rate</strong>). With order <span class="arithmatex">\(1\)</span> each step adds a fixed number of correct digits; with order <span class="arithmatex">\(p\)</span> the number of correct digits is multiplied by about <span class="arithmatex">\(p\)</span>.</p>
-<p>Taking logarithms, <span class="arithmatex">\(\log e_{n+1} \approx p\log e_n + \log C\)</span>: plotted against each other, the errors lie on a line of <strong>slope <span class="arithmatex">\(p\)</span></strong>. From three consecutive errors,</p>
-<div class="arithmatex">\[
-p \approx \frac{\log(e_{n+1}/e_n)}{\log(e_n/e_{n-1})} .
-\]</div>
-<p>For Newton on <span class="arithmatex">\(x^3 + 2x^2 - x - 1\)</span> from <span class="arithmatex">\(x_0 = 1\)</span> this gives <span class="arithmatex">\(1.87,\ 1.99,\ 2.00\)</span>; for the fixed-point iteration <span class="arithmatex">\((2x+5)^{1/3}\)</span> it gives <span class="arithmatex">\(1.00\)</span>.</p>
+<h2 id="counting-the-work">Counting the work<a class="headerlink" href="#counting-the-work" title="Permanent link">&para;</a></h2>
+<p>At step <span class="arithmatex">\(k\)</span> of forward elimination there are <span class="arithmatex">\(n-k\)</span> rows below the pivot. Each needs one division (the multiplier), <span class="arithmatex">\((n-k)\)</span> multiplications to update the row of <span class="arithmatex">\(A\)</span> and one more for <span class="arithmatex">\(\mathbf{b}\)</span>. The block that changes is an <span class="arithmatex">\((n-k)\times(n-k)\)</span> square that shrinks at every step; adding the squares gives <span class="arithmatex">\(\sum_{k=1}^{n-1}k^2\approx\frac{n^3}{3}\)</span>, the volume of a pyramid inside an <span class="arithmatex">\(n\times n\times n\)</span> cube.</p>
 <table>
 <thead>
 <tr>
-<th>Method</th>
-<th>Order</th>
+<th></th>
+<th>multiplications / divisions</th>
+<th>additions / subtractions</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Bisection, Regula Falsi, fixed point (<span class="arithmatex">\(g'(r) \ne 0\)</span>)</td>
-<td><span class="arithmatex">\(1\)</span></td>
+<td>forward elimination</td>
+<td><span class="arithmatex">\(\dfrac{2n^3+3n^2-5n}{6}\)</span></td>
+<td><span class="arithmatex">\(\dfrac{n^3-n}{3}\)</span></td>
 </tr>
 <tr>
-<td>Illinois</td>
-<td><span class="arithmatex">\(\approx 1.44\)</span></td>
+<td>back substitution</td>
+<td><span class="arithmatex">\(\dfrac{n^2+n}{2}\)</span></td>
+<td><span class="arithmatex">\(\dfrac{n^2-n}{2}\)</span></td>
 </tr>
 <tr>
-<td>Secant</td>
-<td><span class="arithmatex">\(\frac{1+\sqrt5}{2} \approx 1.618\)</span></td>
-</tr>
-<tr>
-<td>Newton (simple root)</td>
-<td><span class="arithmatex">\(2\)</span></td>
+<td>total</td>
+<td><span class="arithmatex">\(\dfrac{n^3}{3}+n^2-\dfrac n3\)</span></td>
+<td><span class="arithmatex">\(\dfrac{n^3}{3}+\dfrac{n^2}{2}-\dfrac{5n}{6}\)</span></td>
 </tr>
 </tbody>
 </table>
-<h2 id="order-of-one-point-methods">Order of one-point methods<a class="headerlink" href="#order-of-one-point-methods" title="Permanent link">&para;</a></h2>
-<p>If <span class="arithmatex">\(x_{n+1} = g(x_n)\)</span>, <span class="arithmatex">\(g(r) = r\)</span> and <span class="arithmatex">\(g'(r) = g''(r) = \cdots = g^{(p-1)}(r) = 0\)</span>, then the order is at least <span class="arithmatex">\(p\)</span>, and</p>
-<div class="arithmatex">\[
-\lim_{n\to\infty}\frac{x_{n+1} - r}{(x_n - r)^p} = \frac{g^{(p)}(r)}{p!} .
-\]</div>
-<p><strong>Example.</strong> For <span class="arithmatex">\(\sqrt a\)</span>, <span class="arithmatex">\(g(x) = \frac{x}{2}\left(1 + \frac{a}{x^2}\right)\)</span>: <span class="arithmatex">\(g'(x) = \frac12 - \frac{a}{2x^2}\)</span> so <span class="arithmatex">\(g'(\sqrt a) = 0\)</span>, and <span class="arithmatex">\(g''(x) = \frac{a}{x^3}\)</span> so <span class="arithmatex">\(g''(\sqrt a) = \frac{1}{\sqrt a} \ne 0\)</span>. The order is exactly <span class="arithmatex">\(2\)</span>, with <span class="arithmatex">\(\epsilon_{n+1}/\epsilon_n^2 \to \frac{1}{2\sqrt a}\)</span> (about <span class="arithmatex">\(0.354\)</span> for <span class="arithmatex">\(a = 2\)</span>).</p>
-<h2 id="multiple-roots">Multiple roots<a class="headerlink" href="#multiple-roots" title="Permanent link">&para;</a></h2>
-<p><span class="arithmatex">\(r\)</span> has <strong>multiplicity</strong> <span class="arithmatex">\(m\)</span> if <span class="arithmatex">\(f(x) = (x - r)^m q(x)\)</span> with <span class="arithmatex">\(q(r) \ne 0\)</span>. If <span class="arithmatex">\(f(r) = f'(r) = \cdots = f^{(m-1)}(r) = 0\)</span> and <span class="arithmatex">\(f^{(m)}(r) \ne 0\)</span>, then <span class="arithmatex">\(r\)</span> has multiplicity <span class="arithmatex">\(m\)</span>. For <span class="arithmatex">\(f(x) = e^{x^2} - 1\)</span>: <span class="arithmatex">\(f(0) = 0\)</span>, <span class="arithmatex">\(f'(0) = 0\)</span>, <span class="arithmatex">\(f''(0) = 2\)</span>, so <span class="arithmatex">\(0\)</span> is a double root.</p>
-<p>For Newton's <span class="arithmatex">\(g(x) = x - f(x)/f'(x)\)</span> one finds <span class="arithmatex">\(g'(r) = 1 - \frac1m\)</span>: at a multiple root Newton is only <strong>linear</strong>, with rate <span class="arithmatex">\(1 - \frac1m\)</span> (<span class="arithmatex">\(\frac12\)</span> for a double root, <span class="arithmatex">\(\frac23\)</span> for a triple root). Conversely, an observed ratio <span class="arithmatex">\(\rho\)</span> suggests <span class="arithmatex">\(m \approx \frac{1}{1 - \rho}\)</span>.</p>
-<h2 id="modified-newton">Modified Newton<a class="headerlink" href="#modified-newton" title="Permanent link">&para;</a></h2>
-<div class="arithmatex">\[
-x_{n+1} = x_n - m\,\frac{f(x_n)}{f'(x_n)}
-\]</div>
-<p>has <span class="arithmatex">\(g'(r) = 0\)</span>, so quadratic convergence is restored. For <span class="arithmatex">\(f(x) = e^{x^2} - 1\)</span>, <span class="arithmatex">\(m = 2\)</span>, <span class="arithmatex">\(x_0 = 0.5\)</span>:</p>
+<h2 id="some-numbers">Some numbers<a class="headerlink" href="#some-numbers" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
 <th style="text-align: right;"><span class="arithmatex">\(n\)</span></th>
-<th style="text-align: right;">Newton <span class="arithmatex">\(x_n\)</span></th>
-<th style="text-align: right;">Modified Newton <span class="arithmatex">\(x_n\)</span></th>
+<th style="text-align: right;">operations</th>
+<th style="text-align: right;">time at <span class="arithmatex">\(10^9\)</span> operations per second</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: right;"><span class="arithmatex">\(0\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(0.50000\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(5.0000\times10^{-1}\)</span></td>
-</tr>
-<tr>
-<td style="text-align: right;"><span class="arithmatex">\(1\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(0.27880\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(5.7602\times10^{-2}\)</span></td>
-</tr>
-<tr>
-<td style="text-align: right;"><span class="arithmatex">\(2\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(0.14468\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(9.5454\times10^{-5}\)</span></td>
-</tr>
-<tr>
 <td style="text-align: right;"><span class="arithmatex">\(3\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(0.07309\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(4.3486\times10^{-13}\)</span></td>
-</tr>
-<tr>
-<td style="text-align: right;"><span class="arithmatex">\(4\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(0.03664\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(28\)</span></td>
 <td style="text-align: right;"></td>
 </tr>
 <tr>
-<td style="text-align: right;"><span class="arithmatex">\(5\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(0.01833\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(100\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(6.8\times10^5\)</span></td>
 <td style="text-align: right;"></td>
 </tr>
 <tr>
-<td style="text-align: right;"><span class="arithmatex">\(6\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(0.00917\)</span></td>
-<td style="text-align: right;"></td>
+<td style="text-align: right;"><span class="arithmatex">\(1000\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(6.7\times10^8\)</span></td>
+<td style="text-align: right;">under a second</td>
 </tr>
 </tbody>
 </table>
-<p>Here the convergence is even <strong>cubic</strong>: <span class="arithmatex">\(g(x) = x - \frac{1 - e^{-x^2}}{x} = \frac{x^3}{2} + \cdots\)</span>, so <span class="arithmatex">\(g'(0) = g''(0) = 0\)</span>.</p>
-<p><strong>Unknown <span class="arithmatex">\(m\)</span>.</strong> Apply Newton's method to <span class="arithmatex">\(u(x) = \dfrac{f(x)}{f'(x)}\)</span>, which has a simple root at <span class="arithmatex">\(r\)</span> for any <span class="arithmatex">\(m\)</span>. This converges quadratically, but <span class="arithmatex">\(u' = 1 - \dfrac{f f''}{(f')^2}\)</span> needs <span class="arithmatex">\(f''\)</span>.</p>
-<div class="admonition warning">
-<p class="admonition-title">Cancellation</p>
-<p>For small <span class="arithmatex">\(x\)</span>, <span class="arithmatex">\(e^{x^2}\)</span> is very close to <span class="arithmatex">\(1\)</span>, and computing <span class="arithmatex">\(e^{x^2} - 1\)</span> directly subtracts nearly equal numbers, losing digits. The naive formula gives <span class="arithmatex">\(x_3 \approx 1.1\times10^{-12}\)</span> instead of <span class="arithmatex">\(4.35\times10^{-13}\)</span>. A dedicated routine for <span class="arithmatex">\(e^y - 1\)</span> (usually called <code>expm1</code>) avoids this. Lecture 9 explains why.</p>
-</div>
+<h2 id="comparisons">Comparisons<a class="headerlink" href="#comparisons" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Cramer's rule</strong> expands <span class="arithmatex">\(n+1\)</span> determinants by cofactors, about <span class="arithmatex">\((n+1)!\)</span> operations. For <span class="arithmatex">\(n=20\)</span> that is <span class="arithmatex">\(5\times10^{19}\)</span>, more than a thousand years at <span class="arithmatex">\(10^9\)</span> operations per second; elimination needs about <span class="arithmatex">\(5\,000\)</span>.</li>
+<li><strong>The inverse</strong> costs about <span class="arithmatex">\(2n^3\)</span>, three times as much as elimination, and is less accurate. Never compute <span class="arithmatex">\(A^{-1}\)</span> to solve <span class="arithmatex">\(A\mathbf{x}=\mathbf{b}\)</span>.</li>
+<li><strong>Many right-hand sides.</strong> The elimination of <span class="arithmatex">\(A\)</span> is the same for every <span class="arithmatex">\(\mathbf{b}\)</span>; saving the multipliers makes each new <span class="arithmatex">\(\mathbf{b}\)</span> cost only <span class="arithmatex">\(n^2\)</span>. This is the <span class="arithmatex">\(LU\)</span> factorisation.</li>
+<li><strong>Structure.</strong> A triangular system costs <span class="arithmatex">\(n^2\)</span>, a tridiagonal one <span class="arithmatex">\(O(n)\)</span>.</li>
+</ul>
 <div class="nm-actions">
-<p><a class="md-button md-button--primary" href="../../practice/lec07_order_modified_newton.html">Practise this lecture</a>
-<a class="md-button" href="../lec06-fixed-point-convergence/">← Previous: Fixed-Point Convergence</a>
-<a class="md-button" href="../lec08-floating-point/">Next: Floating-Point Numbers →</a></p>
+<p><a class="md-button md-button--primary" href="../../practice/lec11_operation_count.html">Practise this lecture</a>
+<a class="md-button" href="../lec10-gaussian-elimination/">← Previous: Gaussian Elimination</a></p>
 </div>
 
 
@@ -1022,7 +955,7 @@ x_{n+1} = x_n - m\,\frac{f(x_n)}{f'(x_n)}
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../lec06-fixed-point-convergence/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 6 · Fixed-Point Convergence">
+          <a href="../lec10-gaussian-elimination/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 10 · Gaussian Elimination">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1032,27 +965,11 @@ x_{n+1} = x_n - m\,\frac{f(x_n)}{f'(x_n)}
                 Previous
               </span>
               <div class="md-ellipsis">
-                6 · Fixed-Point Convergence
+                10 · Gaussian Elimination
               </div>
             </div>
           </a>
         
-        
-          
-          <a href="../lec08-floating-point/" class="md-footer__link md-footer__link--next" aria-label="Next: 8 · Floating-Point Numbers">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              <div class="md-ellipsis">
-                8 · Floating-Point Numbers
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
-            </div>
-          </a>
         
       </nav>
     

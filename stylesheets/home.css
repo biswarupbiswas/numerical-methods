@@ -126,3 +126,4 @@
   .md-typeset ol.nmh-steps { grid-template-columns: 1fr; }
 }
 @media (prefers-reduced-motion: reduce) { .nmh-btn, .nmh-card { transition: none; } }
+.nmh-pill--progress { background: rgba(201, 138, 0, 0.10); color: var(--nmh-gold); border-color: rgba(201, 138, 0, 0.35); }
