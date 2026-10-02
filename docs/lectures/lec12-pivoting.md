@@ -6,10 +6,11 @@ title: Partial and Complete Pivoting
 
 # Partial and Complete Pivoting
 
-![Lecture 12: Partial and Complete Pivoting](../assets/thumbnails/lec12_pivoting.png){ .nm-video }
+<iframe class="nm-video" src="https://www.youtube-nocookie.com/embed/LyZHx8Uyywk" title="Lecture 12: Partial and Complete Pivoting" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 <div class="nm-actions" markdown>
 [Practise this lecture](../practice/lec12_pivoting.html){ .md-button .md-button--primary }
+[Watch on YouTube](https://www.youtube.com/watch?v=LyZHx8Uyywk){ .md-button }
 </div>
 
 <div class="nm-key" markdown>
