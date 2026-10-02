@@ -44,6 +44,11 @@ At step \(k\) of forward elimination there are \(n-k\) rows below the pivot. Eac
 - **The inverse** costs about \(2n^3\), three times as much as elimination, and is less accurate. Never compute \(A^{-1}\) to solve \(A\mathbf{x}=\mathbf{b}\).
 - **Many right-hand sides.** The elimination of \(A\) is the same for every \(\mathbf{b}\); saving the multipliers makes each new \(\mathbf{b}\) cost only \(n^2\). This is the \(LU\) factorisation.
 - **Structure.** A triangular system costs \(n^2\), a tridiagonal one \(O(n)\).
+- **Gauss–Jordan elimination** reduces \(A\) to the identity, eliminating above and below each pivot. It needs no back substitution but costs about \(n^3\) operations, \(1.5\) times as much as Gaussian elimination.
+- **Determinants.** Eliminate and multiply the pivots: about \(3.3\times10^5\) multiplications for \(n=100\), against \(1.6\times10^{158}\) by cofactor expansion.
+- **Faster computers.** Because the cost grows like \(n^3\), a computer twice as fast solves a system only \(2^{1/3}\approx1.26\) times larger in the same time; a thousand times faster, only ten times larger.
+
+For \(n=1000\) the exact count is \(668\,165\,500\), against \(\frac23n^3=666\,666\,667\): the lower-order terms change it by \(0.22\%\), so the cost is \(\frac23n^3+O(n^2)\).
 
 <div class="nm-actions" markdown>
 [Practise this lecture](../practice/lec11_operation_count.html){ .md-button .md-button--primary }
