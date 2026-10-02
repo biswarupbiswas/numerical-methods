@@ -6,10 +6,11 @@ title: Gaussian Elimination
 
 # Gaussian Elimination
 
-![Lecture 10: Gaussian Elimination](../assets/thumbnails/lec10_gaussian_elimination.png){ .nm-video }
+<iframe class="nm-video" src="https://www.youtube-nocookie.com/embed/8_y7ddBKEqE" title="Lecture 10: Gaussian Elimination" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 <div class="nm-actions" markdown>
 [Practise this lecture](../practice/lec10_gaussian_elimination.html){ .md-button .md-button--primary }
+[Watch on YouTube](https://www.youtube.com/watch?v=8_y7ddBKEqE){ .md-button }
 </div>
 
 <div class="nm-key" markdown>
