@@ -10,6 +10,8 @@
   (7, "Order of Convergence and Modified Newton", "lec07-order-modified-newton", "lec07_order_modified_newton", "HGcmFTTwxts", "7:47", "Measuring the order p, multiple roots, and restoring quadratic speed."),
   (8, "Errors and Floating-Point Numbers", "lec08-floating-point", "lec08_floating_point", "LYnjN184ih0", "8:44", "Why 0.1 + 0.2 is not 0.3: binary, floating-point systems, chopping and rounding."),
   (9, "Machine Epsilon and Loss of Significance", "lec09-rounding-errors", "lec09_rounding_errors", "OWk3188Nl34", "8:56", "Machine epsilon, catastrophic cancellation and how to avoid it, IEEE 754."),
+  (10, "Gaussian Elimination", "lec10-gaussian-elimination", "lec10_gaussian_elimination", "", "6:18", "Row operations, back substitution, pivots and the determinant, and when elimination fails."),
+  (11, "Operation Count of Gaussian Elimination", "lec11-operation-count", "lec11_operation_count", "", "5:54", "Why elimination costs about two-thirds n cubed, and why Cramer's rule and inverses are wasteful."),
 ] %}
 
 {% set modules = [
@@ -45,9 +47,9 @@
   </section>
   <section class="nmh-stats" aria-label="Course at a glance">
     <div class="nmh-stats__inner">
-      <div class="nmh-stat"><span class="nmh-stat__num">9</span><span class="nmh-stat__label">lectures published</span></div>
-      <div class="nmh-stat"><span class="nmh-stat__num">69</span><span class="nmh-stat__label">minutes of video</span></div>
-      <div class="nmh-stat"><span class="nmh-stat__num">81</span><span class="nmh-stat__label">practice tasks</span></div>
+      <div class="nmh-stat"><span class="nmh-stat__num">11</span><span class="nmh-stat__label">lectures published</span></div>
+      <div class="nmh-stat"><span class="nmh-stat__num">81</span><span class="nmh-stat__label">minutes of video</span></div>
+      <div class="nmh-stat"><span class="nmh-stat__num">99</span><span class="nmh-stat__label">practice tasks</span></div>
       <div class="nmh-stat"><span class="nmh-stat__num">8</span><span class="nmh-stat__label">modules planned</span></div>
     </div>
   </section>
@@ -60,12 +62,13 @@
     <div class="nmh-section__head">
       <p class="nmh-kicker nmh-kicker--dark">Syllabus</p>
       <h2>Eight modules, from roots to differential equations</h2>
-      <p class="nmh-section__lede">The course follows a first university course in numerical analysis. Modules 1 and 2 are complete; new lectures are added as they are recorded.</p>
+      <p class="nmh-section__lede">The course follows a first university course in numerical analysis. Modules 1 and 2 are complete and Module 3 is under way; new lectures are added as they are recorded.</p>
     </div>
 
     <ol class="nmh-modules">
       {% for title, range, topics, ready, first, last in modules %}
-      <li class="nmh-module {% if ready %}is-ready{% endif %}">
+      {% set started = lectures | selectattr(0, ">=", first) | selectattr(0, "<=", last) | list | length > 0 %}
+      <li class="nmh-module {% if ready or started %}is-ready{% endif %}">
         <div class="nmh-module__row">
           <span class="nmh-module__num">{{ "%02d" | format(loop.index) }}</span>
           <div class="nmh-module__text">
@@ -73,9 +76,9 @@
             <p>{{ topics }}</p>
           </div>
           <span class="nmh-module__range">{{ range }}</span>
-          <span class="nmh-pill {% if ready %}nmh-pill--ready{% endif %}">{% if ready %}Available{% else %}Coming{% endif %}</span>
+          <span class="nmh-pill {% if ready %}nmh-pill--ready{% elif started %}nmh-pill--progress{% endif %}">{% if ready %}Available{% elif started %}In progress{% else %}Coming{% endif %}</span>
         </div>
-        {% if ready %}
+        {% if ready or started %}
         <div class="nmh-lectures">
           {% for n, name, page, thumb, vid, dur, blurb in lectures if first <= n <= last %}
           <article class="nmh-card">

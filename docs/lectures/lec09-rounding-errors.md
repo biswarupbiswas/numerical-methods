@@ -117,4 +117,5 @@ The smallest and largest exponent patterns are reserved: \(0\) and subnormal num
 <div class="nm-actions" markdown>
 [Practise this lecture](../practice/lec09_rounding_errors.html){ .md-button .md-button--primary }
 [← Previous: Floating-Point Numbers](lec08-floating-point.md){ .md-button }
+[Next: Gaussian Elimination →](lec10-gaussian-elimination.md){ .md-button }
 </div>
