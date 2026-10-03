@@ -53,6 +53,7 @@ nav:
       - "13 · LU Factorisation": lectures/lec13-lu.md
       - "14 · Cholesky": lectures/lec14-cholesky.md
       - "15 · Simple Structure": lectures/lec15-special-systems.md
+      - "16 · Norms": lectures/lec16-norms.md
 
 markdown_extensions:
   - admonition

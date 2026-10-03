@@ -74,4 +74,5 @@ A tridiagonal system with \(10^6\) unknowns needs about \(8\times10^6\) operatio
 <div class="nm-actions" markdown>
 [Practise this lecture](../practice/lec15_special_systems.html){ .md-button .md-button--primary }
 [← Previous: Cholesky](lec14-cholesky.md){ .md-button }
+[Next: Norms →](lec16-norms.md){ .md-button }
 </div>
