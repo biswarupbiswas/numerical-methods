@@ -12,13 +12,11 @@
         <meta name="author" content="Biswarup Biswas">
       
       
-        <link rel="canonical" href="https://biswarupbiswas.github.io/numerical-methods/lectures/lec02-secant/">
+        <link rel="canonical" href="https://biswarupbiswas.github.io/numerical-methods/lectures/lec13-lu/">
       
       
-        <link rel="prev" href="../lec01-bisection/">
+        <link rel="prev" href="../lec12-pivoting/">
       
-      
-        <link rel="next" href="../lec03-regula-falsi/">
       
       
         
@@ -29,7 +27,7 @@
     
     
       
-        <title>The Secant Method - Numerical Methods</title>
+        <title>LU Factorisation - Numerical Methods</title>
       
     
     
@@ -88,7 +86,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#the-secant-method" class="md-skip">
+        <a href="#lu-factorisation" class="md-skip">
           Skip to content
         </a>
       
@@ -124,7 +122,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              The Secant Method
+              LU Factorisation
             
           </span>
         </div>
@@ -376,37 +374,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    2 · Secant Method
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../lec02-secant/" class="md-nav__link">
         
   
   
@@ -422,114 +393,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#key-results" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Key results
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#the-idea" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The idea
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#the-secant-formula" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The secant formula
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#worked-example" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Worked example
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#why-it-is-fast-the-golden-ratio" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Why it is fast: the golden ratio
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#when-it-fails" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        When it fails
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#algorithm" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Algorithm
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#bisection-vs-secant" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Bisection vs secant
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -819,10 +682,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../lec13-lu/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 · LU Factorisation
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -838,6 +728,103 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#key-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key results
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-factorise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why factorise?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#l-and-u-from-elimination" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        L and U from elimination
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#doolittles-factorisation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Doolittle's factorisation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crouts-factorisation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Crout's factorisation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pa-lu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PA = LU
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cost-and-practice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cost and practice
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -888,10 +875,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-idea" class="md-nav__link">
+  <a href="#why-factorise" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The idea
+        Why factorise?
       
     </span>
   </a>
@@ -899,10 +886,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-secant-formula" class="md-nav__link">
+  <a href="#l-and-u-from-elimination" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The secant formula
+        L and U from elimination
       
     </span>
   </a>
@@ -910,10 +897,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#worked-example" class="md-nav__link">
+  <a href="#doolittles-factorisation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Worked example
+        Doolittle's factorisation
       
     </span>
   </a>
@@ -921,10 +908,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#why-it-is-fast-the-golden-ratio" class="md-nav__link">
+  <a href="#crouts-factorisation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Why it is fast: the golden ratio
+        Crout's factorisation
       
     </span>
   </a>
@@ -932,10 +919,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#when-it-fails" class="md-nav__link">
+  <a href="#pa-lu" class="md-nav__link">
     <span class="md-ellipsis">
       
-        When it fails
+        PA = LU
       
     </span>
   </a>
@@ -943,21 +930,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#algorithm" class="md-nav__link">
+  <a href="#cost-and-practice" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Algorithm
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#bisection-vs-secant" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Bisection vs secant
+        Cost and practice
       
     </span>
   </a>
@@ -981,170 +957,122 @@
 
 
 
-<p class="nm-eyebrow">Lecture 2</p>
+<p class="nm-eyebrow">Lecture 13</p>
 
-<h1 id="the-secant-method">The Secant Method<a class="headerlink" href="#the-secant-method" title="Permanent link">&para;</a></h1>
-<iframe class="nm-video" src="https://www.youtube-nocookie.com/embed/4c2-SlNsi70" title="Lecture 2: The Secant Method" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
+<h1 id="lu-factorisation">LU Factorisation<a class="headerlink" href="#lu-factorisation" title="Permanent link">&para;</a></h1>
+<p><img alt="Lecture 13: LU Factorisation" class="nm-video" src="../../assets/thumbnails/lec13_lu.png" /></p>
 <div class="nm-actions">
-<p><a class="md-button md-button--primary" href="../../practice/lec02_secant.html">Practise this lecture</a>
-<a class="md-button" href="https://www.youtube.com/watch?v=4c2-SlNsi70">Watch on YouTube</a></p>
+<p><a class="md-button md-button--primary" href="../../practice/lec13_lu.html">Practise this lecture</a></p>
 </div>
 <div class="nm-key">
 <h4 id="key-results">Key results<a class="headerlink" href="#key-results" title="Permanent link">&para;</a></h4>
 <ul>
-<li><span class="arithmatex">\(x_{n+1} = x_n - \dfrac{f(x_n)\,(x_n - x_{n-1})}{f(x_n) - f(x_{n-1})}\)</span></li>
-<li><span class="arithmatex">\(e_{n+1} \approx C\,e_n\,e_{n-1}\)</span>, so the order is <span class="arithmatex">\(p = \frac{1+\sqrt5}{2} \approx 1.618\)</span>.</li>
-<li>One new function value per step and no derivatives, but convergence is only local.</li>
+<li><span class="arithmatex">\(A=LU\)</span> turns <span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> into two triangular solves: <span class="arithmatex">\(L\mathbf z=\mathbf b\)</span> (forward substitution) and <span class="arithmatex">\(U\mathbf x=\mathbf z\)</span> (back substitution).</li>
+<li>Gaussian elimination gives <span class="arithmatex">\(U\)</span>; the multipliers <span class="arithmatex">\(m_{ik}\)</span> are the entries of <span class="arithmatex">\(L\)</span> below its unit diagonal.</li>
+<li><strong>Doolittle:</strong> unit <span class="arithmatex">\(L\)</span>. <strong>Crout:</strong> unit <span class="arithmatex">\(U\)</span>. Both exist if the leading principal minors <span class="arithmatex">\(D_1,\dots,D_{n-1}\)</span> are non-zero, and are unique for nonsingular <span class="arithmatex">\(A\)</span>.</li>
+<li>With partial pivoting <span class="arithmatex">\(PA=LU\)</span> exists for every nonsingular <span class="arithmatex">\(A\)</span>. The factorisation costs about <span class="arithmatex">\(\frac23n^3\)</span> once; every further right-hand side about <span class="arithmatex">\(2n^2\)</span>.</li>
 </ul>
 </div>
-<h2 id="the-idea">The idea<a class="headerlink" href="#the-idea" title="Permanent link">&para;</a></h2>
-<p>Bisection only uses the <strong>signs</strong> of <span class="arithmatex">\(f\)</span>. The secant method uses the <strong>values</strong>. Up close a smooth curve looks like a straight line, so we replace the curve by the line through the last two points and see where that line crosses the axis.</p>
-<h2 id="the-secant-formula">The secant formula<a class="headerlink" href="#the-secant-formula" title="Permanent link">&para;</a></h2>
-<p>The line through <span class="arithmatex">\((x_0, f(x_0))\)</span> and <span class="arithmatex">\((x_1, f(x_1))\)</span> crosses the axis at</p>
+<h2 id="why-factorise">Why factorise?<a class="headerlink" href="#why-factorise" title="Permanent link">&para;</a></h2>
+<p>Triangular systems are cheap: <span class="arithmatex">\(L\mathbf z=\mathbf b\)</span> is solved from the top down,</p>
 <div class="arithmatex">\[
-x_2 = x_1 - \frac{f(x_1)\,(x_1 - x_0)}{f(x_1) - f(x_0)} .
+z_1=\frac{b_1}{l_{11}},\qquad z_i=\frac{1}{l_{ii}}\Big(b_i-\sum_{j&lt;i}l_{ij}z_j\Big),
 \]</div>
-<p>Repeating with the two newest points gives</p>
+<p>and <span class="arithmatex">\(U\mathbf x=\mathbf z\)</span> from the bottom up, each in about <span class="arithmatex">\(n^2\)</span> operations. So if <span class="arithmatex">\(A=LU\)</span>, then <span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> becomes <span class="arithmatex">\(L(U\mathbf x)=\mathbf b\)</span>: solve <span class="arithmatex">\(L\mathbf z=\mathbf b\)</span>, then <span class="arithmatex">\(U\mathbf x=\mathbf z\)</span>. When many systems share the same <span class="arithmatex">\(A\)</span>, the expensive part is done only once.</p>
+<h2 id="l-and-u-from-elimination">L and U from elimination<a class="headerlink" href="#l-and-u-from-elimination" title="Permanent link">&para;</a></h2>
+<p>Elimination on the system of Lecture 10 (<span class="arithmatex">\(2x_1-x_2+3x_3=9,\ x_1+x_2+x_3=6,\ 3x_1+4x_2-2x_3=5\)</span>) uses the multipliers <span class="arithmatex">\(m_{21}=\frac12,\ m_{31}=\frac32,\ m_{32}=\frac{11}{3}\)</span>, and these are exactly the entries of <span class="arithmatex">\(L\)</span>:</p>
 <div class="arithmatex">\[
-x_{n+1} = x_n - \frac{f(x_n)\,(x_n - x_{n-1})}{f(x_n) - f(x_{n-1})}, \qquad n \ge 1 .
+\begin{bmatrix}2&amp;-1&amp;3\\1&amp;1&amp;1\\3&amp;4&amp;-2\end{bmatrix}
+=\underbrace{\begin{bmatrix}1&amp;0&amp;0\\ \frac12&amp;1&amp;0\\ \frac32&amp;\frac{11}{3}&amp;1\end{bmatrix}}_{L}
+\underbrace{\begin{bmatrix}2&amp;-1&amp;3\\0&amp;\frac32&amp;-\frac12\\0&amp;0&amp;-\frac{14}{3}\end{bmatrix}}_{U}.
 \]</div>
-<h2 id="worked-example">Worked example<a class="headerlink" href="#worked-example" title="Permanent link">&para;</a></h2>
-<p><span class="arithmatex">\(f(x) = x^3 + 2x^2 - x - 1\)</span> with <span class="arithmatex">\(x_0 = 0\)</span> and <span class="arithmatex">\(x_1 = 1\)</span>. The root in <span class="arithmatex">\([0,1]\)</span> is <span class="arithmatex">\(r = 0.8019377\ldots\)</span></p>
-<table>
-<thead>
-<tr>
-<th style="text-align: right;"><span class="arithmatex">\(n\)</span></th>
-<th style="text-align: right;"><span class="arithmatex">\(x_n\)</span></th>
-<th style="text-align: right;"><span class="arithmatex">\(f(x_n)\)</span></th>
-<th style="text-align: right;"><span class="arithmatex">\(\lvert x_n - r\rvert\)</span></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: right;"><span class="arithmatex">\(0\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(0\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(-1\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(8.0\times10^{-1}\)</span></td>
-</tr>
-<tr>
-<td style="text-align: right;"><span class="arithmatex">\(1\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(1\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(+1\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(2.0\times10^{-1}\)</span></td>
-</tr>
-<tr>
-<td style="text-align: right;"><span class="arithmatex">\(2\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(0.5\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(-0.875\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(3.0\times10^{-1}\)</span></td>
-</tr>
-<tr>
-<td style="text-align: right;"><span class="arithmatex">\(3\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(0.7333333\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(-0.2634\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(6.9\times10^{-2}\)</span></td>
-</tr>
-<tr>
-<td style="text-align: right;"><span class="arithmatex">\(4\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(0.8338279\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(+0.1364\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(3.2\times10^{-2}\)</span></td>
-</tr>
-<tr>
-<td style="text-align: right;"><span class="arithmatex">\(5\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(0.7995353\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(-0.0099\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(2.4\times10^{-3}\)</span></td>
-</tr>
-<tr>
-<td style="text-align: right;"><span class="arithmatex">\(6\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(0.8018581\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(-0.00033\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(8.0\times10^{-5}\)</span></td>
-</tr>
-<tr>
-<td style="text-align: right;"><span class="arithmatex">\(7\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(0.8019379\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(+8.4\times10^{-7}\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(2.0\times10^{-7}\)</span></td>
-</tr>
-<tr>
-<td style="text-align: right;"><span class="arithmatex">\(8\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(0.8019377\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(\approx 0\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(1.7\times10^{-11}\)</span></td>
-</tr>
-</tbody>
-</table>
-<p>Notice that <span class="arithmatex">\(x_2\)</span> and <span class="arithmatex">\(x_3\)</span> are both <strong>below</strong> the axis. Unlike bisection, the secant method does not keep a bracket: the line simply extends beyond the two points.</p>
-<h2 id="why-it-is-fast-the-golden-ratio">Why it is fast: the golden ratio<a class="headerlink" href="#why-it-is-fast-the-golden-ratio" title="Permanent link">&para;</a></h2>
-<p>For the secant method</p>
+<p>With <span class="arithmatex">\(\mathbf b=(9,6,5)\)</span>: forward substitution gives <span class="arithmatex">\(\mathbf z=(9,\frac32,-14)\)</span>, back substitution gives <span class="arithmatex">\(x_3=3,\ x_2=2,\ x_1=1\)</span>.</p>
+<p>The reason: <span class="arithmatex">\(E_{32}E_{31}E_{21}A=U\)</span>, so <span class="arithmatex">\(A=E_{21}^{-1}E_{31}^{-1}E_{32}^{-1}U\)</span>. Each inverse just adds the multiple back, and in the product every multiplier lands in its own place below the diagonal.</p>
+<h2 id="doolittles-factorisation">Doolittle's factorisation<a class="headerlink" href="#doolittles-factorisation" title="Permanent link">&para;</a></h2>
+<p><span class="arithmatex">\(L\)</span> has ones on its diagonal. Comparing <span class="arithmatex">\(A\)</span> with <span class="arithmatex">\(LU\)</span> entry by entry, row <span class="arithmatex">\(k\)</span> of <span class="arithmatex">\(U\)</span> and column <span class="arithmatex">\(k\)</span> of <span class="arithmatex">\(L\)</span> are found in turn:</p>
 <div class="arithmatex">\[
-e_{n+1} \approx C\, e_n\, e_{n-1}, \qquad C \approx \left|\frac{f''(r)}{2 f'(r)}\right| .
+u_{kj}=a_{kj}-\sum_{p=1}^{k-1}l_{kp}u_{pj}\quad(j\ge k),\qquad
+l_{ik}=\frac{1}{u_{kk}}\Big(a_{ik}-\sum_{p=1}^{k-1}l_{ip}u_{pk}\Big)\quad(i&gt;k).
 \]</div>
-<p>Multiplying errors <strong>adds</strong> their numbers of correct digits, so the digits grow like the Fibonacci numbers. In the example they are <span class="arithmatex">\(1.5,\ 2.6,\ 4.1,\ 6.7,\ 10.8\)</span>. The ratio of consecutive Fibonacci numbers tends to the golden ratio, which gives the order of convergence</p>
+<p>For the example of the notes,</p>
 <div class="arithmatex">\[
-p^2 = p + 1 \quad\Longrightarrow\quad p = \frac{1+\sqrt5}{2} \approx 1.618 .
+\begin{bmatrix}4&amp;2&amp;2\\2&amp;5&amp;1\\2&amp;1&amp;6\end{bmatrix}
+=\begin{bmatrix}1&amp;0&amp;0\\ \frac12&amp;1&amp;0\\ \frac12&amp;0&amp;1\end{bmatrix}
+\begin{bmatrix}4&amp;2&amp;2\\0&amp;4&amp;0\\0&amp;0&amp;5\end{bmatrix},
 \]</div>
-<p>This is <strong>superlinear</strong> convergence: faster than bisection's <span class="arithmatex">\(p = 1\)</span>, slower than quadratic.</p>
-<h2 id="when-it-fails">When it fails<a class="headerlink" href="#when-it-fails" title="Permanent link">&para;</a></h2>
+<p>with <span class="arithmatex">\(u_{22}=5-\frac12\cdot2=4\)</span>, <span class="arithmatex">\(u_{23}=1-\frac12\cdot2=0\)</span>, <span class="arithmatex">\(l_{32}=0\)</span>, <span class="arithmatex">\(u_{33}=6-1=5\)</span>. The leading minors are <span class="arithmatex">\(D_1=4\)</span> and <span class="arithmatex">\(D_2=16\)</span>, and <span class="arithmatex">\(\det A=4\cdot4\cdot5=80\)</span>.</p>
 <ul>
-<li><strong>Flat curve.</strong> If <span class="arithmatex">\(f(x_n) \approx f(x_{n-1})\)</span> the line is nearly horizontal and the next guess shoots far away. From <span class="arithmatex">\(x_0 = 0.2\)</span>, <span class="arithmatex">\(x_1 = 0.3\)</span> the example jumps to <span class="arithmatex">\(x_2 \approx 6.05\)</span>. If the two values are equal, we divide by zero.</li>
-<li><strong>No bracket.</strong> Convergence is only local. From <span class="arithmatex">\(-1.5\)</span> and <span class="arithmatex">\(-1\)</span> the method converges, but to a different root, <span class="arithmatex">\(-0.555\)</span>.</li>
+<li><strong>Existence:</strong> if <span class="arithmatex">\(D_1,\dots,D_{n-1}\neq0\)</span>, Doolittle's factorisation exists.</li>
+<li><strong>Uniqueness</strong> (nonsingular <span class="arithmatex">\(A\)</span>): from <span class="arithmatex">\(L_1U_1=L_2U_2\)</span>, <span class="arithmatex">\(L_2^{-1}L_1=U_2U_1^{-1}\)</span> is both unit lower and upper triangular, hence <span class="arithmatex">\(I\)</span>.</li>
+<li>Without a fixed diagonal, <span class="arithmatex">\(LU=(LD)(D^{-1}U)\)</span>; and the singular matrix <span class="arithmatex">\(\begin{bmatrix}0&amp;0\\0&amp;1\end{bmatrix}=\begin{bmatrix}1&amp;0\\t&amp;1\end{bmatrix}\begin{bmatrix}0&amp;0\\0&amp;1\end{bmatrix}\)</span> has one for every <span class="arithmatex">\(t\)</span>.</li>
 </ul>
-<h2 id="algorithm">Algorithm<a class="headerlink" href="#algorithm" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>input  f, x0, x1, tol, maxit
-for k = 1 to maxit
-    if  f(x1) = f(x0):  error (zero denominator)
-    x2 ← x1 − f(x1)·(x1 − x0) / (f(x1) − f(x0))
-    x0 ← x1
-    x1 ← x2
-    if  |x1 − x0| &lt; tol:  return x1
-end
-</code></pre></div>
-<h2 id="bisection-vs-secant">Bisection vs secant<a class="headerlink" href="#bisection-vs-secant" title="Permanent link">&para;</a></h2>
+<h2 id="crouts-factorisation">Crout's factorisation<a class="headerlink" href="#crouts-factorisation" title="Permanent link">&para;</a></h2>
+<p>Now <span class="arithmatex">\(U\)</span> has ones on its diagonal and <span class="arithmatex">\(L\)</span> carries the pivots; a column of <span class="arithmatex">\(L\)</span> is computed first, then a row of <span class="arithmatex">\(U\)</span>. The system <span class="arithmatex">\(3x_1+3x_2+9x_3=3,\ 3x_1+3x_2+5x_3=7,\ 2x_1-x_2+x_3=3\)</span> has <span class="arithmatex">\(D_2=0\)</span>, so rows 1 and 3 are swapped first:</p>
+<div class="arithmatex">\[
+\begin{bmatrix}2&amp;-1&amp;1\\3&amp;3&amp;5\\3&amp;3&amp;9\end{bmatrix}
+=\begin{bmatrix}2&amp;0&amp;0\\3&amp;\frac92&amp;0\\3&amp;\frac92&amp;4\end{bmatrix}
+\begin{bmatrix}1&amp;-\frac12&amp;\frac12\\0&amp;1&amp;\frac79\\0&amp;0&amp;1\end{bmatrix}.
+\]</div>
+<p>With <span class="arithmatex">\(\mathbf b=(3,7,3)\)</span>: <span class="arithmatex">\(\mathbf z=(\frac32,\frac59,-1)\)</span> and <span class="arithmatex">\(x_3=-1,\ x_2=\frac43,\ x_1=\frac83\)</span>.</p>
+<h2 id="pa-lu">PA = LU<a class="headerlink" href="#pa-lu" title="Permanent link">&para;</a></h2>
+<p><span class="arithmatex">\(\begin{bmatrix}0&amp;1\\1&amp;1\end{bmatrix}\)</span> is nonsingular but has no <span class="arithmatex">\(LU\)</span> factorisation (<span class="arithmatex">\(u_{11}=0\)</span> would need <span class="arithmatex">\(l_{21}\cdot0=1\)</span>). With partial pivoting one always gets <span class="arithmatex">\(PA=LU\)</span>; for the system of Lecture 10,</p>
+<div class="arithmatex">\[
+\underbrace{\begin{bmatrix}0&amp;0&amp;1\\1&amp;0&amp;0\\0&amp;1&amp;0\end{bmatrix}}_{P}A=\underbrace{\begin{bmatrix}1&amp;0&amp;0\\ \frac23&amp;1&amp;0\\ \frac13&amp;\frac1{11}&amp;1\end{bmatrix}}_{L}\underbrace{\begin{bmatrix}3&amp;4&amp;-2\\0&amp;-\frac{11}{3}&amp;\frac{13}{3}\\0&amp;0&amp;\frac{14}{11}\end{bmatrix}}_{U},
+\]</div>
+<p>and <span class="arithmatex">\(L\mathbf z=P\mathbf b=(5,9,6)\)</span> gives <span class="arithmatex">\(\mathbf z=(5,\frac{17}{3},\frac{42}{11})\)</span>, then <span class="arithmatex">\(U\mathbf x=\mathbf z\)</span> gives <span class="arithmatex">\(\mathbf x=(1,2,3)\)</span>.</p>
+<h2 id="cost-and-practice">Cost and practice<a class="headerlink" href="#cost-and-practice" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th></th>
-<th>Bisection</th>
-<th>Secant</th>
+<th>task</th>
+<th>operations</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Always converges?</td>
-<td>yes</td>
-<td>no</td>
+<td>factorise <span class="arithmatex">\(A=LU\)</span> (once)</td>
+<td><span class="arithmatex">\(\approx\frac23n^3\)</span></td>
 </tr>
 <tr>
-<td>Order <span class="arithmatex">\(p\)</span></td>
-<td><span class="arithmatex">\(1\)</span> (linear)</td>
-<td><span class="arithmatex">\(1.618\)</span> (superlinear)</td>
+<td>each right-hand side (forward + back)</td>
+<td><span class="arithmatex">\(\approx2n^2\)</span></td>
 </tr>
 <tr>
-<td>Needs a bracket?</td>
-<td>yes</td>
-<td>no</td>
-</tr>
-<tr>
-<td>Derivatives?</td>
-<td>no</td>
-<td>no</td>
-</tr>
-<tr>
-<td>New <span class="arithmatex">\(f\)</span>-values per step</td>
-<td><span class="arithmatex">\(1\)</span></td>
-<td><span class="arithmatex">\(1\)</span></td>
+<td>compute <span class="arithmatex">\(A^{-1}\)</span></td>
+<td><span class="arithmatex">\(\approx2n^3\)</span></td>
 </tr>
 </tbody>
 </table>
-<p>In practice the two ideas are combined: robust root finders keep a bracket like bisection but take fast secant-like steps whenever it is safe.</p>
+<p>For <span class="arithmatex">\(n=1000\)</span> and <span class="arithmatex">\(100\)</span> right-hand sides, repeated elimination needs about <span class="arithmatex">\(6.7\times10^{10}\)</span> operations, <span class="arithmatex">\(LU\)</span> about <span class="arithmatex">\(8.7\times10^{8}\)</span>. In memory, the multipliers overwrite the zeros of <span class="arithmatex">\(A\)</span>, so <span class="arithmatex">\(L\)</span> and <span class="arithmatex">\(U\)</span> share one array. As a bonus, <span class="arithmatex">\(\det A=u_{11}u_{22}\cdots u_{nn}\)</span> (Doolittle).</p>
+<table>
+<thead>
+<tr>
+<th>factorisation</th>
+<th>unit diagonal</th>
+<th>exists when</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Doolittle</td>
+<td><span class="arithmatex">\(L\)</span></td>
+<td><span class="arithmatex">\(D_1,\dots,D_{n-1}\neq0\)</span></td>
+</tr>
+<tr>
+<td>Crout</td>
+<td><span class="arithmatex">\(U\)</span></td>
+<td><span class="arithmatex">\(D_1,\dots,D_{n-1}\neq0\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(PA=LU\)</span></td>
+<td><span class="arithmatex">\(L\)</span></td>
+<td><span class="arithmatex">\(A\)</span> nonsingular</td>
+</tr>
+</tbody>
+</table>
 <div class="nm-actions">
-<p><a class="md-button md-button--primary" href="../../practice/lec02_secant.html">Practise this lecture</a>
-<a class="md-button" href="../lec01-bisection/">← Previous: The Bisection Method</a>
-<a class="md-button" href="../lec03-regula-falsi/">Next: Regula Falsi →</a></p>
+<p><a class="md-button md-button--primary" href="../../practice/lec13_lu.html">Practise this lecture</a>
+<a class="md-button" href="../lec12-pivoting/">← Previous: Pivoting</a></p>
 </div>
 
 
@@ -1184,7 +1112,7 @@ end
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../lec01-bisection/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 1 · Bisection Method">
+          <a href="../lec12-pivoting/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 12 · Pivoting">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1194,27 +1122,11 @@ end
                 Previous
               </span>
               <div class="md-ellipsis">
-                1 · Bisection Method
+                12 · Pivoting
               </div>
             </div>
           </a>
         
-        
-          
-          <a href="../lec03-regula-falsi/" class="md-footer__link md-footer__link--next" aria-label="Next: 3 · Regula Falsi">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              <div class="md-ellipsis">
-                3 · Regula Falsi
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
-            </div>
-          </a>
         
       </nav>
     
