@@ -12,13 +12,11 @@
         <meta name="author" content="Biswarup Biswas">
       
       
-        <link rel="canonical" href="https://biswarupbiswas.github.io/numerical-methods/lectures/lec15-special-systems/">
+        <link rel="canonical" href="https://biswarupbiswas.github.io/numerical-methods/lectures/lec16-norms/">
       
       
-        <link rel="prev" href="../lec14-cholesky/">
+        <link rel="prev" href="../lec15-special-systems/">
       
-      
-        <link rel="next" href="../lec16-norms/">
       
       
         
@@ -29,7 +27,7 @@
     
     
       
-        <title>Systems with Simple Structure - Numerical Methods</title>
+        <title>Vector and Matrix Norms - Numerical Methods</title>
       
     
     
@@ -88,7 +86,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#systems-with-simple-structure" class="md-skip">
+        <a href="#vector-and-matrix-norms" class="md-skip">
           Skip to content
         </a>
       
@@ -124,7 +122,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Systems with Simple Structure
+              Vector and Matrix Norms
             
           </span>
         </div>
@@ -740,6 +738,34 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec15-special-systems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15 · Simple Structure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -759,7 +785,7 @@
   <span class="md-ellipsis">
     
   
-    15 · Simple Structure
+    16 · Norms
   
 
     
@@ -777,7 +803,7 @@
   <span class="md-ellipsis">
     
   
-    15 · Simple Structure
+    16 · Norms
   
 
     
@@ -814,10 +840,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#diagonal-and-triangular-systems" class="md-nav__link">
+  <a href="#vector-norms" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Diagonal and triangular systems
+        Vector norms
       
     </span>
   </a>
@@ -825,21 +851,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#tridiagonal-systems-the-thomas-algorithm" class="md-nav__link">
+  <a href="#matrix-norms" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Tridiagonal systems: the Thomas algorithm
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cost-storage-and-an-application" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Cost, storage and an application
+        Matrix norms
       
     </span>
   </a>
@@ -850,34 +865,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../lec16-norms/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    16 · Norms
-  
-
-    
-  </span>
-  
-  
-
-      </a>
     </li>
   
 
@@ -928,10 +915,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#diagonal-and-triangular-systems" class="md-nav__link">
+  <a href="#vector-norms" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Diagonal and triangular systems
+        Vector norms
       
     </span>
   </a>
@@ -939,21 +926,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#tridiagonal-systems-the-thomas-algorithm" class="md-nav__link">
+  <a href="#matrix-norms" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Tridiagonal systems: the Thomas algorithm
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cost-storage-and-an-application" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Cost, storage and an application
+        Matrix norms
       
     </span>
   </a>
@@ -977,136 +953,93 @@
 
 
 
-<p class="nm-eyebrow">Lecture 15</p>
+<p class="nm-eyebrow">Lecture 16</p>
 
-<h1 id="systems-with-simple-structure">Systems with Simple Structure<a class="headerlink" href="#systems-with-simple-structure" title="Permanent link">&para;</a></h1>
-<iframe class="nm-video" src="https://www.youtube-nocookie.com/embed/qRzSPQMZxNo" title="Lecture 15: Systems with Simple Structure" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
+<h1 id="vector-and-matrix-norms">Vector and Matrix Norms<a class="headerlink" href="#vector-and-matrix-norms" title="Permanent link">&para;</a></h1>
+<p><img alt="Lecture 16: Vector and Matrix Norms" class="nm-video" src="../../assets/thumbnails/lec16_norms.png" /></p>
 <div class="nm-actions">
-<p><a class="md-button md-button--primary" href="../../practice/lec15_special_systems.html">Practise this lecture</a>
-<a class="md-button" href="https://www.youtube.com/watch?v=qRzSPQMZxNo">Watch on YouTube</a></p>
+<p><a class="md-button md-button--primary" href="../../practice/lec16_norms.html">Practise this lecture</a></p>
 </div>
 <div class="nm-key">
 <h4 id="key-results">Key results<a class="headerlink" href="#key-results" title="Permanent link">&para;</a></h4>
 <ul>
-<li><strong>Diagonal:</strong> <span class="arithmatex">\(x_i=b_i/d_i\)</span>, <span class="arithmatex">\(n\)</span> operations.</li>
-<li><strong>Triangular:</strong> back substitution (upper) or forward substitution (lower), about <span class="arithmatex">\(n^2\)</span> operations; <span class="arithmatex">\(\det\)</span> is the product of the diagonal, so a zero on the diagonal means a singular matrix.</li>
-<li><strong>Tridiagonal:</strong> elimination creates no fill-in; the <strong>Thomas algorithm</strong> needs about <span class="arithmatex">\(8n\)</span> operations and <span class="arithmatex">\(4n\)</span> storage.</li>
-<li>Diagonally dominant tridiagonal matrices need no pivoting; a band with <span class="arithmatex">\(p\)</span> diagonals on each side costs about <span class="arithmatex">\(np^2\)</span>.</li>
+<li>A <strong>norm</strong> is positive (zero only for zero), homogeneous (<span class="arithmatex">\(\lVert c\mathbf x\rVert=|c|\lVert\mathbf x\rVert\)</span>) and satisfies the triangle inequality.</li>
+<li><span class="arithmatex">\(\lVert\mathbf x\rVert_1=\sum|x_i|\)</span>, <span class="arithmatex">\(\lVert\mathbf x\rVert_2=\sqrt{\sum x_i^2}\)</span>, <span class="arithmatex">\(\lVert\mathbf x\rVert_\infty=\max|x_i|\)</span>; all norms on <span class="arithmatex">\(\mathbb R^n\)</span> are equivalent.</li>
+<li>Induced norms measure the biggest stretch <span class="arithmatex">\(\max\lVert A\mathbf x\rVert/\lVert\mathbf x\rVert\)</span>: <span class="arithmatex">\(\lVert A\rVert_1\)</span> = largest column sum, <span class="arithmatex">\(\lVert A\rVert_\infty\)</span> = largest row sum, <span class="arithmatex">\(\lVert A\rVert_2=\sqrt{\lambda_{\max}(A^TA)}\)</span>.</li>
+<li><span class="arithmatex">\(\rho(A)\le\lVert A\rVert\)</span> for induced norms, but <span class="arithmatex">\(\rho\)</span> is not a norm; consistency <span class="arithmatex">\(\lVert A\mathbf x\rVert\le\lVert A\rVert\,\lVert\mathbf x\rVert\)</span>.</li>
 </ul>
 </div>
-<h2 id="diagonal-and-triangular-systems">Diagonal and triangular systems<a class="headerlink" href="#diagonal-and-triangular-systems" title="Permanent link">&para;</a></h2>
-<p>For a diagonal matrix each equation has one unknown, <span class="arithmatex">\(x_i=b_i/d_i\)</span>. For an upper triangular <span class="arithmatex">\(U\)</span>, back substitution goes from the bottom up,</p>
-<div class="arithmatex">\[
-x_n=\frac{b_n}{u_{nn}},\qquad x_i=\frac{1}{u_{ii}}\Big(b_i-\sum_{j&gt;i}u_{ij}x_j\Big),
-\]</div>
-<p>and for a lower triangular <span class="arithmatex">\(L\)</span> forward substitution goes from the top down. The two examples of the lecture:</p>
+<h2 id="vector-norms">Vector norms<a class="headerlink" href="#vector-norms" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th>system</th>
-<th>solution</th>
+<th><span class="arithmatex">\(\mathbf x\)</span></th>
+<th style="text-align: right;"><span class="arithmatex">\(\lVert\mathbf x\rVert_1\)</span></th>
+<th style="text-align: right;"><span class="arithmatex">\(\lVert\mathbf x\rVert_2\)</span></th>
+<th style="text-align: right;"><span class="arithmatex">\(\lVert\mathbf x\rVert_\infty\)</span></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><span class="arithmatex">\(2x_1+x_2-x_3=1,\ 3x_2+2x_3=12,\ 4x_3=12\)</span></td>
-<td><span class="arithmatex">\(x_3=3,\ x_2=\frac{12-6}{3}=2,\ x_1=\frac{1-2+3}{2}=1\)</span></td>
-</tr>
-<tr>
-<td><span class="arithmatex">\(2x_1=2,\ x_1+3x_2=7,\ -x_1+2x_2+4x_3=15\)</span></td>
-<td><span class="arithmatex">\(x_1=1,\ x_2=\frac{7-1}{3}=2,\ x_3=\frac{15+1-4}{4}=3\)</span></td>
-</tr>
-</tbody>
-</table>
-<p>Row <span class="arithmatex">\(i\)</span> needs about <span class="arithmatex">\(i\)</span> multiplications and additions, so a triangular solve costs about <span class="arithmatex">\(n^2\)</span> operations (<span class="arithmatex">\(10^6\)</span> for <span class="arithmatex">\(n=1000\)</span>, against <span class="arithmatex">\(6.7\times10^8\)</span> for full elimination). Since <span class="arithmatex">\(\det U=u_{11}u_{22}\cdots u_{nn}\)</span>, a zero on the diagonal means <span class="arithmatex">\(U\)</span> is singular.</p>
-<h2 id="tridiagonal-systems-the-thomas-algorithm">Tridiagonal systems: the Thomas algorithm<a class="headerlink" href="#tridiagonal-systems-the-thomas-algorithm" title="Permanent link">&para;</a></h2>
-<p>Tridiagonal matrices arise when each unknown is coupled only to its neighbours (temperature along a rod, masses and springs in a chain, splines). With sub-, main and super-diagonals <span class="arithmatex">\(a_i,b_i,c_i\)</span> and right-hand side <span class="arithmatex">\(d_i\)</span>, elimination needs one multiplier per column and changes only one entry, so no fill-in appears:</p>
-<div class="arithmatex">\[
-m_i=\frac{a_i}{\hat b_{i-1}},\quad \hat b_i=b_i-m_ic_{i-1},\quad \hat d_i=d_i-m_i\hat d_{i-1};\qquad
-x_n=\frac{\hat d_n}{\hat b_n},\quad x_i=\frac{\hat d_i-c_ix_{i+1}}{\hat b_i}.
-\]</div>
-<p>For <span class="arithmatex">\(b_i=2\)</span>, <span class="arithmatex">\(a_i=c_i=-1\)</span> and <span class="arithmatex">\(\mathbf d=(0,0,0,5)\)</span>:</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: right;"><span class="arithmatex">\(i\)</span></th>
-<th style="text-align: right;"><span class="arithmatex">\(m_i\)</span></th>
-<th style="text-align: right;"><span class="arithmatex">\(\hat b_i\)</span></th>
-<th style="text-align: right;"><span class="arithmatex">\(\hat d_i\)</span></th>
-<th style="text-align: right;"><span class="arithmatex">\(x_i\)</span></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;"></td>
-<td style="text-align: right;"><span class="arithmatex">\(2\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(0\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(1\)</span></td>
-</tr>
-<tr>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;"><span class="arithmatex">\(-\frac12\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(\frac32\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(0\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(2\)</span></td>
-</tr>
-<tr>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;"><span class="arithmatex">\(-\frac23\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(\frac43\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(0\)</span></td>
+<td><span class="arithmatex">\((1,-1,2,0,3)\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(7\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(\sqrt{15}\approx3.87\)</span></td>
 <td style="text-align: right;"><span class="arithmatex">\(3\)</span></td>
 </tr>
 <tr>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;"><span class="arithmatex">\(-\frac34\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(\frac54\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(5\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(4\)</span></td>
+<td><span class="arithmatex">\((3,4)\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(7\)</span> (taxicab)</td>
+<td style="text-align: right;"><span class="arithmatex">\(5\)</span> (bird)</td>
+<td style="text-align: right;"><span class="arithmatex">\(4\)</span> (chess king)</td>
 </tr>
 </tbody>
 </table>
-<p>The pivots <span class="arithmatex">\(\hat b_k=\frac{k+1}{k}\)</span> stay above <span class="arithmatex">\(1\)</span>: the matrix is diagonally dominant and no pivoting is needed. If a pivot vanishes (e.g. <span class="arithmatex">\(b_1=0\)</span>), row swaps are needed and add one extra diagonal of fill-in.</p>
-<h2 id="cost-storage-and-an-application">Cost, storage and an application<a class="headerlink" href="#cost-storage-and-an-application" title="Permanent link">&para;</a></h2>
+<p>The unit circles <span class="arithmatex">\(\{\lVert\mathbf x\rVert=1\}\)</span> are a diamond (<span class="arithmatex">\(p=1\)</span>), a circle (<span class="arithmatex">\(p=2\)</span>) and a square (<span class="arithmatex">\(p=\infty\)</span>); the <span class="arithmatex">\(p\)</span>-norm <span class="arithmatex">\(\lVert\mathbf x\rVert_p=\big(\sum|x_i|^p\big)^{1/p}\)</span> morphs between them. Since <span class="arithmatex">\(\lVert\mathbf x\rVert_\infty\le\lVert\mathbf x\rVert_2\le\sqrt n\,\lVert\mathbf x\rVert_\infty\)</span>, an error that is small in one norm is small in all.</p>
+<p><strong>Errors.</strong> For <span class="arithmatex">\(\mathbf x=(1,2,3)\)</span> and <span class="arithmatex">\(\hat{\mathbf x}=(1.01,1.98,3.02)\)</span>, the error <span class="arithmatex">\(\mathbf e=(0.01,-0.02,0.02)\)</span> has <span class="arithmatex">\(\lVert\mathbf e\rVert_1=0.05\)</span>, <span class="arithmatex">\(\lVert\mathbf e\rVert_2=0.03\)</span>, <span class="arithmatex">\(\lVert\mathbf e\rVert_\infty=0.02\)</span>, and the relative error <span class="arithmatex">\(\lVert\mathbf e\rVert_\infty/\lVert\mathbf x\rVert_\infty=0.02/3\approx0.0067\)</span>.</p>
+<h2 id="matrix-norms">Matrix norms<a class="headerlink" href="#matrix-norms" title="Permanent link">&para;</a></h2>
+<p>Besides the three axioms we ask for <strong>submultiplicativity</strong> <span class="arithmatex">\(\lVert AB\rVert\le\lVert A\rVert\lVert B\rVert\)</span> and <strong>consistency</strong> <span class="arithmatex">\(\lVert A\mathbf x\rVert\le\lVert A\rVert\lVert\mathbf x\rVert\)</span>.</p>
+<ul>
+<li><strong>Frobenius:</strong> <span class="arithmatex">\(\lVert A\rVert_F=\sqrt{\sum_{i,j}a_{ij}^2}\)</span>; for <span class="arithmatex">\(\begin{bmatrix}1&amp;2\\3&amp;4\end{bmatrix}\)</span>, <span class="arithmatex">\(\sqrt{30}\approx5.48\)</span>.</li>
+<li><strong>Induced:</strong> <span class="arithmatex">\(\lVert A\rVert=\max_{\mathbf x\ne\mathbf0}\lVert A\mathbf x\rVert/\lVert\mathbf x\rVert\)</span>. <span class="arithmatex">\(A\)</span> maps the unit circle to an ellipse, and <span class="arithmatex">\(\lVert A\rVert_2\)</span> is its longest semi-axis.</li>
+<li>In the 1-norm the corners of the diamond are the unit vectors, and <span class="arithmatex">\(A\mathbf e_j\)</span> is column <span class="arithmatex">\(j\)</span>: <span class="arithmatex">\(\lVert A\rVert_1=\max_j\sum_i|a_{ij}|\)</span>. In the <span class="arithmatex">\(\infty\)</span>-norm the corners are <span class="arithmatex">\((\pm1,\dots,\pm1)\)</span>: <span class="arithmatex">\(\lVert A\rVert_\infty=\max_i\sum_j|a_{ij}|\)</span>.</li>
+</ul>
+<p>For the matrix of the notes,</p>
+<div class="arithmatex">\[
+A=\begin{bmatrix}3&amp;8&amp;9&amp;7\\6&amp;2&amp;4&amp;5\\9&amp;7&amp;6&amp;3\\8&amp;1&amp;5&amp;2\end{bmatrix}:\quad
+\text{column sums } 26,18,24,17,\ \ \text{row sums } 27,17,25,16,
+\]</div>
+<p>so <span class="arithmatex">\(\lVert A\rVert_1=26\)</span>, <span class="arithmatex">\(\lVert A\rVert_\infty=27\)</span> and <span class="arithmatex">\(\lVert A\rVert_F=\sqrt{553}\approx23.52\)</span>.</p>
+<p><strong>Spectral norm.</strong> <span class="arithmatex">\(\lVert A\rVert_2=\sqrt{\lambda_{\max}(A^TA)}\)</span>. For <span class="arithmatex">\(A=\begin{bmatrix}1&amp;2\\3&amp;4\end{bmatrix}\)</span>, <span class="arithmatex">\(A^TA=\begin{bmatrix}10&amp;14\\14&amp;20\end{bmatrix}\)</span>, <span class="arithmatex">\(\lambda_{\max}=15+\sqrt{221}\approx29.87\)</span> and <span class="arithmatex">\(\lVert A\rVert_2\approx5.465\)</span>. The eigenvalues of <span class="arithmatex">\(A\)</span> itself are <span class="arithmatex">\(\approx-0.37\)</span> and <span class="arithmatex">\(5.37\)</span>, so <span class="arithmatex">\(\rho(A)\approx5.37\le\lVert A\rVert_2\)</span>. The spectral radius is not a norm: <span class="arithmatex">\(\rho\begin{bmatrix}0&amp;1\\0&amp;0\end{bmatrix}=0\)</span>.</p>
 <table>
 <thead>
 <tr>
-<th>structure</th>
-<th>operations</th>
-<th style="text-align: right;"><span class="arithmatex">\(n=1000\)</span></th>
+<th>norm</th>
+<th>compute</th>
+<th>typical use</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>diagonal</td>
-<td><span class="arithmatex">\(n\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(10^3\)</span></td>
+<td><span class="arithmatex">\(\lVert\cdot\rVert_1,\ \lVert\cdot\rVert_\infty\)</span></td>
+<td>sums of absolute values</td>
+<td>error estimates</td>
 </tr>
 <tr>
-<td>tridiagonal</td>
-<td><span class="arithmatex">\(\approx8n\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(8\times10^3\)</span></td>
+<td><span class="arithmatex">\(\lVert\cdot\rVert_2\)</span></td>
+<td>eigenvalues of <span class="arithmatex">\(A^TA\)</span></td>
+<td>geometry</td>
 </tr>
 <tr>
-<td>triangular</td>
-<td><span class="arithmatex">\(\approx n^2\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(10^6\)</span></td>
-</tr>
-<tr>
-<td>full</td>
-<td><span class="arithmatex">\(\approx\frac23n^3\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(6.7\times10^8\)</span></td>
+<td><span class="arithmatex">\(\lVert\cdot\rVert_F\)</span></td>
+<td>sum of squares</td>
+<td>proofs, quick bounds</td>
 </tr>
 </tbody>
 </table>
-<p>A tridiagonal system with <span class="arithmatex">\(10^6\)</span> unknowns needs about <span class="arithmatex">\(8\times10^6\)</span> operations and four vectors of storage; full elimination would need <span class="arithmatex">\(6.7\times10^{17}\)</span>. Banded matrices with <span class="arithmatex">\(p\)</span> diagonals on each side keep their band and cost about <span class="arithmatex">\(np^2\)</span>.</p>
-<p><strong>Heat in a rod:</strong> <span class="arithmatex">\(-u''=1\)</span>, <span class="arithmatex">\(u(0)=u(1)=0\)</span>, discretised with step <span class="arithmatex">\(h\)</span>, gives <span class="arithmatex">\(-u_{i-1}+2u_i-u_{i+1}=h^2\)</span> — exactly the tridiagonal system above. The Thomas algorithm returns grid values that lie on <span class="arithmatex">\(u(x)=\frac{x(1-x)}{2}\)</span>.</p>
+<p>Note that <span class="arithmatex">\(\lVert I\rVert_F=\sqrt n\)</span> while every induced norm gives <span class="arithmatex">\(\lVert I\rVert=1\)</span>: the Frobenius norm is not induced.</p>
 <div class="nm-actions">
-<p><a class="md-button md-button--primary" href="../../practice/lec15_special_systems.html">Practise this lecture</a>
-<a class="md-button" href="../lec14-cholesky/">← Previous: Cholesky</a>
-<a class="md-button" href="../lec16-norms/">Next: Norms →</a></p>
+<p><a class="md-button md-button--primary" href="../../practice/lec16_norms.html">Practise this lecture</a>
+<a class="md-button" href="../lec15-special-systems/">← Previous: Simple Structure</a></p>
 </div>
 
 
@@ -1146,7 +1079,7 @@ x_n=\frac{\hat d_n}{\hat b_n},\quad x_i=\frac{\hat d_i-c_ix_{i+1}}{\hat b_i}.
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../lec14-cholesky/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 14 · Cholesky">
+          <a href="../lec15-special-systems/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 15 · Simple Structure">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1156,27 +1089,11 @@ x_n=\frac{\hat d_n}{\hat b_n},\quad x_i=\frac{\hat d_i-c_ix_{i+1}}{\hat b_i}.
                 Previous
               </span>
               <div class="md-ellipsis">
-                14 · Cholesky
+                15 · Simple Structure
               </div>
             </div>
           </a>
         
-        
-          
-          <a href="../lec16-norms/" class="md-footer__link md-footer__link--next" aria-label="Next: 16 · Norms">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              <div class="md-ellipsis">
-                16 · Norms
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
-            </div>
-          </a>
         
       </nav>
     
