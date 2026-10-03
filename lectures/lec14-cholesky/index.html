@@ -12,13 +12,11 @@
         <meta name="author" content="Biswarup Biswas">
       
       
-        <link rel="canonical" href="https://biswarupbiswas.github.io/numerical-methods/lectures/lec13-lu/">
+        <link rel="canonical" href="https://biswarupbiswas.github.io/numerical-methods/lectures/lec14-cholesky/">
       
       
-        <link rel="prev" href="../lec12-pivoting/">
+        <link rel="prev" href="../lec13-lu/">
       
-      
-        <link rel="next" href="../lec14-cholesky/">
       
       
         
@@ -29,7 +27,7 @@
     
     
       
-        <title>LU Factorisation - Numerical Methods</title>
+        <title>Cholesky Factorisation - Numerical Methods</title>
       
     
     
@@ -88,7 +86,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#lu-factorisation" class="md-skip">
+        <a href="#cholesky-factorisation" class="md-skip">
           Skip to content
         </a>
       
@@ -124,7 +122,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              LU Factorisation
+              Cholesky Factorisation
             
           </span>
         </div>
@@ -684,6 +682,34 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec13-lu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 · LU Factorisation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -703,7 +729,7 @@
   <span class="md-ellipsis">
     
   
-    13 · LU Factorisation
+    14 · Cholesky
   
 
     
@@ -721,7 +747,7 @@
   <span class="md-ellipsis">
     
   
-    13 · LU Factorisation
+    14 · Cholesky
   
 
     
@@ -758,10 +784,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#why-factorise" class="md-nav__link">
+  <a href="#positive-definite-matrices" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Why factorise?
+        Positive definite matrices
       
     </span>
   </a>
@@ -769,10 +795,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#l-and-u-from-elimination" class="md-nav__link">
+  <a href="#from-lu-to-llt" class="md-nav__link">
     <span class="md-ellipsis">
       
-        L and U from elimination
+        From LU to LLᵀ
       
     </span>
   </a>
@@ -780,10 +806,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#doolittles-factorisation" class="md-nav__link">
+  <a href="#computing-l" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Doolittle's factorisation
+        Computing L
       
     </span>
   </a>
@@ -791,32 +817,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#crouts-factorisation" class="md-nav__link">
+  <a href="#cost-and-stability" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Crout's factorisation
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#pa-lu" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        PA = LU
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cost-and-practice" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Cost and practice
+        Cost and stability
       
     </span>
   </a>
@@ -827,34 +831,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../lec14-cholesky/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    14 · Cholesky
-  
-
-    
-  </span>
-  
-  
-
-      </a>
     </li>
   
 
@@ -905,10 +881,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#why-factorise" class="md-nav__link">
+  <a href="#positive-definite-matrices" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Why factorise?
+        Positive definite matrices
       
     </span>
   </a>
@@ -916,10 +892,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#l-and-u-from-elimination" class="md-nav__link">
+  <a href="#from-lu-to-llt" class="md-nav__link">
     <span class="md-ellipsis">
       
-        L and U from elimination
+        From LU to LLᵀ
       
     </span>
   </a>
@@ -927,10 +903,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#doolittles-factorisation" class="md-nav__link">
+  <a href="#computing-l" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Doolittle's factorisation
+        Computing L
       
     </span>
   </a>
@@ -938,32 +914,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#crouts-factorisation" class="md-nav__link">
+  <a href="#cost-and-stability" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Crout's factorisation
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#pa-lu" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        PA = LU
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cost-and-practice" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Cost and practice
+        Cost and stability
       
     </span>
   </a>
@@ -987,125 +941,80 @@
 
 
 
-<p class="nm-eyebrow">Lecture 13</p>
+<p class="nm-eyebrow">Lecture 14</p>
 
-<h1 id="lu-factorisation">LU Factorisation<a class="headerlink" href="#lu-factorisation" title="Permanent link">&para;</a></h1>
-<iframe class="nm-video" src="https://www.youtube-nocookie.com/embed/6-P2SvFnkQQ" title="Lecture 13: LU Factorisation" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
+<h1 id="cholesky-factorisation">Cholesky Factorisation<a class="headerlink" href="#cholesky-factorisation" title="Permanent link">&para;</a></h1>
+<p><img alt="Lecture 14: Cholesky Factorisation" class="nm-video" src="../../assets/thumbnails/lec14_cholesky.png" /></p>
 <div class="nm-actions">
-<p><a class="md-button md-button--primary" href="../../practice/lec13_lu.html">Practise this lecture</a>
-<a class="md-button" href="https://www.youtube.com/watch?v=6-P2SvFnkQQ">Watch on YouTube</a></p>
+<p><a class="md-button md-button--primary" href="../../practice/lec14_cholesky.html">Practise this lecture</a></p>
 </div>
 <div class="nm-key">
 <h4 id="key-results">Key results<a class="headerlink" href="#key-results" title="Permanent link">&para;</a></h4>
 <ul>
-<li><span class="arithmatex">\(A=LU\)</span> turns <span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> into two triangular solves: <span class="arithmatex">\(L\mathbf z=\mathbf b\)</span> (forward substitution) and <span class="arithmatex">\(U\mathbf x=\mathbf z\)</span> (back substitution).</li>
-<li>Gaussian elimination gives <span class="arithmatex">\(U\)</span>; the multipliers <span class="arithmatex">\(m_{ik}\)</span> are the entries of <span class="arithmatex">\(L\)</span> below its unit diagonal.</li>
-<li><strong>Doolittle:</strong> unit <span class="arithmatex">\(L\)</span>. <strong>Crout:</strong> unit <span class="arithmatex">\(U\)</span>. Both exist if the leading principal minors <span class="arithmatex">\(D_1,\dots,D_{n-1}\)</span> are non-zero, and are unique for nonsingular <span class="arithmatex">\(A\)</span>.</li>
-<li>With partial pivoting <span class="arithmatex">\(PA=LU\)</span> exists for every nonsingular <span class="arithmatex">\(A\)</span>. The factorisation costs about <span class="arithmatex">\(\frac23n^3\)</span> once; every further right-hand side about <span class="arithmatex">\(2n^2\)</span>.</li>
+<li>A symmetric matrix is <strong>positive definite</strong> if <span class="arithmatex">\(\mathbf x^TA\mathbf x&gt;0\)</span> for all <span class="arithmatex">\(\mathbf x\neq\mathbf 0\)</span>; equivalently all eigenvalues, or all leading principal minors (Sylvester), are positive.</li>
+<li>Every symmetric positive definite <span class="arithmatex">\(A\)</span> has a <strong>unique</strong> factorisation <span class="arithmatex">\(A=LL^T\)</span> with <span class="arithmatex">\(L\)</span> lower triangular and <span class="arithmatex">\(l_{kk}&gt;0\)</span>.</li>
+<li><span class="arithmatex">\(l_{kk}=\sqrt{a_{kk}-\sum_{j&lt;k}l_{kj}^2}\)</span>, <span class="arithmatex">\(l_{ik}=\big(a_{ik}-\sum_{j&lt;k}l_{ij}l_{kj}\big)/l_{kk}\)</span>, column by column.</li>
+<li>About <span class="arithmatex">\(\frac13n^3\)</span> operations and <span class="arithmatex">\(n\)</span> square roots, half of <span class="arithmatex">\(LU\)</span>; no pivoting is needed.
+</div></li>
 </ul>
-</div>
-<h2 id="why-factorise">Why factorise?<a class="headerlink" href="#why-factorise" title="Permanent link">&para;</a></h2>
-<p>Triangular systems are cheap: <span class="arithmatex">\(L\mathbf z=\mathbf b\)</span> is solved from the top down,</p>
+<h2 id="positive-definite-matrices">Positive definite matrices<a class="headerlink" href="#positive-definite-matrices" title="Permanent link">&para;</a></h2>
+<p>For a symmetric <span class="arithmatex">\(2\times2\)</span> matrix, the level curves of <span class="arithmatex">\(q(\mathbf x)=\mathbf x^TA\mathbf x\)</span> show the difference: for <span class="arithmatex">\(A=\begin{bmatrix}2&amp;1\\1&amp;2\end{bmatrix}\)</span> they are ellipses (a bowl), for <span class="arithmatex">\(B=\begin{bmatrix}1&amp;2\\2&amp;1\end{bmatrix}\)</span> they are hyperbolas (a saddle) — <span class="arithmatex">\(B\)</span> is symmetric but not positive definite (eigenvalues <span class="arithmatex">\(3\)</span> and <span class="arithmatex">\(-1\)</span>). For</p>
 <div class="arithmatex">\[
-z_1=\frac{b_1}{l_{11}},\qquad z_i=\frac{1}{l_{ii}}\Big(b_i-\sum_{j&lt;i}l_{ij}z_j\Big),
+A=\begin{bmatrix}4&amp;2&amp;2\\2&amp;5&amp;1\\2&amp;1&amp;6\end{bmatrix}
 \]</div>
-<p>and <span class="arithmatex">\(U\mathbf x=\mathbf z\)</span> from the bottom up, each in about <span class="arithmatex">\(n^2\)</span> operations. So if <span class="arithmatex">\(A=LU\)</span>, then <span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> becomes <span class="arithmatex">\(L(U\mathbf x)=\mathbf b\)</span>: solve <span class="arithmatex">\(L\mathbf z=\mathbf b\)</span>, then <span class="arithmatex">\(U\mathbf x=\mathbf z\)</span>. When many systems share the same <span class="arithmatex">\(A\)</span>, the expensive part is done only once.</p>
-<h2 id="l-and-u-from-elimination">L and U from elimination<a class="headerlink" href="#l-and-u-from-elimination" title="Permanent link">&para;</a></h2>
-<p>Elimination on the system of Lecture 10 (<span class="arithmatex">\(2x_1-x_2+3x_3=9,\ x_1+x_2+x_3=6,\ 3x_1+4x_2-2x_3=5\)</span>) uses the multipliers <span class="arithmatex">\(m_{21}=\frac12,\ m_{31}=\frac32,\ m_{32}=\frac{11}{3}\)</span>, and these are exactly the entries of <span class="arithmatex">\(L\)</span>:</p>
+<p>the leading minors are <span class="arithmatex">\(D_1=4,\ D_2=16,\ D_3=80\)</span>, all positive. Stiffness matrices, covariance matrices and the normal equations of least squares are symmetric positive definite.</p>
+<h2 id="from-lu-to-llt">From LU to LLᵀ<a class="headerlink" href="#from-lu-to-llt" title="Permanent link">&para;</a></h2>
+<p>Symmetry turns <span class="arithmatex">\(A=LU\)</span> (unit <span class="arithmatex">\(L\)</span>) into <span class="arithmatex">\(A=LDL^T\)</span>, with the pivots in <span class="arithmatex">\(D\)</span>; positive definiteness makes them positive, so <span class="arithmatex">\(A=(LD^{1/2})(D^{1/2}L^T)\)</span>. For the matrix above,</p>
 <div class="arithmatex">\[
-\begin{bmatrix}2&amp;-1&amp;3\\1&amp;1&amp;1\\3&amp;4&amp;-2\end{bmatrix}
-=\underbrace{\begin{bmatrix}1&amp;0&amp;0\\ \frac12&amp;1&amp;0\\ \frac32&amp;\frac{11}{3}&amp;1\end{bmatrix}}_{L}
-\underbrace{\begin{bmatrix}2&amp;-1&amp;3\\0&amp;\frac32&amp;-\frac12\\0&amp;0&amp;-\frac{14}{3}\end{bmatrix}}_{U}.
+\begin{bmatrix}1&amp;0&amp;0\\ \frac12&amp;1&amp;0\\ \frac12&amp;0&amp;1\end{bmatrix}
+\begin{bmatrix}2&amp;&amp;\\&amp;2&amp;\\&amp;&amp;\sqrt5\end{bmatrix}
+=\begin{bmatrix}2&amp;0&amp;0\\1&amp;2&amp;0\\1&amp;0&amp;\sqrt5\end{bmatrix}=L .
 \]</div>
-<p>With <span class="arithmatex">\(\mathbf b=(9,6,5)\)</span>: forward substitution gives <span class="arithmatex">\(\mathbf z=(9,\frac32,-14)\)</span>, back substitution gives <span class="arithmatex">\(x_3=3,\ x_2=2,\ x_1=1\)</span>.</p>
-<p>The reason: <span class="arithmatex">\(E_{32}E_{31}E_{21}A=U\)</span>, so <span class="arithmatex">\(A=E_{21}^{-1}E_{31}^{-1}E_{32}^{-1}U\)</span>. Each inverse just adds the multiple back, and in the product every multiplier lands in its own place below the diagonal.</p>
-<h2 id="doolittles-factorisation">Doolittle's factorisation<a class="headerlink" href="#doolittles-factorisation" title="Permanent link">&para;</a></h2>
-<p><span class="arithmatex">\(L\)</span> has ones on its diagonal. Comparing <span class="arithmatex">\(A\)</span> with <span class="arithmatex">\(LU\)</span> entry by entry, row <span class="arithmatex">\(k\)</span> of <span class="arithmatex">\(U\)</span> and column <span class="arithmatex">\(k\)</span> of <span class="arithmatex">\(L\)</span> are found in turn:</p>
-<div class="arithmatex">\[
-u_{kj}=a_{kj}-\sum_{p=1}^{k-1}l_{kp}u_{pj}\quad(j\ge k),\qquad
-l_{ik}=\frac{1}{u_{kk}}\Big(a_{ik}-\sum_{p=1}^{k-1}l_{ip}u_{pk}\Big)\quad(i&gt;k).
-\]</div>
-<p>For the example of the notes,</p>
-<div class="arithmatex">\[
-\begin{bmatrix}4&amp;2&amp;2\\2&amp;5&amp;1\\2&amp;1&amp;6\end{bmatrix}
-=\begin{bmatrix}1&amp;0&amp;0\\ \frac12&amp;1&amp;0\\ \frac12&amp;0&amp;1\end{bmatrix}
-\begin{bmatrix}4&amp;2&amp;2\\0&amp;4&amp;0\\0&amp;0&amp;5\end{bmatrix},
-\]</div>
-<p>with <span class="arithmatex">\(u_{22}=5-\frac12\cdot2=4\)</span>, <span class="arithmatex">\(u_{23}=1-\frac12\cdot2=0\)</span>, <span class="arithmatex">\(l_{32}=0\)</span>, <span class="arithmatex">\(u_{33}=6-1=5\)</span>. The leading minors are <span class="arithmatex">\(D_1=4\)</span> and <span class="arithmatex">\(D_2=16\)</span>, and <span class="arithmatex">\(\det A=4\cdot4\cdot5=80\)</span>.</p>
+<p><strong>Uniqueness:</strong> from <span class="arithmatex">\(LL^T=MM^T\)</span>, <span class="arithmatex">\(L^{-1}M=L^T(M^T)^{-1}\)</span> is both lower and upper triangular, hence a diagonal <span class="arithmatex">\(D\)</span> with <span class="arithmatex">\(D^2=I\)</span>; positive diagonals give <span class="arithmatex">\(D=I\)</span>.</p>
+<h2 id="computing-l">Computing L<a class="headerlink" href="#computing-l" title="Permanent link">&para;</a></h2>
+<p>Comparing <span class="arithmatex">\(LL^T\)</span> with <span class="arithmatex">\(A\)</span> column by column: <span class="arithmatex">\(l_{11}=\sqrt4=2\)</span>, <span class="arithmatex">\(l_{21}=l_{31}=\frac22=1\)</span>, <span class="arithmatex">\(l_{22}=\sqrt{5-1^2}=2\)</span>, <span class="arithmatex">\(l_{32}=\frac{1-1\cdot1}{2}=0\)</span>, <span class="arithmatex">\(l_{33}=\sqrt{6-1-0}=\sqrt5\)</span>.</p>
 <ul>
-<li><strong>Existence:</strong> if <span class="arithmatex">\(D_1,\dots,D_{n-1}\neq0\)</span>, Doolittle's factorisation exists.</li>
-<li><strong>Uniqueness</strong> (nonsingular <span class="arithmatex">\(A\)</span>): from <span class="arithmatex">\(L_1U_1=L_2U_2\)</span>, <span class="arithmatex">\(L_2^{-1}L_1=U_2U_1^{-1}\)</span> is both unit lower and upper triangular, hence <span class="arithmatex">\(I\)</span>.</li>
-<li>Without a fixed diagonal, <span class="arithmatex">\(LU=(LD)(D^{-1}U)\)</span>; and the singular matrix <span class="arithmatex">\(\begin{bmatrix}0&amp;0\\0&amp;1\end{bmatrix}=\begin{bmatrix}1&amp;0\\t&amp;1\end{bmatrix}\begin{bmatrix}0&amp;0\\0&amp;1\end{bmatrix}\)</span> has one for every <span class="arithmatex">\(t\)</span>.</li>
+<li><strong>Solving</strong> <span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> with <span class="arithmatex">\(\mathbf b=(8,8,9)\)</span>: <span class="arithmatex">\(L\mathbf y=\mathbf b\)</span> gives <span class="arithmatex">\(\mathbf y=(4,2,\sqrt5)\)</span>, then <span class="arithmatex">\(L^T\mathbf x=\mathbf y\)</span> gives <span class="arithmatex">\(\mathbf x=(1,1,1)\)</span>.</li>
+<li><strong>Inverting:</strong> for <span class="arithmatex">\(A=\begin{bmatrix}2&amp;-1&amp;2\\-1&amp;1&amp;-1\\2&amp;-1&amp;3\end{bmatrix}\)</span>, <span class="arithmatex">\(L=\begin{bmatrix}\sqrt2&amp;0&amp;0\\-\frac1{\sqrt2}&amp;\frac1{\sqrt2}&amp;0\\ \sqrt2&amp;0&amp;1\end{bmatrix}\)</span>, <span class="arithmatex">\(L^{-1}=\begin{bmatrix}\frac1{\sqrt2}&amp;0&amp;0\\ \frac1{\sqrt2}&amp;\sqrt2&amp;0\\-1&amp;0&amp;1\end{bmatrix}\)</span> and <span class="arithmatex">\(A^{-1}=(L^{-1})^TL^{-1}=\begin{bmatrix}2&amp;1&amp;-1\\1&amp;2&amp;0\\-1&amp;0&amp;1\end{bmatrix}\)</span>.</li>
+<li><strong>Failure:</strong> for <span class="arithmatex">\(\begin{bmatrix}1&amp;2\\2&amp;1\end{bmatrix}\)</span>, <span class="arithmatex">\(l_{22}^2=1-2^2=-3\)</span>: no real square root, so the matrix is not positive definite. Attempting Cholesky is the cheapest test of positive definiteness.</li>
 </ul>
-<h2 id="crouts-factorisation">Crout's factorisation<a class="headerlink" href="#crouts-factorisation" title="Permanent link">&para;</a></h2>
-<p>Now <span class="arithmatex">\(U\)</span> has ones on its diagonal and <span class="arithmatex">\(L\)</span> carries the pivots; a column of <span class="arithmatex">\(L\)</span> is computed first, then a row of <span class="arithmatex">\(U\)</span>. The system <span class="arithmatex">\(3x_1+3x_2+9x_3=3,\ 3x_1+3x_2+5x_3=7,\ 2x_1-x_2+x_3=3\)</span> has <span class="arithmatex">\(D_2=0\)</span>, so rows 1 and 3 are swapped first:</p>
-<div class="arithmatex">\[
-\begin{bmatrix}2&amp;-1&amp;1\\3&amp;3&amp;5\\3&amp;3&amp;9\end{bmatrix}
-=\begin{bmatrix}2&amp;0&amp;0\\3&amp;\frac92&amp;0\\3&amp;\frac92&amp;4\end{bmatrix}
-\begin{bmatrix}1&amp;-\frac12&amp;\frac12\\0&amp;1&amp;\frac79\\0&amp;0&amp;1\end{bmatrix}.
-\]</div>
-<p>With <span class="arithmatex">\(\mathbf b=(3,7,3)\)</span>: <span class="arithmatex">\(\mathbf z=(\frac32,\frac59,-1)\)</span> and <span class="arithmatex">\(x_3=-1,\ x_2=\frac43,\ x_1=\frac83\)</span>.</p>
-<h2 id="pa-lu">PA = LU<a class="headerlink" href="#pa-lu" title="Permanent link">&para;</a></h2>
-<p><span class="arithmatex">\(\begin{bmatrix}0&amp;1\\1&amp;1\end{bmatrix}\)</span> is nonsingular but has no <span class="arithmatex">\(LU\)</span> factorisation (<span class="arithmatex">\(u_{11}=0\)</span> would need <span class="arithmatex">\(l_{21}\cdot0=1\)</span>). With partial pivoting one always gets <span class="arithmatex">\(PA=LU\)</span>; for the system of Lecture 10,</p>
-<div class="arithmatex">\[
-\underbrace{\begin{bmatrix}0&amp;0&amp;1\\1&amp;0&amp;0\\0&amp;1&amp;0\end{bmatrix}}_{P}A=\underbrace{\begin{bmatrix}1&amp;0&amp;0\\ \frac23&amp;1&amp;0\\ \frac13&amp;\frac1{11}&amp;1\end{bmatrix}}_{L}\underbrace{\begin{bmatrix}3&amp;4&amp;-2\\0&amp;-\frac{11}{3}&amp;\frac{13}{3}\\0&amp;0&amp;\frac{14}{11}\end{bmatrix}}_{U},
-\]</div>
-<p>and <span class="arithmatex">\(L\mathbf z=P\mathbf b=(5,9,6)\)</span> gives <span class="arithmatex">\(\mathbf z=(5,\frac{17}{3},\frac{42}{11})\)</span>, then <span class="arithmatex">\(U\mathbf x=\mathbf z\)</span> gives <span class="arithmatex">\(\mathbf x=(1,2,3)\)</span>.</p>
-<h2 id="cost-and-practice">Cost and practice<a class="headerlink" href="#cost-and-practice" title="Permanent link">&para;</a></h2>
+<h2 id="cost-and-stability">Cost and stability<a class="headerlink" href="#cost-and-stability" title="Permanent link">&para;</a></h2>
+<p>Since <span class="arithmatex">\(a_{kk}=\sum_j l_{kj}^2\)</span>, every <span class="arithmatex">\(|l_{kj}|\le\sqrt{a_{kk}}\)</span>: the entries cannot grow, so no pivoting is needed (in the example the rows of <span class="arithmatex">\(L\)</span> give <span class="arithmatex">\(4=2^2\)</span>, <span class="arithmatex">\(5=1^2+2^2\)</span>, <span class="arithmatex">\(6=1^2+0^2+(\sqrt5)^2\)</span>). The variant <span class="arithmatex">\(A=LDL^T\)</span> avoids square roots.</p>
 <table>
 <thead>
 <tr>
-<th>task</th>
-<th>operations</th>
+<th></th>
+<th><span class="arithmatex">\(LU\)</span> (with pivoting)</th>
+<th>Cholesky</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>factorise <span class="arithmatex">\(A=LU\)</span> (once)</td>
-<td><span class="arithmatex">\(\approx\frac23n^3\)</span></td>
+<td>matrices</td>
+<td>any nonsingular</td>
+<td>symmetric positive definite</td>
 </tr>
 <tr>
-<td>each right-hand side (forward + back)</td>
-<td><span class="arithmatex">\(\approx2n^2\)</span></td>
+<td>cost</td>
+<td><span class="arithmatex">\(\frac23n^3\)</span></td>
+<td><span class="arithmatex">\(\frac13n^3\)</span></td>
 </tr>
 <tr>
-<td>compute <span class="arithmatex">\(A^{-1}\)</span></td>
-<td><span class="arithmatex">\(\approx2n^3\)</span></td>
-</tr>
-</tbody>
-</table>
-<p>For <span class="arithmatex">\(n=1000\)</span> and <span class="arithmatex">\(100\)</span> right-hand sides, repeated elimination needs about <span class="arithmatex">\(6.7\times10^{10}\)</span> operations, <span class="arithmatex">\(LU\)</span> about <span class="arithmatex">\(8.7\times10^{8}\)</span>. In memory, the multipliers overwrite the zeros of <span class="arithmatex">\(A\)</span>, so <span class="arithmatex">\(L\)</span> and <span class="arithmatex">\(U\)</span> share one array. As a bonus, <span class="arithmatex">\(\det A=u_{11}u_{22}\cdots u_{nn}\)</span> (Doolittle).</p>
-<table>
-<thead>
-<tr>
-<th>factorisation</th>
-<th>unit diagonal</th>
-<th>exists when</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Doolittle</td>
-<td><span class="arithmatex">\(L\)</span></td>
-<td><span class="arithmatex">\(D_1,\dots,D_{n-1}\neq0\)</span></td>
+<td>pivoting</td>
+<td>needed</td>
+<td>never</td>
 </tr>
 <tr>
-<td>Crout</td>
-<td><span class="arithmatex">\(U\)</span></td>
-<td><span class="arithmatex">\(D_1,\dots,D_{n-1}\neq0\)</span></td>
-</tr>
-<tr>
-<td><span class="arithmatex">\(PA=LU\)</span></td>
-<td><span class="arithmatex">\(L\)</span></td>
-<td><span class="arithmatex">\(A\)</span> nonsingular</td>
+<td>storage</td>
+<td><span class="arithmatex">\(L\)</span> and <span class="arithmatex">\(U\)</span></td>
+<td><span class="arithmatex">\(L\)</span> only</td>
 </tr>
 </tbody>
 </table>
 <div class="nm-actions">
-<p><a class="md-button md-button--primary" href="../../practice/lec13_lu.html">Practise this lecture</a>
-<a class="md-button" href="../lec12-pivoting/">← Previous: Pivoting</a>
-<a class="md-button" href="../lec14-cholesky/">Next: Cholesky Factorisation →</a></p>
+<p><a class="md-button md-button--primary" href="../../practice/lec14_cholesky.html">Practise this lecture</a>
+<a class="md-button" href="../lec13-lu/">← Previous: LU Factorisation</a></p>
+</div>
 </div>
 
 
@@ -1145,7 +1054,7 @@ l_{ik}=\frac{1}{u_{kk}}\Big(a_{ik}-\sum_{p=1}^{k-1}l_{ip}u_{pk}\Big)\quad(i&gt;k
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../lec12-pivoting/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 12 · Pivoting">
+          <a href="../lec13-lu/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 13 · LU Factorisation">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1155,27 +1064,11 @@ l_{ik}=\frac{1}{u_{kk}}\Big(a_{ik}-\sum_{p=1}^{k-1}l_{ip}u_{pk}\Big)\quad(i&gt;k
                 Previous
               </span>
               <div class="md-ellipsis">
-                12 · Pivoting
+                13 · LU Factorisation
               </div>
             </div>
           </a>
         
-        
-          
-          <a href="../lec14-cholesky/" class="md-footer__link md-footer__link--next" aria-label="Next: 14 · Cholesky">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              <div class="md-ellipsis">
-                14 · Cholesky
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
-            </div>
-          </a>
         
       </nav>
     
