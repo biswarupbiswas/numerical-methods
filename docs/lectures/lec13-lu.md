@@ -6,10 +6,11 @@ title: LU Factorisation
 
 # LU Factorisation
 
-![Lecture 13: LU Factorisation](../assets/thumbnails/lec13_lu.png){ .nm-video }
+<iframe class="nm-video" src="https://www.youtube-nocookie.com/embed/6-P2SvFnkQQ" title="Lecture 13: LU Factorisation" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 <div class="nm-actions" markdown>
 [Practise this lecture](../practice/lec13_lu.html){ .md-button .md-button--primary }
+[Watch on YouTube](https://www.youtube.com/watch?v=6-P2SvFnkQQ){ .md-button }
 </div>
 
 <div class="nm-key" markdown>
