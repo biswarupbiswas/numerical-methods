@@ -109,4 +109,5 @@ For \(n=1000\) and \(100\) right-hand sides, repeated elimination needs about \(
 <div class="nm-actions" markdown>
 [Practise this lecture](../practice/lec13_lu.html){ .md-button .md-button--primary }
 [← Previous: Pivoting](lec12-pivoting.md){ .md-button }
+[Next: Cholesky Factorisation →](lec14-cholesky.md){ .md-button }
 </div>

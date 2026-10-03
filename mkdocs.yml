@@ -51,6 +51,7 @@ nav:
       - "11 · Operation Count": lectures/lec11-operation-count.md
       - "12 · Pivoting": lectures/lec12-pivoting.md
       - "13 · LU Factorisation": lectures/lec13-lu.md
+      - "14 · Cholesky": lectures/lec14-cholesky.md
 
 markdown_extensions:
   - admonition
