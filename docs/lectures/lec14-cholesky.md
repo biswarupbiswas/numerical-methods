@@ -6,11 +6,11 @@ title: Cholesky Factorisation
 
 # Cholesky Factorisation
 
-<iframe class="nm-video" src="https://www.youtube-nocookie.com/embed/ePneb0UVD-M" title="Lecture 14: Cholesky Factorisation" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe class="nm-video" src="https://www.youtube-nocookie.com/embed/8xfPlJHWwyY" title="Lecture 14: Cholesky Factorisation" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 <div class="nm-actions" markdown>
 [Practise this lecture](../practice/lec14_cholesky.html){ .md-button .md-button--primary }
-[Watch on YouTube](https://www.youtube.com/watch?v=ePneb0UVD-M){ .md-button }
+[Watch on YouTube](https://www.youtube.com/watch?v=8xfPlJHWwyY){ .md-button }
 </div>
 
 <div class="nm-key" markdown>
