@@ -50,6 +50,7 @@ nav:
       - "10 · Gaussian Elimination": lectures/lec10-gaussian-elimination.md
       - "11 · Operation Count": lectures/lec11-operation-count.md
       - "12 · Pivoting": lectures/lec12-pivoting.md
+      - "13 · LU Factorisation": lectures/lec13-lu.md
 
 markdown_extensions:
   - admonition

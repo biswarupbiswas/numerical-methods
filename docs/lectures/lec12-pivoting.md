@@ -63,4 +63,5 @@ The entries can grow during elimination. For Wilkinson's matrix, partial pivotin
 <div class="nm-actions" markdown>
 [Practise this lecture](../practice/lec12_pivoting.html){ .md-button .md-button--primary }
 [← Previous: Operation Count](lec11-operation-count.md){ .md-button }
+[Next: LU Factorisation →](lec13-lu.md){ .md-button }
 </div>
