@@ -64,4 +64,5 @@ Since \(a_{kk}=\sum_j l_{kj}^2\), every \(|l_{kj}|\le\sqrt{a_{kk}}\): the entrie
 <div class="nm-actions" markdown>
 [Practise this lecture](../practice/lec14_cholesky.html){ .md-button .md-button--primary }
 [← Previous: LU Factorisation](lec13-lu.md){ .md-button }
+[Next: Simple Structure →](lec15-special-systems.md){ .md-button }
 </div>
