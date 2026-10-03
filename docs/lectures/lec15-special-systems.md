@@ -6,11 +6,11 @@ title: Systems with Simple Structure
 
 # Systems with Simple Structure
 
-<iframe class="nm-video" src="https://www.youtube-nocookie.com/embed/H6bWWuqbtXI" title="Lecture 15: Systems with Simple Structure" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe class="nm-video" src="https://www.youtube-nocookie.com/embed/qRzSPQMZxNo" title="Lecture 15: Systems with Simple Structure" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 <div class="nm-actions" markdown>
 [Practise this lecture](../practice/lec15_special_systems.html){ .md-button .md-button--primary }
-[Watch on YouTube](https://www.youtube.com/watch?v=H6bWWuqbtXI){ .md-button }
+[Watch on YouTube](https://www.youtube.com/watch?v=qRzSPQMZxNo){ .md-button }
 </div>
 
 <div class="nm-key" markdown>
