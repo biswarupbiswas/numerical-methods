@@ -6,10 +6,11 @@ title: Sensitivity and Condition Number
 
 # Sensitivity and Condition Number
 
-![Lecture 17: Sensitivity and Condition Number](../assets/thumbnails/lec17_conditioning.png){ .nm-video }
+<iframe class="nm-video" src="https://www.youtube-nocookie.com/embed/VqPkWSUrZi0" title="Lecture 17: Sensitivity and Condition Number" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 <div class="nm-actions" markdown>
 [Practise this lecture](../practice/lec17_conditioning.html){ .md-button .md-button--primary }
+[Watch on YouTube](https://www.youtube.com/watch?v=VqPkWSUrZi0){ .md-button }
 </div>
 
 <div class="nm-key" markdown>
