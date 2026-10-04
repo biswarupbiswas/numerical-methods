@@ -62,4 +62,5 @@ Note that \(\lVert I\rVert_F=\sqrt n\) while every induced norm gives \(\lVert I
 <div class="nm-actions" markdown>
 [Practise this lecture](../practice/lec16_norms.html){ .md-button .md-button--primary }
 [← Previous: Simple Structure](lec15-special-systems.md){ .md-button }
+[Next: Condition Number →](lec17-conditioning.md){ .md-button }
 </div>

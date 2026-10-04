@@ -54,6 +54,7 @@ nav:
       - "14 · Cholesky": lectures/lec14-cholesky.md
       - "15 · Simple Structure": lectures/lec15-special-systems.md
       - "16 · Norms": lectures/lec16-norms.md
+      - "17 · Condition Number": lectures/lec17-conditioning.md
 
 markdown_extensions:
   - admonition
