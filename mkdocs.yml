@@ -55,6 +55,9 @@ nav:
       - "15 · Simple Structure": lectures/lec15-special-systems.md
       - "16 · Norms": lectures/lec16-norms.md
       - "17 · Condition Number": lectures/lec17-conditioning.md
+      - "18 · Jacobi and Gauss–Seidel": lectures/lec18-jacobi-gauss-seidel.md
+      - "19 · Iterative Convergence": lectures/lec19-iterative-convergence.md
+      - "20 · SOR": lectures/lec20-sor.md
 
 markdown_extensions:
   - admonition

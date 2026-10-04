@@ -53,4 +53,5 @@ For the example, \(A^{-1}=10^4\begin{bmatrix}1.0001&-1\\-1&1\end{bmatrix}\), \(\
 <div class="nm-actions" markdown>
 [Practise this lecture](../practice/lec17_conditioning.html){ .md-button .md-button--primary }
 [← Previous: Norms](lec16-norms.md){ .md-button }
+[Next: Jacobi and Gauss–Seidel →](lec18-jacobi-gauss-seidel.md){ .md-button }
 </div>
