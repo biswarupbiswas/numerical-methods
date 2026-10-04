@@ -6,10 +6,11 @@ title: Vector and Matrix Norms
 
 # Vector and Matrix Norms
 
-![Lecture 16: Vector and Matrix Norms](../assets/thumbnails/lec16_norms.png){ .nm-video }
+<iframe class="nm-video" src="https://www.youtube-nocookie.com/embed/Bs2GWHUXsD4" title="Lecture 16: Vector and Matrix Norms" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 <div class="nm-actions" markdown>
 [Practise this lecture](../practice/lec16_norms.html){ .md-button .md-button--primary }
+[Watch on YouTube](https://www.youtube.com/watch?v=Bs2GWHUXsD4){ .md-button }
 </div>
 
 <div class="nm-key" markdown>
