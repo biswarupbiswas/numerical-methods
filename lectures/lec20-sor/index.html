@@ -12,13 +12,11 @@
         <meta name="author" content="Biswarup Biswas">
       
       
-        <link rel="canonical" href="https://biswarupbiswas.github.io/numerical-methods/lectures/lec09-rounding-errors/">
+        <link rel="canonical" href="https://biswarupbiswas.github.io/numerical-methods/lectures/lec20-sor/">
       
       
-        <link rel="prev" href="../lec08-floating-point/">
+        <link rel="prev" href="../lec19-iterative-convergence/">
       
-      
-        <link rel="next" href="../lec10-gaussian-elimination/">
       
       
         
@@ -29,7 +27,7 @@
     
     
       
-        <title>Machine Epsilon and Loss of Significance - Numerical Methods</title>
+        <title>Successive Over-Relaxation (SOR) - Numerical Methods</title>
       
     
     
@@ -88,7 +86,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#machine-epsilon-and-loss-of-significance" class="md-skip">
+        <a href="#successive-over-relaxation-sor" class="md-skip">
           Skip to content
         </a>
       
@@ -124,7 +122,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Machine Epsilon and Loss of Significance
+              Successive Over-Relaxation (SOR)
             
           </span>
         </div>
@@ -572,37 +570,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    9 · Machine Epsilon
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../lec09-rounding-errors/" class="md-nav__link">
         
   
   
@@ -618,114 +589,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#key-results" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Key results
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#machine-epsilon" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Machine epsilon
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#floating-point-arithmetic" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Floating-point arithmetic
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#propagation-of-errors" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Propagation of errors
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example-sqrtx1-sqrtx-at-x-500-6-digits" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Example: \(\sqrt{x+1} - \sqrt{x}\) at \(x = 500\), 6 digits
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example-the-quadratic-formula" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Example: the quadratic formula
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#remedies" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Remedies
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ieee-754" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        IEEE 754
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1015,10 +878,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../lec20-sor/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    20 · SOR
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1034,6 +924,70 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#key-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key results
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-kahans-bound-holds" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Kahan's bound holds
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#an-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        An example
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-large-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A large problem
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1084,10 +1038,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#machine-epsilon" class="md-nav__link">
+  <a href="#why-kahans-bound-holds" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Machine epsilon
+        Why Kahan's bound holds
       
     </span>
   </a>
@@ -1095,10 +1049,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#floating-point-arithmetic" class="md-nav__link">
+  <a href="#an-example" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Floating-point arithmetic
+        An example
       
     </span>
   </a>
@@ -1106,54 +1060,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#propagation-of-errors" class="md-nav__link">
+  <a href="#a-large-problem" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Propagation of errors
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example-sqrtx1-sqrtx-at-x-500-6-digits" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Example: \(\sqrt{x+1} - \sqrt{x}\) at \(x = 500\), 6 digits
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example-the-quadratic-formula" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Example: the quadratic formula
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#remedies" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Remedies
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ieee-754" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        IEEE 754
+        A large problem
       
     </span>
   </a>
@@ -1177,172 +1087,85 @@
 
 
 
-<p class="nm-eyebrow">Lecture 9</p>
+<p class="nm-eyebrow">Lecture 20</p>
 
-<h1 id="machine-epsilon-and-loss-of-significance">Machine Epsilon and Loss of Significance<a class="headerlink" href="#machine-epsilon-and-loss-of-significance" title="Permanent link">&para;</a></h1>
-<iframe class="nm-video" src="https://www.youtube-nocookie.com/embed/OWk3188Nl34" title="Lecture 9: Machine Epsilon and Loss of Significance" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
+<h1 id="successive-over-relaxation-sor">Successive Over-Relaxation (SOR)<a class="headerlink" href="#successive-over-relaxation-sor" title="Permanent link">&para;</a></h1>
+<p><img alt="Lecture 20: Successive Over-Relaxation" class="nm-video" src="../../assets/thumbnails/lec20_sor.png" /></p>
 <div class="nm-actions">
-<p><a class="md-button md-button--primary" href="../../practice/lec09_rounding_errors.html">Practise this lecture</a>
-<a class="md-button" href="https://www.youtube.com/watch?v=OWk3188Nl34">Watch on YouTube</a></p>
+<p><a class="md-button md-button--primary" href="../../practice/lec20_sor.html">Practise this lecture</a></p>
 </div>
 <div class="nm-key">
 <h4 id="key-results">Key results<a class="headerlink" href="#key-results" title="Permanent link">&para;</a></h4>
 <ul>
-<li>Machine epsilon <span class="arithmatex">\(\varepsilon_M = \beta^{1-t}\)</span>, the gap between <span class="arithmatex">\(1\)</span> and the next number; unit round-off <span class="arithmatex">\(u = \frac12\varepsilon_M\)</span>.</li>
-<li>Model of arithmetic: <span class="arithmatex">\(x \circledast y = (x * y)(1 + \delta)\)</span>, <span class="arithmatex">\(|\delta| \le u\)</span>.</li>
-<li>Products: relative errors add. Sums: amplified by <span class="arithmatex">\(\frac{|x| + |y|}{|x + y|}\)</span>, huge when <span class="arithmatex">\(x \approx -y\)</span> (cancellation).</li>
-<li>IEEE double: <span class="arithmatex">\(\varepsilon_M = 2^{-52} \approx 2.22\times10^{-16}\)</span>, about <span class="arithmatex">\(16\)</span> digits.</li>
+<li><strong>SOR:</strong> <span class="arithmatex">\(x_i^{(k+1)}=(1-\omega)\,x_i^{(k)}+\omega\,x_i^{GS}\)</span>, where <span class="arithmatex">\(x_i^{GS}\)</span> is the Gauss–Seidel value; <span class="arithmatex">\(\omega=1\)</span> is Gauss–Seidel.</li>
+<li>Iteration matrix <span class="arithmatex">\(H(\omega)=(D+\omega L)^{-1}\big[(1-\omega)D-\omega U\big]\)</span>.</li>
+<li><strong>Kahan:</strong> <span class="arithmatex">\(\rho(H(\omega))\ge|\omega-1|\)</span>, so only <span class="arithmatex">\(0&lt;\omega&lt;2\)</span> can converge. <strong>Ostrowski–Reich:</strong> for symmetric positive definite <span class="arithmatex">\(A\)</span>, every <span class="arithmatex">\(0&lt;\omega&lt;2\)</span> works.</li>
+<li><strong>Young</strong> (consistently ordered <span class="arithmatex">\(A\)</span>, e.g. tridiagonal): <span class="arithmatex">\(\omega_{\text{opt}}=\dfrac{2}{1+\sqrt{1-\mu^2}}\)</span> with <span class="arithmatex">\(\mu=\rho(H_J)\)</span>, and <span class="arithmatex">\(\rho\big(H(\omega_{\text{opt}})\big)=\omega_{\text{opt}}-1\)</span>.</li>
 </ul>
 </div>
-<h2 id="machine-epsilon">Machine epsilon<a class="headerlink" href="#machine-epsilon" title="Permanent link">&para;</a></h2>
+<h2 id="why-kahans-bound-holds">Why Kahan's bound holds<a class="headerlink" href="#why-kahans-bound-holds" title="Permanent link">&para;</a></h2>
+<p>Since <span class="arithmatex">\(D+\omega L\)</span> and <span class="arithmatex">\((1-\omega)D-\omega U\)</span> are triangular,</p>
 <div class="arithmatex">\[
-\varepsilon_M = \beta^{1-t}, \qquad u = \tfrac12\,\varepsilon_M .
+\det H(\omega)=\frac{\det\big((1-\omega)D-\omega U\big)}{\det(D+\omega L)}=\frac{(1-\omega)^n\det D}{\det D}=(1-\omega)^n=\lambda_1\lambda_2\cdots\lambda_n,
 \]</div>
-<p><span class="arithmatex">\(\varepsilon_M\)</span> is the distance from <span class="arithmatex">\(1\)</span> to the next floating-point number; <span class="arithmatex">\(u\)</span> bounds the relative error of rounding. It can be found by halving: start with <span class="arithmatex">\(e = 1\)</span> and halve while <span class="arithmatex">\(1 + e/2 &gt; 1\)</span>. In double precision the loop stops at <span class="arithmatex">\(e = 2^{-52} \approx 2.22\times10^{-16}\)</span>, and <span class="arithmatex">\(1 + 2^{-53} = 1\)</span>.</p>
-<h2 id="floating-point-arithmetic">Floating-point arithmetic<a class="headerlink" href="#floating-point-arithmetic" title="Permanent link">&para;</a></h2>
-<p>Each operation is computed as if exactly and then rounded:</p>
+<p>so the largest <span class="arithmatex">\(|\lambda_i|\)</span> is at least <span class="arithmatex">\(|1-\omega|\)</span>.</p>
+<h2 id="an-example">An example<a class="headerlink" href="#an-example" title="Permanent link">&para;</a></h2>
 <div class="arithmatex">\[
-x \circledast y = (x * y)(1 + \delta), \qquad |\delta| \le u, \quad * \in \{+, -, \times, \div\}.
+\begin{aligned}3x+2y&amp;=4.5\\2x+3y-z&amp;=5\\-y+2z&amp;=-0.5\end{aligned}\qquad \mathbf x=(0.5,\ 1.5,\ 0.5).
 \]</div>
-<p><strong>Addition is not associative.</strong> With <span class="arithmatex">\(4\)</span> digits, <span class="arithmatex">\((1.000 + 0.0004) + 0.0004 = 1.000\)</span> but <span class="arithmatex">\(1.000 + (0.0004 + 0.0004) = 1.001\)</span> (exact: <span class="arithmatex">\(1.0008\)</span>). Add small terms first.</p>
-<h2 id="propagation-of-errors">Propagation of errors<a class="headerlink" href="#propagation-of-errors" title="Permanent link">&para;</a></h2>
-<p><strong>Products and quotients</strong> are safe:</p>
-<div class="arithmatex">\[
-x(1+\varepsilon_1)\cdot y(1+\varepsilon_2) \approx xy\,(1 + \varepsilon_1 + \varepsilon_2), \qquad
-\frac{x(1+\varepsilon_1)}{y(1+\varepsilon_2)} \approx \frac{x}{y}(1 + \varepsilon_1 - \varepsilon_2).
-\]</div>
-<p><strong>Sums</strong> can amplify errors:</p>
-<div class="arithmatex">\[
-x(1+\varepsilon_1) + y(1+\varepsilon_2) = (x+y)\Big(1 + \frac{x\varepsilon_1 + y\varepsilon_2}{x+y}\Big), \qquad
-\text{relative error} \le \frac{|x| + |y|}{|x+y|}\,\max|\varepsilon_i| .
-\]</div>
-<p>When <span class="arithmatex">\(x \approx -y\)</span> the factor is huge: <strong>catastrophic cancellation</strong>. The subtraction itself is exact; the errors already in <span class="arithmatex">\(x\)</span> and <span class="arithmatex">\(y\)</span> become the leading digits of the result.</p>
-<h2 id="example-sqrtx1-sqrtx-at-x-500-6-digits">Example: <span class="arithmatex">\(\sqrt{x+1} - \sqrt{x}\)</span> at <span class="arithmatex">\(x = 500\)</span>, 6 digits<a class="headerlink" href="#example-sqrtx1-sqrtx-at-x-500-6-digits" title="Permanent link">&para;</a></h2>
+<p>The Jacobi eigenvalues are <span class="arithmatex">\(0,\ \pm\sqrt{11/18}\)</span>, so <span class="arithmatex">\(\mu\approx0.7817\)</span>, <span class="arithmatex">\(\omega_{\text{opt}}\approx1.2318\)</span> and <span class="arithmatex">\(\rho\approx0.2318\)</span>. One SOR sweep from <span class="arithmatex">\(\mathbf 0\)</span> with this <span class="arithmatex">\(\omega\)</span> gives <span class="arithmatex">\(\mathbf x^{(1)}\approx(1.8477,\ 0.5356,\ 0.0220)\)</span>.</p>
 <table>
 <thead>
 <tr>
-<th></th>
-<th>value</th>
+<th>method</th>
+<th style="text-align: right;"><span class="arithmatex">\(\rho\)</span></th>
+<th style="text-align: right;">rate <span class="arithmatex">\(-\log_{10}\rho\)</span></th>
+<th style="text-align: right;">sweeps to <span class="arithmatex">\(10^{-6}\)</span></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><span class="arithmatex">\(\sqrt{501},\ \sqrt{500}\)</span></td>
-<td><span class="arithmatex">\(22.3830,\ 22.3607\)</span></td>
+<td>Jacobi</td>
+<td style="text-align: right;">0.7817</td>
+<td style="text-align: right;">0.107</td>
+<td style="text-align: right;">58</td>
 </tr>
 <tr>
-<td>direct: <span class="arithmatex">\(22.3830 - 22.3607\)</span></td>
-<td><span class="arithmatex">\(0.0223000\)</span> (relative error <span class="arithmatex">\(2.2\times10^{-3}\)</span>)</td>
+<td>Gauss–Seidel</td>
+<td style="text-align: right;">0.6111</td>
+<td style="text-align: right;">0.214</td>
+<td style="text-align: right;">29</td>
 </tr>
 <tr>
-<td>rationalised: <span class="arithmatex">\(\dfrac{1}{\sqrt{501} + \sqrt{500}} = \dfrac{1}{44.7437}\)</span></td>
-<td><span class="arithmatex">\(0.0223495\)</span> (all digits correct)</td>
+<td>SOR, <span class="arithmatex">\(\omega_{\text{opt}}\)</span></td>
+<td style="text-align: right;">0.2318</td>
+<td style="text-align: right;">0.635</td>
+<td style="text-align: right;">13</td>
 </tr>
 </tbody>
 </table>
-<h2 id="example-the-quadratic-formula">Example: the quadratic formula<a class="headerlink" href="#example-the-quadratic-formula" title="Permanent link">&para;</a></h2>
-<p><span class="arithmatex">\(x^2 + 62.10x + 1 = 0\)</span> with <span class="arithmatex">\(4\)</span>-digit arithmetic: <span class="arithmatex">\(b^2 - 4 = 3852\)</span>, <span class="arithmatex">\(\sqrt{3852} = 62.06\)</span>.</p>
+<p>The curve <span class="arithmatex">\(\rho(H(\omega))\)</span> is steep to the left of <span class="arithmatex">\(\omega_{\text{opt}}\)</span> and a straight line of slope <span class="arithmatex">\(1\)</span> to the right, so it is better to overestimate <span class="arithmatex">\(\omega_{\text{opt}}\)</span> than to underestimate it. In practice <span class="arithmatex">\(\rho(H_J)\)</span> is estimated from how fast the changes shrink, or a few values of <span class="arithmatex">\(\omega\)</span> are tried on a smaller problem; <span class="arithmatex">\(\omega&lt;1\)</span> (under-relaxation) can damp oscillations.</p>
+<h2 id="a-large-problem">A large problem<a class="headerlink" href="#a-large-problem" title="Permanent link">&para;</a></h2>
+<p>For the tridiagonal model matrix <span class="arithmatex">\(\operatorname{tridiag}(-1,2,-1)\)</span> with <span class="arithmatex">\(n=50\)</span>: <span class="arithmatex">\(\rho(H_J)=\cos\frac{\pi}{51}\approx0.9981\)</span>, <span class="arithmatex">\(\omega_{\text{opt}}\approx1.884\)</span>, and the sweeps to reach <span class="arithmatex">\(10^{-6}\)</span> are</p>
 <table>
 <thead>
 <tr>
-<th></th>
-<th style="text-align: right;">computed</th>
-<th style="text-align: right;">true</th>
+<th style="text-align: right;">Jacobi</th>
+<th style="text-align: right;">Gauss–Seidel</th>
+<th style="text-align: right;">SOR</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><span class="arithmatex">\(x_1 = \dfrac{-b + \sqrt{b^2 - 4ac}}{2a}\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(-0.02000\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(-0.01610724\)</span></td>
-</tr>
-<tr>
-<td><span class="arithmatex">\(x_1 = \dfrac{-2c}{b + \sqrt{b^2 - 4ac}} = \dfrac{-2}{124.2}\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(-0.01610\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(-0.01610724\)</span></td>
-</tr>
-<tr>
-<td><span class="arithmatex">\(x_2 = \dfrac{-b - \sqrt{b^2 - 4ac}}{2a}\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(-62.08\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(-62.08389\)</span></td>
+<td style="text-align: right;">7278</td>
+<td style="text-align: right;">3639</td>
+<td style="text-align: right;">113</td>
 </tr>
 </tbody>
 </table>
-<p>The first formula has a relative error of <span class="arithmatex">\(24\%\)</span>; the rewritten one is correct to all four digits.</p>
-<h2 id="remedies">Remedies<a class="headerlink" href="#remedies" title="Permanent link">&para;</a></h2>
-<ul>
-<li><strong>Rationalise</strong>, as above.</li>
-<li><strong>Use identities</strong>: <span class="arithmatex">\(1 - \cos x = 2\sin^2\frac{x}{2}\)</span>. At <span class="arithmatex">\(x = 10^{-8}\)</span> the left side gives <span class="arithmatex">\(0\)</span>, the right side <span class="arithmatex">\(5\times10^{-17}\)</span>.</li>
-<li><strong>Taylor series</strong> for small arguments: <span class="arithmatex">\(e^x - 1 \approx x + \frac{x^2}{2}\)</span>. Numerical libraries provide special functions for <span class="arithmatex">\(e^x - 1\)</span> and <span class="arithmatex">\(\log(1 + x)\)</span>.</li>
-<li><strong>Reorder</strong> sums so that small terms are added first.</li>
-<li><strong>Rescale</strong> to avoid overflow: <span class="arithmatex">\(\sqrt{x^2 + y^2} = |x|\sqrt{1 + (y/x)^2}\)</span> works even for <span class="arithmatex">\(x = 10^{200}\)</span>.</li>
-</ul>
-<p>In 1996 the Ariane 5 rocket was lost when a 64-bit floating-point value was converted to a 16-bit integer and overflowed.</p>
-<h2 id="ieee-754">IEEE 754<a class="headerlink" href="#ieee-754" title="Permanent link">&para;</a></h2>
-<p>Since 1985 almost every computer follows the IEEE 754 standard (largely designed by William Kahan): fixed formats, correct rounding (round half to even by default) and special values. A number is stored as a sign bit <span class="arithmatex">\(s\)</span>, a biased exponent <span class="arithmatex">\(E\)</span> and a fraction <span class="arithmatex">\(f\)</span>:</p>
-<div class="arithmatex">\[
-x = (-1)^s \times 1.f \times 2^{E - \text{bias}} .
-\]</div>
-<p>The leading <span class="arithmatex">\(1\)</span> is the <strong>hidden bit</strong>: it is not stored, giving one extra bit of precision.</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th style="text-align: right;">single</th>
-<th style="text-align: right;">double</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>bits (<span class="arithmatex">\(s\)</span>, <span class="arithmatex">\(E\)</span>, <span class="arithmatex">\(f\)</span>)</td>
-<td style="text-align: right;"><span class="arithmatex">\(1, 8, 23\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(1, 11, 52\)</span></td>
-</tr>
-<tr>
-<td>bias</td>
-<td style="text-align: right;"><span class="arithmatex">\(127\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(1023\)</span></td>
-</tr>
-<tr>
-<td><span class="arithmatex">\(t\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(24\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(53\)</span></td>
-</tr>
-<tr>
-<td><span class="arithmatex">\(\varepsilon_M\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(1.19\times10^{-7}\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(2.22\times10^{-16}\)</span></td>
-</tr>
-<tr>
-<td><span class="arithmatex">\(u\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(5.96\times10^{-8}\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(1.11\times10^{-16}\)</span></td>
-</tr>
-<tr>
-<td>largest</td>
-<td style="text-align: right;"><span class="arithmatex">\(3.40\times10^{38}\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(1.80\times10^{308}\)</span></td>
-</tr>
-<tr>
-<td>smallest normal</td>
-<td style="text-align: right;"><span class="arithmatex">\(1.18\times10^{-38}\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(2.23\times10^{-308}\)</span></td>
-</tr>
-<tr>
-<td>decimal digits</td>
-<td style="text-align: right;"><span class="arithmatex">\(\approx 7\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(\approx 16\)</span></td>
-</tr>
-</tbody>
-</table>
-<p>The smallest and largest exponent patterns are reserved: <span class="arithmatex">\(0\)</span> and subnormal numbers, and <span class="arithmatex">\(\pm\infty\)</span> and NaN.</p>
-<p><strong>Example.</strong> <span class="arithmatex">\(-7.25 = -111.01_2 = -1.1101_2\times2^2\)</span>. In single precision: <span class="arithmatex">\(s = 1\)</span>, <span class="arithmatex">\(E = 2 + 127 = 129 = 10000001_2\)</span>, <span class="arithmatex">\(f = 1101000\ldots0\)</span>.</p>
-<p><strong>Spacing.</strong> Consecutive doubles in <span class="arithmatex">\([2^j, 2^{j+1})\)</span> are <span class="arithmatex">\(2^{j-52}\)</span> apart: <span class="arithmatex">\(\varepsilon_M\)</span> near <span class="arithmatex">\(1\)</span>, but <span class="arithmatex">\(2\)</span> near <span class="arithmatex">\(10^{16}\)</span>, so <span class="arithmatex">\(10^{16} + 1 = 10^{16}\)</span> in double precision.</p>
 <div class="nm-actions">
-<p><a class="md-button md-button--primary" href="../../practice/lec09_rounding_errors.html">Practise this lecture</a>
-<a class="md-button" href="../lec08-floating-point/">← Previous: Floating-Point Numbers</a>
-<a class="md-button" href="../lec10-gaussian-elimination/">Next: Gaussian Elimination →</a></p>
+<p><a class="md-button md-button--primary" href="../../practice/lec20_sor.html">Practise this lecture</a>
+<a class="md-button" href="../lec19-iterative-convergence/">← Previous: Convergence of Iterative Methods</a></p>
 </div>
 
 
@@ -1382,7 +1205,7 @@ x = (-1)^s \times 1.f \times 2^{E - \text{bias}} .
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../lec08-floating-point/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 8 · Floating-Point Numbers">
+          <a href="../lec19-iterative-convergence/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 19 · Iterative Convergence">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1392,27 +1215,11 @@ x = (-1)^s \times 1.f \times 2^{E - \text{bias}} .
                 Previous
               </span>
               <div class="md-ellipsis">
-                8 · Floating-Point Numbers
+                19 · Iterative Convergence
               </div>
             </div>
           </a>
         
-        
-          
-          <a href="../lec10-gaussian-elimination/" class="md-footer__link md-footer__link--next" aria-label="Next: 10 · Gaussian Elimination">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              <div class="md-ellipsis">
-                10 · Gaussian Elimination
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
-            </div>
-          </a>
         
       </nav>
     
