@@ -6,10 +6,11 @@ title: Jacobi and Gauss–Seidel Methods
 
 # Jacobi and Gauss–Seidel Methods
 
-![Lecture 18: Jacobi and Gauss–Seidel Methods](../assets/thumbnails/lec18_jacobi_gauss_seidel.png){ .nm-video }
+<iframe class="nm-video" src="https://www.youtube-nocookie.com/embed/NN0Rx9EtcrQ" title="Lecture 18: Jacobi and Gauss–Seidel Methods" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 <div class="nm-actions" markdown>
 [Practise this lecture](../practice/lec18_jacobi_gauss_seidel.html){ .md-button .md-button--primary }
+[Watch on YouTube](https://www.youtube.com/watch?v=NN0Rx9EtcrQ){ .md-button }
 </div>
 
 <div class="nm-key" markdown>

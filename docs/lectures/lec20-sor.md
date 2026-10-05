@@ -6,10 +6,11 @@ title: Successive Over-Relaxation (SOR)
 
 # Successive Over-Relaxation (SOR)
 
-![Lecture 20: Successive Over-Relaxation](../assets/thumbnails/lec20_sor.png){ .nm-video }
+<iframe class="nm-video" src="https://www.youtube-nocookie.com/embed/69iKRvNSOBw" title="Lecture 20: Successive Over-Relaxation (SOR)" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 <div class="nm-actions" markdown>
 [Practise this lecture](../practice/lec20_sor.html){ .md-button .md-button--primary }
+[Watch on YouTube](https://www.youtube.com/watch?v=69iKRvNSOBw){ .md-button }
 </div>
 
 <div class="nm-key" markdown>

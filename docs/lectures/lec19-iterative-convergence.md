@@ -6,10 +6,11 @@ title: Convergence of Iterative Methods
 
 # Convergence of Iterative Methods
 
-![Lecture 19: Convergence of Iterative Methods](../assets/thumbnails/lec19_iterative_convergence.png){ .nm-video }
+<iframe class="nm-video" src="https://www.youtube-nocookie.com/embed/D03W7qRGhCA" title="Lecture 19: Convergence of Iterative Methods" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 <div class="nm-actions" markdown>
 [Practise this lecture](../practice/lec19_iterative_convergence.html){ .md-button .md-button--primary }
+[Watch on YouTube](https://www.youtube.com/watch?v=D03W7qRGhCA){ .md-button }
 </div>
 
 <div class="nm-key" markdown>
