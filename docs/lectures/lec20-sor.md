@@ -58,4 +58,5 @@ For the tridiagonal model matrix \(\operatorname{tridiag}(-1,2,-1)\) with \(n=50
 <div class="nm-actions" markdown>
 [Practise this lecture](../practice/lec20_sor.html){ .md-button .md-button--primary }
 [← Previous: Convergence of Iterative Methods](lec19-iterative-convergence.md){ .md-button }
+[Next: The Power Method →](lec21-power-method.md){ .md-button }
 </div>

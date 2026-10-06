@@ -12,7 +12,9 @@ function typeset(node) {
 /* Minimal TeX-like renderer for canvas labels, using KaTeX's own fonts so plots match the text.
    Supports: letters (italic), digits/operators (upright), _x _{..} ^x ^{..}, \text{..}, a few symbols. */
 const SYMBOLS = { "\\varepsilon": "ε", "\\epsilon": "ε", "\\cdot": "·", "\\le": "≤", "\\ge": "≥", "\\approx": "≈",
-  "\\to": "→", "\\ldots": "…", "\\infty": "∞", "\\pm": "±", "\\,": " ", "\\;": " ", "\\quad": "  ", "\\ ": " " };
+  "\\to": "→", "\\ldots": "…", "\\infty": "∞", "\\pm": "±", "\\,": " ", "\\;": " ", "\\quad": "  ", "\\ ": " ",
+  "\\lambda": "λ", "\\sigma": "σ", "\\alpha": "α", "\\mu": "μ", "\\omega": "ω", "\\rho": "ρ", "\\delta": "δ",
+  "\\kappa": "κ", "\\pi": "π", "\\theta": "θ", "\\phi": "φ" };
 function mathRuns(src, size) {
   const runs = [];
   const push = (text, kind, level) => { if (text) runs.push({ text, kind, level }); };

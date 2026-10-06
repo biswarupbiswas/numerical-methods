@@ -58,6 +58,9 @@ nav:
       - "18 · Jacobi and Gauss–Seidel": lectures/lec18-jacobi-gauss-seidel.md
       - "19 · Iterative Convergence": lectures/lec19-iterative-convergence.md
       - "20 · SOR": lectures/lec20-sor.md
+      - "21 · Power Method": lectures/lec21-power-method.md
+      - "22 · Inverse Power Method": lectures/lec22-inverse-power.md
+      - "23 · Shifted Inverse Power": lectures/lec23-shifted-inverse-power.md
 
 markdown_extensions:
   - admonition
