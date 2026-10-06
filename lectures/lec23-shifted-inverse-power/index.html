@@ -12,25 +12,29 @@
         <meta name="author" content="Biswarup Biswas">
       
       
+        <link rel="canonical" href="https://biswarupbiswas.github.io/numerical-methods/lectures/lec23-shifted-inverse-power/">
+      
+      
+        <link rel="prev" href="../lec22-inverse-power/">
       
       
       
         
       
       
-      <link rel="icon" href="/numerical-methods/assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
-        <title>Numerical Methods</title>
+        <title>The Shifted Inverse Power Method - Numerical Methods</title>
       
     
     
-      <link rel="stylesheet" href="/numerical-methods/assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
-        <link rel="stylesheet" href="/numerical-methods/assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -53,11 +57,11 @@
     
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,650&display=swap">
     
-      <link rel="stylesheet" href="/numerical-methods/stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
     
-      <link rel="stylesheet" href="/numerical-methods/stylesheets/home.css">
+      <link rel="stylesheet" href="../../stylesheets/home.css">
     
-    <script>__md_scope=new URL("/numerical-methods/",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -81,6 +85,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#the-shifted-inverse-power-method" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -93,7 +102,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/numerical-methods/." title="Numerical Methods" class="md-header__button md-logo" aria-label="Numerical Methods" data-md-component="logo">
+    <a href="../.." title="Numerical Methods" class="md-header__button md-logo" aria-label="Numerical Methods" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.42 5.29c-1.1-.1-2.07.71-2.17 1.82L10 10h2.82v2h-3l-.44 5.07A4.001 4.001 0 0 1 2 18.83l1.5-1.5c.33 1.05 1.46 1.64 2.5 1.3.78-.24 1.33-.93 1.4-1.74L7.82 12h-3v-2H8l.27-3.07a4.01 4.01 0 0 1 4.33-3.65c1.26.11 2.4.81 3.06 1.89l-1.5 1.5c-.25-.77-.93-1.31-1.74-1.38M22 13.65l-1.41-1.41-2.83 2.83-2.83-2.83-1.43 1.41 2.85 2.85-2.85 2.81 1.43 1.41 2.83-2.83 2.83 2.83L22 19.31l-2.83-2.81z"/></svg>
@@ -113,7 +122,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              The Shifted Inverse Power Method
             
           </span>
         </div>
@@ -229,7 +238,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/numerical-methods/." title="Numerical Methods" class="md-nav__button md-logo" aria-label="Numerical Methods" data-md-component="logo">
+    <a href="../.." title="Numerical Methods" class="md-nav__button md-logo" aria-label="Numerical Methods" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.42 5.29c-1.1-.1-2.07.71-2.17 1.82L10 10h2.82v2h-3l-.44 5.07A4.001 4.001 0 0 1 2 18.83l1.5-1.5c.33 1.05 1.46 1.64 2.5 1.3.78-.24 1.33-.93 1.4-1.74L7.82 12h-3v-2H8l.27-3.07a4.01 4.01 0 0 1 4.33-3.65c1.26.11 2.4.81 3.06 1.89l-1.5 1.5c-.25-.77-.93-1.31-1.74-1.38M22 13.65l-1.41-1.41-2.83 2.83-2.83-2.83-1.43 1.41 2.85 2.85-2.85 2.81 1.43 1.41 2.83-2.83 2.83 2.83L22 19.31l-2.83-2.81z"/></svg>
@@ -259,7 +268,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/numerical-methods/." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -283,8 +292,10 @@
       
   
   
+    
   
   
+  
     
     
     
@@ -295,11 +306,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
@@ -320,7 +331,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -338,7 +349,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/numerical-methods/lectures/lec01-bisection/" class="md-nav__link">
+      <a href="../lec01-bisection/" class="md-nav__link">
         
   
   
@@ -366,7 +377,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/numerical-methods/lectures/lec02-secant/" class="md-nav__link">
+      <a href="../lec02-secant/" class="md-nav__link">
         
   
   
@@ -394,7 +405,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/numerical-methods/lectures/lec03-regula-falsi/" class="md-nav__link">
+      <a href="../lec03-regula-falsi/" class="md-nav__link">
         
   
   
@@ -422,7 +433,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/numerical-methods/lectures/lec04-newton/" class="md-nav__link">
+      <a href="../lec04-newton/" class="md-nav__link">
         
   
   
@@ -450,7 +461,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/numerical-methods/lectures/lec05-fixed-point/" class="md-nav__link">
+      <a href="../lec05-fixed-point/" class="md-nav__link">
         
   
   
@@ -478,7 +489,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/numerical-methods/lectures/lec06-fixed-point-convergence/" class="md-nav__link">
+      <a href="../lec06-fixed-point-convergence/" class="md-nav__link">
         
   
   
@@ -506,7 +517,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/numerical-methods/lectures/lec07-order-modified-newton/" class="md-nav__link">
+      <a href="../lec07-order-modified-newton/" class="md-nav__link">
         
   
   
@@ -534,7 +545,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/numerical-methods/lectures/lec08-floating-point/" class="md-nav__link">
+      <a href="../lec08-floating-point/" class="md-nav__link">
         
   
   
@@ -562,7 +573,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/numerical-methods/lectures/lec09-rounding-errors/" class="md-nav__link">
+      <a href="../lec09-rounding-errors/" class="md-nav__link">
         
   
   
@@ -590,7 +601,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/numerical-methods/lectures/lec10-gaussian-elimination/" class="md-nav__link">
+      <a href="../lec10-gaussian-elimination/" class="md-nav__link">
         
   
   
@@ -618,7 +629,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/numerical-methods/lectures/lec11-operation-count/" class="md-nav__link">
+      <a href="../lec11-operation-count/" class="md-nav__link">
         
   
   
@@ -646,7 +657,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/numerical-methods/lectures/lec12-pivoting/" class="md-nav__link">
+      <a href="../lec12-pivoting/" class="md-nav__link">
         
   
   
@@ -674,7 +685,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/numerical-methods/lectures/lec13-lu/" class="md-nav__link">
+      <a href="../lec13-lu/" class="md-nav__link">
         
   
   
@@ -702,7 +713,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/numerical-methods/lectures/lec14-cholesky/" class="md-nav__link">
+      <a href="../lec14-cholesky/" class="md-nav__link">
         
   
   
@@ -730,7 +741,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/numerical-methods/lectures/lec15-special-systems/" class="md-nav__link">
+      <a href="../lec15-special-systems/" class="md-nav__link">
         
   
   
@@ -758,7 +769,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/numerical-methods/lectures/lec16-norms/" class="md-nav__link">
+      <a href="../lec16-norms/" class="md-nav__link">
         
   
   
@@ -786,7 +797,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/numerical-methods/lectures/lec17-conditioning/" class="md-nav__link">
+      <a href="../lec17-conditioning/" class="md-nav__link">
         
   
   
@@ -814,7 +825,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/numerical-methods/lectures/lec18-jacobi-gauss-seidel/" class="md-nav__link">
+      <a href="../lec18-jacobi-gauss-seidel/" class="md-nav__link">
         
   
   
@@ -842,7 +853,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/numerical-methods/lectures/lec19-iterative-convergence/" class="md-nav__link">
+      <a href="../lec19-iterative-convergence/" class="md-nav__link">
         
   
   
@@ -870,7 +881,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/numerical-methods/lectures/lec20-sor/" class="md-nav__link">
+      <a href="../lec20-sor/" class="md-nav__link">
         
   
   
@@ -898,7 +909,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/numerical-methods/lectures/lec21-power-method/" class="md-nav__link">
+      <a href="../lec21-power-method/" class="md-nav__link">
         
   
   
@@ -926,7 +937,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/numerical-methods/lectures/lec22-inverse-power/" class="md-nav__link">
+      <a href="../lec22-inverse-power/" class="md-nav__link">
         
   
   
@@ -951,10 +962,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="/numerical-methods/lectures/lec23-shifted-inverse-power/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    23 · Shifted Inverse Power
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -970,6 +1008,70 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#key-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key results
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-example-from-the-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The example from the notes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-middle-eigenvalue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The middle eigenvalue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rayleigh-quotient-iteration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rayleigh quotient iteration
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -999,6 +1101,60 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#key-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key results
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-example-from-the-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The example from the notes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-middle-eigenvalue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The middle eigenvalue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rayleigh-quotient-iteration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rayleigh quotient iteration
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1011,8 +1167,101 @@
               
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+
+
+<p class="nm-eyebrow">Lecture 23</p>
+
+<h1 id="the-shifted-inverse-power-method">The Shifted Inverse Power Method<a class="headerlink" href="#the-shifted-inverse-power-method" title="Permanent link">&para;</a></h1>
+<p><img alt="Lecture 23: The Shifted Inverse Power Method" class="nm-video" src="../../assets/thumbnails/lec23_shifted_inverse_power.png" /></p>
+<div class="nm-actions">
+<p><a class="md-button md-button--primary" href="../../practice/lec23_shifted_inverse_power.html">Practise this lecture</a></p>
+</div>
+<div class="nm-key">
+<h4 id="key-results">Key results<a class="headerlink" href="#key-results" title="Permanent link">&para;</a></h4>
+<ul>
+<li><span class="arithmatex">\((A-\sigma I)^{-1}\mathbf x=\frac{1}{\lambda-\sigma}\mathbf x\)</span>: the eigenvalue nearest to the shift <span class="arithmatex">\(\sigma\)</span> becomes dominant.</li>
+<li><strong>Shifted inverse power method:</strong> solve <span class="arithmatex">\((A-\sigma I)\mathbf y^{(k)}=\mathbf v^{(k-1)}\)</span>, <span class="arithmatex">\(\alpha^{(k)}=\)</span> the entry of largest size, <span class="arithmatex">\(\mathbf v^{(k)}=\mathbf y^{(k)}/\alpha^{(k)}\)</span>, <span class="arithmatex">\(\lambda^{(k)}=\sigma+1/\alpha^{(k)}\)</span>. With <span class="arithmatex">\(\sigma=0\)</span> it is the inverse power method.</li>
+<li>The rate is <span class="arithmatex">\(\dfrac{|\lambda_J-\sigma|}{|\lambda_K-\sigma|}\)</span> (nearest over next nearest): the closer <span class="arithmatex">\(\sigma\)</span>, the faster.</li>
+<li>Rayleigh quotient iteration updates <span class="arithmatex">\(\sigma\)</span> every step and converges cubically for symmetric <span class="arithmatex">\(A\)</span>, at the cost of a new factorisation per step.</li>
+</ul>
+</div>
+<h2 id="the-example-from-the-notes">The example from the notes<a class="headerlink" href="#the-example-from-the-notes" title="Permanent link">&para;</a></h2>
+<p>For <span class="arithmatex">\(A=\begin{bmatrix}4&amp;3\\2&amp;5\end{bmatrix}\)</span> (eigenvalues <span class="arithmatex">\(2\)</span> and <span class="arithmatex">\(7\)</span>) and <span class="arithmatex">\(\sigma=6\)</span>, <span class="arithmatex">\(A-6I=\begin{bmatrix}-2&amp;3\\2&amp;-1\end{bmatrix}\)</span>, <span class="arithmatex">\((A-6I)^{-1}=\frac14\begin{bmatrix}1&amp;3\\2&amp;2\end{bmatrix}\)</span>. From <span class="arithmatex">\(\mathbf v^{(0)}=(1,0)\)</span>:</p>
+<table>
+<thead>
+<tr>
+<th><span class="arithmatex">\(k\)</span></th>
+<th style="text-align: right;">1</th>
+<th style="text-align: right;">2</th>
+<th style="text-align: right;">3</th>
+<th style="text-align: right;">4</th>
+<th style="text-align: right;">5</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(\lambda^{(k)},\ \sigma=6\)</span></td>
+<td style="text-align: right;">8.0000</td>
+<td style="text-align: right;">7.1429</td>
+<td style="text-align: right;">7.0769</td>
+<td style="text-align: right;">7.0097</td>
+<td style="text-align: right;">7.0049</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\lambda^{(k)},\ \sigma=6.9\)</span></td>
+<td style="text-align: right;">7.14500</td>
+<td style="text-align: right;">7.00198</td>
+<td style="text-align: right;">7.00006</td>
+<td style="text-align: right;">7.00000</td>
+<td style="text-align: right;"></td>
+</tr>
+</tbody>
+</table>
+<p>The rate is <span class="arithmatex">\(|7-6|/|2-6|=0.25\)</span> for <span class="arithmatex">\(\sigma=6\)</span> and <span class="arithmatex">\(0.1/4.9\approx0.02\)</span> for <span class="arithmatex">\(\sigma=6.9\)</span>: <span class="arithmatex">\(12\)</span> and <span class="arithmatex">\(4\)</span> iterations for <span class="arithmatex">\(10^{-6}\)</span>, against <span class="arithmatex">\(14\)</span> for the power method.</p>
+<h2 id="the-middle-eigenvalue">The middle eigenvalue<a class="headerlink" href="#the-middle-eigenvalue" title="Permanent link">&para;</a></h2>
+<p>For <span class="arithmatex">\(A=\begin{bmatrix}3&amp;1&amp;0\\1&amp;2&amp;1\\0&amp;1&amp;4\end{bmatrix}\)</span> (eigenvalues <span class="arithmatex">\(1.1206,\ 3.3473,\ 4.5321\)</span>), <span class="arithmatex">\(\sigma=3.3\)</span> gives <span class="arithmatex">\(3.37888,\ 3.34878,\ 3.34735,\ 3.34730\)</span>: six decimals after five iterations, at rate <span class="arithmatex">\(0.038\)</span>, with eigenvector <span class="arithmatex">\((1,\ 0.3473,\ -0.5321)\)</span> and residual below <span class="arithmatex">\(2\times10^{-5}\)</span>. Together with the power and inverse power methods this gives the whole spectrum. A shift below <span class="arithmatex">\(2.23\)</span> finds <span class="arithmatex">\(1.1206\)</span>, between <span class="arithmatex">\(2.23\)</span> and <span class="arithmatex">\(3.94\)</span> finds <span class="arithmatex">\(3.3473\)</span>, above <span class="arithmatex">\(3.94\)</span> finds <span class="arithmatex">\(4.5321\)</span>.</p>
+<table>
+<thead>
+<tr>
+<th><span class="arithmatex">\(\sigma\)</span></th>
+<th style="text-align: right;">3.0</th>
+<th style="text-align: right;">3.3</th>
+<th style="text-align: right;">3.34</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>rate</td>
+<td style="text-align: right;">0.227</td>
+<td style="text-align: right;">0.038</td>
+<td style="text-align: right;">0.006</td>
+</tr>
+</tbody>
+</table>
+<h2 id="rayleigh-quotient-iteration">Rayleigh quotient iteration<a class="headerlink" href="#rayleigh-quotient-iteration" title="Permanent link">&para;</a></h2>
+<p>With <span class="arithmatex">\(\sigma_k=r(\mathbf v^{(k)})=\dfrac{\mathbf v^{(k)T}A\mathbf v^{(k)}}{\mathbf v^{(k)T}\mathbf v^{(k)}}\)</span> from <span class="arithmatex">\(\mathbf v=(1,1,1)/\sqrt3\)</span>: <span class="arithmatex">\(4.3333,\ 4.5230,\ 4.53208835,\ 4.53208889\)</span>, with errors <span class="arithmatex">\(2\times10^{-1},\ 9\times10^{-3},\ 5\times10^{-7},\ 9\times10^{-16}\)</span>. Each step needs a new factorisation (<span class="arithmatex">\(n^3/3\)</span> operations), so a fixed shift is often cheaper for large matrices.</p>
+<div class="nm-actions">
+<p><a class="md-button md-button--primary" href="../../practice/lec23_shifted_inverse_power.html">Practise this lecture</a>
+<a class="md-button" href="../lec22-inverse-power/">← Previous: The Inverse Power Method</a></p>
+</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -1030,6 +1279,28 @@
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../lec22-inverse-power/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 22 · Inverse Power Method">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                22 · Inverse Power Method
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">
@@ -1056,16 +1327,16 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "/numerical-methods/", "features": ["navigation.instant", "navigation.tracking", "navigation.sections", "navigation.footer", "navigation.top", "content.code.copy", "toc.follow"], "search": "/numerical-methods/assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.sections", "navigation.footer", "navigation.top", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="/numerical-methods/assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
       
-        <script src="/numerical-methods/javascripts/katex.js"></script>
+        <script src="../../javascripts/katex.js"></script>
       
     
   </body>
