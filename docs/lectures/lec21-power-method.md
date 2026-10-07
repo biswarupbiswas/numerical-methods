@@ -6,10 +6,11 @@ title: The Power Method
 
 # The Power Method
 
-![Lecture 21: The Power Method](../assets/thumbnails/lec21_power_method.png){ .nm-video }
+<iframe class="nm-video" src="https://www.youtube-nocookie.com/embed/k9TRN17eKFk" title="Lecture 21: The Power Method" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 <div class="nm-actions" markdown>
 [Practise this lecture](../practice/lec21_power_method.html){ .md-button .md-button--primary }
+[Watch on YouTube](https://www.youtube.com/watch?v=k9TRN17eKFk){ .md-button }
 </div>
 
 <div class="nm-key" markdown>
