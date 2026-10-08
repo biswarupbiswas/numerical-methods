@@ -6,10 +6,11 @@ title: The Inverse Power Method
 
 # The Inverse Power Method
 
-![Lecture 22: The Inverse Power Method](../assets/thumbnails/lec22_inverse_power.png){ .nm-video }
+<iframe class="nm-video" src="https://www.youtube-nocookie.com/embed/--V0tnrUOfo" title="Lecture 22: The Inverse Power Method" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 <div class="nm-actions" markdown>
 [Practise this lecture](../practice/lec22_inverse_power.html){ .md-button .md-button--primary }
+[Watch on YouTube](https://www.youtube.com/watch?v=--V0tnrUOfo){ .md-button }
 </div>
 
 <div class="nm-key" markdown>
