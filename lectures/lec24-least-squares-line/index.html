@@ -1075,10 +1075,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-example-from-the-notes" class="md-nav__link">
+  <a href="#a-worked-example" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The example from the notes
+        A worked example
       
     </span>
   </a>
@@ -1161,10 +1161,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-example-from-the-notes" class="md-nav__link">
+  <a href="#a-worked-example" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The example from the notes
+        A worked example
       
     </span>
   </a>
@@ -1222,12 +1222,12 @@
 \frac{\partial E}{\partial a_1}=-2\sum_{i=0}^{m}\big(y_i-a_0-a_1x_i\big)x_i=0,
 \]</div>
 <p>which rearrange to the normal equations.</p>
-<h2 id="the-example-from-the-notes">The example from the notes<a class="headerlink" href="#the-example-from-the-notes" title="Permanent link">&para;</a></h2>
-<p>For <span class="arithmatex">\((1,2.2),\ (2,2.8),\ (3,3.6),\ (4,4.5),\ (5,5.1)\)</span>: <span class="arithmatex">\(m+1=5\)</span>, <span class="arithmatex">\(\sum x_i=15\)</span>, <span class="arithmatex">\(\sum y_i=18.2\)</span>, <span class="arithmatex">\(\sum x_i^2=55\)</span>, <span class="arithmatex">\(\sum x_iy_i=62.1\)</span>, so</p>
+<h2 id="a-worked-example">A worked example<a class="headerlink" href="#a-worked-example" title="Permanent link">&para;</a></h2>
+<p>For <span class="arithmatex">\((1,2.3),\ (2,2.4),\ (3,3.9),\ (4,3.8),\ (5,5.6)\)</span>: <span class="arithmatex">\(m+1=5\)</span>, <span class="arithmatex">\(\sum x_i=15\)</span>, <span class="arithmatex">\(\sum y_i=18\)</span>, <span class="arithmatex">\(\sum x_i^2=55\)</span>, <span class="arithmatex">\(\sum x_iy_i=62\)</span>, so</p>
 <div class="arithmatex">\[
-5a_0+15a_1=18.2,\qquad 15a_0+55a_1=62.1,
+5a_0+15a_1=18,\qquad 15a_0+55a_1=62,
 \]</div>
-<p>giving <span class="arithmatex">\(a_1=0.75\)</span>, <span class="arithmatex">\(a_0=1.39\)</span>: the least squares line is <span class="arithmatex">\(y=1.39+0.75x\)</span>.</p>
+<p>giving <span class="arithmatex">\(a_1=0.8\)</span>, <span class="arithmatex">\(a_0=1.2\)</span>: the least squares line is <span class="arithmatex">\(y=1.2+0.8x\)</span>.</p>
 <table>
 <thead>
 <tr>
@@ -1242,34 +1242,36 @@
 <tbody>
 <tr>
 <td><span class="arithmatex">\(y_i\)</span></td>
-<td style="text-align: right;">2.2</td>
-<td style="text-align: right;">2.8</td>
-<td style="text-align: right;">3.6</td>
-<td style="text-align: right;">4.5</td>
-<td style="text-align: right;">5.1</td>
+<td style="text-align: right;">2.3</td>
+<td style="text-align: right;">2.4</td>
+<td style="text-align: right;">3.9</td>
+<td style="text-align: right;">3.8</td>
+<td style="text-align: right;">5.6</td>
 </tr>
 <tr>
-<td><span class="arithmatex">\(1.39+0.75x_i\)</span></td>
-<td style="text-align: right;">2.14</td>
-<td style="text-align: right;">2.89</td>
-<td style="text-align: right;">3.64</td>
-<td style="text-align: right;">4.39</td>
-<td style="text-align: right;">5.14</td>
+<td><span class="arithmatex">\(1.2+0.8x_i\)</span></td>
+<td style="text-align: right;">2.0</td>
+<td style="text-align: right;">2.8</td>
+<td style="text-align: right;">3.6</td>
+<td style="text-align: right;">4.4</td>
+<td style="text-align: right;">5.2</td>
 </tr>
 <tr>
 <td><span class="arithmatex">\(r_i\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(+0.06\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(-0.09\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(-0.04\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(+0.11\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(-0.04\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(+0.3\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(-0.4\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(+0.3\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(-0.6\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(+0.4\)</span></td>
 </tr>
 </tbody>
 </table>
-<p>The residuals add up to <span class="arithmatex">\(0\)</span> and <span class="arithmatex">\(E=\sum r_i^2=0.027\)</span>. The line through the first and last points gives <span class="arithmatex">\(E=0.034\)</span>, the line <span class="arithmatex">\(1.5+0.7x\)</span> gives <span class="arithmatex">\(E=0.06\)</span>. The mean point is <span class="arithmatex">\((3,\ 3.64)\)</span> and the slope is <span class="arithmatex">\(7.5/10=0.75\)</span>. At <span class="arithmatex">\(x=6\)</span> the line predicts <span class="arithmatex">\(5.89\)</span>; the degree-four polynomial through all five points predicts <span class="arithmatex">\(4.7\)</span>.</p>
+<p>The residuals add up to <span class="arithmatex">\(0\)</span> and <span class="arithmatex">\(E=\sum r_i^2=0.86\)</span>. The line through the first and last points gives <span class="arithmatex">\(E=1.48\)</span>, the line <span class="arithmatex">\(1.5+0.7x\)</span> gives <span class="arithmatex">\(E=0.96\)</span>. The mean point is <span class="arithmatex">\((3,\ 3.6)\)</span> and the slope is <span class="arithmatex">\(8/10=0.8\)</span>. At <span class="arithmatex">\(x=6\)</span> the line predicts <span class="arithmatex">\(6.0\)</span>; the degree-four polynomial through all five points shoots up to <span class="arithmatex">\(19.3\)</span>.</p>
+<p>The notes' example <span class="arithmatex">\((1,2.2),\ (2,2.8),\ (3,3.6),\ (4,4.5),\ (5,5.1)\)</span> works the same way: <span class="arithmatex">\(5a_0+15a_1=18.2\)</span>, <span class="arithmatex">\(15a_0+55a_1=62.1\)</span>, so <span class="arithmatex">\(y=1.39+0.75x\)</span> with <span class="arithmatex">\(E=0.027\)</span>.</p>
+<p>With many measurements nothing changes: sixty scattered points need the same four sums and the same <span class="arithmatex">\(2\times2\)</span> system.</p>
 <h2 id="outliers-conditioning-and-the-wrong-model">Outliers, conditioning and the wrong model<a class="headerlink" href="#outliers-conditioning-and-the-wrong-model" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Changing the last value from <span class="arithmatex">\(5.1\)</span> to <span class="arithmatex">\(8.1\)</span> changes the line to <span class="arithmatex">\(y=0.19+1.35x\)</span>: one outlier almost doubles the slope.</li>
+<li>Changing the last value from <span class="arithmatex">\(5.6\)</span> to <span class="arithmatex">\(8.6\)</span> changes the line to <span class="arithmatex">\(y=1.4x\)</span>: one outlier nearly doubles the slope.</li>
 <li>With <span class="arithmatex">\(x=2021,\dots,2025\)</span> the matrix <span class="arithmatex">\(A^TA\)</span> has condition number about <span class="arithmatex">\(8\times10^{12}\)</span>; with <span class="arithmatex">\(x=1,\dots,5\)</span> about <span class="arithmatex">\(70\)</span>. Centring (<span class="arithmatex">\(x-\bar x\)</span>) makes <span class="arithmatex">\(A^TA=\begin{bmatrix}5&amp;0\\0&amp;10\end{bmatrix}\)</span>.</li>
 <li>For the curved data <span class="arithmatex">\(1.0,\ 1.9,\ 3.9,\ 7.1,\ 11.2\)</span> the line leaves residuals <span class="arithmatex">\(+1.1,\ -0.56,\ -1.12,\ -0.48,\ +1.06\)</span>: a pattern, so a curve is needed (next lecture).</li>
 </ul>

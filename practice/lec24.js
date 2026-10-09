@@ -1,7 +1,7 @@
 /* Lecture 24 — Least Squares: Fitting a Line: practice tasks. */
 "use strict";
 
-const XS = [1, 2, 3, 4, 5], YS = [2.2, 2.8, 3.6, 4.5, 5.1];
+const XS = [1, 2, 3, 4, 5], YS = [2.3, 2.4, 3.9, 3.8, 5.6];
 
 function lsFit(xs, ys) {
   const n = xs.length, sx = xs.reduce((a, b) => a + b, 0), sy = ys.reduce((a, b) => a + b, 0);
@@ -30,26 +30,26 @@ function fitPlot(a0, a1, title, opts = {}) {
 
 const TASKS = [
   { nav: "A residual", title: "Measure one gap",
-    instr: TeX`<p>The least squares line is \(y=1.39+0.75x\). What is the residual \(r=y_i-(a_0+a_1x_i)\) at the data point \((4,\ 4.5)\)?</p>`,
-    hints: [TeX`The line gives \(1.39+0.75\cdot4=4.39\) at \(x=4\).`],
-    answer: TeX`\(r=4.5-4.39=0.11\): the point lies just above the line.`,
+    instr: TeX`<p>The least squares line is \(y=1.2+0.8x\). What is the residual \(r=y_i-(a_0+a_1x_i)\) at the data point \((4,\ 3.8)\)?</p>`,
+    hints: [TeX`The line gives \(1.2+0.8\cdot4=4.4\) at \(x=4\).`],
+    answer: TeX`\(r=3.8-4.4=-0.6\): the point lies below the line.`,
     build(C) {
-      fitPlot(1.39, 0.75, TeX`Residuals: vertical gaps from the points to the line`);
+      fitPlot(1.2, 0.8, TeX`Residuals: vertical gaps from the points to the line`);
       const inp = field(C, "r =", "ans1");
-      return () => near(parseNum(inp.value), 0.11, 1e-6) ? ["done", "Correct! A positive residual means the point is above the line."] : ["wrong", "Not quite. Compute 4.5 minus the value of the line at x = 4."];
+      return () => near(parseNum(inp.value), -0.6, 1e-6) ? ["done", "Correct! A negative residual means the point is below the line."] : ["wrong", "Not quite. Compute 3.8 minus the value of the line at x = 4."];
     } },
 
   { nav: "Drag the line", title: "Make the squares small",
-    instr: TeX`<p>Move the intercept \(a_0\) and the slope \(a_1\). The red squares sit on the residuals, and \(E\) is their total area. Get \(E\) below \(0.03\).</p>`,
-    hints: [TeX`Try a slope near \(0.75\), then adjust the intercept.`, TeX`The best line is \(a_0=1.39,\ a_1=0.75\) with \(E=0.027\).`],
-    answer: TeX`\(a_0=1.39,\ a_1=0.75\) gives the minimum \(E=0.027\).`,
+    instr: TeX`<p>Move the intercept \(a_0\) and the slope \(a_1\). The red squares sit on the residuals, and \(E\) is their total area. Get \(E\) below \(0.9\).</p>`,
+    hints: [TeX`Try a slope near \(0.8\), then adjust the intercept.`, TeX`The best line is \(a_0=1.2,\ a_1=0.8\) with \(E=0.86\).`],
+    answer: TeX`\(a_0=1.2,\ a_1=0.8\) gives the minimum \(E=0.86\).`,
     build(C) {
       let a0 = 2.4, a1 = 0.4;
       const draw = () => fitPlot(a0, a1, TeX`\(E=${sse(a0, a1).toFixed(3)}\)`, { squares: true });
       draw();
       slider(C, "a₀", "s0", 0, 3, 0.01, a0, v => { a0 = v; draw(); });
       slider(C, "a₁", "s1", 0, 1.5, 0.005, a1, v => { a1 = v; draw(); });
-      return () => sse(a0, a1) < 0.03 ? ["done", `Correct! E = ${sse(a0, a1).toFixed(4)}; the least squares minimum is 0.027.`] : ["wrong", `E = ${sse(a0, a1).toFixed(3)}. Keep going: below 0.03.`];
+      return () => sse(a0, a1) < 0.9 ? ["done", `Correct! E = ${sse(a0, a1).toFixed(3)}; the least squares minimum is 0.86.`] : ["wrong", `E = ${sse(a0, a1).toFixed(3)}. Keep going: below 0.9.`];
     } },
 
   { nav: "Why squares?", title: "What is wrong with the plain sum?",
@@ -57,53 +57,53 @@ const TASKS = [
     hints: ["Residuals can be positive or negative."],
     answer: TeX`Positive and negative residuals cancel: every line through the mean point \((\bar x,\bar y)\) gives \(\sum r_i=0\), even a terrible one.`,
     build(C) {
-      fitPlot(5.64, -0.6667, TeX`A bad line through \((3,\ 3.64)\): still \(\sum r_i=0\)`);
+      fitPlot(5.6, -0.6667, TeX`A bad line through \((3,\ 3.6)\): still \(\sum r_i=0\)`);
       cards(C, ["Positive and negative residuals cancel", "The sum is always too large", "It has no derivative"]);
       return () => !S.choice ? ["wrong", "Choose one of the options."] : S.choice === 1 ? ["done", "Right! This line is awful, yet its residuals add up to zero."] : ["wrong", "Look at the signs of the residuals in the plot."];
     } },
 
   { nav: "The sums", title: "Compute a sum",
-    instr: TeX`<p>For the data \((1,2.2),(2,2.8),(3,3.6),(4,4.5),(5,5.1)\), compute \(\sum x_iy_i\).</p>`,
-    hints: [TeX`\(2.2+5.6+10.8+18+25.5\).`],
-    answer: TeX`\(\sum x_iy_i=62.1\).`,
+    instr: TeX`<p>For the data \((1,2.3),(2,2.4),(3,3.9),(4,3.8),(5,5.6)\), compute \(\sum x_iy_i\).</p>`,
+    hints: [TeX`\(2.3+4.8+11.7+15.2+28\).`],
+    answer: TeX`\(\sum x_iy_i=62\).`,
     build(C) {
       fitPlot(0, null, TeX`The five data points`);
       const inp = field(C, TeX`\(\sum x_iy_i=\)`, "ans1");
-      return () => near(parseNum(inp.value), 62.1, 1e-6) ? ["done", "Correct! With Σx = 15, Σy = 18.2 and Σx² = 55 we have all four sums."] : ["wrong", "Not quite. Multiply each x by its y and add."];
+      return () => near(parseNum(inp.value), 62, 1e-6) ? ["done", "Correct! With Σx = 15, Σy = 18 and Σx² = 55 we have all four sums."] : ["wrong", "Not quite. Multiply each x by its y and add."];
     } },
 
   { nav: "Normal equations", title: "Solve for the slope",
-    instr: TeX`<p>The normal equations are \(5a_0+15a_1=18.2\) and \(15a_0+55a_1=62.1\). Find \(a_1\).</p>`,
-    hints: [TeX`Multiply the first equation by 3 and subtract it from the second: \(10a_1=7.5\).`],
-    answer: TeX`\(a_1=0.75\), then \(a_0=(18.2-15\cdot0.75)/5=1.39\).`,
+    instr: TeX`<p>The normal equations are \(5a_0+15a_1=18\) and \(15a_0+55a_1=62\). Find \(a_1\).</p>`,
+    hints: [TeX`Multiply the first equation by 3 and subtract it from the second: \(10a_1=8\).`],
+    answer: TeX`\(a_1=0.8\), then \(a_0=(18-15\cdot0.8)/5=1.2\).`,
     build(C) {
-      fitPlot(1.39, 0.75, TeX`\(y=a_0+a_1x\)`);
+      fitPlot(1.2, 0.8, TeX`\(y=a_0+a_1x\)`);
       const inp = field(C, TeX`\(a_1=\)`, "ans1");
-      return () => near(parseNum(inp.value), 0.75, 1e-6) ? ["done", "Correct! The least squares line is y = 1.39 + 0.75x."] : ["wrong", "Not quite. Eliminate a₀ first."];
+      return () => near(parseNum(inp.value), 0.8, 1e-6) ? ["done", "Correct! The least squares line is y = 1.2 + 0.8x."] : ["wrong", "Not quite. Eliminate a₀ first."];
     } },
 
   { nav: "The mean point", title: "Where does the line pass?",
     instr: TeX`<p>The least squares line always passes through the mean point \((\bar x,\bar y)\). What is \(\bar y\) for our data?</p>`,
-    hints: [TeX`\(\bar y=18.2/5\).`],
-    answer: TeX`\(\bar y=3.64\), and indeed \(1.39+0.75\cdot3=3.64\).`,
+    hints: [TeX`\(\bar y=18/5\).`],
+    answer: TeX`\(\bar y=3.6\), and indeed \(1.2+0.8\cdot3=3.6\).`,
     build(C) {
-      fitPlot(1.39, 0.75, TeX`The line and the mean point`);
-      P.pt(3, 3.64, { color: "neg", r: 8, ring: true }); P.draw();
+      fitPlot(1.2, 0.8, TeX`The line and the mean point`);
+      P.pt(3, 3.6, { color: "neg", r: 8, ring: true }); P.draw();
       const inp = field(C, TeX`\(\bar y=\)`, "ans1");
-      return () => near(parseNum(inp.value), 3.64, 1e-6) ? ["done", "Correct! This follows from the first normal equation: the residuals sum to zero."] : ["wrong", "Not quite. Average the five y values."];
+      return () => near(parseNum(inp.value), 3.6, 1e-6) ? ["done", "Correct! This follows from the first normal equation: the residuals sum to zero."] : ["wrong", "Not quite. Average the five y values."];
     } },
 
   { nav: "An outlier", title: "One bad point",
-    instr: TeX`<p>Drag the last data value \(y_5\) and watch the line. At \(y_5=8.1\), what is the new slope \(a_1\)?</p>`,
-    hints: ["Move the slider to 8.1 and read the slope in the title."],
-    answer: TeX`\(a_1=1.35\) (and \(a_0=0.19\)): one point almost doubles the slope.`,
+    instr: TeX`<p>Drag the last data value \(y_5\) and watch the line. At \(y_5=8.6\), what is the new slope \(a_1\)?</p>`,
+    hints: ["Move the slider to 8.6 and read the slope in the title."],
+    answer: TeX`\(a_1=1.4\) (and \(a_0=0\)): one point nearly doubles the slope.`,
     build(C) {
-      let y5 = 5.1;
+      let y5 = 5.6;
       const draw = () => { const ys = [...YS.slice(0, 4), y5]; const [a0, a1] = lsFit(XS, ys); fitPlot(a0, a1, TeX`\(y=${a0.toFixed(2)}+${a1.toFixed(2)}x\)`, { ys, ymax: 9 }); };
       draw();
       slider(C, "y₅", "s5", 3, 9, 0.1, y5, v => { y5 = v; draw(); });
       const inp = field(C, TeX`\(a_1=\)`, "ans1");
-      return () => near(parseNum(inp.value), 1.35, 1e-3) ? ["done", "Correct! Squares punish large errors, so one outlier pulls hard."] : ["wrong", "Not quite. Set y₅ to 8.1 and read the slope."];
+      return () => near(parseNum(inp.value), 1.4, 1e-3) ? ["done", "Correct! Squares punish large errors, so one outlier pulls hard."] : ["wrong", "Not quite. Set y₅ to 8.6 and read the slope."];
     } },
 
   { nav: "Read the residuals", title: "Is a line the right model?",
@@ -132,7 +132,7 @@ const TASKS = [
         s.append(el("option", { value: "" }, "— choose —"), ...order.map(i => { const o = el("option", { value: i }); o.textContent = steps[i]; return o; }));
         grid.append(el("label", { htmlFor: `dd${k + 1}`, className: "steplabel" }, `Step ${k + 1}`), s); return s;
       });
-      fitPlot(1.39, 0.75, TeX`\(y=1.39+0.75x,\ E=0.027\)`, { squares: true });
+      fitPlot(1.2, 0.8, TeX`\(y=1.2+0.8x,\ E=0.86\)`, { squares: true });
       return () => {
         const v = sels.map(s => s.value);
         if (v.includes("")) return ["wrong", "Choose an option for every step."];
@@ -145,5 +145,5 @@ const TASKS = [
 
 startPractice({
   store: "nm-lec24-lsline-v1", lecture: "Lecture 24", tasks: TASKS,
-  finalPlot() { fitPlot(1.39, 0.75, TeX`The least squares line \(y=1.39+0.75x\)`, { squares: true }); },
+  finalPlot() { fitPlot(1.2, 0.8, TeX`The least squares line \(y=1.2+0.8x\)`, { squares: true }); },
 });
