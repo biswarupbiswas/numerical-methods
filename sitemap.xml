@@ -2,98 +2,102 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://biswarupbiswas.github.io/numerical-methods/</loc>
-         <lastmod>2026-10-08</lastmod>
+         <lastmod>2026-10-09</lastmod>
     </url>
     <url>
          <loc>https://biswarupbiswas.github.io/numerical-methods/lectures/lec01-bisection/</loc>
-         <lastmod>2026-10-08</lastmod>
+         <lastmod>2026-10-09</lastmod>
     </url>
     <url>
          <loc>https://biswarupbiswas.github.io/numerical-methods/lectures/lec02-secant/</loc>
-         <lastmod>2026-10-08</lastmod>
+         <lastmod>2026-10-09</lastmod>
     </url>
     <url>
          <loc>https://biswarupbiswas.github.io/numerical-methods/lectures/lec03-regula-falsi/</loc>
-         <lastmod>2026-10-08</lastmod>
+         <lastmod>2026-10-09</lastmod>
     </url>
     <url>
          <loc>https://biswarupbiswas.github.io/numerical-methods/lectures/lec04-newton/</loc>
-         <lastmod>2026-10-08</lastmod>
+         <lastmod>2026-10-09</lastmod>
     </url>
     <url>
          <loc>https://biswarupbiswas.github.io/numerical-methods/lectures/lec05-fixed-point/</loc>
-         <lastmod>2026-10-08</lastmod>
+         <lastmod>2026-10-09</lastmod>
     </url>
     <url>
          <loc>https://biswarupbiswas.github.io/numerical-methods/lectures/lec06-fixed-point-convergence/</loc>
-         <lastmod>2026-10-08</lastmod>
+         <lastmod>2026-10-09</lastmod>
     </url>
     <url>
          <loc>https://biswarupbiswas.github.io/numerical-methods/lectures/lec07-order-modified-newton/</loc>
-         <lastmod>2026-10-08</lastmod>
+         <lastmod>2026-10-09</lastmod>
     </url>
     <url>
          <loc>https://biswarupbiswas.github.io/numerical-methods/lectures/lec08-floating-point/</loc>
-         <lastmod>2026-10-08</lastmod>
+         <lastmod>2026-10-09</lastmod>
     </url>
     <url>
          <loc>https://biswarupbiswas.github.io/numerical-methods/lectures/lec09-rounding-errors/</loc>
-         <lastmod>2026-10-08</lastmod>
+         <lastmod>2026-10-09</lastmod>
     </url>
     <url>
          <loc>https://biswarupbiswas.github.io/numerical-methods/lectures/lec10-gaussian-elimination/</loc>
-         <lastmod>2026-10-08</lastmod>
+         <lastmod>2026-10-09</lastmod>
     </url>
     <url>
          <loc>https://biswarupbiswas.github.io/numerical-methods/lectures/lec11-operation-count/</loc>
-         <lastmod>2026-10-08</lastmod>
+         <lastmod>2026-10-09</lastmod>
     </url>
     <url>
          <loc>https://biswarupbiswas.github.io/numerical-methods/lectures/lec12-pivoting/</loc>
-         <lastmod>2026-10-08</lastmod>
+         <lastmod>2026-10-09</lastmod>
     </url>
     <url>
          <loc>https://biswarupbiswas.github.io/numerical-methods/lectures/lec13-lu/</loc>
-         <lastmod>2026-10-08</lastmod>
+         <lastmod>2026-10-09</lastmod>
     </url>
     <url>
          <loc>https://biswarupbiswas.github.io/numerical-methods/lectures/lec14-cholesky/</loc>
-         <lastmod>2026-10-08</lastmod>
+         <lastmod>2026-10-09</lastmod>
     </url>
     <url>
          <loc>https://biswarupbiswas.github.io/numerical-methods/lectures/lec15-special-systems/</loc>
-         <lastmod>2026-10-08</lastmod>
+         <lastmod>2026-10-09</lastmod>
     </url>
     <url>
          <loc>https://biswarupbiswas.github.io/numerical-methods/lectures/lec16-norms/</loc>
-         <lastmod>2026-10-08</lastmod>
+         <lastmod>2026-10-09</lastmod>
     </url>
     <url>
          <loc>https://biswarupbiswas.github.io/numerical-methods/lectures/lec17-conditioning/</loc>
-         <lastmod>2026-10-08</lastmod>
+         <lastmod>2026-10-09</lastmod>
     </url>
     <url>
          <loc>https://biswarupbiswas.github.io/numerical-methods/lectures/lec18-jacobi-gauss-seidel/</loc>
-         <lastmod>2026-10-08</lastmod>
+         <lastmod>2026-10-09</lastmod>
     </url>
     <url>
          <loc>https://biswarupbiswas.github.io/numerical-methods/lectures/lec19-iterative-convergence/</loc>
-         <lastmod>2026-10-08</lastmod>
+         <lastmod>2026-10-09</lastmod>
     </url>
     <url>
          <loc>https://biswarupbiswas.github.io/numerical-methods/lectures/lec20-sor/</loc>
-         <lastmod>2026-10-08</lastmod>
+         <lastmod>2026-10-09</lastmod>
     </url>
     <url>
          <loc>https://biswarupbiswas.github.io/numerical-methods/lectures/lec21-power-method/</loc>
-         <lastmod>2026-10-08</lastmod>
+         <lastmod>2026-10-09</lastmod>
     </url>
     <url>
          <loc>https://biswarupbiswas.github.io/numerical-methods/lectures/lec22-inverse-power/</loc>
-         <lastmod>2026-10-08</lastmod>
+         <lastmod>2026-10-09</lastmod>
     </url>
     <url>
          <loc>https://biswarupbiswas.github.io/numerical-methods/lectures/lec23-shifted-inverse-power/</loc>
-         <lastmod>2026-10-08</lastmod>
+         <lastmod>2026-10-09</lastmod>
+    </url>
+    <url>
+         <loc>https://biswarupbiswas.github.io/numerical-methods/lectures/lec24-least-squares-line/</loc>
+         <lastmod>2026-10-09</lastmod>
     </url>
 </urlset>
