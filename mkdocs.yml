@@ -61,6 +61,7 @@ nav:
       - "21 · Power Method": lectures/lec21-power-method.md
       - "22 · Inverse Power Method": lectures/lec22-inverse-power.md
       - "23 · Shifted Inverse Power": lectures/lec23-shifted-inverse-power.md
+      - "24 · Least Squares: Line": lectures/lec24-least-squares-line.md
 
 markdown_extensions:
   - admonition

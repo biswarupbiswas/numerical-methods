@@ -46,4 +46,5 @@ With \(\sigma_k=r(\mathbf v^{(k)})=\dfrac{\mathbf v^{(k)T}A\mathbf v^{(k)}}{\mat
 <div class="nm-actions" markdown>
 [Practise this lecture](../practice/lec23_shifted_inverse_power.html){ .md-button .md-button--primary }
 [← Previous: The Inverse Power Method](lec22-inverse-power.md){ .md-button }
+[Next: Least Squares, Fitting a Line →](lec24-least-squares-line.md){ .md-button }
 </div>
