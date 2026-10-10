@@ -6,10 +6,11 @@ title: "Least Squares: Fitting a Line"
 
 # Least Squares: Fitting a Line
 
-![Lecture 24: Least Squares: Fitting a Line](../assets/thumbnails/lec24_least_squares_line.png){ .nm-video }
+<iframe class="nm-video" src="https://www.youtube-nocookie.com/embed/jsT3JQpnmfU" title="Lecture 24: Least Squares: Fitting a Line" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 <div class="nm-actions" markdown>
 [Practise this lecture](../practice/lec24_least_squares_line.html){ .md-button .md-button--primary }
+[Watch on YouTube](https://www.youtube.com/watch?v=jsT3JQpnmfU){ .md-button }
 </div>
 
 <div class="nm-key" markdown>
