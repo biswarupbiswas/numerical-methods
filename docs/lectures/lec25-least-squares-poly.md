@@ -6,10 +6,11 @@ title: "Least Squares: Polynomial Fit"
 
 # Least Squares: Polynomial Fit
 
-![Lecture 25: Least Squares: Polynomial Fit](../assets/thumbnails/lec25_least_squares_poly.png){ .nm-video }
+<iframe class="nm-video" src="https://www.youtube-nocookie.com/embed/vgrpEhggNaw" title="Lecture 25: Least Squares: Polynomial Fit" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 <div class="nm-actions" markdown>
 [Practise this lecture](../practice/lec25_least_squares_poly.html){ .md-button .md-button--primary }
+[Watch on YouTube](https://www.youtube.com/watch?v=vgrpEhggNaw){ .md-button }
 </div>
 
 <div class="nm-key" markdown>
