@@ -6,10 +6,11 @@ title: "Lagrange Interpolation"
 
 # Lagrange Interpolation
 
-![Lecture 26: Lagrange Interpolation](../assets/thumbnails/lec26_lagrange.png){ .nm-video }
+<iframe class="nm-video" src="https://www.youtube-nocookie.com/embed/csz-2rcvpSU" title="Lecture 26: Lagrange Interpolation" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 <div class="nm-actions" markdown>
 [Practise this lecture](../practice/lec26_lagrange.html){ .md-button .md-button--primary }
+[Watch on YouTube](https://www.youtube.com/watch?v=csz-2rcvpSU){ .md-button }
 </div>
 
 <div class="nm-key" markdown>
@@ -75,6 +76,7 @@ If \(P\) and \(Q\) both interpolate the data with degree at most \(n\), then \(R
 
 <div class="nm-actions" markdown>
 [Practise this lecture](../practice/lec26_lagrange.html){ .md-button .md-button--primary }
+[Watch on YouTube](https://www.youtube.com/watch?v=csz-2rcvpSU){ .md-button }
 [← Previous: Least Squares, Polynomial Fit](lec25-least-squares-poly.md){ .md-button }
 [Next: Newton's Divided Differences →](lec27-divided-differences.md){ .md-button }
 </div>
