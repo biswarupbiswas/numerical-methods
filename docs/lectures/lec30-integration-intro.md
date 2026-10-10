@@ -120,4 +120,5 @@ It uses \(n\) function values, the same as the composite rectangle rule. Next le
 <div class="nm-actions" markdown>
 [Practise this lecture](../practice/lec30_integration_intro.html){ .md-button .md-button--primary }
 [← Previous: The Runge Phenomenon](lec29-runge.md){ .md-button }
+[Next: The Trapezoidal Rule →](lec31-trapezoidal.md){ .md-button }
 </div>

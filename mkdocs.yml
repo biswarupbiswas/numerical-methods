@@ -69,6 +69,7 @@ nav:
       - "28 · Interpolation Error": lectures/lec28-interpolation-error.md
       - "29 · Runge Phenomenon": lectures/lec29-runge.md
       - "30 · Numerical Integration": lectures/lec30-integration-intro.md
+      - "31 · Trapezoidal Rule": lectures/lec31-trapezoidal.md
 
 markdown_extensions:
   - admonition
