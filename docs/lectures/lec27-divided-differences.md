@@ -6,10 +6,11 @@ title: "Newton Divided Differences"
 
 # Newton Divided Differences
 
-![Lecture 27: Newton Divided Differences](../assets/thumbnails/lec27_divided_differences.png){ .nm-video }
+<iframe class="nm-video" src="https://www.youtube-nocookie.com/embed/wY47AsK9MAE" title="Lecture 27: Newton Divided Differences" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 <div class="nm-actions" markdown>
 [Practise this lecture](../practice/lec27_divided_differences.html){ .md-button .md-button--primary }
+[Watch on YouTube](https://www.youtube.com/watch?v=wY47AsK9MAE){ .md-button }
 </div>
 
 <div class="nm-key" markdown>
@@ -72,6 +73,7 @@ The symmetric formula checks the example: \(f[1,3,4,5]=\frac{2}{-24}+\frac54+\fr
 
 <div class="nm-actions" markdown>
 [Practise this lecture](../practice/lec27_divided_differences.html){ .md-button .md-button--primary }
+[Watch on YouTube](https://www.youtube.com/watch?v=wY47AsK9MAE){ .md-button }
 [← Previous: Lagrange Interpolation](lec26-lagrange.md){ .md-button }
 [Next: The Interpolation Error →](lec28-interpolation-error.md){ .md-button }
 </div>
