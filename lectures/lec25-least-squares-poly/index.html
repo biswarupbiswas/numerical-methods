@@ -12,13 +12,11 @@
         <meta name="author" content="Biswarup Biswas">
       
       
-        <link rel="canonical" href="https://biswarupbiswas.github.io/numerical-methods/lectures/lec14-cholesky/">
+        <link rel="canonical" href="https://biswarupbiswas.github.io/numerical-methods/lectures/lec25-least-squares-poly/">
       
       
-        <link rel="prev" href="../lec13-lu/">
+        <link rel="prev" href="../lec24-least-squares-line/">
       
-      
-        <link rel="next" href="../lec15-special-systems/">
       
       
         
@@ -29,7 +27,7 @@
     
     
       
-        <title>Cholesky Factorisation - Numerical Methods</title>
+        <title>Least Squares: Polynomial Fit - Numerical Methods</title>
       
     
     
@@ -88,7 +86,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#cholesky-factorisation" class="md-skip">
+        <a href="#least-squares-polynomial-fit" class="md-skip">
           Skip to content
         </a>
       
@@ -124,7 +122,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Cholesky Factorisation
+              Least Squares: Polynomial Fit
             
           </span>
         </div>
@@ -712,37 +710,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    14 · Cholesky
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../lec14-cholesky/" class="md-nav__link">
         
   
   
@@ -758,81 +729,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#key-results" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Key results
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#positive-definite-matrices" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Positive definite matrices
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#from-lu-to-llt" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        From LU to LLᵀ
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#computing-l" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Computing L
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cost-and-stability" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Cost and stability
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1122,10 +1018,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../lec25-least-squares-poly/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    25 · Least Squares: Polynomial
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1141,6 +1064,81 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#key-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key results
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-normal-equations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The normal equations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-worked-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A worked example
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conditioning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conditioning
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nonlinear-models-the-notes-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nonlinear models: the notes' example
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1191,10 +1189,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#positive-definite-matrices" class="md-nav__link">
+  <a href="#the-normal-equations" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Positive definite matrices
+        The normal equations
       
     </span>
   </a>
@@ -1202,10 +1200,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#from-lu-to-llt" class="md-nav__link">
+  <a href="#a-worked-example" class="md-nav__link">
     <span class="md-ellipsis">
       
-        From LU to LLᵀ
+        A worked example
       
     </span>
   </a>
@@ -1213,10 +1211,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#computing-l" class="md-nav__link">
+  <a href="#conditioning" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Computing L
+        Conditioning
       
     </span>
   </a>
@@ -1224,10 +1222,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#cost-and-stability" class="md-nav__link">
+  <a href="#nonlinear-models-the-notes-example" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Cost and stability
+        Nonlinear models: the notes' example
       
     </span>
   </a>
@@ -1251,83 +1249,64 @@
 
 
 
-<p class="nm-eyebrow">Lecture 14</p>
+<p class="nm-eyebrow">Lecture 25</p>
 
-<h1 id="cholesky-factorisation">Cholesky Factorisation<a class="headerlink" href="#cholesky-factorisation" title="Permanent link">&para;</a></h1>
-<iframe class="nm-video" src="https://www.youtube-nocookie.com/embed/8xfPlJHWwyY" title="Lecture 14: Cholesky Factorisation" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
+<h1 id="least-squares-polynomial-fit">Least Squares: Polynomial Fit<a class="headerlink" href="#least-squares-polynomial-fit" title="Permanent link">&para;</a></h1>
+<p><img alt="Lecture 25: Least Squares: Polynomial Fit" class="nm-video" src="../../assets/thumbnails/lec25_least_squares_poly.png" /></p>
 <div class="nm-actions">
-<p><a class="md-button md-button--primary" href="../../practice/lec14_cholesky.html">Practise this lecture</a>
-<a class="md-button" href="https://www.youtube.com/watch?v=8xfPlJHWwyY">Watch on YouTube</a></p>
+<p><a class="md-button md-button--primary" href="../../practice/lec25_least_squares_poly.html">Practise this lecture</a></p>
 </div>
 <div class="nm-key">
 <h4 id="key-results">Key results<a class="headerlink" href="#key-results" title="Permanent link">&para;</a></h4>
 <ul>
-<li>A symmetric matrix is <strong>positive definite</strong> if <span class="arithmatex">\(\mathbf x^TA\mathbf x&gt;0\)</span> for all <span class="arithmatex">\(\mathbf x\neq\mathbf 0\)</span>; equivalently all eigenvalues, or all leading principal minors (Sylvester), are positive.</li>
-<li>Every symmetric positive definite <span class="arithmatex">\(A\)</span> has a <strong>unique</strong> factorisation <span class="arithmatex">\(A=LL^T\)</span> with <span class="arithmatex">\(L\)</span> lower triangular and <span class="arithmatex">\(l_{kk}&gt;0\)</span>.</li>
-<li><span class="arithmatex">\(l_{kk}=\sqrt{a_{kk}-\sum_{j&lt;k}l_{kj}^2}\)</span>, <span class="arithmatex">\(l_{ik}=\big(a_{ik}-\sum_{j&lt;k}l_{ij}l_{kj}\big)/l_{kk}\)</span>, column by column.</li>
-<li>About <span class="arithmatex">\(\frac13n^3\)</span> operations and <span class="arithmatex">\(n\)</span> square roots, half of <span class="arithmatex">\(LU\)</span>; no pivoting is needed.
-</div></li>
+<li>For <span class="arithmatex">\(P_n(x)=a_0+a_1x+\dots+a_nx^n\)</span>, minimising <span class="arithmatex">\(E=\sum_{i=0}^{m}\big(y_i-P_n(x_i)\big)^2\)</span> gives <span class="arithmatex">\(n+1\)</span> <strong>normal equations</strong> with power sums, <span class="arithmatex">\(A^TA\,\mathbf a=A^T\mathbf b\)</span>, where row <span class="arithmatex">\(i\)</span> of <span class="arithmatex">\(A\)</span> is <span class="arithmatex">\((1,x_i,x_i^2,\dots,x_i^n)\)</span>.</li>
+<li>The fit is unique when the data contain at least <span class="arithmatex">\(n+1\)</span> distinct nodes: then <span class="arithmatex">\(A^TA\)</span> is symmetric positive definite (Cholesky).</li>
+<li>Higher degree always lowers <span class="arithmatex">\(E\)</span> but can overfit; <span class="arithmatex">\(\kappa(A^TA)=\kappa(A)^2\)</span> grows fast with <span class="arithmatex">\(n\)</span>.</li>
+<li><span class="arithmatex">\(y=ax^b\)</span> and <span class="arithmatex">\(y=ae^{bx}\)</span> become straight lines after taking logarithms; this minimises the error of <span class="arithmatex">\(\ln y\)</span>, not of <span class="arithmatex">\(y\)</span>.</li>
 </ul>
-<h2 id="positive-definite-matrices">Positive definite matrices<a class="headerlink" href="#positive-definite-matrices" title="Permanent link">&para;</a></h2>
-<p>For a symmetric <span class="arithmatex">\(2\times2\)</span> matrix, the level curves of <span class="arithmatex">\(q(\mathbf x)=\mathbf x^TA\mathbf x\)</span> show the difference: for <span class="arithmatex">\(A=\begin{bmatrix}2&amp;1\\1&amp;2\end{bmatrix}\)</span> they are ellipses (a bowl), for <span class="arithmatex">\(B=\begin{bmatrix}1&amp;2\\2&amp;1\end{bmatrix}\)</span> they are hyperbolas (a saddle) — <span class="arithmatex">\(B\)</span> is symmetric but not positive definite (eigenvalues <span class="arithmatex">\(3\)</span> and <span class="arithmatex">\(-1\)</span>). For</p>
+</div>
+<h2 id="the-normal-equations">The normal equations<a class="headerlink" href="#the-normal-equations" title="Permanent link">&para;</a></h2>
+<p>Setting <span class="arithmatex">\(\partial E/\partial a_k=-2\sum_i\big(y_i-P_n(x_i)\big)x_i^{\,k}=0\)</span> for <span class="arithmatex">\(k=0,\dots,n\)</span> gives</p>
 <div class="arithmatex">\[
-A=\begin{bmatrix}4&amp;2&amp;2\\2&amp;5&amp;1\\2&amp;1&amp;6\end{bmatrix}
+\sum_{j=0}^{n}a_j\sum_{i=0}^{m}x_i^{\,j+k}=\sum_{i=0}^{m}x_i^{\,k}y_i,\qquad k=0,1,\dots,n,
 \]</div>
-<p>the leading minors are <span class="arithmatex">\(D_1=4,\ D_2=16,\ D_3=80\)</span>, all positive. Stiffness matrices, covariance matrices and the normal equations of least squares are symmetric positive definite.</p>
-<h2 id="from-lu-to-llt">From LU to LLᵀ<a class="headerlink" href="#from-lu-to-llt" title="Permanent link">&para;</a></h2>
-<p>Symmetry turns <span class="arithmatex">\(A=LU\)</span> (unit <span class="arithmatex">\(L\)</span>) into <span class="arithmatex">\(A=LDL^T\)</span>, with the pivots in <span class="arithmatex">\(D\)</span>; positive definiteness makes them positive, so <span class="arithmatex">\(A=(LD^{1/2})(D^{1/2}L^T)\)</span>. For the matrix above,</p>
+<p>that is <span class="arithmatex">\(A^TA\,\mathbf a=A^T\mathbf b\)</span> with <span class="arithmatex">\(E=\lVert A\mathbf a-\mathbf b\rVert_2^2\)</span>. For <span class="arithmatex">\(n=1\)</span> these are the two equations of the previous lecture.</p>
+<h2 id="a-worked-example">A worked example<a class="headerlink" href="#a-worked-example" title="Permanent link">&para;</a></h2>
+<p>For <span class="arithmatex">\((-2,3.1),\ (-1,1.3),\ (0,1.6),\ (1,1.5),\ (2,5.5)\)</span> and a quadratic: <span class="arithmatex">\(\sum x_i=0\)</span>, <span class="arithmatex">\(\sum x_i^2=10\)</span>, <span class="arithmatex">\(\sum x_i^3=0\)</span>, <span class="arithmatex">\(\sum x_i^4=34\)</span>, <span class="arithmatex">\(\sum y_i=13\)</span>, <span class="arithmatex">\(\sum x_iy_i=5\)</span>, <span class="arithmatex">\(\sum x_i^2y_i=37.2\)</span>, so</p>
 <div class="arithmatex">\[
-\begin{bmatrix}1&amp;0&amp;0\\ \frac12&amp;1&amp;0\\ \frac12&amp;0&amp;1\end{bmatrix}
-\begin{bmatrix}2&amp;&amp;\\&amp;2&amp;\\&amp;&amp;\sqrt5\end{bmatrix}
-=\begin{bmatrix}2&amp;0&amp;0\\1&amp;2&amp;0\\1&amp;0&amp;\sqrt5\end{bmatrix}=L .
+5a_0+10a_2=13,\qquad 10a_1=5,\qquad 10a_0+34a_2=37.2 .
 \]</div>
-<p><strong>Uniqueness:</strong> from <span class="arithmatex">\(LL^T=MM^T\)</span>, <span class="arithmatex">\(L^{-1}M=L^T(M^T)^{-1}\)</span> is both lower and upper triangular, hence a diagonal <span class="arithmatex">\(D\)</span> with <span class="arithmatex">\(D^2=I\)</span>; positive diagonals give <span class="arithmatex">\(D=I\)</span>.</p>
-<h2 id="computing-l">Computing L<a class="headerlink" href="#computing-l" title="Permanent link">&para;</a></h2>
-<p>Comparing <span class="arithmatex">\(LL^T\)</span> with <span class="arithmatex">\(A\)</span> column by column: <span class="arithmatex">\(l_{11}=\sqrt4=2\)</span>, <span class="arithmatex">\(l_{21}=l_{31}=\frac22=1\)</span>, <span class="arithmatex">\(l_{22}=\sqrt{5-1^2}=2\)</span>, <span class="arithmatex">\(l_{32}=\frac{1-1\cdot1}{2}=0\)</span>, <span class="arithmatex">\(l_{33}=\sqrt{6-1-0}=\sqrt5\)</span>.</p>
-<ul>
-<li><strong>Solving</strong> <span class="arithmatex">\(A\mathbf x=\mathbf b\)</span> with <span class="arithmatex">\(\mathbf b=(8,8,9)\)</span>: <span class="arithmatex">\(L\mathbf y=\mathbf b\)</span> gives <span class="arithmatex">\(\mathbf y=(4,2,\sqrt5)\)</span>, then <span class="arithmatex">\(L^T\mathbf x=\mathbf y\)</span> gives <span class="arithmatex">\(\mathbf x=(1,1,1)\)</span>.</li>
-<li><strong>Inverting:</strong> for <span class="arithmatex">\(A=\begin{bmatrix}2&amp;-1&amp;2\\-1&amp;1&amp;-1\\2&amp;-1&amp;3\end{bmatrix}\)</span>, <span class="arithmatex">\(L=\begin{bmatrix}\sqrt2&amp;0&amp;0\\-\frac1{\sqrt2}&amp;\frac1{\sqrt2}&amp;0\\ \sqrt2&amp;0&amp;1\end{bmatrix}\)</span>, <span class="arithmatex">\(L^{-1}=\begin{bmatrix}\frac1{\sqrt2}&amp;0&amp;0\\ \frac1{\sqrt2}&amp;\sqrt2&amp;0\\-1&amp;0&amp;1\end{bmatrix}\)</span> and <span class="arithmatex">\(A^{-1}=(L^{-1})^TL^{-1}=\begin{bmatrix}2&amp;1&amp;-1\\1&amp;2&amp;0\\-1&amp;0&amp;1\end{bmatrix}\)</span>.</li>
-<li><strong>Failure:</strong> for <span class="arithmatex">\(\begin{bmatrix}1&amp;2\\2&amp;1\end{bmatrix}\)</span>, <span class="arithmatex">\(l_{22}^2=1-2^2=-3\)</span>: no real square root, so the matrix is not positive definite. Attempting Cholesky is the cheapest test of positive definiteness.</li>
-</ul>
-<h2 id="cost-and-stability">Cost and stability<a class="headerlink" href="#cost-and-stability" title="Permanent link">&para;</a></h2>
-<p>Since <span class="arithmatex">\(a_{kk}=\sum_j l_{kj}^2\)</span>, every <span class="arithmatex">\(|l_{kj}|\le\sqrt{a_{kk}}\)</span>: the entries cannot grow, so no pivoting is needed (in the example the rows of <span class="arithmatex">\(L\)</span> give <span class="arithmatex">\(4=2^2\)</span>, <span class="arithmatex">\(5=1^2+2^2\)</span>, <span class="arithmatex">\(6=1^2+0^2+(\sqrt5)^2\)</span>). The variant <span class="arithmatex">\(A=LDL^T\)</span> avoids square roots.</p>
+<p>The symmetric nodes make the odd sums vanish and the system splits: <span class="arithmatex">\(a_1=0.5\)</span>, <span class="arithmatex">\(a_2=0.8\)</span>, <span class="arithmatex">\(a_0=1\)</span>. The least squares quadratic is <span class="arithmatex">\(P_2(x)=1+0.5x+0.8x^2\)</span>, with residuals <span class="arithmatex">\(-0.1,\ 0,\ 0.6,\ -0.8,\ 0.3\)</span> and <span class="arithmatex">\(E=1.1\)</span>; the best straight line has <span class="arithmatex">\(E=10.06\)</span>.</p>
 <table>
 <thead>
 <tr>
-<th></th>
-<th><span class="arithmatex">\(LU\)</span> (with pivoting)</th>
-<th>Cholesky</th>
+<th>degree <span class="arithmatex">\(n\)</span></th>
+<th style="text-align: right;">0</th>
+<th style="text-align: right;">1</th>
+<th style="text-align: right;">2</th>
+<th style="text-align: right;">3</th>
+<th style="text-align: right;">4</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>matrices</td>
-<td>any nonsingular</td>
-<td>symmetric positive definite</td>
-</tr>
-<tr>
-<td>cost</td>
-<td><span class="arithmatex">\(\frac23n^3\)</span></td>
-<td><span class="arithmatex">\(\frac13n^3\)</span></td>
-</tr>
-<tr>
-<td>pivoting</td>
-<td>needed</td>
-<td>never</td>
-</tr>
-<tr>
-<td>storage</td>
-<td><span class="arithmatex">\(L\)</span> and <span class="arithmatex">\(U\)</span></td>
-<td><span class="arithmatex">\(L\)</span> only</td>
+<td><span class="arithmatex">\(E\)</span></td>
+<td style="text-align: right;">12.56</td>
+<td style="text-align: right;">10.06</td>
+<td style="text-align: right;">1.10</td>
+<td style="text-align: right;">0.70</td>
+<td style="text-align: right;">0</td>
 </tr>
 </tbody>
 </table>
+<p>Degree <span class="arithmatex">\(4\)</span> passes through all five points but swings wildly: at <span class="arithmatex">\(x=3\)</span> it gives <span class="arithmatex">\(25.1\)</span> against <span class="arithmatex">\(9.7\)</span> for the quadratic. With sixty noisy points around a parabola, degree <span class="arithmatex">\(9\)</span> lowers <span class="arithmatex">\(E\)</span> only from <span class="arithmatex">\(29.4\)</span> to <span class="arithmatex">\(28.2\)</span> while chasing the noise; choose the simplest model that captures the trend.</p>
+<h2 id="conditioning">Conditioning<a class="headerlink" href="#conditioning" title="Permanent link">&para;</a></h2>
+<p>For <span class="arithmatex">\(11\)</span> equally spaced points on <span class="arithmatex">\([0,1]\)</span>, <span class="arithmatex">\(\kappa(A^TA)\approx3.8\times10^2\)</span> for <span class="arithmatex">\(n=2\)</span>, <span class="arithmatex">\(9.8\times10^6\)</span> for <span class="arithmatex">\(n=5\)</span> and <span class="arithmatex">\(1.4\times10^{16}\)</span> for <span class="arithmatex">\(n=10\)</span>. For high degree use orthogonal polynomials or a QR factorisation.</p>
+<h2 id="nonlinear-models-the-notes-example">Nonlinear models: the notes' example<a class="headerlink" href="#nonlinear-models-the-notes-example" title="Permanent link">&para;</a></h2>
+<p>To fit <span class="arithmatex">\(y=ax^b\)</span> to <span class="arithmatex">\((1,0.5),\ (2,2),\ (5,3),\ (7,4),\ (10,5)\)</span>, take <span class="arithmatex">\(u=\ln x\)</span>, <span class="arithmatex">\(v=\ln y\)</span> and fit <span class="arithmatex">\(v=c_1+c_2u\)</span>: <span class="arithmatex">\(\sum u_i=6.5511\)</span>, <span class="arithmatex">\(\sum v_i=4.0943\)</span>, <span class="arithmatex">\(\sum u_i^2=12.1592\)</span>, <span class="arithmatex">\(\sum u_iv_i=8.6521\)</span> give <span class="arithmatex">\(c_1=-0.3857\)</span>, <span class="arithmatex">\(c_2=0.9194\)</span>, so <span class="arithmatex">\(a=e^{c_1}\approx0.68\)</span>, <span class="arithmatex">\(b\approx0.9194\)</span>. Its error in <span class="arithmatex">\(y\)</span> is <span class="arithmatex">\(\sum(y_i-ax_i^b)^2=0.97\)</span>; the true nonlinear least squares fit <span class="arithmatex">\(a\approx0.96\)</span>, <span class="arithmatex">\(b\approx0.72\)</span> has <span class="arithmatex">\(0.40\)</span>.</p>
 <div class="nm-actions">
-<p><a class="md-button md-button--primary" href="../../practice/lec14_cholesky.html">Practise this lecture</a>
-<a class="md-button" href="../lec13-lu/">← Previous: LU Factorisation</a>
-<a class="md-button" href="../lec15-special-systems/">Next: Simple Structure →</a></p>
-</div>
+<p><a class="md-button md-button--primary" href="../../practice/lec25_least_squares_poly.html">Practise this lecture</a>
+<a class="md-button" href="../lec24-least-squares-line/">← Previous: Least Squares, Fitting a Line</a></p>
 </div>
 
 
@@ -1367,7 +1346,7 @@ A=\begin{bmatrix}4&amp;2&amp;2\\2&amp;5&amp;1\\2&amp;1&amp;6\end{bmatrix}
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../lec13-lu/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 13 · LU Factorisation">
+          <a href="../lec24-least-squares-line/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 24 · Least Squares: Line">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1377,27 +1356,11 @@ A=\begin{bmatrix}4&amp;2&amp;2\\2&amp;5&amp;1\\2&amp;1&amp;6\end{bmatrix}
                 Previous
               </span>
               <div class="md-ellipsis">
-                13 · LU Factorisation
+                24 · Least Squares: Line
               </div>
             </div>
           </a>
         
-        
-          
-          <a href="../lec15-special-systems/" class="md-footer__link md-footer__link--next" aria-label="Next: 15 · Simple Structure">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              <div class="md-ellipsis">
-                15 · Simple Structure
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
-            </div>
-          </a>
         
       </nav>
     
