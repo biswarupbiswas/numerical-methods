@@ -74,3 +74,9 @@
   .nm-lecture { grid-template-columns: 1fr; }
   .nm-hero h1 { font-size: 2.3rem; }
 }
+
+/* book note at the end of each lecture page */
+.nm-book { display: flex; gap: .9rem; align-items: center; margin: 2.5rem 0 0; padding: .8rem 1rem;
+  border: 1px solid var(--md-default-fg-color--lightest); border-radius: 8px; font-size: .74rem; }
+.nm-book img { flex: none; width: 54px; height: auto; border-radius: 2px; }
+.nm-book p { margin: 0; }

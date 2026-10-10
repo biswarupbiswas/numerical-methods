@@ -127,3 +127,19 @@
 }
 @media (prefers-reduced-motion: reduce) { .nmh-btn, .nmh-card { transition: none; } }
 .nmh-pill--progress { background: rgba(201, 138, 0, 0.10); color: var(--nmh-gold); border-color: rgba(201, 138, 0, 0.35); }
+
+/* ---------- book ---------- */
+.nmh-book { display: grid; grid-template-columns: 11rem minmax(0, 1fr); gap: 2.2rem; align-items: center; }
+.nmh-book__cover { width: 100%; border-radius: 4px; box-shadow: 0 10px 28px rgba(10, 18, 38, 0.35); }
+.md-typeset .nmh-book h2 { margin: 0 0 .6rem; font-family: "Newsreader", Georgia, serif; }
+.nmh-book__text > p { color: var(--nmh-muted); margin: 0 0 1.2rem; max-width: 34rem; }
+.md-typeset .nmh-book__text .nmh-cta { margin-bottom: 1rem; }
+.nmh-btn--outline { color: var(--nmh-ink) !important; border: 1px solid var(--nmh-line); }
+.nmh-btn--outline:hover { border-color: var(--nmh-accent); color: var(--nmh-accent) !important; }
+.md-typeset .nmh-book__note { font-size: .78rem; margin: 0; }
+@media (max-width: 44rem) {
+  .nmh-book { grid-template-columns: 1fr; justify-items: start; gap: 1.2rem; }
+  .nmh-book__cover { width: 8.5rem; }
+}
+.nmh-author a { color: #fdd663; }
+.nmh-author a:hover { text-decoration: underline; }
