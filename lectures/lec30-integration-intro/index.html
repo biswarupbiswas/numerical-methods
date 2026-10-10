@@ -12,13 +12,11 @@
         <meta name="author" content="Biswarup Biswas">
       
       
-        <link rel="canonical" href="https://biswarupbiswas.github.io/numerical-methods/lectures/lec06-fixed-point-convergence/">
+        <link rel="canonical" href="https://biswarupbiswas.github.io/numerical-methods/lectures/lec30-integration-intro/">
       
       
-        <link rel="prev" href="../lec05-fixed-point/">
+        <link rel="prev" href="../lec29-runge/">
       
-      
-        <link rel="next" href="../lec07-order-modified-newton/">
       
       
         
@@ -31,7 +29,7 @@
   
     
       
-        <title>Convergence of Fixed-Point Iteration - Numerical Methods</title>
+        <title>Introduction to Numerical Integration - Numerical Methods</title>
       
     
   
@@ -95,7 +93,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#convergence-of-fixed-point-iteration" class="md-skip">
+        <a href="#introduction-to-numerical-integration" class="md-skip">
           Skip to content
         </a>
       
@@ -131,7 +129,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Convergence of Fixed-Point Iteration
+              Introduction to Numerical Integration
             
           </span>
         </div>
@@ -495,37 +493,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    6 · Fixed-Point Convergence
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../lec06-fixed-point-convergence/" class="md-nav__link">
         
   
   
@@ -541,92 +512,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#key-results" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Key results
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#each-step-multiplies-the-error-by-a-slope" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Each step multiplies the error by a slope
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#contraction-mapping-theorem" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Contraction mapping theorem
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#predicting-the-number-of-steps" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Predicting the number of steps
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#rate-and-local-convergence" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Rate and local convergence
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#relaxation-and-higher-order" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Relaxation and higher order
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1280,10 +1165,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../lec30-integration-intro/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    30 · Numerical Integration
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1299,6 +1211,125 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#key-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key results
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-numerical-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why numerical integration?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quadrature-based-on-interpolation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quadrature based on interpolation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-rectangle-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The rectangle rule
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-midpoint-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The midpoint rule
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#worked-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked example
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#composite-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Composite rules
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cautions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cautions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#algorithm-composite-midpoint-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Algorithm (composite midpoint rule)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1349,10 +1380,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#each-step-multiplies-the-error-by-a-slope" class="md-nav__link">
+  <a href="#why-numerical-integration" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Each step multiplies the error by a slope
+        Why numerical integration?
       
     </span>
   </a>
@@ -1360,10 +1391,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#contraction-mapping-theorem" class="md-nav__link">
+  <a href="#quadrature-based-on-interpolation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Contraction mapping theorem
+        Quadrature based on interpolation
       
     </span>
   </a>
@@ -1371,10 +1402,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#predicting-the-number-of-steps" class="md-nav__link">
+  <a href="#the-rectangle-rule" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Predicting the number of steps
+        The rectangle rule
       
     </span>
   </a>
@@ -1382,10 +1413,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#rate-and-local-convergence" class="md-nav__link">
+  <a href="#the-midpoint-rule" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Rate and local convergence
+        The midpoint rule
       
     </span>
   </a>
@@ -1393,10 +1424,43 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#relaxation-and-higher-order" class="md-nav__link">
+  <a href="#worked-example" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Relaxation and higher order
+        Worked example
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#composite-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Composite rules
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cautions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cautions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#algorithm-composite-midpoint-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Algorithm (composite midpoint rule)
       
     </span>
   </a>
@@ -1420,184 +1484,116 @@
 
 
 
-<p class="nm-eyebrow">Lecture 6</p>
+<p class="nm-eyebrow">Lecture 30</p>
 
-<h1 id="convergence-of-fixed-point-iteration">Convergence of Fixed-Point Iteration<a class="headerlink" href="#convergence-of-fixed-point-iteration" title="Permanent link">&para;</a></h1>
-<iframe class="nm-video" src="https://www.youtube-nocookie.com/embed/583PXs6cS4I" title="Lecture 6: Convergence of Fixed-Point Iteration" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
+<h1 id="introduction-to-numerical-integration">Introduction to Numerical Integration<a class="headerlink" href="#introduction-to-numerical-integration" title="Permanent link">&para;</a></h1>
+<p><img alt="Lecture 30: Introduction to Numerical Integration" class="nm-video" src="../../assets/thumbnails/lec30_integration_intro.png" /></p>
 <div class="nm-actions">
-<p><a class="md-button md-button--primary" href="../../practice/lec06_fixed_point_convergence.html">Practise this lecture</a>
-<a class="md-button" href="https://www.youtube.com/watch?v=583PXs6cS4I">Watch on YouTube</a></p>
+<p><a class="md-button md-button--primary" href="../../practice/lec30_integration_intro.html">Practise this lecture</a></p>
 </div>
 <div class="nm-key">
 <h4 id="key-results">Key results<a class="headerlink" href="#key-results" title="Permanent link">&para;</a></h4>
 <ul>
-<li>Near a fixed point, <span class="arithmatex">\(r - x_{n+1} = g'(\xi_n)(r - x_n)\)</span>: each step multiplies the error by a slope.</li>
-<li><span class="arithmatex">\(|g'(r)| &lt; 1\)</span>: the fixed point attracts (linear convergence, rate <span class="arithmatex">\(|g'(r)|\)</span>); <span class="arithmatex">\(|g'(r)| &gt; 1\)</span>: it repels.</li>
-<li>Contraction mapping theorem with error bounds <span class="arithmatex">\(|r - x_n| \le \frac{\lambda^n}{1-\lambda}|x_1 - x_0|\)</span>.</li>
+<li>A <strong>quadrature rule</strong> replaces <span class="arithmatex">\(\int_a^b f(x)\,dx\)</span> by a weighted sum <span class="arithmatex">\(\sum_{i=0}^{n}a_i f(x_i)\)</span>. Integrating the interpolant <span class="arithmatex">\(P_n=\sum f(x_i)\,\ell_i\)</span> gives the weights <span class="arithmatex">\(a_i=\int_a^b\ell_i(x)\,dx\)</span>.</li>
+<li><strong>Degree of precision</strong> <span class="arithmatex">\(n\)</span>: the rule is exact for every polynomial of degree at most <span class="arithmatex">\(n\)</span>, but not for some polynomial of degree <span class="arithmatex">\(n+1\)</span>.</li>
+<li><strong>Rectangle rule</strong> <span class="arithmatex">\((b-a)\,f(a)\)</span>: error <span class="arithmatex">\(\frac{h^2}{2}f'(c)\)</span>, degree of precision <span class="arithmatex">\(0\)</span>. <strong>Midpoint rule</strong> <span class="arithmatex">\((b-a)\,f\!\left(\frac{a+b}{2}\right)\)</span>: error <span class="arithmatex">\(\frac{h^3}{24}f''(c)\)</span>, degree of precision <span class="arithmatex">\(1\)</span> (here <span class="arithmatex">\(h=b-a\)</span>).</li>
+<li>For <span class="arithmatex">\(\int_0^1\frac{dx}{1+x^2}=\frac{\pi}{4}\approx0.785398\)</span>: rectangle <span class="arithmatex">\(1\)</span> (error <span class="arithmatex">\(0.2146\)</span>), midpoint <span class="arithmatex">\(0.8\)</span> (error <span class="arithmatex">\(0.0146\)</span>). The composite rules have errors of order <span class="arithmatex">\(h\)</span> and <span class="arithmatex">\(h^2\)</span>.</li>
 </ul>
 </div>
-<h2 id="each-step-multiplies-the-error-by-a-slope">Each step multiplies the error by a slope<a class="headerlink" href="#each-step-multiplies-the-error-by-a-slope" title="Permanent link">&para;</a></h2>
-<p>Close to a fixed point <span class="arithmatex">\(c\)</span>, the graph of <span class="arithmatex">\(g\)</span> looks like a straight line through <span class="arithmatex">\(c\)</span> with slope <span class="arithmatex">\(g'(c)\)</span>. The mean value theorem makes this exact:</p>
+<h2 id="why-numerical-integration">Why numerical integration?<a class="headerlink" href="#why-numerical-integration" title="Permanent link">&para;</a></h2>
+<p>Many integrals have no antiderivative in terms of elementary functions, for example <span class="arithmatex">\(\int_0^1e^{-x^2}\,dx\approx0.7468\)</span>. In other problems <span class="arithmatex">\(f\)</span> is only known at sample points, such as a velocity measured every few seconds, whose integral is the distance travelled. A computer can only evaluate <span class="arithmatex">\(f\)</span> at finitely many points, so we approximate</p>
 <div class="arithmatex">\[
-c - x_{n+1} = g(c) - g(x_n) = g'(\xi_n)\,(c - x_n), \qquad \xi_n \text{ between } x_n \text{ and } c .
+I=\int_a^b f(x)\,dx\approx\sum_{i=0}^{n}a_i\,f(x_i),
 \]</div>
-<p>So the slope decides everything:</p>
+<p>with nodes <span class="arithmatex">\(x_i\in[a,b]\)</span> and weights <span class="arithmatex">\(a_i\)</span> fixed in advance. This is <strong>numerical quadrature</strong>.</p>
+<h2 id="quadrature-based-on-interpolation">Quadrature based on interpolation<a class="headerlink" href="#quadrature-based-on-interpolation" title="Permanent link">&para;</a></h2>
+<p>Choose distinct nodes <span class="arithmatex">\(x_0,\dots,x_n\)</span> in <span class="arithmatex">\([a,b]\)</span> and interpolate: <span class="arithmatex">\(P_n(x)=\sum_{i=0}^{n}f(x_i)\,\ell_i(x)\)</span>. Then</p>
+<div class="arithmatex">\[
+\int_a^b f(x)\,dx\approx\int_a^b P_n(x)\,dx=\sum_{i=0}^{n}f(x_i)\int_a^b\ell_i(x)\,dx,\qquad a_i=\int_a^b\ell_i(x)\,dx .
+\]</div>
+<p>Integrating the interpolation error gives the quadrature error <span class="arithmatex">\(E(f)=\frac{1}{(n+1)!}\int_a^b f^{(n+1)}(\xi_x)\,w(x)\,dx\)</span>. To evaluate such integrals we use the <strong>Weighted Mean Value Theorem</strong>: if <span class="arithmatex">\(f\)</span> is continuous and <span class="arithmatex">\(g\)</span> is integrable and of one sign on <span class="arithmatex">\([a,b]\)</span>, then <span class="arithmatex">\(\int_a^b f(x)g(x)\,dx=f(c)\int_a^b g(x)\,dx\)</span> for some <span class="arithmatex">\(c\in[a,b]\)</span>.</p>
+<p>A rule has <strong>degree of precision</strong> <span class="arithmatex">\(n\)</span> when it integrates every polynomial of degree <span class="arithmatex">\(\le n\)</span> exactly but fails for some polynomial of degree <span class="arithmatex">\(n+1\)</span>. Since the rule and the integral are both linear in <span class="arithmatex">\(f\)</span>, it is enough to test <span class="arithmatex">\(1,x,x^2,\dots\)</span> until the first failure.</p>
+<h2 id="the-rectangle-rule">The rectangle rule<a class="headerlink" href="#the-rectangle-rule" title="Permanent link">&para;</a></h2>
+<p>Interpolate by the constant <span class="arithmatex">\(P_0(x)=f(a)\)</span>:</p>
+<div class="arithmatex">\[
+\int_a^b f(x)\,dx\approx(b-a)\,f(a).
+\]</div>
+<p>The error is <span class="arithmatex">\(E(f)=\int_a^b f'(\xi_x)(x-a)\,dx\)</span>. The weight <span class="arithmatex">\(x-a\)</span> is never negative on <span class="arithmatex">\([a,b]\)</span>, so with <span class="arithmatex">\(h=b-a\)</span></p>
+<div class="arithmatex">\[
+\int_a^b f(x)\,dx=h\,f(a)+\frac{h^2}{2}\,f'(c).
+\]</div>
+<p>The rule is exact for constants but gives <span class="arithmatex">\(0\)</span> instead of <span class="arithmatex">\(\frac{h^2}{2}\)</span> for <span class="arithmatex">\(f(x)=x\)</span> on <span class="arithmatex">\([0,h]\)</span>: degree of precision <span class="arithmatex">\(0\)</span>.</p>
+<h2 id="the-midpoint-rule">The midpoint rule<a class="headerlink" href="#the-midpoint-rule" title="Permanent link">&para;</a></h2>
+<p>Interpolate by the constant <span class="arithmatex">\(f(m)\)</span> at the centre <span class="arithmatex">\(m=\frac{a+b}{2}\)</span>:</p>
+<div class="arithmatex">\[
+\int_a^b f(x)\,dx\approx(b-a)\,f(m).
+\]</div>
+<p>On one side of <span class="arithmatex">\(m\)</span> the rectangle cuts off area, on the other it adds area, and the two errors partly cancel. A picture shows why: the trapezoid under the <strong>tangent line</strong> at <span class="arithmatex">\(m\)</span> has average height <span class="arithmatex">\(f(m)\)</span>, so it has exactly the same area as the midpoint rectangle. The error is only the gap between the curve and its tangent. Formally, by Taylor's theorem about <span class="arithmatex">\(m\)</span>,</p>
+<div class="arithmatex">\[
+f(x)=f(m)+f'(m)(x-m)+\frac{f''(\xi_x)}{2}(x-m)^2,
+\]</div>
+<p>and <span class="arithmatex">\(\int_a^b(x-m)\,dx=0\)</span>, so with the weight <span class="arithmatex">\((x-m)^2\ge0\)</span></p>
+<div class="arithmatex">\[
+\int_a^b f(x)\,dx=h\,f(m)+\frac{h^3}{24}\,f''(c).
+\]</div>
+<p>The midpoint rule is exact for <span class="arithmatex">\(1\)</span> and <span class="arithmatex">\(x\)</span> (on <span class="arithmatex">\([0,1]\)</span> it gives <span class="arithmatex">\(\frac12\)</span> for <span class="arithmatex">\(x\)</span>), but gives <span class="arithmatex">\(\frac14\)</span> instead of <span class="arithmatex">\(\frac13\)</span> for <span class="arithmatex">\(x^2\)</span>: degree of precision <span class="arithmatex">\(1\)</span>.</p>
+<h2 id="worked-example">Worked example<a class="headerlink" href="#worked-example" title="Permanent link">&para;</a></h2>
+<p>For <span class="arithmatex">\(I=\int_0^1\frac{dx}{1+x^2}=\frac{\pi}{4}\approx0.785398\)</span>, the rectangle rule gives <span class="arithmatex">\(f(0)=1\)</span> (error <span class="arithmatex">\(0.2146\)</span>) and the midpoint rule gives <span class="arithmatex">\(f(\tfrac12)=0.8\)</span> (error <span class="arithmatex">\(0.0146\)</span>), fifteen times smaller for the same work. On <span class="arithmatex">\([0,1]\)</span>, <span class="arithmatex">\(\max|f'|\approx0.65\)</span> (at <span class="arithmatex">\(x=1/\sqrt3\)</span>) and <span class="arithmatex">\(\max|f''|=2\)</span> (at <span class="arithmatex">\(x=0\)</span>), so the error bounds are <span class="arithmatex">\(0.65/2\approx0.325\)</span> and <span class="arithmatex">\(2/24\approx0.083\)</span>; both true errors lie inside.</p>
+<h2 id="composite-rules">Composite rules<a class="headerlink" href="#composite-rules" title="Permanent link">&para;</a></h2>
+<p>Split <span class="arithmatex">\([a,b]\)</span> into <span class="arithmatex">\(n\)</span> pieces of width <span class="arithmatex">\(h=\frac{b-a}{n}\)</span>, <span class="arithmatex">\(x_i=a+ih\)</span>, and apply the rule on each:</p>
+<div class="arithmatex">\[
+R_n=h\sum_{i=0}^{n-1}f(x_i),\qquad M_n=h\sum_{i=0}^{n-1}f\!\left(x_i+\tfrac h2\right),
+\]</div>
+<div class="arithmatex">\[
+I-R_n=\frac{b-a}{2}\,h\,f'(c),\qquad I-M_n=\frac{b-a}{24}\,h^2f''(c).
+\]</div>
 <table>
 <thead>
 <tr>
-<th><span class="arithmatex">\(g'(c)\)</span></th>
-<th>Cobweb</th>
-<th>Behaviour</th>
+<th><span class="arithmatex">\(n\)</span></th>
+<th style="text-align: right;">1</th>
+<th style="text-align: right;">2</th>
+<th style="text-align: right;">4</th>
+<th style="text-align: right;">8</th>
+<th style="text-align: right;">16</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><span class="arithmatex">\(0 &lt; g'(c) &lt; 1\)</span></td>
-<td>staircase</td>
-<td>converges</td>
+<td><span class="arithmatex">\(\lvert I-R_n\rvert\)</span></td>
+<td style="text-align: right;">0.2146</td>
+<td style="text-align: right;">0.1146</td>
+<td style="text-align: right;">0.0599</td>
+<td style="text-align: right;">0.0306</td>
+<td style="text-align: right;">0.0155</td>
 </tr>
 <tr>
-<td><span class="arithmatex">\(-1 &lt; g'(c) &lt; 0\)</span></td>
-<td>spiral</td>
-<td>converges</td>
-</tr>
-<tr>
-<td><span class="arithmatex">\(g'(c) &lt; -1\)</span></td>
-<td>spiral</td>
-<td>diverges</td>
-</tr>
-<tr>
-<td><span class="arithmatex">\(g'(c) &gt; 1\)</span></td>
-<td>staircase</td>
-<td>diverges</td>
+<td><span class="arithmatex">\(\lvert I-M_n\rvert\)</span></td>
+<td style="text-align: right;">0.0146</td>
+<td style="text-align: right;">0.0052</td>
+<td style="text-align: right;">0.0013</td>
+<td style="text-align: right;"><span class="arithmatex">\(3.3\times10^{-4}\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(8.1\times10^{-5}\)</span></td>
 </tr>
 </tbody>
 </table>
-<p>For the four rearrangements of <span class="arithmatex">\(x^3 - 2x - 5 = 0\)</span> from Lecture 5: <span class="arithmatex">\((2x+5)^{1/3}\)</span> has <span class="arithmatex">\(g'(r) \approx 0.15\)</span>, <span class="arithmatex">\(\sqrt{(2x+5)/x}\)</span> has <span class="arithmatex">\(-0.27\)</span>, <span class="arithmatex">\((2x+5)/x^2\)</span> has <span class="arithmatex">\(-1.54\)</span>, and <span class="arithmatex">\(x^3 - x - 5\)</span> has <span class="arithmatex">\(12.2\)</span>. The first two converge, the last two diverge.</p>
-<h2 id="contraction-mapping-theorem">Contraction mapping theorem<a class="headerlink" href="#contraction-mapping-theorem" title="Permanent link">&para;</a></h2>
-<p><span class="arithmatex">\(g\)</span> is a <strong>contraction</strong> on <span class="arithmatex">\([a,b]\)</span> if <span class="arithmatex">\(|g(x) - g(y)| \le \lambda|x - y|\)</span> for all <span class="arithmatex">\(x, y \in [a,b]\)</span>, with <span class="arithmatex">\(0 &lt; \lambda &lt; 1\)</span>.</p>
-<div class="admonition note">
-<p class="admonition-title">Theorem</p>
-<p>If <span class="arithmatex">\(g([a,b]) \subseteq [a,b]\)</span> and <span class="arithmatex">\(g\)</span> is a contraction on <span class="arithmatex">\([a,b]\)</span>, then <span class="arithmatex">\(g\)</span> has exactly one fixed point <span class="arithmatex">\(r \in [a,b]\)</span>, and <span class="arithmatex">\(x_{n+1} = g(x_n)\)</span> converges to <span class="arithmatex">\(r\)</span> from every <span class="arithmatex">\(x_0 \in [a,b]\)</span>, with</p>
-<div class="arithmatex">\[
-|r - x_n| \le \lambda^n |r - x_0| \le \frac{\lambda^n}{1-\lambda}\,|x_1 - x_0| .
-\]</div>
-</div>
-<p><em>Uniqueness.</em> If <span class="arithmatex">\(c, d\)</span> are fixed points, <span class="arithmatex">\(|c - d| = |g(c) - g(d)| \le \lambda|c - d|\)</span>, so <span class="arithmatex">\((1-\lambda)|c-d| \le 0\)</span> and <span class="arithmatex">\(c = d\)</span>.</p>
-<p><em>Convergence.</em> <span class="arithmatex">\(|r - x_{n+1}| = |g(r) - g(x_n)| \le \lambda|r - x_n|\)</span>, hence <span class="arithmatex">\(|r - x_n| \le \lambda^n|r - x_0| \to 0\)</span>.</p>
-<p><em>Error bound.</em> <span class="arithmatex">\(|r - x_0| \le |r - x_1| + |x_1 - x_0| \le \lambda|r - x_0| + |x_1 - x_0|\)</span> gives <span class="arithmatex">\(|r - x_0| \le \frac{1}{1-\lambda}|x_1 - x_0|\)</span>. The same argument gives the a posteriori bound</p>
-<div class="arithmatex">\[
-|r - x_{n+1}| \le \frac{\lambda}{1-\lambda}\,|x_{n+1} - x_n| .
-\]</div>
-<p><strong>Finding <span class="arithmatex">\(\lambda\)</span>.</strong> If <span class="arithmatex">\(g'\)</span> is continuous and <span class="arithmatex">\(\lambda = \max_{[a,b]}|g'(x)| &lt; 1\)</span>, the mean value theorem shows <span class="arithmatex">\(g\)</span> is a contraction. For <span class="arithmatex">\(g(x) = (2x+5)^{1/3}\)</span> on <span class="arithmatex">\([2,3]\)</span>: <span class="arithmatex">\(g'(x) = \frac23(2x+5)^{-2/3}\)</span> is largest at <span class="arithmatex">\(x = 2\)</span>, so <span class="arithmatex">\(\lambda = \frac23\cdot 9^{-2/3} \approx 0.154\)</span>.</p>
-<h2 id="predicting-the-number-of-steps">Predicting the number of steps<a class="headerlink" href="#predicting-the-number-of-steps" title="Permanent link">&para;</a></h2>
-<p>With <span class="arithmatex">\(\lambda = 0.154\)</span> and <span class="arithmatex">\(|x_1 - x_0| = 0.0801\)</span>, an error below <span class="arithmatex">\(10^{-6}\)</span> needs <span class="arithmatex">\(\frac{0.154^n}{0.846}(0.0801) \le 10^{-6}\)</span>, i.e. <span class="arithmatex">\(n \ge 6.13\)</span>: <strong>7 steps</strong>.</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: right;"><span class="arithmatex">\(n\)</span></th>
-<th style="text-align: right;"><span class="arithmatex">\(x_n\)</span></th>
-<th style="text-align: right;"><span class="arithmatex">\(\lvert x_n - r\rvert\)</span></th>
-<th style="text-align: right;">a priori bound</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: right;"><span class="arithmatex">\(0\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(2.000000000\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(9.46\times10^{-2}\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(9.47\times10^{-2}\)</span></td>
-</tr>
-<tr>
-<td style="text-align: right;"><span class="arithmatex">\(1\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(2.080083823\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(1.45\times10^{-2}\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(1.46\times10^{-2}\)</span></td>
-</tr>
-<tr>
-<td style="text-align: right;"><span class="arithmatex">\(2\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(2.092350678\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(2.20\times10^{-3}\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(2.25\times10^{-3}\)</span></td>
-</tr>
-<tr>
-<td style="text-align: right;"><span class="arithmatex">\(3\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(2.094216996\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(3.34\times10^{-4}\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(3.46\times10^{-4}\)</span></td>
-</tr>
-<tr>
-<td style="text-align: right;"><span class="arithmatex">\(4\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(2.094500652\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(5.08\times10^{-5}\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(5.34\times10^{-5}\)</span></td>
-</tr>
-<tr>
-<td style="text-align: right;"><span class="arithmatex">\(5\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(2.094543758\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(7.72\times10^{-6}\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(8.22\times10^{-6}\)</span></td>
-</tr>
-<tr>
-<td style="text-align: right;"><span class="arithmatex">\(6\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(2.094550308\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(1.17\times10^{-6}\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(1.27\times10^{-6}\)</span></td>
-</tr>
-<tr>
-<td style="text-align: right;"><span class="arithmatex">\(7\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(2.094551303\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(1.78\times10^{-7}\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(1.95\times10^{-7}\)</span></td>
-</tr>
-<tr>
-<td style="text-align: right;"><span class="arithmatex">\(8\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(2.094551454\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(2.71\times10^{-8}\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(3.01\times10^{-8}\)</span></td>
-</tr>
-</tbody>
-</table>
-<p>After 6 steps the error is still just above <span class="arithmatex">\(10^{-6}\)</span>; after 7 it is below, as predicted.</p>
-<h2 id="rate-and-local-convergence">Rate and local convergence<a class="headerlink" href="#rate-and-local-convergence" title="Permanent link">&para;</a></h2>
-<div class="arithmatex">\[
-\lim_{n\to\infty}\frac{r - x_{n+1}}{r - x_n} = g'(r),
-\]</div>
-<p>so the convergence is linear with rate <span class="arithmatex">\(|g'(r)|\)</span> when <span class="arithmatex">\(g'(r) \ne 0\)</span> (for the cube-root form, about <span class="arithmatex">\(0.152\)</span>). If <span class="arithmatex">\(|g'(r)| &lt; 1\)</span>, continuity keeps <span class="arithmatex">\(|g'| &lt; 1\)</span> on a small interval around <span class="arithmatex">\(r\)</span>, so the iteration converges for every <span class="arithmatex">\(x_0\)</span> close enough to <span class="arithmatex">\(r\)</span>: <strong>local convergence</strong>.</p>
-<h2 id="relaxation-and-higher-order">Relaxation and higher order<a class="headerlink" href="#relaxation-and-higher-order" title="Permanent link">&para;</a></h2>
-<p>Write <span class="arithmatex">\(g(x) = x - \alpha f(x)\)</span>. Its fixed points are the roots of <span class="arithmatex">\(f\)</span>, and <span class="arithmatex">\(g'(r) = 1 - \alpha f'(r)\)</span>. For <span class="arithmatex">\(x^3 - 2x - 5\)</span>, <span class="arithmatex">\(f'(r) \approx 11.16\)</span>:</p>
-<table>
-<thead>
-<tr>
-<th><span class="arithmatex">\(\alpha\)</span></th>
-<th><span class="arithmatex">\(g'(r)\)</span></th>
-<th>Behaviour</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><span class="arithmatex">\(0.05\)</span></td>
-<td><span class="arithmatex">\(0.44\)</span></td>
-<td>slow</td>
-</tr>
-<tr>
-<td><span class="arithmatex">\(0.2\)</span></td>
-<td><span class="arithmatex">\(-1.23\)</span></td>
-<td>diverges</td>
-</tr>
-<tr>
-<td><span class="arithmatex">\(1/f'(r) \approx 0.0896\)</span></td>
-<td><span class="arithmatex">\(0\)</span></td>
-<td>very fast</td>
-</tr>
-</tbody>
-</table>
-<p>Newton's method takes <span class="arithmatex">\(\alpha = 1/f'(x_n)\)</span> at every step. When <span class="arithmatex">\(g'(r) = 0\)</span> the error is proportional to its square; in general, if <span class="arithmatex">\(g'(r) = \cdots = g^{(p-1)}(r) = 0\)</span>, the order of convergence is at least <span class="arithmatex">\(p\)</span>.</p>
+<p>Doubling <span class="arithmatex">\(n\)</span> halves the rectangle error and divides the midpoint error by <span class="arithmatex">\(4\)</span>: on a log–log plot the slopes are <span class="arithmatex">\(-1\)</span> and <span class="arithmatex">\(-2\)</span>. For an error of at most <span class="arithmatex">\(10^{-6}\)</span> the bounds ask for <span class="arithmatex">\(n\ge289\)</span> midpoints but about <span class="arithmatex">\(325\,000\)</span> rectangles.</p>
+<h2 id="cautions">Cautions<a class="headerlink" href="#cautions" title="Permanent link">&para;</a></h2>
+<ul>
+<li>A rule only sees its samples. For <span class="arithmatex">\(\int_0^1(1+\cos8\pi x)\,dx=1\)</span>, every midpoint of <span class="arithmatex">\(M_4\)</span> lands where <span class="arithmatex">\(f=0\)</span> and every left end of <span class="arithmatex">\(R_4\)</span> where <span class="arithmatex">\(f=2\)</span>: <span class="arithmatex">\(M_4=0\)</span>, <span class="arithmatex">\(R_4=2\)</span>.</li>
+<li>The error terms need bounded derivatives. For <span class="arithmatex">\(\int_0^1\frac{dx}{\sqrt x}=2\)</span> the rectangle rule cannot even evaluate <span class="arithmatex">\(f(0)\)</span>; the midpoint rule works, but the error only halves when <span class="arithmatex">\(n\)</span> is multiplied by <span class="arithmatex">\(4\)</span> (<span class="arithmatex">\(0.301,\ 0.151,\ 0.076\)</span> for <span class="arithmatex">\(n=4,16,64\)</span>).</li>
+<li>The Weighted Mean Value Theorem needs a weight of one sign; otherwise the error must be found another way.</li>
+</ul>
+<h2 id="algorithm-composite-midpoint-rule">Algorithm (composite midpoint rule)<a class="headerlink" href="#algorithm-composite-midpoint-rule" title="Permanent link">&para;</a></h2>
+<ol>
+<li><span class="arithmatex">\(h=(b-a)/n\)</span>, <span class="arithmatex">\(\text{sum}=0\)</span>.</li>
+<li>For <span class="arithmatex">\(i=0,\dots,n-1\)</span>: add <span class="arithmatex">\(f\big(a+(i+\tfrac12)h\big)\)</span> to the sum.</li>
+<li>Return <span class="arithmatex">\(h\cdot\text{sum}\)</span>.</li>
+</ol>
+<p>It uses <span class="arithmatex">\(n\)</span> function values, the same as the composite rectangle rule. Next lecture: interpolating linearly through both end points gives the trapezoidal rule.</p>
 <div class="nm-actions">
-<p><a class="md-button md-button--primary" href="../../practice/lec06_fixed_point_convergence.html">Practise this lecture</a>
-<a class="md-button" href="../lec05-fixed-point/">← Previous: Fixed-Point Iteration</a>
-<a class="md-button" href="../lec07-order-modified-newton/">Next: Order and Modified Newton →</a></p>
+<p><a class="md-button md-button--primary" href="../../practice/lec30_integration_intro.html">Practise this lecture</a>
+<a class="md-button" href="../lec29-runge/">← Previous: The Runge Phenomenon</a></p>
 </div>
 
 
@@ -1637,7 +1633,7 @@ c - x_{n+1} = g(c) - g(x_n) = g'(\xi_n)\,(c - x_n), \qquad \xi_n \text{ between 
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../lec05-fixed-point/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 5 · Fixed-Point Iteration">
+          <a href="../lec29-runge/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 29 · Runge Phenomenon">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1647,27 +1643,11 @@ c - x_{n+1} = g(c) - g(x_n) = g'(\xi_n)\,(c - x_n), \qquad \xi_n \text{ between 
                 Previous
               </span>
               <div class="md-ellipsis">
-                5 · Fixed-Point Iteration
+                29 · Runge Phenomenon
               </div>
             </div>
           </a>
         
-        
-          
-          <a href="../lec07-order-modified-newton/" class="md-footer__link md-footer__link--next" aria-label="Next: 7 · Order and Modified Newton">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              <div class="md-ellipsis">
-                7 · Order and Modified Newton
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
-            </div>
-          </a>
         
       </nav>
     
