@@ -6,10 +6,11 @@ title: "The Interpolation Error"
 
 # The Interpolation Error
 
-![Lecture 28: The Interpolation Error](../assets/thumbnails/lec28_interpolation_error.png){ .nm-video }
+<iframe class="nm-video" src="https://www.youtube-nocookie.com/embed/t4aDWcD3QtI" title="Lecture 28: The Interpolation Error" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 <div class="nm-actions" markdown>
 [Practise this lecture](../practice/lec28_interpolation_error.html){ .md-button .md-button--primary }
+[Watch on YouTube](https://www.youtube.com/watch?v=t4aDWcD3QtI){ .md-button }
 </div>
 
 <div class="nm-key" markdown>
@@ -85,6 +86,7 @@ For \(e^x\) on \([0,2]\) with \(n+1\) equally spaced nodes, the maximum error fa
 
 <div class="nm-actions" markdown>
 [Practise this lecture](../practice/lec28_interpolation_error.html){ .md-button .md-button--primary }
+[Watch on YouTube](https://www.youtube.com/watch?v=t4aDWcD3QtI){ .md-button }
 [← Previous: Newton's Divided Differences](lec27-divided-differences.md){ .md-button }
 [Next: The Runge Phenomenon →](lec29-runge.md){ .md-button }
 </div>
