@@ -63,6 +63,10 @@ nav:
       - "23 · Shifted Inverse Power": lectures/lec23-shifted-inverse-power.md
       - "24 · Least Squares: Line": lectures/lec24-least-squares-line.md
       - "25 · Least Squares: Polynomial": lectures/lec25-least-squares-poly.md
+      - "26 · Lagrange Interpolation": lectures/lec26-lagrange.md
+      - "27 · Divided Differences": lectures/lec27-divided-differences.md
+      - "28 · Interpolation Error": lectures/lec28-interpolation-error.md
+      - "29 · Runge Phenomenon": lectures/lec29-runge.md
 
 markdown_extensions:
   - admonition

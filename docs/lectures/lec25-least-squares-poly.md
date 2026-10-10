@@ -58,4 +58,5 @@ To fit \(y=ax^b\) to \((1,0.5),\ (2,2),\ (5,3),\ (7,4),\ (10,5)\), take \(u=\ln 
 <div class="nm-actions" markdown>
 [Practise this lecture](../practice/lec25_least_squares_poly.html){ .md-button .md-button--primary }
 [← Previous: Least Squares, Fitting a Line](lec24-least-squares-line.md){ .md-button }
+[Next: Lagrange Interpolation →](lec26-lagrange.md){ .md-button }
 </div>
