@@ -12,13 +12,13 @@
         <meta name="author" content="Biswarup Biswas">
       
       
-        <link rel="canonical" href="https://biswarupbiswas.github.io/numerical-methods/lectures/lec04-newton/">
+        <link rel="canonical" href="https://biswarupbiswas.github.io/numerical-methods/lectures/lec27-divided-differences/">
       
       
-        <link rel="prev" href="../lec03-regula-falsi/">
+        <link rel="prev" href="../lec26-lagrange/">
       
       
-        <link rel="next" href="../lec05-fixed-point/">
+        <link rel="next" href="../lec28-interpolation-error/">
       
       
         
@@ -29,7 +29,7 @@
     
     
       
-        <title>The Newton–Raphson Method - Numerical Methods</title>
+        <title>Newton Divided Differences - Numerical Methods</title>
       
     
     
@@ -88,7 +88,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#the-newtonraphson-method" class="md-skip">
+        <a href="#newton-divided-differences" class="md-skip">
           Skip to content
         </a>
       
@@ -124,7 +124,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              The Newton–Raphson Method
+              Newton Divided Differences
             
           </span>
         </div>
@@ -432,37 +432,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    4 · Newton–Raphson
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../lec04-newton/" class="md-nav__link">
         
   
   
@@ -478,136 +451,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#key-results" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Key results
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#from-secant-to-tangent" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        From secant to tangent
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#the-formula" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The formula
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#worked-example" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Worked example
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#why-the-error-is-squared" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Why the error is squared
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#the-babylonian-square-root" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The Babylonian square root
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cost-per-function-evaluation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Cost per function evaluation
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#when-newton-fails" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        When Newton fails
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#algorithm" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Algorithm
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#comparison" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Comparison
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1233,10 +1076,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../lec27-divided-differences/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    27 · Divided Differences
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1252,6 +1122,81 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#key-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key results
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#growing-the-polynomial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Growing the polynomial
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-worked-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The worked example
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-a-point" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adding a point
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#properties-and-pitfalls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Properties and pitfalls
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1358,10 +1303,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#from-secant-to-tangent" class="md-nav__link">
+  <a href="#growing-the-polynomial" class="md-nav__link">
     <span class="md-ellipsis">
       
-        From secant to tangent
+        Growing the polynomial
       
     </span>
   </a>
@@ -1369,10 +1314,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-formula" class="md-nav__link">
+  <a href="#the-worked-example" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The formula
+        The worked example
       
     </span>
   </a>
@@ -1380,10 +1325,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#worked-example" class="md-nav__link">
+  <a href="#adding-a-point" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Worked example
+        Adding a point
       
     </span>
   </a>
@@ -1391,65 +1336,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#why-the-error-is-squared" class="md-nav__link">
+  <a href="#properties-and-pitfalls" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Why the error is squared
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#the-babylonian-square-root" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The Babylonian square root
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cost-per-function-evaluation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Cost per function evaluation
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#when-newton-fails" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        When Newton fails
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#algorithm" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Algorithm
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#comparison" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Comparison
+        Properties and pitfalls
       
     </span>
   </a>
@@ -1473,153 +1363,93 @@
 
 
 
-<p class="nm-eyebrow">Lecture 4</p>
+<p class="nm-eyebrow">Lecture 27</p>
 
-<h1 id="the-newtonraphson-method">The Newton–Raphson Method<a class="headerlink" href="#the-newtonraphson-method" title="Permanent link">&para;</a></h1>
-<iframe class="nm-video" src="https://www.youtube-nocookie.com/embed/MIM5zopwb5o" title="Lecture 4: The Newton–Raphson Method" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
+<h1 id="newton-divided-differences">Newton Divided Differences<a class="headerlink" href="#newton-divided-differences" title="Permanent link">&para;</a></h1>
+<p><img alt="Lecture 27: Newton Divided Differences" class="nm-video" src="../../assets/thumbnails/lec27_divided_differences.png" /></p>
 <div class="nm-actions">
-<p><a class="md-button md-button--primary" href="../../practice/lec04_newton.html">Practise this lecture</a>
-<a class="md-button" href="https://www.youtube.com/watch?v=MIM5zopwb5o">Watch on YouTube</a></p>
+<p><a class="md-button md-button--primary" href="../../practice/lec27_divided_differences.html">Practise this lecture</a></p>
 </div>
 <div class="nm-key">
 <h4 id="key-results">Key results<a class="headerlink" href="#key-results" title="Permanent link">&para;</a></h4>
 <ul>
-<li><span class="arithmatex">\(x_{n+1} = x_n - \dfrac{f(x_n)}{f'(x_n)}\)</span>: follow the tangent line down to the axis.</li>
-<li>Near a simple root the convergence is <strong>quadratic</strong>: <span class="arithmatex">\(e_{n+1} \approx \frac{f''(r)}{2f'(r)}\,e_n^2\)</span>, so the correct digits double.</li>
-<li>It needs <span class="arithmatex">\(f'\)</span> and a good starting guess; it can find the wrong root, meet a flat tangent, cycle or diverge.</li>
+<li><strong>Newton form:</strong> <span class="arithmatex">\(P(x)=f[x_0]+f[x_0,x_1](x-x_0)+f[x_0,x_1,x_2](x-x_0)(x-x_1)+\dots+f[x_0,\dots,x_n](x-x_0)\cdots(x-x_{n-1})\)</span>, the same polynomial as Lagrange's.</li>
+<li><strong>Divided differences:</strong> <span class="arithmatex">\(f[x_i]=f(x_i)\)</span> and <span class="arithmatex">\(f[x_i,\dots,x_{i+k}]=\dfrac{f[x_{i+1},\dots,x_{i+k}]-f[x_i,\dots,x_{i+k-1}]}{x_{i+k}-x_i}\)</span>; the coefficients are the top diagonal of the table.</li>
+<li>A new node adds one diagonal to the table and one term to the polynomial; nothing else changes.</li>
+<li>Nested evaluation needs only <span class="arithmatex">\(n\)</span> multiplications; building the table needs <span class="arithmatex">\(n(n+1)/2\)</span> divisions.</li>
+<li><span class="arithmatex">\(f[x_0,\dots,x_n]=\sum_i f(x_i)/w'(x_i)\)</span> does not depend on the order of the nodes, and <span class="arithmatex">\(f[x_0,\dots,x_k]=f^{(k)}(\xi)/k!\)</span>.</li>
 </ul>
 </div>
-<h2 id="from-secant-to-tangent">From secant to tangent<a class="headerlink" href="#from-secant-to-tangent" title="Permanent link">&para;</a></h2>
-<p>The secant method draws a line through two points of the curve. Slide the two points together and the secant becomes the <strong>tangent</strong>, the line with slope <span class="arithmatex">\(f'(x)\)</span>. Newton's method starts from a single guess <span class="arithmatex">\(x_0\)</span>, follows the tangent to the axis, and repeats.</p>
-<h2 id="the-formula">The formula<a class="headerlink" href="#the-formula" title="Permanent link">&para;</a></h2>
-<p>The tangent at <span class="arithmatex">\(x_n\)</span> is <span class="arithmatex">\(y = f(x_n) + f'(x_n)\,(x - x_n)\)</span>. Setting <span class="arithmatex">\(y = 0\)</span>:</p>
+<h2 id="growing-the-polynomial">Growing the polynomial<a class="headerlink" href="#growing-the-polynomial" title="Permanent link">&para;</a></h2>
+<p>Lagrange's form <span class="arithmatex">\(P(x)=\sum_j y_j\,\ell_j(x)\)</span> must be rebuilt from scratch when a node is added, because every <span class="arithmatex">\(\ell_j\)</span> changes. Newton's form grows instead: <span class="arithmatex">\(P_k(x)=P_{k-1}(x)+c_k(x-x_0)\cdots(x-x_{k-1})\)</span>. The new term vanishes at <span class="arithmatex">\(x_0,\dots,x_{k-1}\)</span>, so the earlier interpolation conditions are kept, and <span class="arithmatex">\(c_k\)</span> is chosen to fit the new point. Matching <span class="arithmatex">\(x_0\)</span> and <span class="arithmatex">\(x_1\)</span> gives</p>
 <div class="arithmatex">\[
-x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}, \qquad n \ge 0 .
+c_0=y_0,\qquad c_1=\frac{y_1-y_0}{x_1-x_0}=f[x_0,x_1],
 \]</div>
-<p>For a straight line <span class="arithmatex">\(f(x) = ax + b\)</span> the tangent is the line itself, so Newton reaches the root <span class="arithmatex">\(-b/a\)</span> in one step from any <span class="arithmatex">\(x_0\)</span>.</p>
-<h2 id="worked-example">Worked example<a class="headerlink" href="#worked-example" title="Permanent link">&para;</a></h2>
-<p><span class="arithmatex">\(f(x) = x^3 + 2x^2 - x - 1\)</span>, <span class="arithmatex">\(f'(x) = 3x^2 + 4x - 1\)</span>, starting at <span class="arithmatex">\(x_0 = 1\)</span>:</p>
+<p>and in general <span class="arithmatex">\(c_k=f[x_0,x_1,\dots,x_k]\)</span>.</p>
+<h2 id="the-worked-example">The worked example<a class="headerlink" href="#the-worked-example" title="Permanent link">&para;</a></h2>
+<p>For <span class="arithmatex">\((1,2),\ (3,5),\ (4,6),\ (5,8)\)</span> the divided-difference table is</p>
 <table>
 <thead>
 <tr>
-<th style="text-align: right;"><span class="arithmatex">\(n\)</span></th>
-<th style="text-align: right;"><span class="arithmatex">\(x_n\)</span></th>
-<th style="text-align: right;"><span class="arithmatex">\(\lvert f(x_n)\rvert\)</span></th>
-<th style="text-align: right;"><span class="arithmatex">\(f'(x_n)\)</span></th>
-<th style="text-align: right;"><span class="arithmatex">\(\lvert x_n - r\rvert\)</span></th>
+<th style="text-align: right;"><span class="arithmatex">\(x_i\)</span></th>
+<th style="text-align: right;"><span class="arithmatex">\(f[x_i]\)</span></th>
+<th style="text-align: right;">1st DD</th>
+<th style="text-align: right;">2nd DD</th>
+<th style="text-align: right;">3rd DD</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: right;"><span class="arithmatex">\(0\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(1.0000000000\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(1.0\times10^{0}\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(6.0000\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(2.0\times10^{-1}\)</span></td>
-</tr>
-<tr>
 <td style="text-align: right;"><span class="arithmatex">\(1\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(0.8333333333\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(1.3\times10^{-1}\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(4.4167\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(3.1\times10^{-2}\)</span></td>
-</tr>
-<tr>
 <td style="text-align: right;"><span class="arithmatex">\(2\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(0.8029350105\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(4.1\times10^{-3}\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(4.1459\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(1.0\times10^{-3}\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(\tfrac32\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(-\tfrac16\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(\tfrac16\)</span></td>
 </tr>
 <tr>
 <td style="text-align: right;"><span class="arithmatex">\(3\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(0.8019387932\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(4.4\times10^{-6}\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(4.1371\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(1.1\times10^{-6}\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(5\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(1\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(\tfrac12\)</span></td>
+<td style="text-align: right;"></td>
 </tr>
 <tr>
 <td style="text-align: right;"><span class="arithmatex">\(4\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(0.8019377358\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(4.9\times10^{-12}\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(4.1371\)</span></td>
-<td style="text-align: right;"><span class="arithmatex">\(1.2\times10^{-12}\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(6\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(2\)</span></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr>
+<td style="text-align: right;"><span class="arithmatex">\(5\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(8\)</span></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
 </tr>
 </tbody>
 </table>
-<p>The correct digits are about <span class="arithmatex">\(0.7,\ 1.5,\ 3.0,\ 6.0,\ 11.9\)</span>: they <strong>double</strong> at every step.</p>
-<h2 id="why-the-error-is-squared">Why the error is squared<a class="headerlink" href="#why-the-error-is-squared" title="Permanent link">&para;</a></h2>
-<p>Taylor's theorem around <span class="arithmatex">\(x_n\)</span> gives <span class="arithmatex">\(0 = f(r) = f(x_n) + f'(x_n)(r - x_n) + \tfrac12 f''(\xi)(r - x_n)^2\)</span>. Dividing by <span class="arithmatex">\(f'(x_n)\)</span>:</p>
+<p>with, for example, <span class="arithmatex">\(f[1,3]=\frac{5-2}{3-1}=\frac32\)</span>, <span class="arithmatex">\(f[1,3,4]=\frac{1-3/2}{4-1}=-\frac16\)</span> and <span class="arithmatex">\(f[1,3,4,5]=\frac{1/2-(-1/6)}{5-1}=\frac16\)</span>. Reading the top row,</p>
 <div class="arithmatex">\[
-r - x_{n+1} = -\frac{f''(\xi)}{2f'(x_n)}\,(r - x_n)^2
-\quad\Longrightarrow\quad
-\lim_{n\to\infty}\frac{r - x_{n+1}}{(r - x_n)^2} = -\frac{f''(r)}{2f'(r)} .
+P_3(x)=2+\tfrac32(x-1)-\tfrac16(x-1)(x-3)+\tfrac16(x-1)(x-3)(x-4).
 \]</div>
-<p>Equivalently, Newton is the one-point method <span class="arithmatex">\(x_{n+1} = g(x_n)\)</span> with <span class="arithmatex">\(g(x) = x - f(x)/f'(x)\)</span>, and <span class="arithmatex">\(g'(x) = \dfrac{f(x)\,f''(x)}{f'(x)^2}\)</span> vanishes at the root. That is what makes the order at least <span class="arithmatex">\(2\)</span>.</p>
-<h2 id="the-babylonian-square-root">The Babylonian square root<a class="headerlink" href="#the-babylonian-square-root" title="Permanent link">&para;</a></h2>
-<p>For <span class="arithmatex">\(f(x) = x^2 - 2\)</span> Newton's method becomes <span class="arithmatex">\(x_{n+1} = \frac12\left(x_n + \frac{2}{x_n}\right)\)</span>: average <span class="arithmatex">\(x\)</span> with <span class="arithmatex">\(2/x\)</span>. From <span class="arithmatex">\(x_0 = 1\)</span>: <span class="arithmatex">\(1.5,\ 1.41667,\ 1.4142157,\ 1.41421356237\)</span>, again doubling the digits.</p>
-<h2 id="cost-per-function-evaluation">Cost per function evaluation<a class="headerlink" href="#cost-per-function-evaluation" title="Permanent link">&para;</a></h2>
-<p>Each Newton step needs <span class="arithmatex">\(f\)</span> and <span class="arithmatex">\(f'\)</span>, two evaluations; the secant method needs one. Per evaluation, Newton's order is <span class="arithmatex">\(\sqrt2 \approx 1.41\)</span> and the secant method's is <span class="arithmatex">\(1.618\)</span>. When <span class="arithmatex">\(f'\)</span> is expensive, the secant method can win.</p>
-<h2 id="when-newton-fails">When Newton fails<a class="headerlink" href="#when-newton-fails" title="Permanent link">&para;</a></h2>
-<ul>
-<li><strong>The wrong root.</strong> From <span class="arithmatex">\(x_0 = 0\)</span>, <span class="arithmatex">\(f'(0) = -1 &lt; 0\)</span> points the other way: <span class="arithmatex">\(0 \to -1 \to -0.5 \to -0.5556\)</span>, converging to <span class="arithmatex">\(-0.55496\)</span> instead of <span class="arithmatex">\(0.80194\)</span>.</li>
-<li><strong>A flat tangent.</strong> At <span class="arithmatex">\(x \approx 0.215\)</span>, <span class="arithmatex">\(f'(x) = 0\)</span>. Starting at <span class="arithmatex">\(0.2\)</span> the tangent is nearly flat and the next guess is <span class="arithmatex">\(-13.7\)</span>.</li>
-<li><strong>A cycle.</strong> For <span class="arithmatex">\(f(x) = x^3 - 2x + 2\)</span> from <span class="arithmatex">\(x_0 = 0\)</span>: <span class="arithmatex">\(0 \to 1 \to 0 \to 1 \to \cdots\)</span></li>
-<li><strong>Divergence.</strong> For <span class="arithmatex">\(f(x) = \arctan x\)</span> from <span class="arithmatex">\(1.5\)</span>: <span class="arithmatex">\(-1.69,\ 2.32,\ -5.11,\ 32.3, \ldots\)</span>; from <span class="arithmatex">\(1.3\)</span> it converges.</li>
-</ul>
-<p>A sufficient condition for convergence is <span class="arithmatex">\(M\,|r - x_0| &lt; 1\)</span> with <span class="arithmatex">\(M = \dfrac{\max|f''|}{2\min|f'|}\)</span> near the root; then <span class="arithmatex">\(M|r - x_n| \le (M|r - x_0|)^{2^n}\)</span>.</p>
-<h2 id="algorithm">Algorithm<a class="headerlink" href="#algorithm" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>input  f, f', x0, tol, maxit
-for n = 0 to maxit − 1
-    if  f'(xn) = 0 :  error (zero derivative)
-    x(n+1) ← xn − f(xn) / f'(xn)
-    if  |x(n+1) − xn| ≤ tol :  return x(n+1)
-end
-error: no convergence within maxit
-</code></pre></div>
-<h2 id="comparison">Comparison<a class="headerlink" href="#comparison" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>Guaranteed?</th>
-<th>Order</th>
-<th>Needs <span class="arithmatex">\(f'\)</span>?</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Bisection</td>
-<td>yes</td>
-<td><span class="arithmatex">\(1\)</span></td>
-<td>no</td>
-</tr>
-<tr>
-<td>Regula Falsi</td>
-<td>yes</td>
-<td><span class="arithmatex">\(1\)</span></td>
-<td>no</td>
-</tr>
-<tr>
-<td>Secant</td>
-<td>no</td>
-<td><span class="arithmatex">\(1.618\)</span></td>
-<td>no</td>
-</tr>
-<tr>
-<td>Newton</td>
-<td>no</td>
-<td><span class="arithmatex">\(2\)</span></td>
-<td>yes</td>
-</tr>
-</tbody>
-</table>
-<p>In practice a safe method gets close to the root, and Newton finishes the job in a few steps.</p>
+<p>At <span class="arithmatex">\(x=2\)</span> the terms give <span class="arithmatex">\(P_3(2)=2+\tfrac32+\tfrac16+\tfrac13=4\)</span>; the partial sums <span class="arithmatex">\(P_0(2),\dots,P_3(2)\)</span> are <span class="arithmatex">\(2,\ 3.5,\ 3.667,\ 4\)</span>. Rounding <span class="arithmatex">\(\mp\tfrac16\)</span> to <span class="arithmatex">\(\mp0.1667\)</span> gives <span class="arithmatex">\(4.0001\)</span>, a rounding artefact. In nested form</p>
+<div class="arithmatex">\[
+P_3(x)=2+(x-1)\Big[\tfrac32+(x-3)\big[-\tfrac16+(x-4)\cdot\tfrac16\big]\Big],
+\]</div>
+<p>and at <span class="arithmatex">\(x=2\)</span> the brackets give <span class="arithmatex">\(-\tfrac12\)</span>, then <span class="arithmatex">\(2\)</span>, then <span class="arithmatex">\(4\)</span>.</p>
+<h2 id="adding-a-point">Adding a point<a class="headerlink" href="#adding-a-point" title="Permanent link">&para;</a></h2>
+<p>With a fifth point <span class="arithmatex">\((6,7)\)</span> only the new bottom diagonal is computed: <span class="arithmatex">\(f[5,6]=-1\)</span>, <span class="arithmatex">\(f[4,5,6]=-\tfrac32\)</span>, <span class="arithmatex">\(f[3,4,5,6]=-\tfrac23\)</span> and <span class="arithmatex">\(f[1,3,4,5,6]=-\tfrac16\)</span>. Then</p>
+<div class="arithmatex">\[
+P_4(x)=P_3(x)-\tfrac16(x-1)(x-3)(x-4)(x-5),
+\]</div>
+<p>which still passes through the four old points; the estimate at <span class="arithmatex">\(x=2\)</span> moves from <span class="arithmatex">\(4\)</span> to <span class="arithmatex">\(P_4(2)=5\)</span>.</p>
+<h2 id="properties-and-pitfalls">Properties and pitfalls<a class="headerlink" href="#properties-and-pitfalls" title="Permanent link">&para;</a></h2>
+<p>The symmetric formula checks the example: <span class="arithmatex">\(f[1,3,4,5]=\frac{2}{-24}+\frac54+\frac{6}{-3}+\frac88=\frac16\)</span>. For <span class="arithmatex">\(f(x)=x^3\)</span> at <span class="arithmatex">\(0,1,2,3,4\)</span> the third divided differences are all <span class="arithmatex">\(1=3!/3!\)</span> and the fourth is <span class="arithmatex">\(0\)</span>. The nodes must be distinct; nearly equal nodes cause cancellation (with <span class="arithmatex">\(e^x\)</span> rounded to four decimals at <span class="arithmatex">\(1,\ 1.001,\ 1.002\)</span>, the second divided difference comes out as <span class="arithmatex">\(0\)</span> instead of about <span class="arithmatex">\(1.36\)</span>), and an error in one value spreads to every entry to its right.</p>
 <div class="nm-actions">
-<p><a class="md-button md-button--primary" href="../../practice/lec04_newton.html">Practise this lecture</a>
-<a class="md-button" href="../lec03-regula-falsi/">← Previous: Regula Falsi</a>
-<a class="md-button" href="../lec05-fixed-point/">Next: Fixed-Point Iteration →</a></p>
+<p><a class="md-button md-button--primary" href="../../practice/lec27_divided_differences.html">Practise this lecture</a>
+<a class="md-button" href="../lec26-lagrange/">← Previous: Lagrange Interpolation</a>
+<a class="md-button" href="../lec28-interpolation-error/">Next: The Interpolation Error →</a></p>
 </div>
 
 
@@ -1659,7 +1489,7 @@ error: no convergence within maxit
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../lec03-regula-falsi/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 3 · Regula Falsi">
+          <a href="../lec26-lagrange/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 26 · Lagrange Interpolation">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1669,20 +1499,20 @@ error: no convergence within maxit
                 Previous
               </span>
               <div class="md-ellipsis">
-                3 · Regula Falsi
+                26 · Lagrange Interpolation
               </div>
             </div>
           </a>
         
         
           
-          <a href="../lec05-fixed-point/" class="md-footer__link md-footer__link--next" aria-label="Next: 5 · Fixed-Point Iteration">
+          <a href="../lec28-interpolation-error/" class="md-footer__link md-footer__link--next" aria-label="Next: 28 · Interpolation Error">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                5 · Fixed-Point Iteration
+                28 · Interpolation Error
               </div>
             </div>
             <div class="md-footer__button md-icon">
