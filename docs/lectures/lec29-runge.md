@@ -6,10 +6,11 @@ title: "The Runge Phenomenon"
 
 # The Runge Phenomenon
 
-![Lecture 29: The Runge Phenomenon](../assets/thumbnails/lec29_runge.png){ .nm-video }
+<iframe class="nm-video" src="https://www.youtube-nocookie.com/embed/d6MGPHkH7uQ" title="Lecture 29: The Runge Phenomenon" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 <div class="nm-actions" markdown>
 [Practise this lecture](../practice/lec29_runge.html){ .md-button .md-button--primary }
+[Watch on YouTube](https://www.youtube.com/watch?v=d6MGPHkH7uQ){ .md-button }
 </div>
 
 <div class="nm-key" markdown>
@@ -69,6 +70,7 @@ When the data come at fixed, equally spaced points, use low-degree pieces betwee
 
 <div class="nm-actions" markdown>
 [Practise this lecture](../practice/lec29_runge.html){ .md-button .md-button--primary }
+[Watch on YouTube](https://www.youtube.com/watch?v=d6MGPHkH7uQ){ .md-button }
 [← Previous: The Interpolation Error](lec28-interpolation-error.md){ .md-button }
 [Next: Introduction to Numerical Integration →](lec30-integration-intro.md){ .md-button }
 </div>
