@@ -62,4 +62,5 @@ With many measurements nothing changes: sixty scattered points need the same fou
 <div class="nm-actions" markdown>
 [Practise this lecture](../practice/lec24_least_squares_line.html){ .md-button .md-button--primary }
 [← Previous: The Shifted Inverse Power Method](lec23-shifted-inverse-power.md){ .md-button }
+[Next: Least Squares, Polynomial Fit →](lec25-least-squares-poly.md){ .md-button }
 </div>
