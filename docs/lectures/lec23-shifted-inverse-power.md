@@ -6,10 +6,11 @@ title: The Shifted Inverse Power Method
 
 # The Shifted Inverse Power Method
 
-![Lecture 23: The Shifted Inverse Power Method](../assets/thumbnails/lec23_shifted_inverse_power.png){ .nm-video }
+<iframe class="nm-video" src="https://www.youtube-nocookie.com/embed/WuBBVaPTUYU" title="Lecture 23: The Shifted Inverse Power Method" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 <div class="nm-actions" markdown>
 [Practise this lecture](../practice/lec23_shifted_inverse_power.html){ .md-button .md-button--primary }
+[Watch on YouTube](https://www.youtube.com/watch?v=WuBBVaPTUYU){ .md-button }
 </div>
 
 <div class="nm-key" markdown>
@@ -45,6 +46,7 @@ With \(\sigma_k=r(\mathbf v^{(k)})=\dfrac{\mathbf v^{(k)T}A\mathbf v^{(k)}}{\mat
 
 <div class="nm-actions" markdown>
 [Practise this lecture](../practice/lec23_shifted_inverse_power.html){ .md-button .md-button--primary }
+[Watch on YouTube](https://www.youtube.com/watch?v=WuBBVaPTUYU){ .md-button }
 [← Previous: The Inverse Power Method](lec22-inverse-power.md){ .md-button }
 [Next: Least Squares, Fitting a Line →](lec24-least-squares-line.md){ .md-button }
 </div>
