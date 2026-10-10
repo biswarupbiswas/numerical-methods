@@ -70,4 +70,5 @@ When the data come at fixed, equally spaced points, use low-degree pieces betwee
 <div class="nm-actions" markdown>
 [Practise this lecture](../practice/lec29_runge.html){ .md-button .md-button--primary }
 [← Previous: The Interpolation Error](lec28-interpolation-error.md){ .md-button }
+[Next: Introduction to Numerical Integration →](lec30-integration-intro.md){ .md-button }
 </div>

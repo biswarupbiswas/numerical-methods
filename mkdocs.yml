@@ -68,6 +68,7 @@ nav:
       - "27 · Divided Differences": lectures/lec27-divided-differences.md
       - "28 · Interpolation Error": lectures/lec28-interpolation-error.md
       - "29 · Runge Phenomenon": lectures/lec29-runge.md
+      - "30 · Numerical Integration": lectures/lec30-integration-intro.md
 
 markdown_extensions:
   - admonition
