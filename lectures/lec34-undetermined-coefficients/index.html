@@ -1419,6 +1419,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#an-open-rule-the-midpoint-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        An open rule: the midpoint rule
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#weak-cases" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1599,6 +1610,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#an-open-rule-the-midpoint-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        An open rule: the midpoint rule
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#weak-cases" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1663,7 +1685,9 @@
 <li><strong>Degree of precision <span class="arithmatex">\(p\)</span>:</strong> exact for every polynomial of degree <span class="arithmatex">\(\le p\)</span>, not for some polynomial of degree <span class="arithmatex">\(p+1\)</span>.</li>
 <li><strong>Error constant:</strong> <span class="arithmatex">\(C=\int_a^b x^{p+1}\,dx-\sum_i\lambda_ix_i^{p+1}\)</span> and <span class="arithmatex">\(E(f)=\frac{C}{(p+1)!}f^{(p+1)}(\eta)\)</span>.</li>
 <li><strong>Classics recovered:</strong> trapezoid (<span class="arithmatex">\(C=-\frac{h^3}{6}\)</span>, <span class="arithmatex">\(E=-\frac{h^3}{12}f''\)</span>), Simpson <span class="arithmatex">\(1/3\)</span> (<span class="arithmatex">\(E=-\frac{h^5}{90}f^{(4)}\)</span>), Simpson <span class="arithmatex">\(3/8\)</span> (<span class="arithmatex">\(C=-\frac{9h^5}{10}\)</span>, <span class="arithmatex">\(E=-\frac{3h^5}{80}f^{(4)}\)</span>).</li>
-<li><strong>New nodes:</strong> <span class="arithmatex">\(\int_0^hf\,dx\approx\frac{3h}{4}f\big(\frac h3\big)+\frac h4f(h)\)</span>, precision <span class="arithmatex">\(2\)</span>, <span class="arithmatex">\(E=-\frac{h^4}{216}f'''(\eta)\)</span>. On <span class="arithmatex">\(\int_0^1e^x\,dx\)</span> it gives <span class="arithmatex">\(1.726280\)</span> (error <span class="arithmatex">\(-8.0\times10^{-3}\)</span>).</li>
+<li><strong>New nodes:</strong> <span class="arithmatex">\(\int_0^hf\,dx\approx\frac{3h}{4}f\big(\frac h3\big)+\frac h4f(h)\)</span>, precision <span class="arithmatex">\(2\)</span>, <span class="arithmatex">\(E=-\frac{h^4}{216}f'''(\eta)\)</span>. On <span class="arithmatex">\(\int_0^1e^x\,dx\)</span> it gives <span class="arithmatex">\(1.726280\)</span> (error <span class="arithmatex">\(-8.0\times10^{-3}\)</span>); on <span class="arithmatex">\(\frac\pi4\)</span> it gives <span class="arithmatex">\(0.8\)</span>, less than half the trapezoid's error with the same number of values.</li>
+<li><strong>Open rule:</strong> one node at the midpoint of <span class="arithmatex">\([-h,h]\)</span> gives <span class="arithmatex">\(\int_{-h}^hf\,dx=2h\,f(0)+\frac{h^3}{3}f''(\eta)\)</span>, precision <span class="arithmatex">\(1\)</span>: the midpoint rule.</li>
+<li><strong>Weak cases:</strong> many equally spaced nodes give negative weights (from <span class="arithmatex">\(n=8\)</span>), <span class="arithmatex">\(\sum|\lambda_i|=544\)</span> for <span class="arithmatex">\(n=20\)</span>, and an ill-conditioned Vandermonde system.</li>
 </ul>
 </div>
 <h2 id="why-another-road">Why another road?<a class="headerlink" href="#why-another-road" title="Permanent link">&para;</a></h2>
@@ -1778,6 +1802,13 @@ E(f)=-\frac{h^4}{216}f'''(\eta).
 </tr>
 </tbody>
 </table>
+<p>On a log–log plot the errors lie on a line of slope <span class="arithmatex">\(-3\)</span>.</p>
+<h2 id="an-open-rule-the-midpoint-rule">An open rule: the midpoint rule<a class="headerlink" href="#an-open-rule-the-midpoint-rule" title="Permanent link">&para;</a></h2>
+<p>The nodes need not include the end points. Take a single node in the middle of <span class="arithmatex">\([-h,h]\)</span>: <span class="arithmatex">\(\int_{-h}^hf\,dx\approx\lambda f(0)\)</span>. The condition for <span class="arithmatex">\(f=1\)</span> gives <span class="arithmatex">\(\lambda=2h\)</span>. The function <span class="arithmatex">\(x\)</span> is odd, so <span class="arithmatex">\(\int_{-h}^hx\,dx=0=2h\cdot0\)</span>: exact for free. For <span class="arithmatex">\(x^2\)</span> the integral is <span class="arithmatex">\(\frac{2h^3}{3}\)</span> and the rule gives <span class="arithmatex">\(0\)</span>, so <span class="arithmatex">\(C=\frac{2h^3}{3}\)</span>, <span class="arithmatex">\(p=1\)</span> and</p>
+<div class="arithmatex">\[
+\int_{-h}^hf(x)\,dx=2h\,f(0)+\frac{h^3}{3}f''(\eta).
+\]</div>
+<p>This is the midpoint rule (with <span class="arithmatex">\(L=2h\)</span> the error is <span class="arithmatex">\(\frac{L^3}{24}f''\)</span>, as in Lecture 30), an open rule that never uses <span class="arithmatex">\(f(a)\)</span> or <span class="arithmatex">\(f(b)\)</span>.</p>
 <h2 id="weak-cases">Weak cases<a class="headerlink" href="#weak-cases" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>Negative weights.</strong> On <span class="arithmatex">\(n+1\)</span> equally spaced nodes in <span class="arithmatex">\([0,1]\)</span> (closed Newton–Cotes), all weights are positive up to <span class="arithmatex">\(n=7\)</span>; for <span class="arithmatex">\(n=8\)</span> the smallest weight is <span class="arithmatex">\(-0.16\)</span>, and for <span class="arithmatex">\(n=10\)</span> the weights range from <span class="arithmatex">\(-0.44\)</span> to <span class="arithmatex">\(0.71\)</span>.</li>

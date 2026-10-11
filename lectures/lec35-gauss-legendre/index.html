@@ -1681,6 +1681,7 @@
 <ul>
 <li><strong>Free nodes.</strong> With <span class="arithmatex">\(n\)</span> nodes and <span class="arithmatex">\(n\)</span> weights all free there are <span class="arithmatex">\(2n\)</span> unknowns, so the rule <span class="arithmatex">\(\int_{-1}^1f\,dx\approx\sum_i\lambda_if(x_i)\)</span> can be exact for <span class="arithmatex">\(1,x,\dots,x^{2n-1}\)</span>: degree of precision <span class="arithmatex">\(2n-1\)</span>, the highest possible for <span class="arithmatex">\(n\)</span> points.</li>
 <li><strong>Two points:</strong> <span class="arithmatex">\(\int_{-1}^1f\,dx\approx f\big(-\frac{1}{\sqrt3}\big)+f\big(\frac{1}{\sqrt3}\big)\)</span>, error <span class="arithmatex">\(\frac{1}{135}f^{(4)}(\eta)\)</span>. <strong>Three points:</strong> <span class="arithmatex">\(\frac59f\big(-\sqrt{\frac35}\big)+\frac89f(0)+\frac59f\big(\sqrt{\frac35}\big)\)</span>, error <span class="arithmatex">\(\frac{1}{15750}f^{(6)}(\eta)\)</span>.</li>
+<li><strong>Interval of length <span class="arithmatex">\(L\)</span>:</strong> two-point error <span class="arithmatex">\(\frac{L^5}{4320}f^{(4)}\)</span> against <span class="arithmatex">\(\frac{L^5}{2880}f^{(4)}\)</span> for Simpson; three-point error <span class="arithmatex">\(\frac{L^7}{2016000}f^{(6)}\)</span>.</li>
 <li><strong>Nodes</strong> are the roots of the Legendre polynomial <span class="arithmatex">\(P_n\)</span>; the weights are positive and add up to <span class="arithmatex">\(2\)</span>.</li>
 <li><strong>Any interval:</strong> <span class="arithmatex">\(x=\frac{b-a}{2}t+\frac{a+b}{2}\)</span> gives <span class="arithmatex">\(\int_a^bf\,dx\approx\frac{b-a}{2}\sum_i\lambda_if(x_i)\)</span>.</li>
 <li>For <span class="arithmatex">\(\int_0^1\frac{dx}{1+x^2}=\frac{\pi}{4}\)</span>: two points give <span class="arithmatex">\(0.786885\)</span> (error <span class="arithmatex">\(1.5\times10^{-3}\)</span>), three points <span class="arithmatex">\(0.785267\)</span> (error <span class="arithmatex">\(1.3\times10^{-4}\)</span>); for <span class="arithmatex">\(\int_0^3e^x\,dx=19.0855\)</span>: <span class="arithmatex">\(18.8101\)</span> and <span class="arithmatex">\(19.0803\)</span>.</li>
@@ -1777,6 +1778,11 @@ P_0=1,\quad P_1=x,\quad P_2=\tfrac12(3x^2-1),\quad P_3=\tfrac12(5x^3-3x),\qquad 
 \int_a^bf(x)\,dx=\frac{b-a}{2}\int_{-1}^1f\Big(\frac{b-a}{2}t+\frac{a+b}{2}\Big)dt\approx\frac{b-a}{2}\sum_i\lambda_if(x_i).
 \]</div>
 <p>Do not forget the factor <span class="arithmatex">\(\frac{b-a}{2}\)</span>.</p>
+<p><strong>Error terms on <span class="arithmatex">\([a,b]\)</span>.</strong> Each derivative with respect to <span class="arithmatex">\(t\)</span> brings a factor <span class="arithmatex">\(\frac{b-a}{2}\)</span>. On an interval of length <span class="arithmatex">\(L=b-a\)</span> the error terms become</p>
+<div class="arithmatex">\[
+E_2=\frac{1}{135}\Big(\frac L2\Big)^5f^{(4)}(\eta)=\frac{L^5}{4320}f^{(4)}(\eta),\qquad E_3=\frac{1}{15750}\Big(\frac L2\Big)^7f^{(6)}(\eta)=\frac{L^7}{2016000}f^{(6)}(\eta).
+\]</div>
+<p>Simpson's rule on the same interval has error <span class="arithmatex">\(\frac{L^5}{2880}f^{(4)}\)</span>: two Gauss points are <span class="arithmatex">\(\frac{4320}{2880}=1.5\)</span> times more accurate than three Simpson points.</p>
 <h2 id="worked-examples">Worked examples<a class="headerlink" href="#worked-examples" title="Permanent link">&para;</a></h2>
 <p><strong><span class="arithmatex">\(I=\int_0^1\frac{dx}{1+x^2}=\frac{\pi}{4}\approx0.785398\)</span>.</strong> The factor is <span class="arithmatex">\(\frac12\)</span> and <span class="arithmatex">\(x_i=\frac12+\frac12t_i\)</span>.</p>
 <table>
