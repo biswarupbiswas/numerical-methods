@@ -6,10 +6,11 @@ title: "Simpson's 3/8 Rule"
 
 # Simpson's 3/8 Rule
 
-![Lecture 33: Simpson's 3/8 Rule](../assets/thumbnails/lec33_simpson_38.png){ .nm-video }
+<iframe class="nm-video" src="https://www.youtube-nocookie.com/embed/_ZVR0-UlZRY" title="Lecture 33: Simpson's 3/8 Rule" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 <div class="nm-actions" markdown>
 [Practise this lecture](../practice/lec33_simpson_38.html){ .md-button .md-button--primary }
+[Watch on YouTube](https://www.youtube.com/watch?v=_ZVR0-UlZRY){ .md-button }
 </div>
 
 <div class="nm-key" markdown>
@@ -136,6 +137,7 @@ It uses \(n+1\) function values for every \(n\). Next lecture: the method of und
 
 <div class="nm-actions" markdown>
 [Practise this lecture](../practice/lec33_simpson_38.html){ .md-button .md-button--primary }
+[Watch on YouTube](https://www.youtube.com/watch?v=_ZVR0-UlZRY){ .md-button }
 [← Previous: Simpson's 1/3 Rule](lec32-simpson-13.md){ .md-button }
 [Next: Method of Undetermined Coefficients →](lec34-undetermined-coefficients.md){ .md-button }
 </div>
