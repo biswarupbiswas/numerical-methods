@@ -70,6 +70,8 @@ nav:
       - "29 · Runge Phenomenon": lectures/lec29-runge.md
       - "30 · Numerical Integration": lectures/lec30-integration-intro.md
       - "31 · Trapezoidal Rule": lectures/lec31-trapezoidal.md
+      - "32 · Simpson's 1/3 Rule": lectures/lec32-simpson-13.md
+      - "33 · Simpson's 3/8 Rule": lectures/lec33-simpson-38.md
 
 markdown_extensions:
   - admonition

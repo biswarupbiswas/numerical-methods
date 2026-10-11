@@ -124,4 +124,5 @@ It uses \(n+1\) function values, and works directly on tabulated data given at e
 <div class="nm-actions" markdown>
 [Practise this lecture](../practice/lec31_trapezoidal.html){ .md-button .md-button--primary }
 [← Previous: Introduction to Numerical Integration](lec30-integration-intro.md){ .md-button }
+[Next: Simpson's 1/3 Rule →](lec32-simpson-13.md){ .md-button }
 </div>
