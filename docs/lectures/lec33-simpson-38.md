@@ -137,4 +137,5 @@ It uses \(n+1\) function values for every \(n\). Next lecture: the method of und
 <div class="nm-actions" markdown>
 [Practise this lecture](../practice/lec33_simpson_38.html){ .md-button .md-button--primary }
 [← Previous: Simpson's 1/3 Rule](lec32-simpson-13.md){ .md-button }
+[Next: Method of Undetermined Coefficients →](lec34-undetermined-coefficients.md){ .md-button }
 </div>

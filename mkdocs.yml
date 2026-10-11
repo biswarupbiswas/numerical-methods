@@ -72,6 +72,8 @@ nav:
       - "31 · Trapezoidal Rule": lectures/lec31-trapezoidal.md
       - "32 · Simpson's 1/3 Rule": lectures/lec32-simpson-13.md
       - "33 · Simpson's 3/8 Rule": lectures/lec33-simpson-38.md
+      - "34 · Method of Undetermined Coefficients": lectures/lec34-undetermined-coefficients.md
+      - "35 · Gauss–Legendre Quadrature": lectures/lec35-gauss-legendre.md
 
 markdown_extensions:
   - admonition
