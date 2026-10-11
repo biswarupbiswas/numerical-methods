@@ -6,10 +6,11 @@ title: "Introduction to Numerical Integration"
 
 # Introduction to Numerical Integration
 
-![Lecture 30: Introduction to Numerical Integration](../assets/thumbnails/lec30_integration_intro.png){ .nm-video }
+<iframe class="nm-video" src="https://www.youtube-nocookie.com/embed/iIriwn_vC5E" title="Lecture 30: Introduction to Numerical Integration" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 <div class="nm-actions" markdown>
 [Practise this lecture](../practice/lec30_integration_intro.html){ .md-button .md-button--primary }
+[Watch on YouTube](https://www.youtube.com/watch?v=iIriwn_vC5E){ .md-button }
 </div>
 
 <div class="nm-key" markdown>
@@ -119,6 +120,7 @@ It uses \(n\) function values, the same as the composite rectangle rule. Next le
 
 <div class="nm-actions" markdown>
 [Practise this lecture](../practice/lec30_integration_intro.html){ .md-button .md-button--primary }
+[Watch on YouTube](https://www.youtube.com/watch?v=iIriwn_vC5E){ .md-button }
 [← Previous: The Runge Phenomenon](lec29-runge.md){ .md-button }
 [Next: The Trapezoidal Rule →](lec31-trapezoidal.md){ .md-button }
 </div>
