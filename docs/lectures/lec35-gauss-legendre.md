@@ -6,10 +6,11 @@ title: "Gauss–Legendre Quadrature"
 
 # Gauss–Legendre Quadrature
 
-![Lecture 35: Gauss–Legendre Quadrature](../assets/thumbnails/lec35_gauss_legendre.png){ .nm-video }
+<iframe class="nm-video" src="https://www.youtube-nocookie.com/embed/YzhX4le92tU" title="Lecture 35: Gauss–Legendre Quadrature" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 <div class="nm-actions" markdown>
 [Practise this lecture](../practice/lec35_gauss_legendre.html){ .md-button .md-button--primary }
+[Watch on YouTube](https://www.youtube.com/watch?v=YzhX4le92tU){ .md-button }
 </div>
 
 <div class="nm-key" markdown>
@@ -172,5 +173,6 @@ For a smooth function that can be evaluated anywhere, Gauss–Legendre is the mo
 
 <div class="nm-actions" markdown>
 [Practise this lecture](../practice/lec35_gauss_legendre.html){ .md-button .md-button--primary }
+[Watch on YouTube](https://www.youtube.com/watch?v=YzhX4le92tU){ .md-button }
 [← Previous: Method of Undetermined Coefficients](lec34-undetermined-coefficients.md){ .md-button }
 </div>
