@@ -6,10 +6,11 @@ title: "Method of Undetermined Coefficients"
 
 # Method of Undetermined Coefficients
 
-![Lecture 34: Method of Undetermined Coefficients](../assets/thumbnails/lec34_undetermined_coefficients.png){ .nm-video }
+<iframe class="nm-video" src="https://www.youtube-nocookie.com/embed/i7uvfpyaxP0" title="Lecture 34: Method of Undetermined Coefficients" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 <div class="nm-actions" markdown>
 [Practise this lecture](../practice/lec34_undetermined_coefficients.html){ .md-button .md-button--primary }
+[Watch on YouTube](https://www.youtube.com/watch?v=i7uvfpyaxP0){ .md-button }
 </div>
 
 <div class="nm-key" markdown>
@@ -170,6 +171,7 @@ Both give the same unique weights. Next lecture: Gauss–Legendre quadrature, wh
 
 <div class="nm-actions" markdown>
 [Practise this lecture](../practice/lec34_undetermined_coefficients.html){ .md-button .md-button--primary }
+[Watch on YouTube](https://www.youtube.com/watch?v=i7uvfpyaxP0){ .md-button }
 [← Previous: Simpson's 3/8 Rule](lec33-simpson-38.md){ .md-button }
 [Next: Gauss–Legendre Quadrature →](lec35-gauss-legendre.md){ .md-button }
 </div>
