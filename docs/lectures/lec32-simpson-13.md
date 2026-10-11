@@ -6,10 +6,11 @@ title: "Simpson's 1/3 Rule"
 
 # Simpson's 1/3 Rule
 
-![Lecture 32: Simpson's 1/3 Rule](../assets/thumbnails/lec32_simpson_13.png){ .nm-video }
+<iframe class="nm-video" src="https://www.youtube-nocookie.com/embed/JHIXqCbd-B4" title="Lecture 32: Simpson's 1/3 Rule" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 <div class="nm-actions" markdown>
 [Practise this lecture](../practice/lec32_simpson_13.html){ .md-button .md-button--primary }
+[Watch on YouTube](https://www.youtube.com/watch?v=JHIXqCbd-B4){ .md-button }
 </div>
 
 <div class="nm-key" markdown>
@@ -153,6 +154,7 @@ Next lecture: Simpson's \(3/8\) rule, \(\frac{3h}{8}\big(f_0+3f_1+3f_2+f_3\big)\
 
 <div class="nm-actions" markdown>
 [Practise this lecture](../practice/lec32_simpson_13.html){ .md-button .md-button--primary }
+[Watch on YouTube](https://www.youtube.com/watch?v=JHIXqCbd-B4){ .md-button }
 [← Previous: The Trapezoidal Rule](lec31-trapezoidal.md){ .md-button }
 [Next: Simpson's 3/8 Rule →](lec33-simpson-38.md){ .md-button }
 </div>
