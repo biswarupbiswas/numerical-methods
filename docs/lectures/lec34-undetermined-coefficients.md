@@ -18,7 +18,9 @@ title: "Method of Undetermined Coefficients"
 - **Degree of precision \(p\):** exact for every polynomial of degree \(\le p\), not for some polynomial of degree \(p+1\).
 - **Error constant:** \(C=\int_a^b x^{p+1}\,dx-\sum_i\lambda_ix_i^{p+1}\) and \(E(f)=\frac{C}{(p+1)!}f^{(p+1)}(\eta)\).
 - **Classics recovered:** trapezoid (\(C=-\frac{h^3}{6}\), \(E=-\frac{h^3}{12}f''\)), Simpson \(1/3\) (\(E=-\frac{h^5}{90}f^{(4)}\)), Simpson \(3/8\) (\(C=-\frac{9h^5}{10}\), \(E=-\frac{3h^5}{80}f^{(4)}\)).
-- **New nodes:** \(\int_0^hf\,dx\approx\frac{3h}{4}f\big(\frac h3\big)+\frac h4f(h)\), precision \(2\), \(E=-\frac{h^4}{216}f'''(\eta)\). On \(\int_0^1e^x\,dx\) it gives \(1.726280\) (error \(-8.0\times10^{-3}\)).
+- **New nodes:** \(\int_0^hf\,dx\approx\frac{3h}{4}f\big(\frac h3\big)+\frac h4f(h)\), precision \(2\), \(E=-\frac{h^4}{216}f'''(\eta)\). On \(\int_0^1e^x\,dx\) it gives \(1.726280\) (error \(-8.0\times10^{-3}\)); on \(\frac\pi4\) it gives \(0.8\), less than half the trapezoid's error with the same number of values.
+- **Open rule:** one node at the midpoint of \([-h,h]\) gives \(\int_{-h}^hf\,dx=2h\,f(0)+\frac{h^3}{3}f''(\eta)\), precision \(1\): the midpoint rule.
+- **Weak cases:** many equally spaced nodes give negative weights (from \(n=8\)), \(\sum|\lambda_i|=544\) for \(n=20\), and an ill-conditioned Vandermonde system.
 </div>
 
 ## Why another road?
@@ -128,6 +130,18 @@ On \(\int_0^1\frac{dx}{1+x^2}=\frac\pi4\) the rule uses \(f(\frac13)=0.9\) and \
 |---|---:|---:|---:|---:|---:|
 | \(I-R_n\) | \(-8.00\times10^{-3}\) | \(-1.00\times10^{-3}\) | \(-1.25\times10^{-4}\) | \(-1.56\times10^{-5}\) | \(-1.95\times10^{-6}\) |
 | ratio | | 7.97 | 8.02 | 8.02 | 8.01 |
+
+On a log–log plot the errors lie on a line of slope \(-3\).
+
+## An open rule: the midpoint rule
+
+The nodes need not include the end points. Take a single node in the middle of \([-h,h]\): \(\int_{-h}^hf\,dx\approx\lambda f(0)\). The condition for \(f=1\) gives \(\lambda=2h\). The function \(x\) is odd, so \(\int_{-h}^hx\,dx=0=2h\cdot0\): exact for free. For \(x^2\) the integral is \(\frac{2h^3}{3}\) and the rule gives \(0\), so \(C=\frac{2h^3}{3}\), \(p=1\) and
+
+\[
+\int_{-h}^hf(x)\,dx=2h\,f(0)+\frac{h^3}{3}f''(\eta).
+\]
+
+This is the midpoint rule (with \(L=2h\) the error is \(\frac{L^3}{24}f''\), as in Lecture 30), an open rule that never uses \(f(a)\) or \(f(b)\).
 
 ## Weak cases
 

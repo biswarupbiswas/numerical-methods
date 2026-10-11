@@ -16,6 +16,7 @@ title: "Gauss–Legendre Quadrature"
 #### Key results
 - **Free nodes.** With \(n\) nodes and \(n\) weights all free there are \(2n\) unknowns, so the rule \(\int_{-1}^1f\,dx\approx\sum_i\lambda_if(x_i)\) can be exact for \(1,x,\dots,x^{2n-1}\): degree of precision \(2n-1\), the highest possible for \(n\) points.
 - **Two points:** \(\int_{-1}^1f\,dx\approx f\big(-\frac{1}{\sqrt3}\big)+f\big(\frac{1}{\sqrt3}\big)\), error \(\frac{1}{135}f^{(4)}(\eta)\). **Three points:** \(\frac59f\big(-\sqrt{\frac35}\big)+\frac89f(0)+\frac59f\big(\sqrt{\frac35}\big)\), error \(\frac{1}{15750}f^{(6)}(\eta)\).
+- **Interval of length \(L\):** two-point error \(\frac{L^5}{4320}f^{(4)}\) against \(\frac{L^5}{2880}f^{(4)}\) for Simpson; three-point error \(\frac{L^7}{2016000}f^{(6)}\).
 - **Nodes** are the roots of the Legendre polynomial \(P_n\); the weights are positive and add up to \(2\).
 - **Any interval:** \(x=\frac{b-a}{2}t+\frac{a+b}{2}\) gives \(\int_a^bf\,dx\approx\frac{b-a}{2}\sum_i\lambda_if(x_i)\).
 - For \(\int_0^1\frac{dx}{1+x^2}=\frac{\pi}{4}\): two points give \(0.786885\) (error \(1.5\times10^{-3}\)), three points \(0.785267\) (error \(1.3\times10^{-4}\)); for \(\int_0^3e^x\,dx=19.0855\): \(18.8101\) and \(19.0803\).
@@ -107,6 +108,14 @@ The map \(x=\frac{b-a}{2}t+\frac{a+b}{2}\) takes \(t\in[-1,1]\) to \(x\in[a,b]\)
 \]
 
 Do not forget the factor \(\frac{b-a}{2}\).
+
+**Error terms on \([a,b]\).** Each derivative with respect to \(t\) brings a factor \(\frac{b-a}{2}\). On an interval of length \(L=b-a\) the error terms become
+
+\[
+E_2=\frac{1}{135}\Big(\frac L2\Big)^5f^{(4)}(\eta)=\frac{L^5}{4320}f^{(4)}(\eta),\qquad E_3=\frac{1}{15750}\Big(\frac L2\Big)^7f^{(6)}(\eta)=\frac{L^7}{2016000}f^{(6)}(\eta).
+\]
+
+Simpson's rule on the same interval has error \(\frac{L^5}{2880}f^{(4)}\): two Gauss points are \(\frac{4320}{2880}=1.5\) times more accurate than three Simpson points.
 
 ## Worked examples
 
