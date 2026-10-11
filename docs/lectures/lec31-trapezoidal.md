@@ -6,10 +6,11 @@ title: "The Trapezoidal Rule"
 
 # The Trapezoidal Rule
 
-![Lecture 31: The Trapezoidal Rule](../assets/thumbnails/lec31_trapezoidal.png){ .nm-video }
+<iframe class="nm-video" src="https://www.youtube-nocookie.com/embed/j63FQnC2jyg" title="Lecture 31: The Trapezoidal Rule" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 <div class="nm-actions" markdown>
 [Practise this lecture](../practice/lec31_trapezoidal.html){ .md-button .md-button--primary }
+[Watch on YouTube](https://www.youtube.com/watch?v=j63FQnC2jyg){ .md-button }
 </div>
 
 <div class="nm-key" markdown>
@@ -123,6 +124,7 @@ It uses \(n+1\) function values, and works directly on tabulated data given at e
 
 <div class="nm-actions" markdown>
 [Practise this lecture](../practice/lec31_trapezoidal.html){ .md-button .md-button--primary }
+[Watch on YouTube](https://www.youtube.com/watch?v=j63FQnC2jyg){ .md-button }
 [← Previous: Introduction to Numerical Integration](lec30-integration-intro.md){ .md-button }
 [Next: Simpson's 1/3 Rule →](lec32-simpson-13.md){ .md-button }
 </div>
