@@ -6,10 +6,11 @@ title: "Euler's Method"
 
 # Euler's Method
 
-![Lecture 37: Euler's Method](../assets/thumbnails/lec37_euler.png){ .nm-video }
+<iframe class="nm-video" src="https://www.youtube-nocookie.com/embed/lfz5LO5ysrI" title="Lecture 37: Euler's Method" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 <div class="nm-actions" markdown>
 [Practise this lecture](../practice/lec37_euler.html){ .md-button .md-button--primary }
+[Watch on YouTube](https://www.youtube.com/watch?v=lfz5LO5ysrI){ .md-button }
 </div>
 
 <div class="nm-key" markdown>
@@ -167,5 +168,6 @@ With the same \(h=0.1\) the Taylor method is about \(30\) times more accurate, a
 
 <div class="nm-actions" markdown>
 [Practise this lecture](../practice/lec37_euler.html){ .md-button .md-button--primary }
+[Watch on YouTube](https://www.youtube.com/watch?v=lfz5LO5ysrI){ .md-button }
 [← Previous: Initial Value Problems](lec36-ode-intro.md){ .md-button }
 </div>
