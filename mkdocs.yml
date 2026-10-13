@@ -76,6 +76,8 @@ nav:
       - "35 · Gauss–Legendre Quadrature": lectures/lec35-gauss-legendre.md
       - "36 · Initial Value Problems": lectures/lec36-ode-intro.md
       - "37 · Euler's Method": lectures/lec37-euler.md
+      - "38 · Taylor Series Methods": lectures/lec38-taylor-methods.md
+      - "39 · Runge–Kutta Methods: RK2": lectures/lec39-rk2.md
 
 markdown_extensions:
   - admonition

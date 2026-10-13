@@ -170,4 +170,5 @@ With the same \(h=0.1\) the Taylor method is about \(30\) times more accurate, a
 [Practise this lecture](../practice/lec37_euler.html){ .md-button .md-button--primary }
 [Watch on YouTube](https://www.youtube.com/watch?v=lfz5LO5ysrI){ .md-button }
 [← Previous: Initial Value Problems](lec36-ode-intro.md){ .md-button }
+[Next: Taylor Series Methods →](lec38-taylor-methods.md){ .md-button }
 </div>
