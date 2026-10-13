@@ -6,10 +6,11 @@ title: "Initial Value Problems"
 
 # Initial Value Problems
 
-![Lecture 36: Initial Value Problems](../assets/thumbnails/lec36_ode_intro.png){ .nm-video }
+<iframe class="nm-video" src="https://www.youtube-nocookie.com/embed/9cAHjFyZieg" title="Lecture 36: Initial Value Problems" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 <div class="nm-actions" markdown>
 [Practise this lecture](../practice/lec36_ode_intro.html){ .md-button .md-button--primary }
+[Watch on YouTube](https://www.youtube.com/watch?v=9cAHjFyZieg){ .md-button }
 </div>
 
 <div class="nm-key" markdown>
@@ -137,6 +138,7 @@ Next lecture: Euler's method. Follow the tangent for one small step, then repeat
 
 <div class="nm-actions" markdown>
 [Practise this lecture](../practice/lec36_ode_intro.html){ .md-button .md-button--primary }
+[Watch on YouTube](https://www.youtube.com/watch?v=9cAHjFyZieg){ .md-button }
 [← Previous: Gauss–Legendre Quadrature](lec35-gauss-legendre.md){ .md-button }
 [Next: Euler's Method →](lec37-euler.md){ .md-button }
 </div>
