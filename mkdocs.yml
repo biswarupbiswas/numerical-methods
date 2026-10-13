@@ -74,6 +74,8 @@ nav:
       - "33 · Simpson's 3/8 Rule": lectures/lec33-simpson-38.md
       - "34 · Method of Undetermined Coefficients": lectures/lec34-undetermined-coefficients.md
       - "35 · Gauss–Legendre Quadrature": lectures/lec35-gauss-legendre.md
+      - "36 · Initial Value Problems": lectures/lec36-ode-intro.md
+      - "37 · Euler's Method": lectures/lec37-euler.md
 
 markdown_extensions:
   - admonition

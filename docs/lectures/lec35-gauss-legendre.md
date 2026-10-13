@@ -175,4 +175,5 @@ For a smooth function that can be evaluated anywhere, Gauss–Legendre is the mo
 [Practise this lecture](../practice/lec35_gauss_legendre.html){ .md-button .md-button--primary }
 [Watch on YouTube](https://www.youtube.com/watch?v=YzhX4le92tU){ .md-button }
 [← Previous: Method of Undetermined Coefficients](lec34-undetermined-coefficients.md){ .md-button }
+[Next: Initial Value Problems →](lec36-ode-intro.md){ .md-button }
 </div>
