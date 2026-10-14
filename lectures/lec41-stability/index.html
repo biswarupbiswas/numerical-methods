@@ -1,0 +1,2189 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Visual lectures and self-paced practice for a first course in Numerical Methods.">
+      
+      
+        <meta name="author" content="Biswarup Biswas">
+      
+      
+        <link rel="canonical" href="https://biswarupbiswas.github.io/numerical-methods/lectures/lec41-stability/">
+      
+      
+        <link rel="prev" href="../lec40-rk4/">
+      
+      
+        <link rel="next" href="../lec42-stiff/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+  
+    
+      
+        <title>Stability of Numerical Methods for ODEs - Numerical Methods</title>
+      
+    
+  
+
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,300i,400,400i,700,700i%7CIBM+Plex+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"IBM Plex Sans";--md-code-font:"IBM Plex Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,650&display=swap">
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/home.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  
+  <link rel="apple-touch-icon" href="../../assets/images/apple-touch-icon.png">
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#stability-of-numerical-methods-for-odes" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Numerical Methods" class="md-header__button md-logo" aria-label="Numerical Methods" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.42 5.29c-1.1-.1-2.07.71-2.17 1.82L10 10h2.82v2h-3l-.44 5.07A4.001 4.001 0 0 1 2 18.83l1.5-1.5c.33 1.05 1.46 1.64 2.5 1.3.78-.24 1.33-.93 1.4-1.74L7.82 12h-3v-2H8l.27-3.07a4.01 4.01 0 0 1 4.33-3.65c1.26.11 2.4.81 3.06 1.89l-1.5 1.5c-.25-.77-.93-1.31-1.74-1.38M22 13.65l-1.41-1.41-2.83 2.83-2.83-2.83-1.43 1.41 2.85 2.85-2.85 2.81 1.43 1.41 2.83-2.83 2.83 2.83L22 19.31l-2.83-2.81z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Numerical Methods
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Stability of Numerical Methods for ODEs
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/biswarupbiswas/numerical-methods" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    numerical-methods
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Numerical Methods" class="md-nav__button md-logo" aria-label="Numerical Methods" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.42 5.29c-1.1-.1-2.07.71-2.17 1.82L10 10h2.82v2h-3l-.44 5.07A4.001 4.001 0 0 1 2 18.83l1.5-1.5c.33 1.05 1.46 1.64 2.5 1.3.78-.24 1.33-.93 1.4-1.74L7.82 12h-3v-2H8l.27-3.07a4.01 4.01 0 0 1 4.33-3.65c1.26.11 2.4.81 3.06 1.89l-1.5 1.5c-.25-.77-.93-1.31-1.74-1.38M22 13.65l-1.41-1.41-2.83 2.83-2.83-2.83-1.43 1.41 2.85 2.85-2.85 2.81 1.43 1.41 2.83-2.83 2.83 2.83L22 19.31l-2.83-2.81z"/></svg>
+
+    </a>
+    Numerical Methods
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/biswarupbiswas/numerical-methods" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    numerical-methods
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lectures
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Lectures
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec01-bisection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 · Bisection Method
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec02-secant/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 · Secant Method
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec03-regula-falsi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 · Regula Falsi
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec04-newton/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 · Newton–Raphson
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec05-fixed-point/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 · Fixed-Point Iteration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec06-fixed-point-convergence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 · Fixed-Point Convergence
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec07-order-modified-newton/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 · Order and Modified Newton
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec08-floating-point/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 · Floating-Point Numbers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec09-rounding-errors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9 · Machine Epsilon
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec10-gaussian-elimination/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 · Gaussian Elimination
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec11-operation-count/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11 · Operation Count
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec12-pivoting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 · Pivoting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec13-lu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 · LU Factorisation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec14-cholesky/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14 · Cholesky
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec15-special-systems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15 · Simple Structure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec16-norms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16 · Norms
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec17-conditioning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17 · Condition Number
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec18-jacobi-gauss-seidel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18 · Jacobi and Gauss–Seidel
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec19-iterative-convergence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19 · Iterative Convergence
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec20-sor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    20 · SOR
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec21-power-method/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    21 · Power Method
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec22-inverse-power/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    22 · Inverse Power Method
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec23-shifted-inverse-power/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    23 · Shifted Inverse Power
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec24-least-squares-line/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    24 · Least Squares: Line
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec25-least-squares-poly/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    25 · Least Squares: Polynomial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec26-lagrange/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    26 · Lagrange Interpolation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec27-divided-differences/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    27 · Divided Differences
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec28-interpolation-error/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    28 · Interpolation Error
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec29-runge/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    29 · Runge Phenomenon
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec30-integration-intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    30 · Numerical Integration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec31-trapezoidal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    31 · Trapezoidal Rule
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec32-simpson-13/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    32 · Simpson's 1/3 Rule
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec33-simpson-38/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    33 · Simpson's 3/8 Rule
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec34-undetermined-coefficients/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    34 · Method of Undetermined Coefficients
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec35-gauss-legendre/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    35 · Gauss–Legendre Quadrature
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec36-ode-intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    36 · Initial Value Problems
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec37-euler/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    37 · Euler's Method
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec38-taylor-methods/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    38 · Taylor Series Methods
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec39-rk2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    39 · Runge–Kutta Methods: RK2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec40-rk4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    40 · Runge–Kutta Methods: RK4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    41 · Stability of Numerical Methods for ODEs
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    41 · Stability of Numerical Methods for ODEs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#key-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key results
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-an-accurate-method-blows-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When an accurate method blows up
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-model-problem-and-the-growth-factor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The model problem and the growth factor
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#eulers-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Euler's method
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rungekutta-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Runge–Kutta methods
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-backward-euler-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The backward Euler method
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#one-step-four-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        One step, four methods
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#choosing-a-stable-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Choosing a stable step
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comparison
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lec42-stiff/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    42 · A-Stability and Stiff Problems
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#key-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key results
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-an-accurate-method-blows-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When an accurate method blows up
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-model-problem-and-the-growth-factor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The model problem and the growth factor
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#eulers-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Euler's method
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rungekutta-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Runge–Kutta methods
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-backward-euler-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The backward Euler method
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#one-step-four-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        One step, four methods
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#choosing-a-stable-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Choosing a stable step
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comparison
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+  
+                  
+
+
+
+<p class="nm-eyebrow">Lecture 41</p>
+
+<h1 id="stability-of-numerical-methods-for-odes">Stability of Numerical Methods for ODEs<a class="headerlink" href="#stability-of-numerical-methods-for-odes" title="Permanent link">&para;</a></h1>
+<p><img alt="Lecture 41: Stability of Numerical Methods for ODEs" class="nm-video" src="../../assets/thumbnails/lec41_stability.png" /></p>
+<div class="nm-actions">
+<p><a class="md-button md-button--primary" href="../../practice/lec41_stability.html">Practise this lecture</a></p>
+</div>
+<div class="nm-key">
+<h4 id="key-results">Key results<a class="headerlink" href="#key-results" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Model problem:</strong> <span class="arithmatex">\(y'=\lambda y\)</span> with <span class="arithmatex">\(\lambda\in\mathbb C\)</span>. A one-step method gives <span class="arithmatex">\(y_{n+1}=G(z)\,y_n\)</span> with <span class="arithmatex">\(z=h\lambda\)</span>, so <span class="arithmatex">\(y_n=G(z)^n\,y_0\)</span>. The method is <strong>absolutely stable</strong> at <span class="arithmatex">\(z\)</span> when <span class="arithmatex">\(|G(z)|\le1\)</span>; these <span class="arithmatex">\(z\)</span> form its <strong>region of absolute stability</strong>.</li>
+<li><strong>Euler:</strong> <span class="arithmatex">\(G(z)=1+z\)</span>, the disk <span class="arithmatex">\(|1+z|\le1\)</span> around <span class="arithmatex">\(-1\)</span>. For real <span class="arithmatex">\(\lambda&lt;0\)</span>: <span class="arithmatex">\(h\le2/|\lambda|\)</span>. For purely imaginary <span class="arithmatex">\(\lambda\)</span> it is unstable for every <span class="arithmatex">\(h&gt;0\)</span>.</li>
+<li><strong>RK2</strong> (Heun, midpoint, Ralston): <span class="arithmatex">\(G(z)=1+z+\frac{z^2}{2}\)</span>; real interval <span class="arithmatex">\([-2,0]\)</span>. For <span class="arithmatex">\(\lambda=-2+2i\)</span>: <span class="arithmatex">\(h\le0.772\)</span>, against <span class="arithmatex">\(0.5\)</span> for Euler.</li>
+<li><strong>RK4:</strong> <span class="arithmatex">\(G(z)=1+z+\frac{z^2}{2}+\frac{z^3}{6}+\frac{z^4}{24}\)</span>; real interval <span class="arithmatex">\([-2.785,0]\)</span>, imaginary axis up to <span class="arithmatex">\(\pm2\sqrt2\,i\)</span>. Explicit methods have polynomial <span class="arithmatex">\(G\)</span>, so their regions are bounded.</li>
+<li><strong>Backward Euler:</strong> <span class="arithmatex">\(y_{n+1}=y_n+h\,f(t_{n+1},y_{n+1})\)</span>, implicit, order 1. <span class="arithmatex">\(G(z)=\frac{1}{1-z}\)</span>; stable for <span class="arithmatex">\(|1-z|\ge1\)</span>, which contains the whole left half-plane.</li>
+<li>For <span class="arithmatex">\(y'=-20y\)</span>: RK4 with <span class="arithmatex">\(h=0.15\)</span> (<span class="arithmatex">\(z=-3\)</span>) grows by <span class="arithmatex">\(1.375\)</span> per step; the largest stable steps are <span class="arithmatex">\(0.1\)</span> (Euler) and <span class="arithmatex">\(0.139\)</span> (RK4).</li>
+</ul>
+</div>
+<h2 id="when-an-accurate-method-blows-up">When an accurate method blows up<a class="headerlink" href="#when-an-accurate-method-blows-up" title="Permanent link">&para;</a></h2>
+<p>Take <span class="arithmatex">\(y'=-20y\)</span>, <span class="arithmatex">\(y(0)=1\)</span>, whose solution <span class="arithmatex">\(e^{-20t}\)</span> dies out almost at once. RK4 with <span class="arithmatex">\(h=0.15\)</span> gives</p>
+<div class="arithmatex">\[
+1,\ 1.375,\ 1.89,\ 2.60,\ 3.57,\ \dots
+\]</div>
+<p>growing by the same factor <span class="arithmatex">\(1.375\)</span> at every step, although RK4 is a fourth-order method. With <span class="arithmatex">\(h=0.1\)</span> the values fall by a factor <span class="arithmatex">\(\frac13\)</span> per step. Between these two steps lies a sharp border that the order of the method does not see. Linear stability analysis finds it.</p>
+<h2 id="the-model-problem-and-the-growth-factor">The model problem and the growth factor<a class="headerlink" href="#the-model-problem-and-the-growth-factor" title="Permanent link">&para;</a></h2>
+<p>Every method is studied on the model problem</p>
+<div class="arithmatex">\[
+y'=\lambda y,\qquad y(0)=y_0,\qquad y(t)=y_0\,e^{\lambda t}.
+\]</div>
+<p>Near a solution, a smooth equation <span class="arithmatex">\(y'=f(t,y)\)</span> behaves like its linear part with <span class="arithmatex">\(\lambda\approx\frac{\partial f}{\partial y}\)</span>; for a system <span class="arithmatex">\(\mathbf y'=\mathbf f(t,\mathbf y)\)</span> the role of <span class="arithmatex">\(\lambda\)</span> is played by the eigenvalues of the Jacobian <span class="arithmatex">\(\partial\mathbf f/\partial\mathbf y\)</span>. These can be complex: with <span class="arithmatex">\(\lambda=a+ib\)</span>, <span class="arithmatex">\(e^{\lambda t}=e^{at}(\cos bt+i\sin bt)\)</span> decays when <span class="arithmatex">\(a&lt;0\)</span> and oscillates when <span class="arithmatex">\(b\neq0\)</span>.</p>
+<p>A one-step method applied to the model problem multiplies the current value by a fixed number that depends only on <span class="arithmatex">\(z=h\lambda\)</span>:</p>
+<div class="arithmatex">\[
+y_{n+1}=G(z)\,y_n,\qquad y_n=G(z)^n\,y_0 .
+\]</div>
+<p><span class="arithmatex">\(G\)</span> is the <strong>growth factor</strong> or <strong>stability function</strong>. The computed values stay bounded exactly when <span class="arithmatex">\(|G(z)|\le1\)</span>, and the set <span class="arithmatex">\(\{z\in\mathbb C:\ |G(z)|\le1\}\)</span> is the method's <strong>region of absolute stability</strong>.</p>
+<h2 id="eulers-method">Euler's method<a class="headerlink" href="#eulers-method" title="Permanent link">&para;</a></h2>
+<p>On <span class="arithmatex">\(y'=\lambda y\)</span>, <span class="arithmatex">\(y_{n+1}=y_n+h\lambda y_n=(1+h\lambda)\,y_n\)</span>, so</p>
+<div class="arithmatex">\[
+G(z)=1+z,\qquad |1+z|\le1:
+\]</div>
+<p>the closed disk of radius <span class="arithmatex">\(1\)</span> with centre <span class="arithmatex">\(-1\)</span>.</p>
+<p><strong>Real <span class="arithmatex">\(\lambda&lt;0\)</span>.</strong> As <span class="arithmatex">\(h\)</span> grows, <span class="arithmatex">\(z=h\lambda\)</span> moves left along the real axis and leaves the disk at <span class="arithmatex">\(z=-2\)</span>: Euler needs <span class="arithmatex">\(h\le2/|\lambda|\)</span>. For <span class="arithmatex">\(\lambda=-20\)</span>:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"><span class="arithmatex">\(h\)</span></th>
+<th style="text-align: center;"><span class="arithmatex">\(z\)</span></th>
+<th style="text-align: center;"><span class="arithmatex">\(G\)</span></th>
+<th style="text-align: center;">behaviour</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">0.025</td>
+<td style="text-align: center;"><span class="arithmatex">\(-0.5\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.5\)</span></td>
+<td style="text-align: center;">halves each step</td>
+</tr>
+<tr>
+<td style="text-align: center;">0.05</td>
+<td style="text-align: center;"><span class="arithmatex">\(-1\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+<td style="text-align: center;">zero after one step</td>
+</tr>
+<tr>
+<td style="text-align: center;">0.075</td>
+<td style="text-align: center;"><span class="arithmatex">\(-1.5\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(-0.5\)</span></td>
+<td style="text-align: center;">flips sign, decays</td>
+</tr>
+<tr>
+<td style="text-align: center;">0.1</td>
+<td style="text-align: center;"><span class="arithmatex">\(-2\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(-1\)</span></td>
+<td style="text-align: center;">flips between <span class="arithmatex">\(1\)</span> and <span class="arithmatex">\(-1\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">0.12</td>
+<td style="text-align: center;"><span class="arithmatex">\(-2.4\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(-1.4\)</span></td>
+<td style="text-align: center;">flips sign, grows</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Complex <span class="arithmatex">\(\lambda\)</span>.</strong> For <span class="arithmatex">\(\lambda=-2+2i\)</span>, <span class="arithmatex">\(z=h\lambda\)</span> walks along a ray, and</p>
+<div class="arithmatex">\[
+|1+z|^2=(1-2h)^2+4h^2=1-4h+8h^2\le1\iff h\le\tfrac12 .
+\]</div>
+<p>At <span class="arithmatex">\(h=\frac12\)</span>, <span class="arithmatex">\(z=-1+i\)</span> lies on the circle.</p>
+<p><strong>Pure oscillation.</strong> For <span class="arithmatex">\(\lambda=3i\)</span>, <span class="arithmatex">\(|1+3ih|=\sqrt{1+9h^2}&gt;1\)</span> for every <span class="arithmatex">\(h&gt;0\)</span>: Euler is unstable on the imaginary axis whatever the step. With <span class="arithmatex">\(h=0.1\)</span> the modulus grows by a factor <span class="arithmatex">\(1.09^{5}\approx1.54\)</span> up to <span class="arithmatex">\(t=1\)</span>, the outward spiral of the oscillator in Lecture 37.</p>
+<h2 id="rungekutta-methods">Runge–Kutta methods<a class="headerlink" href="#rungekutta-methods" title="Permanent link">&para;</a></h2>
+<p>For Heun's method, <span class="arithmatex">\(K_1=h\lambda\,y_n\)</span>, <span class="arithmatex">\(K_2=h\lambda\,(y_n+K_1)\)</span> and <span class="arithmatex">\(y_{n+1}=y_n+\frac12(K_1+K_2)\)</span>, so</p>
+<div class="arithmatex">\[
+G(z)=1+z+\frac{z^2}{2},
+\]</div>
+<p>the first three terms of <span class="arithmatex">\(e^z\)</span>. Every two-stage method of order two (Heun, midpoint, Ralston) has this <span class="arithmatex">\(G\)</span>. Its real interval is again <span class="arithmatex">\([-2,0]\)</span>, but the region is wider off the axis: for <span class="arithmatex">\(\lambda=-2+2i\)</span>, <span class="arithmatex">\(|G(h\lambda)|^2=(1-2h)^2(1+4h^2)\)</span>, which equals <span class="arithmatex">\(1\)</span> at <span class="arithmatex">\(h\approx0.772\)</span>. On the imaginary axis <span class="arithmatex">\(|G(iy)|^2=1+\frac{y^4}{4}\)</span>, so for <span class="arithmatex">\(\lambda=3i\)</span>, <span class="arithmatex">\(h=0.1\)</span> the modulus grows by only <span class="arithmatex">\(1.01\)</span> in ten steps.</p>
+<p>For RK4 the same computation gives</p>
+<div class="arithmatex">\[
+G(z)=1+z+\frac{z^2}{2}+\frac{z^3}{6}+\frac{z^4}{24},
+\]</div>
+<p>the first five terms of <span class="arithmatex">\(e^z\)</span>. The region reaches <span class="arithmatex">\(-2.785\)</span> on the real axis and contains the imaginary axis up to <span class="arithmatex">\(\pm2\sqrt2\,i\approx\pm2.83\,i\)</span>.</p>
+<p>This explains the opening example: for <span class="arithmatex">\(y'=-20y\)</span>, <span class="arithmatex">\(h=0.15\)</span> gives <span class="arithmatex">\(z=-3\)</span>, outside the RK4 interval, and <span class="arithmatex">\(G(-3)=1.375\)</span>; <span class="arithmatex">\(h=0.1\)</span> gives <span class="arithmatex">\(z=-2\)</span> and <span class="arithmatex">\(G(-2)=\frac13\)</span>. The largest stable steps are</p>
+<div class="arithmatex">\[
+h_{\max}^{\text{Euler}}=\frac{2}{20}=0.1,\qquad h_{\max}^{\text{RK4}}=\frac{2.785}{20}\approx0.139 .
+\]</div>
+<p>The exact factor over one step is <span class="arithmatex">\(e^z\)</span>, with <span class="arithmatex">\(|e^z|\le1\)</span> exactly when <span class="arithmatex">\(\mathrm{Re}\,z\le0\)</span>. An explicit method copies <span class="arithmatex">\(e^z\)</span> near <span class="arithmatex">\(z=0\)</span>, which is why a high order means accuracy for small <span class="arithmatex">\(z\)</span>; but its <span class="arithmatex">\(G\)</span> is a polynomial, <span class="arithmatex">\(|G(z)|\to\infty\)</span> as <span class="arithmatex">\(|z|\to\infty\)</span>, and so <strong>every explicit Runge–Kutta method has a bounded stability region</strong>. A <span class="arithmatex">\(\lambda\)</span> with a large negative real part forces a tiny step, however smooth the solution.</p>
+<h2 id="the-backward-euler-method">The backward Euler method<a class="headerlink" href="#the-backward-euler-method" title="Permanent link">&para;</a></h2>
+<p>Taking the slope at the new point instead of the old one gives</p>
+<div class="arithmatex">\[
+\boxed{y_{n+1}=y_n+h\,f(t_{n+1},\,y_{n+1}).}
+\]</div>
+<p>The unknown <span class="arithmatex">\(y_{n+1}\)</span> appears on both sides, so the method is <strong>implicit</strong>: every step solves <span class="arithmatex">\(g(Y)=Y-y_n-h\,f(t_{n+1},Y)=0\)</span>. Fixed-point iteration <span class="arithmatex">\(Y^{(m+1)}=y_n+h\,f(t_{n+1},Y^{(m)})\)</span> converges when <span class="arithmatex">\(hL&lt;1\)</span>; Newton's method</p>
+<div class="arithmatex">\[
+Y^{(m+1)}=Y^{(m)}-\frac{Y^{(m)}-y_n-h\,f(t_{n+1},Y^{(m)})}{1-h\,f_y(t_{n+1},Y^{(m)})}
+\]</div>
+<p>is more robust, started from <span class="arithmatex">\(Y^{(0)}=y_n\)</span>. For <span class="arithmatex">\(y'=-y^3\)</span>, <span class="arithmatex">\(y(0)=1\)</span>, <span class="arithmatex">\(h=1\)</span>, the equation is <span class="arithmatex">\(Y+Y^3-1=0\)</span> and Newton gives <span class="arithmatex">\(1\to0.75\to0.6860\to0.6823\)</span>. Like forward Euler, the method has order <span class="arithmatex">\(1\)</span>.</p>
+<p><strong>Example.</strong> For <span class="arithmatex">\(y'=t+y\)</span>, <span class="arithmatex">\(y(0)=1\)</span>, <span class="arithmatex">\(h=0.1\)</span>, the equation is linear in <span class="arithmatex">\(y_{n+1}\)</span>:</p>
+<div class="arithmatex">\[
+y_{n+1}=\frac{y_n+h\,t_{n+1}}{1-h}.
+\]</div>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"><span class="arithmatex">\(t_n\)</span></th>
+<th style="text-align: center;">forward Euler</th>
+<th style="text-align: center;">backward Euler</th>
+<th style="text-align: center;">exact</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">0.0</td>
+<td style="text-align: center;">1.00000</td>
+<td style="text-align: center;">1.00000</td>
+<td style="text-align: center;">1.00000</td>
+</tr>
+<tr>
+<td style="text-align: center;">0.1</td>
+<td style="text-align: center;">1.10000</td>
+<td style="text-align: center;">1.12222</td>
+<td style="text-align: center;">1.11034</td>
+</tr>
+<tr>
+<td style="text-align: center;">0.2</td>
+<td style="text-align: center;">1.22000</td>
+<td style="text-align: center;">1.26914</td>
+<td style="text-align: center;">1.24281</td>
+</tr>
+</tbody>
+</table>
+<p>Forward Euler lies below this growing, convex solution and backward Euler above it, both with <span class="arithmatex">\(O(h)\)</span> error.</p>
+<p><strong>Stability.</strong> On <span class="arithmatex">\(y'=\lambda y\)</span>, <span class="arithmatex">\(y_{n+1}=y_n+z\,y_{n+1}\)</span>, so <span class="arithmatex">\((1-z)\,y_{n+1}=y_n\)</span> and</p>
+<div class="arithmatex">\[
+G(z)=\frac{1}{1-z},\qquad |G(z)|\le1\iff|1-z|\ge1 .
+\]</div>
+<p>The region is everything outside the open disk of radius <span class="arithmatex">\(1\)</span> around <span class="arithmatex">\(+1\)</span>; it contains the whole left half-plane. For <span class="arithmatex">\(y'=-20y\)</span> with <span class="arithmatex">\(h=0.15\)</span>, <span class="arithmatex">\(G=\frac{1}{1+3}=\frac14\)</span>: the values fall to <span class="arithmatex">\(\frac14,\frac1{16},\dots\)</span> where RK4 grew. For <span class="arithmatex">\(\lambda=3i\)</span>, <span class="arithmatex">\(h=0.1\)</span>, <span class="arithmatex">\(|G|^{10}\approx0.65\)</span>: backward Euler damps the oscillation, so stability is not the same as accuracy.</p>
+<h2 id="one-step-four-methods">One step, four methods<a class="headerlink" href="#one-step-four-methods" title="Permanent link">&para;</a></h2>
+<p>For <span class="arithmatex">\(y'=-y\)</span>, <span class="arithmatex">\(y(0)=1\)</span>, <span class="arithmatex">\(h=\frac12\)</span> (<span class="arithmatex">\(z=-\frac12\)</span>, inside every region), <span class="arithmatex">\(e^{-1/2}=0.60653\)</span>:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">method</th>
+<th style="text-align: center;"><span class="arithmatex">\(G(-\tfrac12)\)</span></th>
+<th style="text-align: center;">error</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Euler</td>
+<td style="text-align: center;">0.5</td>
+<td style="text-align: center;">0.107</td>
+</tr>
+<tr>
+<td style="text-align: center;">Heun (RK2)</td>
+<td style="text-align: center;">0.625</td>
+<td style="text-align: center;">0.0185</td>
+</tr>
+<tr>
+<td style="text-align: center;">RK4</td>
+<td style="text-align: center;">0.60677</td>
+<td style="text-align: center;"><span class="arithmatex">\(2.4\times10^{-4}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">backward Euler</td>
+<td style="text-align: center;">0.66667</td>
+<td style="text-align: center;">0.0601</td>
+</tr>
+</tbody>
+</table>
+<p>Inside the stability region, the order decides the accuracy.</p>
+<h2 id="choosing-a-stable-step">Choosing a stable step<a class="headerlink" href="#choosing-a-stable-step" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Find <span class="arithmatex">\(\lambda\)</span>: <span class="arithmatex">\(f_y\)</span> along the solution, or the eigenvalues of the Jacobian for a system.</li>
+<li>Find the largest <span class="arithmatex">\(h\)</span> with <span class="arithmatex">\(|G(h\lambda)|\le1\)</span>. For real <span class="arithmatex">\(\lambda\)</span> this is the end of the real interval divided by <span class="arithmatex">\(|\lambda|\)</span>; for complex <span class="arithmatex">\(\lambda\)</span>, solve <span class="arithmatex">\(|G(h\lambda)|=1\)</span>, for example by bisection (Lecture 1). For RK2 and <span class="arithmatex">\(\lambda=-2+2i\)</span> this gives <span class="arithmatex">\(h\approx0.772\)</span>.</li>
+<li>Use the smaller of this step and the step that the accuracy needs.</li>
+</ol>
+<h2 id="comparison">Comparison<a class="headerlink" href="#comparison" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">method</th>
+<th style="text-align: center;"><span class="arithmatex">\(G(z)\)</span></th>
+<th style="text-align: center;">real interval</th>
+<th style="text-align: center;">region</th>
+<th style="text-align: center;">type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Euler</td>
+<td style="text-align: center;"><span class="arithmatex">\(1+z\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\([-2,0]\)</span></td>
+<td style="text-align: center;">disk</td>
+<td style="text-align: center;">explicit</td>
+</tr>
+<tr>
+<td style="text-align: center;">RK2</td>
+<td style="text-align: center;"><span class="arithmatex">\(1+z+\frac{z^2}{2}\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\([-2,0]\)</span></td>
+<td style="text-align: center;">bounded</td>
+<td style="text-align: center;">explicit</td>
+</tr>
+<tr>
+<td style="text-align: center;">RK4</td>
+<td style="text-align: center;"><span class="arithmatex">\(1+z+\dots+\frac{z^4}{24}\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\([-2.785,0]\)</span></td>
+<td style="text-align: center;">bounded</td>
+<td style="text-align: center;">explicit</td>
+</tr>
+<tr>
+<td style="text-align: center;">backward Euler</td>
+<td style="text-align: center;"><span class="arithmatex">\(\frac{1}{1-z}\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\((-\infty,0]\)</span></td>
+<td style="text-align: center;">unbounded</td>
+<td style="text-align: center;">implicit</td>
+</tr>
+</tbody>
+</table>
+<p>Explicit methods are cheap per step but have bounded regions; backward Euler solves an equation at every step but never blows up on a decaying problem. Next lecture: A-stability and stiff problems, such as <span class="arithmatex">\(y'=-1000\,(y-\cos t)\)</span>, where Euler needs <span class="arithmatex">\(h\le0.002\)</span> although the solution stays close to <span class="arithmatex">\(\cos t\)</span>.</p>
+<div class="nm-actions">
+<p><a class="md-button md-button--primary" href="../../practice/lec41_stability.html">Practise this lecture</a>
+<a class="md-button" href="../lec40-rk4/">← Previous: Runge–Kutta Methods: RK4</a>
+<a class="md-button" href="../lec42-stiff/">Next: A-Stability and Stiff Problems →</a></p>
+</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+  
+  <aside class="nm-book">
+    <img src="../../assets/images/book_cover.jpg" alt="" width="54" height="81" loading="lazy">
+    <p>These notes are also a printed book, <em>Lecture Notes on Numerical Methods</em>.
+      <a href="https://store.pothi.com/book/biswarup-biswas-lecture-notes-numerical-methods">Buy in India</a> · <a href="https://a.co/d/0dFUamH7">Buy outside India (Amazon)</a>.
+      Teachers can ask for a specimen copy.</p>
+  </aside>
+  
+
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../lec40-rk4/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 40 · Runge–Kutta Methods: RK4">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                40 · Runge–Kutta Methods: RK4
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../lec42-stiff/" class="md-footer__link md-footer__link--next" aria-label="Next: 42 · A-Stability and Stiff Problems">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                42 · A-Stability and Stiff Problems
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 Biswarup Biswas
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.sections", "navigation.footer", "navigation.top", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+      
+        <script src="../../javascripts/katex.js"></script>
+      
+    
+  </body>
+</html>
