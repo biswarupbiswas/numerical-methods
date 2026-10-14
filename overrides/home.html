@@ -40,6 +40,9 @@
   (37, "Euler's Method", "lec37-euler", "lec37_euler", "lfz5LO5ysrI", "16:45", "Follow the tangent for one step, then repeat: three derivations, local O(h²) against global O(h) error, the stability interval −2 ≤ hλ ≤ 0, and the outward spiral on oscillations."),
   (38, "Taylor Series Methods", "lec38-taylor-methods", "lec38_taylor_methods", "", "16:39", "Keep more terms of the Taylor series: y″ = f_t + f f_y from the chain rule, order p means global error O(hᵖ), Taylor-2 thirty times more accurate than Euler, and the price of differentiating f."),
   (39, "Runge–Kutta Methods: RK2", "lec39-rk2", "lec39_rk2", "", "17:34", "Sample the slope twice and blend: Heun and midpoint methods, the order conditions W₁ + W₂ = 1, W₂c₂ = W₂a₂₁ = ½, why two stages stop at order 2, and the error falling by 4 when h is halved."),
+  (40, "Runge–Kutta Methods: RK4", "lec40-rk4", "lec40_rk4", "", "18:26", "Four looks at the slope blended 1, 2, 2, 1 over 6: Simpson's rule for ODEs, global error O(h⁴) so halving h divides the error by 16, fifteen steps where Euler needs millions, and why order 5 needs six stages."),
+  (41, "Stability of Numerical Methods for ODEs", "lec41-stability", "lec41_stability", "", "18:24", "Why an accurate method can still blow up: the growth factor G(hλ), stability regions in the complex plane for Euler, RK2 and RK4, step limits such as h ≤ 2/|λ|, and backward Euler, stable on the whole left half-plane."),
+  (42, "A-Stability and Stiff Problems", "lec42-stiff", "lec42_stiff", "", "17:37", "Smooth solutions that explicit methods can't keep up with: A-stability, why explicit Runge–Kutta never is, 100 implicit steps against 5000 Euler steps, and a look back over the whole course."),
 ] %}
 
 {% set modules = [
@@ -50,7 +53,7 @@
   ("Least squares", "Lectures 24–25", "Fitting lines and polynomials to data", true, 24, 25),
   ("Interpolation", "Lectures 26–29", "Lagrange and Newton forms, the error term, the Runge phenomenon", true, 26, 29),
   ("Numerical integration", "Lectures 30–35", "Trapezoidal and Simpson rules, Gauss–Legendre quadrature", true, 30, 35),
-  ("Differential equations", "Lectures 36–42", "Euler, Taylor and Runge–Kutta methods, stability and stiffness", false, 36, 42),
+  ("Differential equations", "Lectures 36–42", "Euler, Taylor and Runge–Kutta methods, stability and stiffness", true, 36, 42),
 ] %}
 
 {% block tabs %}
@@ -75,10 +78,10 @@
   </section>
   <section class="nmh-stats" aria-label="Course at a glance">
     <div class="nmh-stats__inner">
-      <div class="nmh-stat"><span class="nmh-stat__num">39</span><span class="nmh-stat__label">lectures published</span></div>
-      <div class="nmh-stat"><span class="nmh-stat__num">365</span><span class="nmh-stat__label">minutes of video</span></div>
-      <div class="nmh-stat"><span class="nmh-stat__num">351</span><span class="nmh-stat__label">practice tasks</span></div>
-      <div class="nmh-stat"><span class="nmh-stat__num">8</span><span class="nmh-stat__label">modules planned</span></div>
+      <div class="nmh-stat"><span class="nmh-stat__num">42</span><span class="nmh-stat__label">lectures published</span></div>
+      <div class="nmh-stat"><span class="nmh-stat__num">419</span><span class="nmh-stat__label">minutes of video</span></div>
+      <div class="nmh-stat"><span class="nmh-stat__num">378</span><span class="nmh-stat__label">practice tasks</span></div>
+      <div class="nmh-stat"><span class="nmh-stat__num">8</span><span class="nmh-stat__label">modules complete</span></div>
     </div>
   </section>
 {% endblock %}
@@ -90,7 +93,7 @@
     <div class="nmh-section__head">
       <p class="nmh-kicker nmh-kicker--dark">Syllabus</p>
       <h2>Eight modules, from roots to differential equations</h2>
-      <p class="nmh-section__lede">The course follows a first university course in numerical analysis. The first seven modules are complete; new lectures are added as they are recorded.</p>
+      <p class="nmh-section__lede">The course follows a first university course in numerical analysis. All eight modules are complete.</p>
     </div>
 
     <ol class="nmh-modules">

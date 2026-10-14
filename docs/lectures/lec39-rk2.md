@@ -165,4 +165,5 @@ Second-order Runge–Kutta methods keep the simplicity of Euler's method and rea
 <div class="nm-actions" markdown>
 [Practise this lecture](../practice/lec39_rk2.html){ .md-button .md-button--primary }
 [← Previous: Taylor Series Methods](lec38-taylor-methods.md){ .md-button }
+[Next: Runge–Kutta Methods: RK4 →](lec40-rk4.md){ .md-button }
 </div>
