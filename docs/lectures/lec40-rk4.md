@@ -6,10 +6,11 @@ title: "Runge–Kutta Methods: RK4"
 
 # Runge–Kutta Methods: RK4
 
-![Lecture 40: Runge–Kutta Methods: RK4](../assets/thumbnails/lec40_rk4.png){ .nm-video }
+<iframe class="nm-video" src="https://www.youtube-nocookie.com/embed/c7keJNBsggc" title="Lecture 40: Runge–Kutta Methods: RK4" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 <div class="nm-actions" markdown>
 [Practise this lecture](../practice/lec40_rk4.html){ .md-button .md-button--primary }
+[Watch on YouTube](https://www.youtube.com/watch?v=c7keJNBsggc){ .md-button }
 </div>
 
 <div class="nm-key" markdown>
@@ -142,6 +143,7 @@ RK4 is the standard method for smooth, non-stiff problems. Next lecture: stabili
 
 <div class="nm-actions" markdown>
 [Practise this lecture](../practice/lec40_rk4.html){ .md-button .md-button--primary }
+[Watch on YouTube](https://www.youtube.com/watch?v=c7keJNBsggc){ .md-button }
 [← Previous: Runge–Kutta Methods: RK2](lec39-rk2.md){ .md-button }
 [Next: Stability of Numerical Methods for ODEs →](lec41-stability.md){ .md-button }
 </div>

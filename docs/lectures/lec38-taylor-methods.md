@@ -6,10 +6,11 @@ title: "Taylor Series Methods"
 
 # Taylor Series Methods
 
-![Lecture 38: Taylor Series Methods](../assets/thumbnails/lec38_taylor_methods.png){ .nm-video }
+<iframe class="nm-video" src="https://www.youtube-nocookie.com/embed/asSaB1dd3a4" title="Lecture 38: Taylor Series Methods" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 <div class="nm-actions" markdown>
 [Practise this lecture](../practice/lec38_taylor_methods.html){ .md-button .md-button--primary }
+[Watch on YouTube](https://www.youtube.com/watch?v=asSaB1dd3a4){ .md-button }
 </div>
 
 <div class="nm-key" markdown>
@@ -138,6 +139,7 @@ Taylor methods reach any order, with a clear error term, and need far fewer step
 
 <div class="nm-actions" markdown>
 [Practise this lecture](../practice/lec38_taylor_methods.html){ .md-button .md-button--primary }
+[Watch on YouTube](https://www.youtube.com/watch?v=asSaB1dd3a4){ .md-button }
 [← Previous: Euler's Method](lec37-euler.md){ .md-button }
 [Next: Runge–Kutta Methods: RK2 →](lec39-rk2.md){ .md-button }
 </div>

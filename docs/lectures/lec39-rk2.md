@@ -6,10 +6,11 @@ title: "Runge–Kutta Methods: RK2"
 
 # Runge–Kutta Methods: RK2
 
-![Lecture 39: Runge–Kutta Methods: RK2](../assets/thumbnails/lec39_rk2.png){ .nm-video }
+<iframe class="nm-video" src="https://www.youtube-nocookie.com/embed/C2sWr1TP2Xs" title="Lecture 39: Runge–Kutta Methods: RK2" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 <div class="nm-actions" markdown>
 [Practise this lecture](../practice/lec39_rk2.html){ .md-button .md-button--primary }
+[Watch on YouTube](https://www.youtube.com/watch?v=C2sWr1TP2Xs){ .md-button }
 </div>
 
 <div class="nm-key" markdown>
@@ -164,6 +165,7 @@ Second-order Runge–Kutta methods keep the simplicity of Euler's method and rea
 
 <div class="nm-actions" markdown>
 [Practise this lecture](../practice/lec39_rk2.html){ .md-button .md-button--primary }
+[Watch on YouTube](https://www.youtube.com/watch?v=C2sWr1TP2Xs){ .md-button }
 [← Previous: Taylor Series Methods](lec38-taylor-methods.md){ .md-button }
 [Next: Runge–Kutta Methods: RK4 →](lec40-rk4.md){ .md-button }
 </div>

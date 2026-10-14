@@ -6,10 +6,11 @@ title: "Stability of Numerical Methods for ODEs"
 
 # Stability of Numerical Methods for ODEs
 
-![Lecture 41: Stability of Numerical Methods for ODEs](../assets/thumbnails/lec41_stability.png){ .nm-video }
+<iframe class="nm-video" src="https://www.youtube-nocookie.com/embed/B0BiMzPljw0" title="Lecture 41: Stability of Numerical Methods for ODEs" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 <div class="nm-actions" markdown>
 [Practise this lecture](../practice/lec41_stability.html){ .md-button .md-button--primary }
+[Watch on YouTube](https://www.youtube.com/watch?v=B0BiMzPljw0){ .md-button }
 </div>
 
 <div class="nm-key" markdown>
@@ -176,6 +177,7 @@ Explicit methods are cheap per step but have bounded regions; backward Euler sol
 
 <div class="nm-actions" markdown>
 [Practise this lecture](../practice/lec41_stability.html){ .md-button .md-button--primary }
+[Watch on YouTube](https://www.youtube.com/watch?v=B0BiMzPljw0){ .md-button }
 [← Previous: Runge–Kutta Methods: RK4](lec40-rk4.md){ .md-button }
 [Next: A-Stability and Stiff Problems →](lec42-stiff.md){ .md-button }
 </div>

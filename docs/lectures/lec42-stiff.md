@@ -6,10 +6,11 @@ title: "A-Stability and Stiff Problems"
 
 # A-Stability and Stiff Problems
 
-![Lecture 42: A-Stability and Stiff Problems](../assets/thumbnails/lec42_stiff.png){ .nm-video }
+<iframe class="nm-video" src="https://www.youtube-nocookie.com/embed/ar0P9TUzAEc" title="Lecture 42: A-Stability and Stiff Problems" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 <div class="nm-actions" markdown>
 [Practise this lecture](../practice/lec42_stiff.html){ .md-button .md-button--primary }
+[Watch on YouTube](https://www.youtube.com/watch?v=ar0P9TUzAEc){ .md-button }
 </div>
 
 <div class="nm-key" markdown>
@@ -143,6 +144,7 @@ This lecture completes the course. Root finding (bisection, secant, regula falsi
 
 <div class="nm-actions" markdown>
 [Practise this lecture](../practice/lec42_stiff.html){ .md-button .md-button--primary }
+[Watch on YouTube](https://www.youtube.com/watch?v=ar0P9TUzAEc){ .md-button }
 [← Previous: Stability of Numerical Methods for ODEs](lec41-stability.md){ .md-button }
 [Back to the course home](../index.md){ .md-button }
 </div>
